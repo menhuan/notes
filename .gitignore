@@ -24,3 +24,7 @@ hs_err_pid*
 
 # 忽略img 图像
 *.png
+*.jpg
+*.jpeg
+*.gif
+*.gmp
