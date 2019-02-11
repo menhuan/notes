@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~十二</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~十二</h1>
+        <div class="show-content">
+          <h1>1使用Apache Tiles视图定义布局</h1><p>在jsp中布局并不是做的很好，最好的方式就是使用布局引擎。我们在这里介绍下Apache Tiles 这个布局引擎。定义适用于所有页面的布局，并且SpringMvc视图解析器也能够将逻辑视图名解析为Tile定义。</p><p>在Sping中使用Tiles 我们需要配置好bean在xml中或者java程序中。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-30bc8b4c103ddcde.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-30bc8b4c103ddcde.png?imageMogr2/auto-orient/strip" data-image-slug="30bc8b4c103ddcde" data-width="551" data-height="148"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-8964f15a6f67f75b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-8964f15a6f67f75b.png?imageMogr2/auto-orient/strip" data-image-slug="8964f15a6f67f75b" data-width="456" data-height="69"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>       这就我们在程序中上面配置好需要用到 的视图，并且要启动刷新功能。</p><p>如果不喜欢在java程序中配置。我们可以在xml文件中配置好TilesConfigurer和TilesViewResolver：</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-aff41cfe616f1e44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-aff41cfe616f1e44.png?imageMogr2/auto-orient/strip" data-image-slug="aff41cfe616f1e44" data-width="623" data-height="194"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在这里TilesConfigurer回家再Tile定义并与ApacheTiles协作，而TilesViewRe-solver会将伙计视图名称解析为Tile定义的视图。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-9c18d1c150ac4fd3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-9c18d1c150ac4fd3.png?imageMogr2/auto-orient/strip" data-image-slug="9c18d1c150ac4fd3" data-width="591" data-height="530"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在这里面最终引用的还是在jsp模板当中。我们在某个jsp当中怎么将模板嵌入进去呢？这里就会使用到&lt;t:insert Attribute&gt;这个标签来引入我们需要的模板。</p><h1>2使用Thymeleaf模板来代替jsp</h1><p>为什么使用Thymeleaf模板，是因为有自定义的命名空间，并且给html标签集合添加Thymeleaf属性。</p><p>首先我们需要配置视图解析器，模板加载并且渲染模板。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a1e88f62c048a827.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a1e88f62c048a827.png?imageMogr2/auto-orient/strip" data-image-slug="a1e88f62c048a827" data-width="647" data-height="383"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-3243c3bed2894868.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-3243c3bed2894868.png?imageMogr2/auto-orient/strip" data-image-slug="3243c3bed2894868" data-width="544" data-height="190"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>还是提供了两种配置方式来解析bean.使用java程序或者xml文件来解析。不管使用哪种配置方式都可以将响应的模板渲染到mvc中。</p><p>我们先写一个首页的html,并且在其中引入模板</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-3699d67ac97bd924.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-3699d67ac97bd924.png?imageMogr2/auto-orient/strip" data-image-slug="3699d67ac97bd924" data-width="543" data-height="211"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在这里我们使用简单的th:href属性，这个是对应html中的href属性。我们在jsp中经常用jstl表达式来解析值，但是在Thymeleaf这个模板中我们用@{}来计算路径。</p><p>我们使用jsp中也使用它的表单数据提交，接下来我们就说下Thymeleaf的表单数据提交   </p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-e8176b120343bfc2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-e8176b120343bfc2.png?imageMogr2/auto-orient/strip" data-image-slug="e8176b120343bfc2" data-width="712" data-height="455"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>首先都是在form上表单绑定了 th:object 对象，在表单中得th:fields就是绑定对象中的属性*{属性名称}。在这里简单介绍下表达式的不同${}表达式就是变量表达式，一般是ognl表达式，但是在Spring中是SpEL表达式。而*{}属于选择表达式，在上图中选中的对象就是th:object属性所设置的对象：模型中的Spitter对象。因此*{firstName}表达式就会计算为Spitter对象中的firstName属性。具体关于Thymeleaf模板的信息我们可以去官网进行学习 http://www.thymeleaf.org/</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

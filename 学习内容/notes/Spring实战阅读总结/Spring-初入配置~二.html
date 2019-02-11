@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring 初入配置~二</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring 初入配置~二</h1>
+        <div class="show-content">
+          <p>上篇文章简单的把构造方法注入类型介绍了下，本篇作为第二篇接着把注入属性介绍下！</p><p>除了构造方法能注入属性，我们还能通过get或者set的方法去配置属性的值！</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-3c74e9b39d7fd23e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿配置好我们需要的一个bean，下面使用setter 注入相关类型！</p><p>1简单类型注入</p><p>首先先注入简单值，我们可以使用&lt;property&gt;元素来配置bean的属性！该标签与我们上篇介绍的&lt;constructor-org&gt;类似！只不过这个标签是通过构造参数来实现的，现在我们的通过setter 注入！</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-e1018d727579ca7d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿这样就注入，一旦调用此类时就会被实例化注入属性值</p><p>并且其中的value值并没有限制类型也可以是其他的简单类型比如int  float等等！</p><p>2引入其他bean</p><p>修改上面的bean 为如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-5b92273c6b95df41.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿如果不是简单类型时，引入其值时就用ref而不用value 了<br></p><p>我们在这里还能使用内部bean，个人感觉用处不大就不介绍了！</p><p>我们还可以使用命名空间p来装配属性，我们在引用前需要先增加命名空间的声明！如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-4df2035b07d7002f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿﻿<br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-18ff72089c265170.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿这样使用也能达到使用效果，也简单明了</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

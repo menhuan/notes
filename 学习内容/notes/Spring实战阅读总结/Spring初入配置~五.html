@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~五</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~五</h1>
+        <div class="show-content">
+          <p>这一篇所写的是最小化springXml文件配置，因为内容有点多，就要分两次写完！哈，其实是我有点懒！</p><p>在这次简化配置中，我们将用到新的知识，就是自动装配和自动检测两种，当这两个一起使用的时候就会减少Speingxml文件的配置！</p><p>首先自动装配分为4种类型分别为byName通过与Bean的属性具有相同名字的其他Bean装配到对应的属性中去！byType通过把Bean的属性具有相同类型的其他bean装配其中！constructor把bean的构造器相同的bean装配其中，autodetect首次尝试用构造期的方式进行自动装配，失败后用byType进行装配</p><p>首先说的是通过byName装配</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-c75a00887f9d2184.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿在bean中增加了一个autowire属性设置为byName就是根据名字去查找，如果设置成bytype就是根据类型去查找但是这两种方式都会有一个缺点就是会查找到多个，再使用类型的时候需要在bean中设置primary属性为true这个bean就比其他类型的bean具有优先级，可以解决多个相同类型的问题！如果类型中我们需要排除一些bean的自动装配就可以使用authowire-candidate属性为false来忽略掉！</p><p>Construtor自动装配</p><p>在bean中的autowire设置为constructor即可，当不确定使用哪种装配方式时可以使用autidetect来装配让其自己选择！</p><p>当然我们也可以在装配的时候默认自动装配使用哪种方式！</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-6219ba797212d9ba.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿默认情况下是不使用自动装配的，default-autowire为none！</p><p>我们在配置文件中也可以先使用自动装配，然后其中某个文件不想使用自动装配时可以显示控制为其他方式装配！如图所示</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-120171fb188bbf71.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿但是这种混合装配的时候我们不能把cinstructor与&lt;constructor-org&gt;元素混合在一块使用</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

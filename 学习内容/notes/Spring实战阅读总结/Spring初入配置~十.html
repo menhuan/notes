@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~十</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~十</h1>
+        <div class="show-content">
+          <h1>构建Spring Web应用程序</h1><p>这篇简单的来说就是初次使用Spring MVC.</p><h3>每当用户从浏览器点击链接或者提交表单的时候，请求就开始工作了。这里面有很复杂的过程。</h3><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-b2043e1413f6985b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-b2043e1413f6985b.png?imageMogr2/auto-orient/strip" data-image-slug="b2043e1413f6985b" data-width="1007" data-height="521"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><h4> 1）用户点击链接或者提交表单发送请求</h4><h4> 2）请求进入Spring 的第一个地方DispatherServlet。这是一个前端控制器来将用户的请求发送给其他应用程序。</h4><h4> 3）DispatherServlet就是根据不同的处理映射器（handler mapping）将请求发送给控制器。</h4><h4>4）耐心等待控制器处理这些数据或者根据不同的业务逻辑将其委托给其他对象来处理业务。完成后这些信息将返回给浏览器显示，这些信息被称为Model，最后发送给视图view。控制器的最后一步操作就是将model和view打包发送回去给DispatherServlet.</h4><h4> 5 ) DispatherServlet根据传输回来的逻辑名称，将使用时解析器来匹配特定的视图来实现。</h4><h4> 6 ）视图结果的展示。这个渲染后再把响应给浏览器</h4><h3>搭建Spring MVC</h3><h4>   1这次介绍的是使用java的方式来配置Spring,只适合Servlet3.0以上环境，传统的xml配置方式以后再说。</h4><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-bbfa2c36583e7406.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-bbfa2c36583e7406.png?imageMogr2/auto-orient/strip" data-image-slug="bbfa2c36583e7406" data-width="611" data-height="331"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><p>1    该图中SpittrWebAppInitializer类继承自AbstractAnnotationConfigDispatcherServletInitializer类，该类能够自动配置Dispatcher-Servlet和Spring应用上下文。对该类进行追踪会发现。该类实现了javax.servlet.ServletContainerInitializer接口。这个接口就是用来配置Servlet容器的。在Spring中也实现了ServletContainerInitializer这个接口名字是SpringServletContainerInitializer，然后再去寻找实现WebApplicationInitializer的类并把配置任务交给他们来完成。</p><p>在Spring3.2中引入了WebApplicationInitializer简单的实现，名字是AbstractAnnotationConfigDispatcherServletInitiali，所以在上图所说的SpittrWebAppInitializer也就间接的实现了WebApplicationInitializer。</p><p>2图中getServletMappings()会将路径映射到我们所说的DispatcherServlet上面。当DispatcherServlet启动的时候会把配置好的bean全部加载，在图中的getServletConfigClasses()中我们使用定义的WebConfig配置类中的bean. 在这里可以指定bean.在SpringWeb中还有一个应用上下文，这个就是由ContextLoaderListener创建的。实际上AbstractAnnotationConfigDispatcherServletInitializer这个类会同时创建DispatcherServlet和ContextLoaderListener。然后GetServletConfigClasses()方法返回带有注解@Configuration的类就是用来定义DispatcherServlet管理的bean.同理getRootConfigClasses()方法返回的带有@Configuration注解的类将会用来配置ContextLoaderListener创建的应用上下文中的bean。</p><p>3如图</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-6a61545f5be587cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-6a61545f5be587cd.png?imageMogr2/auto-orient/strip" data-image-slug="6a61545f5be587cd" data-width="608" data-height="481"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在该图中使用了@ComponentScan("spitte.web") 会扫描spitte.web 会找到该找到的bean.</p><p>我们会为加入bean的上面加入@Controller注解</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-e590d0a3f87679de.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-e590d0a3f87679de.png?imageMogr2/auto-orient/strip" data-image-slug="e590d0a3f87679de" data-width="577" data-height="216"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>通过return 返回的视图，DispatcherServlet会将根据配置的InternalResourceViewResolver方式视图的名称将会解析到/WEB-INF/views/home.jsp的jsp下来展示视图。</p><p>对于最新的在Spring实战第四版中测试的案例还没有得到验证，待验证后在对其总结。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

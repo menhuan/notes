@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~六</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~六</h1>
+        <div class="show-content">
+          <p>hai最近因为产品上线导致一段时间没有更新，从今天开始恢复两天一更新的状态，望大家多多关注。</p><p>继续接着我们上次所说的来讲解，使用注解装配。在Spring 中容器 是默认禁用注解装配。我们需要在使用注解装配前将其启用。最简单的方式是使用&lt;context:annotation-config&gt;元素，如图所示，在beans上直接配置自动扫描<br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-986346c8c2218488.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-986346c8c2218488.png?imageMogr2/auto-orient/strip" data-image-slug="986346c8c2218488" data-width="865" data-height="284"><br><div class="image-caption">来自Spring实战第三版<br>
+</div>
+</div><p>配置好完成后，我们就可以在代码中使用注解的方式。来装配。</p><p>Spring3知己以下几种自动装配的注解：1 Spring自带的@Autowired注解  2 JSR-330的@Inject注解 3JSR-250的@Resource注解</p><p>首先介绍的是@Autowired注解：如图所示我们可以在方法上使用注解</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-dd965ddda94748ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-dd965ddda94748ed.png?imageMogr2/auto-orient/strip" data-image-slug="dd965ddda94748ed" data-width="579" data-height="90"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>使用该注解 会执行ByType自动装配。我们不仅可以标注在方法上还可以标注在属性上并且删除setter方法</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-51ce29c40f8e8161.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-51ce29c40f8e8161.png?imageMogr2/auto-orient/strip" data-image-slug="51ce29c40f8e8161" data-width="954" data-height="61"><br><div class="image-caption">来自Spring实战第三版<br>
+</div>
+</div><p>但是我们在使用过该注解时会出现一些麻烦，比如没有匹配到Bean或者匹配到多个Bean就会，就会直接抛出异常。导致错误。</p><p>我们在装配的时候属性不一定需要装配我们可以在使用注解时加上required=false属性来人让其属性值为Null</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-4d6ece8a13b5cada.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-4d6ece8a13b5cada.png?imageMogr2/auto-orient/strip" data-image-slug="4d6ece8a13b5cada" data-width="839" data-height="60"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>但是该方法在使用的时候有个需要注意的点是，在使用构造器装配时，只有一个构造器可以使requeired=true；其他只能设置成false。<br></p><p>第二种方式注入：</p><p>借用@Inject实现标准的自动装配</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-24d104b443e7d03a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-24d104b443e7d03a.png?imageMogr2/auto-orient/strip" data-image-slug="24d104b443e7d03a" data-width="479" data-height="73"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>这个注解跟@Autowired一样；但是有一点因为他没有required属性那么所以来的关系必须存在，如果不存在就会出现异常。</p><p>除了该注解，JSR-330还提供了了另外一个方式，在注入@Inject时注入一个Provider例如</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a2a077c623c07256.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a2a077c623c07256.png?imageMogr2/auto-orient/strip" data-image-slug="a2a077c623c07256" data-width="732" data-height="203"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>这样我们就可以得到其作用域，或得到不同的对象，自我感觉使用这个没有使用Spring自带的方便（ps个人感觉，可能开发的时候使用自带比较多的缘故）。就如我们刚才在上面所说的他们两者有很多的共同点，@Autowired中还有@Qualifier属性，在@Inject中也有类似的属性是使用的@Name注解。</p><p>@Qualifier帮助我们缩小了所匹配的Bean的范围，而@Name通过Bean的ID来标识可选择的Bean。</p><p>两种注入方式就先说到这里，本文章只是简单的总结一些用法。简单的了解注入的不同。</p><p>除了这些注入之外，我们还有自动检测Bean的需求</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-ef0cd063175277e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-ef0cd063175277e6.png?imageMogr2/auto-orient/strip" data-image-slug="ef0cd063175277e6" data-width="877" data-height="296"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>&lt;context:component-scan&gt;标签元素会扫描制定包内 的自动注册Spring Bean的类。</p><p>他是如何实现的呢，是因为我们会在包中扫描到以下注解</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-f804d06423ed92c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-f804d06423ed92c3.png?imageMogr2/auto-orient/strip" data-image-slug="f804d06423ed92c3" data-width="763" data-height="183"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>只要在Bean上制定这些注解，那么Spring在扫描的时候会主动为其注入。</p><p>关于自动注入的就写到这里，有其他的注解在这里没有写到的请看Spring官方文档解释。</p><p>下一章我们将开始介绍面向切面的Spring。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

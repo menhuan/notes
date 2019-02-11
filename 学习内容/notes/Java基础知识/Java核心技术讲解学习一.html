@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java核心技术讲解学习一</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Java核心技术讲解学习一</h1>
+        <div class="show-content">
+          <p>做java有一段时间了。经常写业务代码，长时间里，自己只知道怎么使用其中的api，对于java的理解很多就忘记了。正好极客时间里面出来了一个课程关于JAVA核心技术的讲解，自己也开始学习，期望能提高自己对java的理解。</p><p>首先提出需要的问题。</p><p>1. ﻿Java平台的理解</p><p>2 Java是解释执行吗？</p><p>我看到这个问题的时候也是一头懵逼。难道面试的时候会问这种问题吗。让我这个小白渣渣心中突突了一下。其实让我自己说也不知道怎么说。赶紧趁着机会学习下。</p><h1>Java平台的理解</h1><p>Java是一个面对对象编程的语言</p><p>1. 具有封装，继承，多态特性</p><p>2. 一次执行，处处运行。与平台无关性。可以让java程序在别的平台上运行，当然这是由JVM确定的。java在第一次编译生成.class文件。JVM运行.class文件。与c还有c++区别最大的一点就是开发者不用在纠结各个操作系统的区别，内存管理在Java上也弱化了很多。</p><p>3. 类库多，并且第三方提供的类库十分丰富，帮助开发者解决了很多问题。</p><p>4. Java的大数据生态。在生态上Java可以说是最成熟的一种解决方案。hadoop，spark，hive等等，都提供Java语言的支持。</p><p>5.Jre解决了Java的开发环境，虚拟机的支持，还有各种类库，而JDK提供各种开发工具，并且还有诊断工具帮助开发者去了解程序执行的问题。例如jmc ，jmap ，jvisualvm等等</p><p>6. 垃圾回收 。Java中降低了开发过程内存管理的开销，一般程序对于内存管理不是必要的话，java中基本上可以忽略，并且能降低内存出现泄露的概率。虽然会有提高一部分开销，但是带来的好处也是显而易见的。</p><p><b>Java是解释性执行吗？</b></p><p>﻿答案是否定的。为什么这么说？</p><p>我们都知道JAVA分为编译期和运行时两种类型。在编译期，Javac会把源码文件编译成.class文件，其实class文件里面就是字节码。而不是直接执行的机器码。那么在运行时，我们就需要依靠虚拟机JVM了。我们常用的Hotspot JVM 提供的是JIT动态编译器。也就是常用的动态编译器。在运行时刻将热点代码编译成机器码。这种情况下的代码就属于编译执行。不是解释执行了。随着Java的发展。Java8已经开始了解释和编译混合的模式。来快速的运行代码。</p><p>1 JIT动态编译，在Hotsoot中有两种模式，一个是client模式，适用于启动速度敏感的应用。一个是server模式。优化长时间运行的服务端应用。最新的动态编译还有AOT直接将字节码编译成机器代码，避免了JIT方面的开销。</p><p>下面是画的简单的脑图，我们可以在下面的内容上继续添加。满足对Java的理解。</p><div class="image-package">
+<img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/4237685-482774758ef1ffd2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="auto" height="auto"><br><div class="image-caption">Java平台</div>
+</div><h1>Exception 与Error</h1><p>我们正常在程序中经常会遇到一些异常问题，需要进行解决。那么这两者有什么区别呢。让我们看下继承关系。</p><p><b>Error与Exception </b>都是继承Throwable.其中Throwable 在Java中才可以被抛出throw或者catch。 它是异常处理机制的基本组成类型。</p><p><b>Error</b>是在不长出现的内容，大部分的Error是程序出现了不可意料的错误，比如OutOfMemoryError这类的。</p><p><b>Exception </b>分为 可检查的和不检查的错误，可检查的错误一般是能在编译器里面自然的能看到。而不可检查的错误比如我们常常遇见的空指针异常。这种异常一般是我们可以捕捉到的异常。一般这方面的异常有连接池异常，访问异常，IO异常等等。</p><p><br></p><div class="image-package">
+<img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/4237685-bce8a76502283bcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="auto" height="auto"><br><div class="image-caption">简单脑图异常</div>
+</div><p><br></p><p><br></p><div class="image-package">
+<img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/4237685-6caa1082efceacdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="auto" height="auto"><br><div class="image-caption">异常图类集成关系</div>
+</div><p><br></p><div class="image-package">
+<img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/4237685-c2f62a0b2ed423c4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="auto" height="auto"><br><div class="image-caption">错误异常</div>
+</div><p>在程序中，我们在处理异常的时候基本上要进行分门别类进行处理，不建议统一按照Exception捕捉，有的异常时需要抛出来让业务层统一处理，有的需要单独处理。特别是在流式程序中执行，异常不是容易查找。</p><p>1. 性能上 try catch 会有十分大的性能开销。所以我们在程序中处理的时候，尽量不要try 一大段代码。</p><p>2. Java每实例化一个Exception 都会对当时的栈进行快照，这是一个重的操作。开销不能忽略。</p><p>欢迎大家关注</p><p><br></p><div class="image-package">
+<img class="uploaded-img" src="http://upload-images.jianshu.io/upload_images/4237685-8ae3ed1ae0242a28.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" width="auto" height="auto"><br><div class="image-caption"></div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

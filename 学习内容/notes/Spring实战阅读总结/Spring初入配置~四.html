@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~四</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~四</h1>
+        <div class="show-content">
+          <p>上一篇讲的怎么配置属性配置集合等等，这次我们来说下使用表达式装配！</p><p>Spel拥有很多特性如图所示</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-82dd850929d2fbc9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿在表达式中的使用方式与在jsp中的使用方式类似，可以直接写简单类型的值，也可以引用其他类型的bean，下面展示我们第一个用表达式装配的bean</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-f12d4eda75bd4bbf.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿通过其name引用其他的bean来实现其他的属性，这简单的装配就完成了！其中在value中我们还可以调用方法</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-548a87b350e61dff.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿如图所示在用表达式调用方法，但是在调用方法时可能出现空指针异常，那么我们可以用null~safe存取期！</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-b32ed6cddb1f4184.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿?.该操作符确保左边的值不会为空为空就不会调用右边的方法！</p><p>在用表达式时还可以直接操作类并且还能在其上面加上操作符等等！算数，关系，逻辑，条件，正则表达式运算等等都可以在SpEl中实现！强调下+运算符还可以进行字符串的链接！</p><p>关于筛选集合的在这里就不介绍了！主要用的是&lt;util:list&gt;标签实现</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

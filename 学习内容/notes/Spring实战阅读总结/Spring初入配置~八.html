@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~八</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~八</h1>
+        <div class="show-content">
+          <p>上篇文章我们简单的介绍了下AOP相关的术语，这篇中我们主要来看下怎么在Spring中实现的。</p><h1>一、Spring提供了4中各具特色的AOP支持</h1><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-7634a57ffcae7c71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-7634a57ffcae7c71.png?imageMogr2/auto-orient/strip" data-image-slug="7634a57ffcae7c71" data-width="611" data-height="151"><br><div class="image-caption">来自Spring实战第三版</div>
+</div><p>前面三种都是Spring基于代理的AOP变体，所以Spring对AOP的支持局限于方法的拦截。如果超过这个拦截的需求我们就需要用到AspectJ切面了。</p><h1>二、Spring在运行时通知对象。Spring在运行期把切面织入到Spring管理的Bean中如图所示</h1><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-771eeda8bbebfb35.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-771eeda8bbebfb35.png?imageMogr2/auto-orient/strip" data-image-slug="771eeda8bbebfb35" data-width="897" data-height="397"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>代理类把真正的目标类封装起来，当代理拦截到对方法的调用时就先会执行切面的逻辑，再根据情况调用目标bean方法。</p><h1>三、通过切点选择链接点</h1><p>首先我们先来看下Spring对AspectJ切点支持的指示器</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-d170966a7e9c001b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-d170966a7e9c001b.png?imageMogr2/auto-orient/strip" data-image-slug="d170966a7e9c001b" data-width="601" data-height="666"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>只支持这几种，如果想使用其他AspectJ指示器就会出现异常。</p><p>其实这么多 指示器我们只需要关注具体执行匹配的指示器就可其实就是execution指示器。</p><p>其他的指示器只是用来限制匹配的。简单来说就是来帮助execution的辅助工具。</p><h1>四、具体实现</h1><h2>    1编写切点</h2><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-7b1d714f4777f859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-7b1d714f4777f859.png?imageMogr2/auto-orient/strip" data-image-slug="7b1d714f4777f859" data-width="337" data-height="97"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>假设我们用途中所编写的接口中的perform方法触发的通知。可以这样设置excecution(* concert.Performance.perform(..))</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a010074114772658.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a010074114772658.png?imageMogr2/auto-orient/strip" data-image-slug="a010074114772658" data-width="475" data-height="129"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>我们可以从图中看到具体的执行方式 *代表的是可以返回任意类型，我们不需要关注方法返回的是什么。</p><p>并且在里面我们指定了方法所在的类与方法名称，并且还可以制定参数。当然在这里我们还可以来限制切点的范围。正如我们在前面所介绍的指示器一样</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-eff0b6c60ae953d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-eff0b6c60ae953d4.png?imageMogr2/auto-orient/strip" data-image-slug="eff0b6c60ae953d4" data-width="504" data-height="165"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>注意当我们一块使用时可能会形成and关系、or、not关系。我们在程序中应该用&amp;&amp;、||、！来带起。</p><h2>   2切点中选择bean</h2><p>        除了我们在介绍的指示器外，Spring还引入了一个新的bean()指示器。可以让我们在使用bean的ID来标识bean.</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-875d9c6697d644a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-875d9c6697d644a0.png?imageMogr2/auto-orient/strip" data-image-slug="875d9c6697d644a0" data-width="350" data-height="50"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><p>在这个途中我们就是希望在执行方法的时候应用通知，但是限定的bean为woodstock。</p><h2>     3使用注解创建切面</h2><p><br></p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-c270f8809a9408a7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-c270f8809a9408a7.png?imageMogr2/auto-orient/strip" data-image-slug="c270f8809a9408a7" data-width="569" data-height="413"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>我们在程序中对类Audience进行了@AspectJ标注了注解。该注解标识不仅仅是一个POJO,还是一个切面。在这里我们还可以用其他注解来定义通知。如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-e633205f9ac77475.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-e633205f9ac77475.png?imageMogr2/auto-orient/strip" data-image-slug="e633205f9ac77475" data-width="609" data-height="403"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在执行表演的方法前后可以执行的操作通知。</p><p>上面的一个定义切点用了好几次，那么我们可以使用@Pointcut注解来解决掉整体麻烦的事情。</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a925e9e3bc04b47d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a925e9e3bc04b47d.png?imageMogr2/auto-orient/strip" data-image-slug="a925e9e3bc04b47d" data-width="589" data-height="446"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>直接指定了切点，我们就可以通过其他注解指定方法就能解决掉通知的问题。</p><p>关于切面的信息我们先说到这里。下次继续说这个切面的问题。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初入spring配置</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">初入spring配置</h1>
+        <div class="show-content">
+          <p>初入公司已经半年多了，在代码上可能应用已经熟悉了但是感觉自己啥也不会了！正好家里面有本关于spring实战的书，正好读下，汇总做个记录让自己以后也有个回忆的地方！</p><p>首先还是从最古老的xml文件配置开始首先看图配置</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-eb351743f71231fd.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>Spring配置元素还是源于Spring beans命名空间所定义的&lt;beans&gt;﻿符号在beans中许多的命名空间！会在接下来的文章中间歇性的介绍！本次就只简单说明下xml中的配置！</p><p>通常我们构造最简单的一个对象就是通过&lt;bean&gt;</p><p>来配置如下所示&lt;bean  id="duke"  class ="com.action.Juggler" /&gt;  但是如果我们想要给其一个值时可以通过&lt;constructor-arg value="20"&gt;来实现当然这个是在bean标签里面的！正如图下所示</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-2c9cdeff420dec5d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿我们可以通过&lt;constructor-arg &gt;标签来告诉Spring额外的消息！既然是可以增加额外的消息那么我们也能开始给其关联对象，简单来说就是为其注入对象的引用，在这里我们就用到了该标签的第二个属性 ref  ，这次引用的是一个对象在其引用前需要将其配置好bean</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-982dbcc1805316b5.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿有了这个bean  id那么我们就能直接将其配置到前面的bean中如图所示</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-6e79974a5bfad64b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿我们不能使用value属性作为第二个构造参数值因为poem不是简单的类型，而是一个对象！该上述所说的都是适合有公开的构造器方法的，那没有的呢？</p><p>我们可能就需要来用工厂方法创建bean 了！幸好在&lt;bean&gt;中有这个factory-method的属性允许我们引用他来创建一个类的实例</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-2986c358abcf6454.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿今天就先简单的总结到这里ps手机打字有点麻烦，总结的有点少以后会总结的更多</p><p>该总结中图片来源于Spring实战这本书，有些文字也是摘抄于此</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

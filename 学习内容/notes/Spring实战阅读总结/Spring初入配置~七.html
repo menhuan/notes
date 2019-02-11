@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~七</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~七</h1>
+        <div class="show-content">
+          <p>这次总结的是我们面向切面的Spring.</p><p>首先我们先看下关于面向切面编程 的概念。<b>什么是面向切面编程呢？</b></p><p>我们通常在编程中经常会用到日志，安全和事务这些东西，但是这些并不是我们让应用对象时刻关注的，应用对象应该只关注自己所针对的业务领域问题就行，其他的方面信息就交给其他应用对象来处理。这种分离的概念就是面向切面编程所需要解决的。我们把我们在软件开发多处的功能称为横切关注点。这些一般都是与业务相分离，把这些分离也是AOP（面向切面编程）要解决的。简单的来说就是分离但是又有联系，让应用对象关注自己需要关注的就可以。</p><p><b>AOP相关术语</b></p><p><b>  </b>描述相关术语一般有通知、切点、链接点这三个，我们用图来展示这个概念。</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-c1c58a3526cdcf73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-c1c58a3526cdcf73.png?imageMogr2/auto-orient/strip" data-image-slug="c1c58a3526cdcf73" data-width="450" data-height="352"><br><div class="image-caption">来自Spring第三版实战</div>
+</div><p>1）通知简单的来讲就是告诉我们一些信息的。他会怎么想告诉呢 ，在Spring提供了5中解决方法，Before、After等，这些通知会告知我们怎么去调用某个方法。来解决我们需要解决的问题。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-cfd835e244be2cf1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-cfd835e244be2cf1.png?imageMogr2/auto-orient/strip" data-image-slug="cfd835e244be2cf1" data-width="893" data-height="469"><br><div class="image-caption">来自Spring第三版实战</div>
+</div><p>2）链接点是在应用执行过程中能够插入切面的一个点，这个点可以提供我们在把另外的操作插入到正常的执行流程中，并且添加新的行为。</p><p>3）切点。简单的来说就是告诉我们它在何处。通过通知我们能知道需要操作什么，什么时候操作，但是我们还的知道它在哪里，这就是切点的作用，帮我们把通知植入到链接点上。在程序中我们通常使用明确的类和方法来制定这些切点，或者利用正则表达式定义匹配的类和方法名称模式来制定切点。</p><p>4）切面。我们把通知和切点结合起来就形成了一种新的理念--切面。切面的内容为它是什么在何时和何处完成其功能。</p><p>5）引入。就是帮助我们在现有的类中增加新方法和新属性。并且是无需更改现有类的情况下，让他们具有新的行为和状态。</p><p>6）织入。是将切面应用到木笔俺对象来创建新的代理对象的过程。切面在指定的链接点被织入到目标对象中。再目标对象的生命周期中有多个点都可以被织入。如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-0738f2da0be45c16.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-0738f2da0be45c16.png?imageMogr2/auto-orient/strip" data-image-slug="0738f2da0be45c16" data-width="932" data-height="300"><br><div class="image-caption">来自Spring第三版实战</div>
+</div><p>关于切面的术语就先简答的介绍到这里，下一篇我们将进行具体的应用。</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

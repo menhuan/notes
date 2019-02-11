@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring初入配置~十一</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">Spring初入配置~十一</h1>
+        <div class="show-content">
+          <p>在上一篇中我们进行了控制器方法的编写，只是简单的配置了下视图渲染。这一篇中我会介绍有关jsp模型的数据。</p><h1>1视图解析</h1><p>我们在Spring中通过控制器来处理逻辑并且维护和更新视图。那么我们是怎么确定渲染哪一个视图的呢？这里就用到的Spring的视图解析器了。在上一篇中我们所用到了InternalResourceViewResolver的视图解析器。在这里我们在了解一下具体是怎么操作的。首先在SpringMvc中我们定义了一个ViewResolver的接口</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a643a8fa7670bfa5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a643a8fa7670bfa5.png?imageMogr2/auto-orient/strip" data-image-slug="a643a8fa7670bfa5" data-width="661" data-height="94"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>当给方法resolveViewName（）传入参数时会返回一个view实例。</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-400a214782189fd4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-400a214782189fd4.png?imageMogr2/auto-orient/strip" data-image-slug="400a214782189fd4" data-width="565" data-height="96"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>view的任务就是把需要渲染的内容放到response中进而展现到用户的浏览器中。</p><p>当然在Spring中还有很多视图解析器，比如freemarker视图解析等等。因为大部分开发还是用的jsp模板我们还是用的是InternalResourceViewResolver视图解析。当然不排除其他的技术。</p><p>我们在最后还会介绍下一种新的技术Thymeleaf ,因为这个模板的产出最像html文件，而不需要我们操作java代码。</p><p>在Spring中提供了两种支持jsp视图的方式：</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-6244d20af75250f9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-6244d20af75250f9.png?imageMogr2/auto-orient/strip" data-image-slug="6244d20af75250f9" data-width="654" data-height="204"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在使用配置jsp逻辑视图名称的时候我们需要配置好前缀与后缀。下面分别为Class中配置与xml文件中配置</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-0d0a35d0cdb10288.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-0d0a35d0cdb10288.png?imageMogr2/auto-orient/strip" data-image-slug="0d0a35d0cdb10288" data-width="376" data-height="146"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-52810db89bf98872.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-52810db89bf98872.png?imageMogr2/auto-orient/strip" data-image-slug="52810db89bf98872" data-width="650" data-height="97"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>这里我们使用了别名p来标识 ，需要在xml文件引入别名。或者自己改为标签也可以的。在我们通常使用的jsp当中，我们都需要使用jstl来获取从后台传输过来的值，那么我们在视图解析器中应该这样配置</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-3f29cf866a60b707.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-3f29cf866a60b707.png?imageMogr2/auto-orient/strip" data-image-slug="3f29cf866a60b707" data-width="569" data-height="302"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在配置中增加jstl解析类帮助解析jstl内容。</p><h1>2 使用jsp库</h1><p>   1）表单数据</p><p>Spring的表单绑定jsp标准库包含了14个标签。他们都是用来渲染html中的标签，区别是相对于html标签，这些jsp标签会绑定一个对象，根据属性值填充。并且标签库中还包含了为用户展示错误的标签，将信息渲染到html中。</p><p>为了使用jsp的表单绑定库，首先在页面需要声明一下</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a255a00d65acd6e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a255a00d65acd6e7.png?imageMogr2/auto-orient/strip" data-image-slug="a255a00d65acd6e7" data-width="581" data-height="25"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-b26ee022fcfc082e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-b26ee022fcfc082e.png?imageMogr2/auto-orient/strip" data-image-slug="b26ee022fcfc082e" data-width="573" data-height="702"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>这些标签其实跟Html中的作用基本上是类似的。最终都会渲染成对应的标签。</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-94a680c1323a5d74.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-94a680c1323a5d74.png?imageMogr2/auto-orient/strip" data-image-slug="94a680c1323a5d74" data-width="421" data-height="131"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>因为在form表单中我们需要将使用commandName来绑定模型，并且在Controller中增加模型的数据。</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-0507f31d4a41637d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-0507f31d4a41637d.png?imageMogr2/auto-orient/strip" data-image-slug="0507f31d4a41637d" data-width="420" data-height="100"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在控制器中我们创建了一个模型，那么我们就能在表单中得到这个模型，并且表单下的属性标签会根据path里面的属性去拿到我们模型中的数据。</p><p>前面说到，我们可以使用&lt;sf:errors&gt;来给用户展现错误的信息，</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-255f70473591812e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-255f70473591812e.png?imageMogr2/auto-orient/strip" data-image-slug="255f70473591812e" data-width="388" data-height="83"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>从代码中我们也能看到它的path也设置成跟上面的path是一样的这样如果校验有错误的情况下，就可以直接展示在页面上了。为了显示明显，我们可以在errors中增加cssClass属性。其他属性标签语气使用类似，就不介绍了。</p><p>3Spring中通用的标签库</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-1dbc88b1a25aaa0f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-1dbc88b1a25aaa0f.png?imageMogr2/auto-orient/strip" data-image-slug="1dbc88b1a25aaa0f" data-width="582" data-height="349"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-f96a37b7997b4d1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-f96a37b7997b4d1d.png?imageMogr2/auto-orient/strip" data-image-slug="f96a37b7997b4d1d" data-width="703" data-height="558"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>在使用这些标签我们需要首先导入</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-7c54cb1845dfdd7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-7c54cb1845dfdd7b.png?imageMogr2/auto-orient/strip" data-image-slug="7c54cb1845dfdd7b" data-width="630" data-height="27"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>首先我们会使用&lt;s:message&gt;  </p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-ad50912d8181c9ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-ad50912d8181c9ca.png?imageMogr2/auto-orient/strip" data-image-slug="ad50912d8181c9ca" data-width="394" data-height="42"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p>我们需要用信息源来渲染信息，在这里比较推荐使用ReloadableResourceBundleMessageSource这个接口，样例如下</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-a723bd843ef04a42.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" data-original-src="http://upload-images.jianshu.io/upload_images/4237685-a723bd843ef04a42.png?imageMogr2/auto-orient/strip" data-image-slug="a723bd843ef04a42" data-width="568" data-height="135"><br><div class="image-caption">来自Spring实战第四版</div>
+</div><p><br></p><p>在这个样例中直接设置basename属性，可以根据类路径或者文件系统，或者在web应用的根路径下查找属性文件。并且基础信息会被命名为message.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

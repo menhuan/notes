@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spring初入配置~三</title>
+    <style type="text/css" media="all">
+      body {
+        margin: 0;
+        font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        color: #777;
+        background-color: white;
+      }
+      .container {
+        width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      .post {
+        font-family: Georgia, "Times New Roman", Times, "SimSun", serif;
+        position: relative;
+        padding: 70px;
+        bottom: 0;
+        overflow-y: auto;
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 25px;
+        color: #515151;
+      }
+
+      .post h1{
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 60px;
+        margin-bottom: 40px;
+        color: inherit;
+      }
+
+      .post p {
+        margin: 0 0 35px 0;
+      }
+
+      .post img {
+        border: 1px solid #D9D9D9;
+      }
+
+      .post a {
+        color: #28A1C5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="post">
+        <h1 class="title">spring初入配置~三</h1>
+        <div class="show-content">
+          <p>有一段时间没更新了！最新因为实习的原因心情不好，但是幸好自己调整过来！也恢复正常以后尽量做到两天一更满足自己的求知欲！也希望更多的人能读到自己所写的文章！为在java知识世界中遨游的人加一分力！</p><p>上一篇写到了命名空间装配属性，下面我们来说装配集合！虽然在开发中接触的少ps本人接触的少！！但还是感觉最好总结一下让自己也充实下万一以后用到哈哈总不能说不会吧！</p><p>首先集合元素有四种如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-f363be076b442b28.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿当装配类型是数组或者Collection属性时&lt;list&gt;与&lt;set&gt;元素是非常有用的！&lt;map&gt;与&lt;props&gt;这两个都是对应的键值对只不过&lt;props&gt;要求键值都是string类型的！<br></p><p>首先我们先看装配list元素的</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-4c9e4e2e97c9548f.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿就是在&lt;property&gt;里面增加list集合并且可以指定关联的bean<br></p><p>类型与list一样就是把list换成set就行，需要注意的一点就是他们两者都可以装配集合属性不一定是list类型就用list装配其实set也是可以的是不是很惊奇！<br></p><p>装配map集合时就不能用以上的配置了可以用&lt;map&gt;来配置如图所示</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-123448d742c4c010.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿在map中使用&lt;entry&gt;为其指定键值但是他还有其他属性</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-2eb5ce055dd7b18b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿都可以用来指定键值</p><p>装配properties集合注意这里面的键值必须都是String类型的使用如图所示的方法装配</p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-46505ab0a566aed2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿配置有很多属性，但是我们应该牢记住配置要点</p><p><br></p><div class="image-package">
+<img src="http://upload-images.jianshu.io/upload_images/4237685-9f6dd3c692b855e4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br><div class="image-caption">图片发自简书App</div>
+</div><p>﻿关于装配基本上就这点东西了，简单值，bean的装配和集合！都可以在配置文件中实现！下一次我们将学习使用表达式装配<br></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

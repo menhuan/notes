@@ -1,0 +1,32 @@
+version: '1.0'
+service:
+  jpress:
+    images:fuhai/jpress:latest
+    depends_on:
+    - mysql
+    ports:
+    - 8080:8080
+    restart:always
+    environment:
+       TZ: Asia/Shanghai
+       JPRESS_DB_HOST: mysql
+       JPRESS_DB_PORT: 3307
+       JPRESS_DB_NAME: jpress
+       JPRESS_DB_USER: root
+       JPRESS_DB_PASSWORD: feng930409
+    volumes:
+       - "/home/ubuntu/Desktop/jpress/docker_compose/tomcat:/usr/local/tomcat/webapps/ROOT/attachment"
+
+  mysql:
+  	images:mysql:5.7
+  	restart:always
+  	ports:
+  	- 3307:3306
+  	enviroment:
+  	  MYSQL_ROOT_PASSWORD: feng930409
+      MYSQL_DATABASE: jpress
+      MYSQL_USER: root
+      MYSQL_PASSWORD: feng930409
+    volumes:
+      -  /home/ubuntu/Desktop/jpress/docker_compose/mysql:/var/lib/mysql     
+
