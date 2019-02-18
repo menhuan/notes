@@ -1,0 +1,9 @@
+# 快速的复制一个表
+
+## mysqldump的方法
+
+使用工具mysqldump
+```Mysql
+mysqldump -h$host -P$port -u$user --add-locks --no-create-info --single-transaction  --set-gtid-purged=OFF db1 t --where="a>900" --result-file=/client_tmp/t.sql
+
+```
