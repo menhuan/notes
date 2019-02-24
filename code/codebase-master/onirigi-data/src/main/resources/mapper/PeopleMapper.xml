@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.infervision.dao.PeopleMapper">
+    <resultMap id="BaseResultMap" type="com.infervision.model.People">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="age" jdbcType="INTEGER" property="age"/>
+        <result column="company" jdbcType="VARCHAR" property="company"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, name, create_date, user_id, age, company
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from people
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <select id="selectPeoples" parameterType="com.infervision.model.People" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from people
+        <where>
+            <if test="name != null and name !='' ">
+                and name = #{name};
+            </if>
+            <if test="company !=null and company != ''">
+                and company = #{company};
+            </if>
+
+        </where>
+
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from people
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.infervision.model.People">
+    insert into people (name, create_date,
+      user_id, age, company
+      )
+    values (#{ #{name,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
+      #{userId,jdbcType=INTEGER}, #{age,jdbcType=INTEGER}, #{company,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id"  parameterType="com.infervision.model.People">
+        insert into people
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+
+            <if test="name != null">
+                name,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="userId != null">
+                user_id,
+            </if>
+            <if test="age != null">
+                age,
+            </if>
+            <if test="company != null">
+                company,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="age != null">
+                #{age,jdbcType=INTEGER},
+            </if>
+            <if test="company != null">
+                #{company,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective"   useGeneratedKeys="true" keyProperty="id"  parameterType="com.infervision.model.People">
+        update people
+        <set>
+            <if test="name != null">
+                name = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="userId != null">
+                user_id = #{userId,jdbcType=INTEGER},
+            </if>
+            <if test="age != null">
+                age = #{age,jdbcType=INTEGER},
+            </if>
+            <if test="company != null">
+                company = #{company,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.infervision.model.People">
+    update people
+    set name = #{name,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      user_id = #{userId,jdbcType=INTEGER},
+      age = #{age,jdbcType=INTEGER},
+      company = #{company,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

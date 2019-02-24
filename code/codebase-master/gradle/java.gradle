@@ -1,0 +1,11 @@
+
+// 增加maven的发布 支持
+apply plugin: 'java'
+
+apply from: IDEA_GRADLE
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+

@@ -1,0 +1,8 @@
+apply from: JAVA_GRADLE
+
+dependencies {
+    compile("io.springfox:springfox-swagger2:$swaggerVersion")
+    compile("io.springfox:springfox-swagger-ui:$swaggerVersion")
+    compile("org.springframework.boot:spring-boot-autoconfigure:$springBootVersion")
+    compileOnly("org.springframework.data:spring-data-commons:1.12.6.RELEASE")
+}

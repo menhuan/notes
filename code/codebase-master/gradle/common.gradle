@@ -1,0 +1,9 @@
+
+// 增加common 设置swagger
+apply from : JAVA_GRADLE
+
+
+dependencies {
+    compile("com.fasterxml.jackson.core:jackson-annotations:$jacksonAnnotationVersion")
+    compile("io.swagger:swagger-annotations:$swaggerAnnotationVersion")
+}

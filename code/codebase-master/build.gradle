@@ -1,0 +1,77 @@
+buildscript {
+    ext {
+        IDEA_GRADLE = "$rootDir/gradle/idea.gradle"
+        JAVA_GRADLE = "$rootDir/gradle/java.gradle"
+        COMMON_GRADLE = "$rootDir/gradle/common.gradle"
+
+        springBootVersion = '1.5.10.RELEASE'
+        commonsLang3 = '3.7'
+        fastjson = '1.2.47'
+        guava = '26.0-jre'
+        mysqlVersion = '5.1.40'
+        jedisVersion = '2.9.0'
+        redisVersion = '1.8.4.RELEASE'
+        mybaitsVersion = '1.1.1'
+        swaggerVersion = '2.9.1'
+        mysqlVersion = '5.1.40'
+        aliVersion = '1.0.26'
+        swaggerAnnotationVersion = '1.5.21'
+        jacksonAnnotationVersion = '2.9.8'
+
+        flywayVersion = '5.1.3'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://repos.infervision.com' }
+        maven { url 'http://maven.solarule.cn/artifactory/libs-release' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
+//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+//        classpath("org.springframework:springloaded:1.2.6.RELEASE")
+    }
+}
+
+
+repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url 'http://repos.infervision.com' }
+    mavenCentral()
+}
+
+allprojects {
+   apply plugin: "com.jfrog.artifactory"
+
+    apply from: IDEA_GRADLE
+
+    group = artifactory_group
+    version = currentVersion
+}
+
+
+artifactoryPublish.skip = true
+//
+artifactory {
+    contextUrl = "${artifactory_contextUrl}"
+    publish {
+        repository {
+            repoKey = currentVersion.endsWith('SNAPSHOT') ? 'libs-snapshot-local' : 'libs-release-local'
+            maven = true
+            username = "${artifactory_user}"
+            password = "${artifactory_password}"
+        }
+        defaults {
+            publishArtifacts = true
+//            publications('mavenJava')
+            publishPom = true
+            publishIvy = false
+        }
+    }
+    resolve {
+        repository {
+            repoKey = 'libs-release'
+            maven = true
+        }
+    }
+}

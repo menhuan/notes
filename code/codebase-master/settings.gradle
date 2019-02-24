@@ -1,0 +1,7 @@
+include 'onirigi-common'
+include 'onirigi-data'
+include 'redis-manage'
+include 'mq-manage'
+include 'onirigi-front'
+include 'swagger-manage'
+

@@ -1,0 +1,7 @@
+apply from: JAVA_GRADLE
+
+dependencies {
+    compile project(":onirigi-common")
+    compile("com.alibaba:fastjson:$fastjson")
+    compile("org.mybatis.spring.boot:mybatis-spring-boot-starter:$mybaitsVersion")
+}

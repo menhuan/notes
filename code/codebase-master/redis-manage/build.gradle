@@ -1,0 +1,11 @@
+apply from: JAVA_GRADLE
+
+dependencies {
+    compile project(":onirigi-common")
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile("com.alibaba:fastjson:${fastjson}")
+    compile("redis.clients:jedis:${jedisVersion}")
+    compile("org.springframework.data:spring-data-redis:${redisVersion}")
+    
+
+}

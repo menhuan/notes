@@ -1,0 +1,64 @@
+spring:
+  profiles: test
+
+  datasource:
+    url: jdbc:mysql://192.168.130.81:3306/date_model?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: stat,log4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+  redis:
+    host: 192.168.130.81
+    port: 6379
+  rabbitmq:
+    username: tuixiang
+    password: tuixiang
+    host: 192.168.130.81
+    port: 5672
+    client:
+      consumer: 10
+      maximumDelivery: 50
+txLog:
+  logConfig:
+    logPath: /home/ruiqi/logs
+
+server:
+  port: 8083
+
+swagger:
+  title: 测试标题
+  description: 描述
+  version: 版本
+  basepackage: com.infervision
+#hadoop:
+#  fs:
+#    hdfs:
+#      impl: org.apache.hadoop.hdfs.DistributedFileSystem
+#    defaultFS: hdfs://cluster
+#  dfs:
+#    nameservices: cluster
+#    ha:
+#      namenodes:
+#        cluster: nn1,nn2
+#    namenode:
+#      rpc-address:
+#        cluster:
+#          nn1: 192.168.108.66:9000
+#          nn2: 192.168.108.67:9000
+#    client:
+#      failover:
+#        proxy:
+#          provider:
+#            cluster: org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider
