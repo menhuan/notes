@@ -14,7 +14,7 @@ import static com.infervision.constants.Constants.*;
  * @date: 19-2-19 下午2:41
  * @version:1.0 rabbit 客户端配置
  **/
-@Configuration
+//@Configuration
 public class RabbitClientConfig {
 
 

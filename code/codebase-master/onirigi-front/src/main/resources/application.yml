@@ -9,7 +9,7 @@ spring:
 
   redis:
   profiles:
-    active: test
+    active: dev
 
 logging:
   config: classpath:logback-spring.xml
