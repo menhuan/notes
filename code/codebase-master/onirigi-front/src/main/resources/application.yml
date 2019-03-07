@@ -15,3 +15,5 @@ logging:
   config: classpath:logback-spring.xml
   level: debug
 
+server:
+  context-path: manage
