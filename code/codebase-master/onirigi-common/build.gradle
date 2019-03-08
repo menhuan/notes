@@ -7,4 +7,6 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-amqp:$springBootVersion")
     compile("redis.clients:jedis:${jedisVersion}")
     compile("org.springframework.data:spring-data-redis:${redisVersion}")
+    compile("com.auth0:java-jwt:${jwtVersion}")
+    compile("org.apache.shiro:shiro-spring:${shiroVersion}")
 }

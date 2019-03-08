@@ -65,6 +65,7 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile("mysql:mysql-connector-java:${mysqlVersion}")
     compile("com.alibaba:druid:${aliVersion}")
+
     compile("org.flywaydb:flyway-core:${flywayVersion}")
 
 
