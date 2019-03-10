@@ -10,9 +10,6 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.shiro.authz.annotation.Logical;
-import org.apache.shiro.authz.annotation.RequiresAuthentication;
-import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -90,9 +87,7 @@ public class LoginController {
 
 
     @GetMapping("admins")
-    @RequiresRoles(logical = Logical.OR,value ={"superadmin","admin"})
     @ApiOperation(value="获取管理员列表" )
-    @RequiresAuthentication
     public Set<AdminDto> getAdmins(){
         return new HashSet<>();
     }

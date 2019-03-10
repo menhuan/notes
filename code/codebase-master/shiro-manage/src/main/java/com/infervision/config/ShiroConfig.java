@@ -3,9 +3,11 @@ package com.infervision.config;
 import org.apache.shiro.cache.ehcache.EhCacheManager;
 import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
 import org.apache.shiro.mgt.DefaultSubjectDAO;
+import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
@@ -52,13 +54,15 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
-
+        filterChainDefinitionMap.put("/login/**","anon");
+        filterChainDefinitionMap.put("/register/**","anon");
 
         // 访问401和404页面不通过我们的Filter
 //        filterChainDefinitionMap.put("/401", "anon");
 //        filterChainDefinitionMap.put("/404", "anon");
         // 其他的
-        filterChainDefinitionMap.put("/admins", "jwt");
+        filterChainDefinitionMap.put("/admins","anyRole[admin,superadmin]");
+        filterChainDefinitionMap.put("/**", "jwt");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }
@@ -117,7 +121,21 @@ public class ShiroConfig {
         return cacheManager;
     }
 
+    @Bean
+    public static LifecycleBeanPostProcessor getLifecycleBeanPostProcessor() {
+        return new LifecycleBeanPostProcessor();
+    }
 
-
+    @Bean
+    public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator(){
+        DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator=new DefaultAdvisorAutoProxyCreator();
+        /**
+         * setUsePrefix(false)用于解决一个奇怪的bug。在引入spring aop的情况下。
+         * 在@Controller注解的类的方法中加入@RequiresRole等shiro注解，会导致该方法无法映射请求，导致返回404。
+         * 加入这项配置能解决这个bug
+         */
+        defaultAdvisorAutoProxyCreator.setUsePrefix(true);
+        return defaultAdvisorAutoProxyCreator;
+    }
 }
 
