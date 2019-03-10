@@ -14,8 +14,18 @@ import java.util.Map;
  **/
 public enum ExceptionCode {
 
-    ERROR_COMMON00000("00000", "返回的错误码不存在");
+    ERROR_COMMON000000("000000", "返回的错误码不存在"),
 
+    /**********************登陆注册异常信息*********************/
+    ERROR_REGISTRYPASSWORD100011("100011","注册密码为空"),
+    ERROR_REGISTRY_ADMIN_NAME100012("100012","注册管理员为空"),
+    ERROR_CHECK_NAME_ERROR100013("100013","管理员名字为空"),
+    ERROR_CHECK_NAME_ERROR100014("100014","用户名或者密码错误"),
+    ERROR_CHECK_NAME_ERROR100015("100015","管理员名字不正确")
+
+
+
+    ;
 
     /**
      * 错误码
@@ -57,10 +67,10 @@ public enum ExceptionCode {
             LoggerFactory.getLogger(ExceptionCode.class).error("返回的错误码不存在：" + code);
         }
 
-        return ERROR_COMMON00000;
+        return ERROR_COMMON000000;
     }
 
-    @ApiModelProperty(example = "00000", value = "错误code", required = true)
+    @ApiModelProperty(example = "000000", value = "错误code", required = true)
     public String getCode() {
         return code;
     }

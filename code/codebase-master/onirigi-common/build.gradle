@@ -1,6 +1,7 @@
 apply from: COMMON_GRADLE
 
 dependencies {
+    compile project(":shiro-manage")
     compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
     compile("org.apache.commons:commons-lang3:${commonsLang3}")
     compile("com.alibaba:fastjson:${fastjson}")
@@ -8,5 +9,4 @@ dependencies {
     compile("redis.clients:jedis:${jedisVersion}")
     compile("org.springframework.data:spring-data-redis:${redisVersion}")
     compile("com.auth0:java-jwt:${jwtVersion}")
-    compile("org.apache.shiro:shiro-spring:${shiroVersion}")
 }

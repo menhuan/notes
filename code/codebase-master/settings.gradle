@@ -4,4 +4,5 @@ include 'redis-manage'
 include 'mq-manage'
 include 'onirigi-front'
 include 'swagger-manage'
+include 'shiro-manage'
 

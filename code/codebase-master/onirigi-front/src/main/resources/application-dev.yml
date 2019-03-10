@@ -32,7 +32,7 @@ spring:
 
 txLog:
   logConfig:
-    logPath: F://日志/log
+    logPath: ./log
 
 hadoop:
   fs:
@@ -40,12 +40,12 @@ hadoop:
       impl: org.apache.hadoop.hdfs.DistributedFileSystem
     defaultFS: hdfs://127.0.0.1:9000
 server:
-  port: 8083
+  port: 8089
 
 swagger:
-  title: 测试标题
-  description: 描述
-  version: 版本
+  title: test
+  description: 开发devapi
+  version: 1.0.0
   basepackage: com.infervision
 
 

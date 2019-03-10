@@ -46,10 +46,10 @@ public class UserController {
             if (id.equals(old.getId())) {
                 return old;
             } else {
-                throw new CommonException(ExceptionCode.ERROR_COMMON00000);
+                throw new CommonException(ExceptionCode.ERROR_COMMON000000);
             }
         } else {
-            throw new CommonException(ExceptionCode.ERROR_COMMON00000);
+            throw new CommonException(ExceptionCode.ERROR_COMMON000000);
         }
 
     }

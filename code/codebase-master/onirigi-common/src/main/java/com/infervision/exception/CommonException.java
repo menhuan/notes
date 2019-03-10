@@ -12,9 +12,9 @@ import org.springframework.http.HttpStatus;
 public class CommonException extends Exception {
 
     /**
-     * 默认 是400 异常
+     * 默认 是500 异常
      */
-    private HttpStatus status = HttpStatus.BAD_REQUEST;
+    private HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
     /**
      * 异常 code
      */

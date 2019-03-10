@@ -13,7 +13,7 @@
  2. filter(): 使用该函数 对RDD数据进行过滤。将符合条件的RDD中的数据 组成新的RDD返回。
 ```
 		JavaRDD<String>  pairRDD =  scContext.parallelize(Arrays.asList("a","b","c"));
-		
+
 //		pairRDD.map(result ->  result.split(" "));  
 		JavaRDD<String> resultRdd=pairRDD.filter( content  -> {
 			return  content.equals('s') ; 

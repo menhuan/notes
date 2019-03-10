@@ -37,8 +37,6 @@ public class PeopleController {
      * 根据用户实体内容 分类查询用户
      * 1. 在这里 vo层将查询条件封装成为一个实体或者
      * 参数较少可以直接使用RESTful的方式将其传参
-     *
-     *
      * @param people 用户实体
      * @return: com.infervision.model.People
      * @author: fruiqi

@@ -59,6 +59,9 @@ public class ResponseExceptionBody {
        this(request,code,null);
     }
 
+    public ResponseExceptionBody(String message,HttpServletRequest request) {
+        this(request,null,message);
+    }
     public ResponseExceptionBody(HttpServletRequest request,  ExceptionCode errors) {
         this(request,errors.getCode(),errors.getInfo());
     }

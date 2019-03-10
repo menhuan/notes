@@ -8,6 +8,11 @@ package com.infervision.constants;
 public class Constants {
 
     /**
+     * 没有权限
+     */
+    public static final String UNAUTHORIZED = "unauthorized";
+
+    /**
      * DICOM 图像类型
      */
     public static final int DICOM_IMAGE_STYPE = 1 ;

@@ -16,4 +16,4 @@ logging:
   level: debug
 
 server:
-  context-path: manage
+  context-path: /manage/

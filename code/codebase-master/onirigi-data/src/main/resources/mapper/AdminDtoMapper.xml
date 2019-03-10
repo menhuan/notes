@@ -24,16 +24,24 @@
     from admin
     where admin_id = #{adminId,jdbcType=BIGINT}
   </select>
+  <select id="selectByAdminName" resultMap="BaseResultMap">
+
+    select
+    <include refid="Base_Column_List" />
+    from admin
+    where admin_name = #{adminName,jdbcType=VARCHAR}
+
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
     delete from admin
     where admin_id = #{adminId,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.infervision.model.AdminDto">
-    insert into admin (admin_id, admin_name, admin_grade, 
+  <insert id="insert" useGeneratedKeys="true" keyProperty="adminId"  parameterType="com.infervision.model.AdminDto">
+    insert into admin ( admin_name, admin_grade,
       admin_email, admin_phone_num, admin_identity_num, 
       admin_password, admin_salt, create_date, 
       update_date, user_id)
-    values (#{adminId,jdbcType=BIGINT}, #{adminName,jdbcType=VARCHAR}, #{adminGrade,jdbcType=INTEGER}, 
+    values (#{adminName,jdbcType=VARCHAR}, #{adminGrade,jdbcType=INTEGER},
       #{adminEmail,jdbcType=VARCHAR}, #{adminPhoneNum,jdbcType=VARCHAR}, #{adminIdentityNum,jdbcType=VARCHAR}, 
       #{adminPassword,jdbcType=VARCHAR}, #{adminSalt,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{updateDate,jdbcType=TIMESTAMP}, #{userId,jdbcType=INTEGER})

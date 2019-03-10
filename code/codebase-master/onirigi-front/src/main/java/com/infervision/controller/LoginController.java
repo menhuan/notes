@@ -1,13 +1,29 @@
 package com.infervision.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.infervision.constants.ExceptionCode;
+import com.infervision.exception.CommonException;
 import com.infervision.model.AdminDto;
+import com.infervision.service.AdminService;
+import com.infervision.util.JwtUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.shiro.authz.annotation.Logical;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.DigestUtils;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
+
+import static com.infervision.util.ConstantUtil.JWT_SECRET;
 
 /**
  * @ClassName LoginController
@@ -17,6 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0
  */
 @RestController
+@Api(value = "loginAndregister",description="登录与注册")
 public class LoginController {
 
     /**
@@ -24,22 +41,60 @@ public class LoginController {
      */
     private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
+    @Autowired
+    private AdminService adminService;
+
     /**
+     * @return com.infervision.model.AdminDto
      * @Author ASUS
-     * @Description  登录接口尝试
+     * @Description 登录接口尝试
      * @Date 22:55 2019/3/7
      * @Param [adminDto]
-     * @return com.infervision.model.AdminDto
      **/
-    @PostMapping("login")
-    public AdminDto login(@RequestBody  AdminDto adminDto){
-        logger.info("------用户获取登录token----- {} ", JSON.toJSONString(adminDto));
-        String userName = adminDto.getAdminName();
-        String password = adminDto.getAdminPassword();
+    @PostMapping("login/{adminName}/{adminPassword}")
+    @ApiResponse(code = 100000, message = "token")
+    public String login(@PathVariable String adminName,@PathVariable String adminPassword) throws CommonException,Exception {
+        logger.info("------用户获取登录token----- {} ", StringUtils.join(adminName," ",adminPassword));
+        String userName = adminName;
+        String password = adminPassword;
+        AdminDto dto = adminService.selectAdmin(userName);
+        if ( null == dto){
+            throw  new CommonException(ExceptionCode.ERROR_CHECK_NAME_ERROR100015);
+        }
+        String digest = DigestUtils.md5DigestAsHex((password + dto.getAdminSalt()).getBytes());
 
-        String digest = DigestUtils.md5DigestAsHex((password+adminDto.getAdminSalt()).getBytes());
+        if (!digest.equals(dto.getAdminPassword())){
+            throw new CommonException(ExceptionCode.ERROR_CHECK_NAME_ERROR100014);
+        }
+
+        String token = null;
+        String sign = JwtUtil.sign(dto.getAdminId().toString(),
+                dto.getAdminName(), Instant.now().toEpochMilli(), JWT_SECRET);
+        return sign;
+    }
+
+    /**
+     * @return com.infervision.model.AdminDto
+     * @Author ASUS
+     * @Description //TODO 注册 管理信息
+     * @Date 0:25 2019/3/9
+     * @Param [dto]
+     **/
+    @PostMapping("register")
+    @ApiOperation(value = "注册管理员")
+    public AdminDto register(@RequestBody AdminDto dto) throws CommonException {
+        logger.info("------------注册管理信息:{}--------",JSON.toJSONString(dto));
+        AdminDto adminDto = adminService.addAdmin(dto);
+        return adminDto;
+    }
 
 
+    @GetMapping("admins")
+    @RequiresRoles(logical = Logical.OR,value ={"superadmin","admin"})
+    @ApiOperation(value="获取管理员列表" )
+    @RequiresAuthentication
+    public Set<AdminDto> getAdmins(){
+        return new HashSet<>();
     }
 
 

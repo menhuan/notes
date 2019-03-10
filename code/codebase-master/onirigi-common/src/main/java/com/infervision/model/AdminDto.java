@@ -7,6 +7,9 @@ public class AdminDto {
 
     private String adminName;
 
+    /**
+     * 管理员级别 0超级管理员 1普通管理员
+     */
     private Integer adminGrade;
 
     private String adminEmail;
