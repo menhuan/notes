@@ -59,8 +59,6 @@ dependencies {
     compile project(':shiro-manage')
     compile project(':mq-manage')
     compile project(':redis-manage')
-    compile project(':onirigi-common')
-    compile project(':onirigi-data')
     compile project(':swagger-manage')
     compile("org.springframework.boot:spring-boot-starter-web")
     testCompile('org.springframework.boot:spring-boot-starter-test')

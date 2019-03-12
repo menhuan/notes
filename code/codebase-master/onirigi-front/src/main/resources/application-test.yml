@@ -32,15 +32,15 @@ spring:
       maximumDelivery: 50
 txLog:
   logConfig:
-    logPath: /home/ruiqi/logs
+    logPath: ./log
 
 server:
   port: 8083
 
 swagger:
-  title: 测试标题
-  description: 描述
-  version: 版本
+  title: test
+  description: 开发devapi
+  version: 1.0.0
   basepackage: com.infervision
 #hadoop:
 #  fs:

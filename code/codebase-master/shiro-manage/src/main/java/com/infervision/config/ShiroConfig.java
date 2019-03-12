@@ -54,15 +54,15 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/webjars/**", "anon");
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
-        filterChainDefinitionMap.put("/login/**","anon");
-        filterChainDefinitionMap.put("/register/**","anon");
+        filterChainDefinitionMap.put("/login","anon");
+        filterChainDefinitionMap.put("/register","anon");
 
         // 访问401和404页面不通过我们的Filter
 //        filterChainDefinitionMap.put("/401", "anon");
 //        filterChainDefinitionMap.put("/404", "anon");
         // 其他的
-        filterChainDefinitionMap.put("/admins","anyRole[admin,superadmin]");
-        filterChainDefinitionMap.put("/**", "jwt");
+//        filterChainDefinitionMap.put("/admins","anyRole[admin,superadmin]");
+        filterChainDefinitionMap.put("/admins", "jwt");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return shiroFilterFactoryBean;
     }

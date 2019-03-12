@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.infervision.constants.ExceptionCode;
 import com.infervision.exception.CommonException;
 import com.infervision.model.AdminDto;
+import com.infervision.model.Token;
 import com.infervision.service.AdminService;
 import com.infervision.util.JwtUtil;
 import io.swagger.annotations.Api;
@@ -30,7 +31,7 @@ import static com.infervision.util.ConstantUtil.JWT_SECRET;
  * @Version 1.0
  */
 @RestController
-@Api(value = "loginAndregister",description="登录与注册")
+@Api(value = "loginAndregister", description = "登录与注册")
 public class LoginController {
 
     /**
@@ -50,24 +51,26 @@ public class LoginController {
      **/
     @PostMapping("login/{adminName}/{adminPassword}")
     @ApiResponse(code = 100000, message = "token")
-    public String login(@PathVariable String adminName,@PathVariable String adminPassword) throws CommonException,Exception {
-        logger.info("------用户获取登录token----- {} ", StringUtils.join(adminName," ",adminPassword));
+    public Token login(@PathVariable String adminName, @PathVariable String adminPassword) throws CommonException, Exception {
+        logger.info("------用户获取登录token----- {} ", StringUtils.join(adminName, " ", adminPassword));
         String userName = adminName;
         String password = adminPassword;
         AdminDto dto = adminService.selectAdmin(userName);
-        if ( null == dto){
-            throw  new CommonException(ExceptionCode.ERROR_CHECK_NAME_ERROR100015);
+        if (null == dto) {
+            throw new CommonException(ExceptionCode.ERROR_CHECK_NAME_ERROR100015);
         }
         String digest = DigestUtils.md5DigestAsHex((password + dto.getAdminSalt()).getBytes());
 
-        if (!digest.equals(dto.getAdminPassword())){
+        if (!digest.equals(dto.getAdminPassword())) {
             throw new CommonException(ExceptionCode.ERROR_CHECK_NAME_ERROR100014);
         }
 
         String token = null;
         String sign = JwtUtil.sign(dto.getAdminId().toString(),
                 dto.getAdminName(), Instant.now().toEpochMilli(), JWT_SECRET);
-        return sign;
+        Token result = new Token();
+        result.setToken(sign);
+        return result;
     }
 
     /**
@@ -80,15 +83,15 @@ public class LoginController {
     @PostMapping("register")
     @ApiOperation(value = "注册管理员")
     public AdminDto register(@RequestBody AdminDto dto) throws CommonException {
-        logger.info("------------注册管理信息:{}--------",JSON.toJSONString(dto));
+        logger.info("------------注册管理信息:{}--------", JSON.toJSONString(dto));
         AdminDto adminDto = adminService.addAdmin(dto);
         return adminDto;
     }
 
 
     @GetMapping("admins")
-    @ApiOperation(value="获取管理员列表" )
-    public Set<AdminDto> getAdmins(){
+    @ApiOperation(value = "获取管理员列表")
+    public Set<AdminDto> getAdmins() {
         return new HashSet<>();
     }
 
