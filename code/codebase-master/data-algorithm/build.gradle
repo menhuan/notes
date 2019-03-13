@@ -1,0 +1,57 @@
+
+apply from: JAVA_GRADLE
+buildscript {
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url 'http://repos.infervision.com' }
+        maven { url 'http://www.dcm4che.org/maven2/' }
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("org.springframework:springloaded:1.2.6.RELEASE")
+    }
+}
+
+group 'com.infervision'
+version '1.0'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+jar {
+    baseName = 'data-algorithm'
+    version = '1.0.0'
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    enabled = true
+}
+
+
+
+dependencies {
+
+    compile("org.springframework.boot:spring-boot-starter-web")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+
+
+}
+
+
+bootRun {
+    addResources = true
+}
+
