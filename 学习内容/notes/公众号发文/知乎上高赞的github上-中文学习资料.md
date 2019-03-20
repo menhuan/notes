@@ -19,4 +19,21 @@
 ![2019-03-17-23-30-14](http://jikelearn.cn/2019-03-17-23-30-14.png)
 ![2019-03-17-23-30-22](http://jikelearn.cn/2019-03-17-23-30-22.png)
 
-基本上Java相关的内容都在该链接存在了。大家可以点击：https://github.com/menhuan/awesome-java-cn
+基本上Java相关的内容都在该链接存在了。大家可以点击：https://github.com/menhuan/awesome-java-cn  查看。
+
+## Python相关内容
+
+该项目在github上已经14000多start。
+![2019-03-17-23-47-32](http://jikelearn.cn/2019-03-17-23-47-32.png)。
+
+项目主体主要有五部分组成，并且该github已经有中文版本的存在。
+![2019-03-17-23-50-14](http://jikelearn.cn/2019-03-17-23-50-14.png)
+![2019-03-17-23-50-31](http://jikelearn.cn/2019-03-17-23-50-31.png)
+![2019-03-17-23-52-10](http://jikelearn.cn/2019-03-17-23-52-10.png)
+
+以上51个小例子帮助学习。
+
+### 传送门
+
+英文原版：https://github.com/satwikkansal/wtfpython
+中文原版：https://github.com/leisurelicht/wtfpython-cn
