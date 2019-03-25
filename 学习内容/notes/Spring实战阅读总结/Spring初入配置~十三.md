@@ -99,9 +99,12 @@ public void onStartup(ServletContext servletContext) throws ServletException {
   <view-controller path="/" view-name="home" />
   -->
 ```
+
 这是用配置文件加载我们还可以使用配置文件的方式加载，使用注解@Configuration注解的类上加载配置
 那么可能我们需要重新改下配置文件web.xml了。
+
 ```
+
 <!-- 设置上下文   使用java配置-->
 		<context-param>
 			 <param-name> contextClass</param-name>
