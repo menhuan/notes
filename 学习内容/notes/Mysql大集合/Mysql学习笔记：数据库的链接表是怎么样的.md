@@ -150,16 +150,43 @@ STRAIGHT_JOIN Orders o on  p.id = o.Pid;
 
 在每一个数据库的表上，我们都了解会有主键索引，那么我们是否可以根据主键索引来排除呢？
 
-sql在执行之前需要根据过滤条件来过滤之后再进行join的数据计算。
-
 我们通过sql来看。
 
 ```SQL
 
+当OrderNo上没有索引的时候
 EXPLAIN select  p.id,o.OrderNo from Persons p
 STRAIGHT_JOIN Orders o on  p.id = o.Pid
-
-where o.OrderNo > 40000
+where o.OrderNo > 30000
 
 ```
 
+![2019-03-26-00-42-28](http://jikelearn.cn/2019-03-26-00-42-28.png)
+
+走的是全盘扫描，如果我们在OrderNo上加上索引呢？
+
+```SQL
+增加普通索引
+CREATE INDEX Pid ON Orders (Pid)
+
+//在我创建索引的时候，有时候条件语句是可以用上索引的，有的时候是用不上的。由于数据量太小的原因导致部分索引使用补上的情况。在这里根据不同的字段内容是能使用上索引的。
+
+EXPLAIN select  p.id,o.OrderNo from Persons p
+STRAIGHT_JOIN Orders o on  p.id = o.Pid
+where o.Pid > 3
+
+```
+
+![能使用索引](http://jikelearn.cn/2019-03-26-00-57-24.png)
+![不能使用索引](http://jikelearn.cn/2019-03-26-00-57-35.png)
+![数据分布](http://jikelearn.cn/2019-03-26-00-57-58.png)
+
+所以我们在使用语句的时候需要多多关注索引的使用，关于Tree索引，我们下次再聊。
+
+## 总结
+
+从上面可以看到，使用索引能帮助我们提高很多，但是写入的SQL中能不能执行使用索引，还跟语句的构成有关。
+
+尽量在写出来的sql都需要执行下explain 检查下执行状况，知道sql的执行结果，这样我们能真正的写出来好的join语句。
+
+关于使用join，建议使用left join或者right join 提高效率。具体分析下次再聊。
