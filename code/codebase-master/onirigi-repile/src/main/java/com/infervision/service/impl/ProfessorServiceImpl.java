@@ -4,6 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.infervision.service.ProfessorService;
 import com.infervision.util.RequestUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -21,7 +23,8 @@ import static com.infervision.util.Constants.USER_AGENT_ARRAP;
 @Service
 public class ProfessorServiceImpl implements ProfessorService {
     
-    
+    private static final Logger logger =LoggerFactory.getLogger(ProfessorServiceImpl.class);
+
     /**
      * @Author fruiqi
      * @Description  去对应的url进行下载
@@ -38,5 +41,7 @@ public class ProfessorServiceImpl implements ProfessorService {
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);
+        logger.info("[info] JSON content :{}",res);
+
     }
 }
