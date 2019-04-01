@@ -45,6 +45,9 @@ jar {
 dependencies {
     compile("com.alibaba:fastjson:${fastjson}")
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.apache.commons:commons-lang3:${commonsLang3}")
+    compile("com.github.andyczy:java-excel-utils:4.0")
+    compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6'
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 

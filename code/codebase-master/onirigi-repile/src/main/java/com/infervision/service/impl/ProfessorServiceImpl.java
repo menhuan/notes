@@ -2,16 +2,21 @@ package com.infervision.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import com.infervision.model.ProfessorContent;
 import com.infervision.service.ProfessorService;
 import com.infervision.util.RequestUtil;
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVPrinter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
-
-import static com.infervision.util.Constants.USER_AGENT_ARRAP;
+import java.util.stream.Collectors;
 
 /**
  * @ClassName fruiqi
@@ -22,26 +27,74 @@ import static com.infervision.util.Constants.USER_AGENT_ARRAP;
  */
 @Service
 public class ProfessorServiceImpl implements ProfessorService {
-    
-    private static final Logger logger =LoggerFactory.getLogger(ProfessorServiceImpl.class);
+
+    private static final Logger logger = LoggerFactory.getLogger(ProfessorServiceImpl.class);
 
     /**
+     * @return void
      * @Author fruiqi
-     * @Description  去对应的url进行下载
+     * @Description 去对应的url进行下载
      * @Date 23:10 2019/3/27
      * @Param [url]
-     * @return void
      **/
     @Override
-    public void ProfessorService(String url) {
-        Map<String,String> headMap = new HashMap<>(10);
-        headMap.put("User-Agent",USER_AGENT_ARRAP);
-        headMap.put("Referer","https://wx.zsxq.com/dweb/");
-        headMap.put("cookie","zsxq_access_token=CD063C9D-9A81-B150-C996-35B20D2E1ABD");
+    public JSONObject professorService(String url) {
+        Map<String, String> headMap = new HashMap<>(10);
+        headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
+        headMap.put("Referer", "https://wx.zsxq.com/dweb/");
+        headMap.put("cookie", "zsxq_access_token=4F4EE172-5581-EF52-56BB-D204571CEF4C");
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);
-        logger.info("[info] JSON content :{}",res);
+        return jsonObject;
+
+    }
+
+    @Override
+    public List<ProfessorContent> acquireContent(List<Map> maps) {
+        List<ProfessorContent> collect = maps.parallelStream().map(content -> {
+            ProfessorContent con = new ProfessorContent();
+
+            Map questionMap = (Map) content.get("question");
+            String question = (String) questionMap.get("text");
+            con.setQuestionee(question);
+
+            Map answerMap = (Map) content.get("answer");
+            String answer = (String) answerMap.get("text");
+            con.setAnswer(answer);
+            return con;
+        }).collect(Collectors.toList());
+        return collect;
+    }
+
+    @Override
+    public void toExcel(List<ProfessorContent> cons) {
+        //初始化csvformat
+        CSVFormat formator = CSVFormat.DEFAULT.withRecordSeparator("\n");
+
+        //创建FileWriter对象
+        FileWriter fileWriter = null;
+        try {
+            fileWriter = new FileWriter("f:/VSCODE\\new.csv");
+            //创建CSVPrinter对象
+            CSVPrinter printer = new CSVPrinter(fileWriter, formator);
+            String[] head = new String[2];
+            head[0]="question";
+            head[1]="answer";
+            printer.printRecord(head);
+            if (cons !=null){
+                for (ProfessorContent professorContent : cons){
+                    printer.printRecord();
+                    printer.printRecord(
+                            "question"+"    "+ professorContent.getQuestionee()
+                            ,"answer"+"    "+professorContent.getAnswer());
+                }
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }

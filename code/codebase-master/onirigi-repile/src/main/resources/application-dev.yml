@@ -40,7 +40,7 @@ hadoop:
       impl: org.apache.hadoop.hdfs.DistributedFileSystem
     defaultFS: hdfs://127.0.0.1:9000
 server:
-  port: 8089
+  port: 8080
 
 swagger:
   title: test

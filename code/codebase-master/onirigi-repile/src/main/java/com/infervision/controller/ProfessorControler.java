@@ -1,11 +1,18 @@
 package com.infervision.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.infervision.model.ProfessorContent;
 import com.infervision.service.ProfessorService;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName fruiqi
@@ -24,10 +31,46 @@ public class ProfessorControler {
     ProfessorService professorService;
 
     @GetMapping("start")
-    public void start() {
-        logger.info("[INFO] read message");
-        professorService.ProfessorService("https://api.zsxq.com/v1.10/groups/721455121/topics?scope=digests&count=20");
+    public List<Map> start(String url) {
+        List<Map> per = this.per(url);
+        List<ProfessorContent> professorContents = professorService.acquireContent(per);
+        professorService.toExcel(professorContents);
+        return per;
     }
+
+    public List<Map> per(String url){
+        logger.info("[INFO] read message");
+        if (url == null){
+            url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=questions&count=20";
+        }
+        //问答 https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=by_owner&count=20。
+        JSONObject jsonObject = professorService.professorService(url);
+        Map resp_date =(Map) jsonObject.get("resp_data");
+        Object topics = resp_date.get("topics");
+
+        List<Map> maps = JSON.parseArray(JSON.toJSONString(topics), Map.class);
+        if (maps.size()==20){
+            String create_time = (String) maps.get(19).get("create_time");
+            String substring = StringUtils.substring(create_time, create_time.length() - 8, create_time.length() - 5);
+            Integer i = Integer.parseInt(substring) - 1;
+            String join = StringUtils.join(StringUtils.substring(create_time, 0, create_time.length() - 8), i.toString(),"+0800");
+            try {
+//                String s = URLEncoder.encode(join, "UTF-8").toLowerCase();
+//                String replace = StringUtils.replace(s, "t", "T", 1);
+                url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=questions&count=20" +"&end_time="+join;
+                List<Map> start = this.start(url);
+                maps.addAll(start);
+            } catch (Exception e) {
+                logger.error("[ERROR] 转移错误");
+
+            }
+        }else {
+            return maps;
+        }
+
+        return maps;
+    }
+
 
 }
 
