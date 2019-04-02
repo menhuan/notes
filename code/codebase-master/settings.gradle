@@ -6,4 +6,5 @@ include 'onirigi-front'
 include 'swagger-manage'
 include 'shiro-manage'
 include 'onirigi-repile'
+include 'data-algorithm'
 
