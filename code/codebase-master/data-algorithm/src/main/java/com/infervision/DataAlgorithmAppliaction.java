@@ -5,6 +5,8 @@ import com.infervision.algorithom.Node;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.LinkedList;
+
 /**
  * @ClassName fruiqi
  * @Description
@@ -16,6 +18,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DataAlgorithmAppliaction {
 
     public static void main(String[] args) {
+        LinkedList list = new LinkedList();
         SpringApplication.run(DataAlgorithmAppliaction.class, args);
     }
 
