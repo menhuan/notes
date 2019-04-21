@@ -45,4 +45,16 @@ public class DataAlgorithmAppliaction {
 
     }
 
+    /**
+     * @Author fruiqi
+     * @Description  测试链表的反转
+     * @Date 12:34 2019/4/21
+     * @Param []
+     * @return void
+     **/
+    public void testLinkInfer(){
+        
+    }
+
+
 }

@@ -71,6 +71,14 @@ public class LinkNode {
         return true;
 
     }
-
-
+    /**
+     * @Author fruiqi
+     * @Description  链表的反转
+     * @Date 12:34 2019/4/21
+     * @Param []
+     * @return void
+     **/
+    public void LinkedInversion(){
+        
+    }
 }
