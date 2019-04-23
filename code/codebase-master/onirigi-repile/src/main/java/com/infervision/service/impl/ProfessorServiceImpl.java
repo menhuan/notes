@@ -42,7 +42,7 @@ public class ProfessorServiceImpl implements ProfessorService {
         Map<String, String> headMap = new HashMap<>(10);
         headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
         headMap.put("Referer", "https://wx.zsxq.com/dweb/");
-        headMap.put("cookie", "zsxq_access_token=4F4EE172-5581-EF52-56BB-D204571CEF4C");
+        headMap.put("cookie", "zsxq_access_token=765696B6-5984-0C65-6260-9D3B719C0244");
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);

@@ -49,7 +49,7 @@ public class BubbleSort {
                 break;
             }
         }
-        logger.info("message {}", JSONUtils.toJSONString());
+        logger.info("message {}", JSONUtils.toJSONString(nums));
     }
 
     /**

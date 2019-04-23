@@ -61,7 +61,7 @@ public class ProfessorControler {
                 List<Map> start = this.start(url);
                 maps.addAll(start);
             } catch (Exception e) {
-                logger.error("[ERROR] 转移错误");
+                logger.error("[ERROR] 转移错误",e);
 
             }
         }else {
