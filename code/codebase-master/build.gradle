@@ -26,7 +26,7 @@ buildscript {
         maven { url 'http://repos.infervision.com' }
         maven { url 'http://maven.solarule.cn/artifactory/libs-release' }
         mavenCentral()
-    }
+    }求
     dependencies {
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
 //        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
