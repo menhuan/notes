@@ -16,7 +16,7 @@
 ### clone
 
 克隆 git clone --bare 路径/file:协议/ssh协议/http 协议内容。 --bare 代表不带工作区的协议
-
+git clone -b 分支的名字 +地址 可以用来克隆指定的远程分支
 ### remote
 
 - git remote -v：查看相关的远程协议内容
