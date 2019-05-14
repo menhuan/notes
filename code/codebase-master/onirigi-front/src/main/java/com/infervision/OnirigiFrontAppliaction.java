@@ -15,7 +15,6 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 public class OnirigiFrontAppliaction {
 
     public static void main(String[] args) {
-
         SpringApplication.run(OnirigiFrontAppliaction.class, args);
     }
 }
