@@ -28,3 +28,7 @@ hs_err_pid*
 *.jpeg
 *.gif
 *.gmp
+
+
+# 忽略.csv文件
+*.csv
