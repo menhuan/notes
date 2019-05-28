@@ -41,7 +41,7 @@ public class ProfessorControler {
     public List<Map> per(String url){
         logger.info("[INFO] read message");
         if (url == null){
-            url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=questions&count=20";
+            url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=by_owner&count=20";
         }
         //问答 https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=by_owner&count=20。
         JSONObject jsonObject = professorService.professorService(url);
@@ -57,7 +57,7 @@ public class ProfessorControler {
             try {
 //                String s = URLEncoder.encode(join, "UTF-8").toLowerCase();
 //                String replace = StringUtils.replace(s, "t", "T", 1);
-                url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=questions&count=20" +"&end_time="+join;
+                url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=by_owner&count=20" +"&end_time="+join;
                 List<Map> start = this.start(url);
                 maps.addAll(start);
             } catch (Exception e) {

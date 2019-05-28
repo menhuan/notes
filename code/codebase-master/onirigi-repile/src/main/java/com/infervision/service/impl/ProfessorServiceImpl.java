@@ -42,7 +42,7 @@ public class ProfessorServiceImpl implements ProfessorService {
         Map<String, String> headMap = new HashMap<>(10);
         headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:66.0) Gecko/20100101 Firefox/66.0");
         headMap.put("Referer", "https://wx.zsxq.com/dweb/");
-        headMap.put("cookie", "zsxq_access_token=CFC30590-EA23-A48A-F53C-CD9B22874101");
+        headMap.put("cookie", "zsxq_access_token=5B226373-F7CD-2A89-19E4-E83CE82F1C19");
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);
@@ -54,14 +54,24 @@ public class ProfessorServiceImpl implements ProfessorService {
     public List<ProfessorContent> acquireContent(List<Map> maps) {
         List<ProfessorContent> collect = maps.parallelStream().map(content -> {
             ProfessorContent con = new ProfessorContent();
+            Map talk = (Map) content.get("talk");
+            if (talk == null || talk.size() == 0) {
+                Map questionMap = (Map) content.get("question");
+                String question = (String) questionMap.get("text");
+                con.setQuestionee(question);
 
-            Map questionMap = (Map) content.get("question");
-            String question = (String) questionMap.get("text");
-            con.setQuestionee(question);
+                Map answerMap = (Map) content.get("answer");
+                String answer = (String) answerMap.get("text");
+                con.setAnswer(answer);
+            } else {
 
-            Map answerMap = (Map) content.get("answer");
-            String answer = (String) answerMap.get("text");
-            con.setAnswer(answer);
+                if (talk.get("text")!=null){
+                    con.setQuestionee(" ");
+                    con.setAnswer(talk.get("text").toString());
+                }
+
+            }
+
             return con;
         }).collect(Collectors.toList());
         return collect;
@@ -79,20 +89,28 @@ public class ProfessorServiceImpl implements ProfessorService {
             //创建CSVPrinter对象
             CSVPrinter printer = new CSVPrinter(fileWriter, formator);
             String[] head = new String[2];
-            head[0]="question";
-            head[1]="answer";
+            head[0] = "question";
+            head[1] = "answer";
             printer.printRecord(head);
-            if (cons !=null){
-                for (ProfessorContent professorContent : cons){
+            if (cons != null) {
+                for (ProfessorContent professorContent : cons) {
                     printer.printRecord();
                     printer.printRecord(
-                            "question"+"    "+ professorContent.getQuestionee()
-                            ,"answer"+"    "+professorContent.getAnswer());
+                            "    " + professorContent.getQuestionee()
+                            , "    " + professorContent.getAnswer());
                 }
             }
 
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            if (fileWriter != null) {
+                try {
+                    fileWriter.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
 
