@@ -1,0 +1,56 @@
+stages:
+  - build
+  - deploy
+
+data_mode_build:
+  stage: build
+  image: shifudao/docker-gradle
+  script:
+    - cd model-front/
+    - gradle build --stacktrace --info
+  aritfacts:
+    path:
+      - model-front/build/libs/*
+    expire_in: 20 mins 
+  only:
+    refs:
+      - tags
+    changes:
+      - data-front/*
+
+view_manage_build:
+  cache:
+    key: gradle_package
+    paths:
+      - view-manage/.gradle
+  stage: build
+  image: shifudao/docker-gradle
+  script:
+    - export GRADLE_USER_HOME=./.gradle
+    - cd view-manage
+    - gradle build --stacktrace --info
+  artifacts:
+    paths:
+      - view-manage/build/libs/*.jar
+    expire_in: 10mins
+  only:
+    refs:
+      - tags
+    changes:
+      - view-manage/*
+
+#------------------------------------------------------------------
+view_manage_deploy:
+  stage: deploy
+  image: docker:18.06.1-ce
+  script:
+    - docker login -u $docker_user -p $docker_pass hub.infervision.com
+    - cd view-manage
+    - docker build -t hub.infervision.com/tools/view_manage:latest --label={commit_id=$CI_COMMIT_SHA} .
+    - docker push hub.infervision.com/tools/view_manage:latest
+    - docker logout hub.infervision.com
+  only:
+    refs:
+      - tags
+    changes:
+      - view-manage/*

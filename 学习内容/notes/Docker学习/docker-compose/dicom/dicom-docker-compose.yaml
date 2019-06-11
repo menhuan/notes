@@ -1,0 +1,85 @@
+version: "3"
+services: 
+  dicomadmin:
+    image: hub.infervision.com/tools/dicom-admin:1.0.0
+    env_file: docker-compose.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.108.81:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    volume:
+      - logs:/app/
+    ports:
+      - 9092:8082
+    logging:
+      driver: json-file
+      options:
+        max-size: "10"
+  dicomreact:
+    image: hub.infervision.com/tools/dicom-react:1.0.0
+    env_file: docker-compose.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.108.81:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    volume:
+      - logs:/app/
+    ports:
+      - 9092:8082
+    logging:
+      driver: json-file
+      options:
+        max-size: "10"
+  filemanage:
+    image: hub.infervision.com/tools/file-manage:1.0.0
+    env_file: docker-compose.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.108.81:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    volume:
+      - logs:/app/
+    ports:
+      - 9092:8082
+    logging:
+      driver: json-file
+      options:
+        max-size: "10"
+  labelmanage:
+    image: hub.infervision.com/tools/label-manage:1.0.0
+    env_file: docker-compose.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.108.81:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    volume:
+      - logs:/app/
+    ports:
+      - 9092:8082
+    logging:
+      driver: json-file
+      options:
+        max-size: "10"
+  labelstatistics:
+    image: hub.infervision.com/tools/label-statistics:1.0.0
+    env_file: docker-compose.env
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://192.168.108.81:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    volume:
+      - logs:/app/
+    ports:
+      - 9092:8082
+    logging:
+      driver: json-file
+      options:
+        max-size: "10"      
+volumes:
+  logs:
+    driver: local
+    driver_opts: 
+      device: /home/ruiqi/log
+
+
+
