@@ -11,4 +11,5 @@ dependencies {
     compile("org.apache.shiro:shiro-ehcache:${shiroVersion}")
     compile("org.springframework.data:spring-data-redis:${redisVersion}")
     compile("com.auth0:java-jwt:${jwtVersion}")
+    compile('io.grpc:grpc-stub:1.19.0')
 }
