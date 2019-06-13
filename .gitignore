@@ -32,3 +32,8 @@ hs_err_pid*
 
 # 忽略.csv文件
 *.csv
+*.project
+*.settings/
+*/bin
+*.classpath
+

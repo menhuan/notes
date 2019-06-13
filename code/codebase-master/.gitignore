@@ -46,3 +46,4 @@ out/
 temp.txt
 log.txt
 *.MF
+*/bin
