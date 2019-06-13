@@ -45,6 +45,8 @@ echo $TILLER_NAMESPACE 查看输出是否是我们设置的值
 ```Linux
 1. helm dependency build
 2. helm package . 打包 --save=false 加这个参数代表 不讲打包的程序加入默认local仓库中。
+3. 当chart目录下的requirements.yaml文件发生改变时，将原先的依赖内容删除，重新打包依赖， helm dependency build,在执行第二步操作即可。
+
 ```
 
 ### 创建一个本地仓库
