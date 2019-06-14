@@ -24,13 +24,15 @@ buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://repos.infervision.com' }
-        maven { url 'http://maven.solarule.cn/artifactory/libs-release' }
+        maven { url 'http://repo.spring.io/plugins-release' }
         mavenCentral()
     }
     dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
-//        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-//        classpath("org.springframework:springloaded:1.2.6.RELEASE")
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.19.0"
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.7.2"
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath 'io.spring.gradle:propdeps-plugin:0.0.9.RELEASE'
     }
 }
 
@@ -42,8 +44,13 @@ repositories {
 }
 
 allprojects {
-   apply plugin: "com.jfrog.artifactory"
+    apply plugin: "com.jfrog.artifactory"
+    apply plugin: 'propdeps'
+    apply plugin: 'propdeps-maven'
+    apply plugin: 'propdeps-idea'
+    apply plugin: 'propdeps-eclipse'
 
+    apply plugin: "com.jfrog.artifactory"
     apply from: IDEA_GRADLE
 
     group = artifactory_group

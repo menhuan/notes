@@ -1,0 +1,10 @@
+apply from: JAVA_GRADLE
+
+dependencies {
+    compile("redis.clients:jedis:${jedisVersion}")
+    compile("org.springframework.data:spring-data-redis:${redisVersion}")
+    compile("org.springframework.boot:spring-boot-autoconfigure:$springBootVersion")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.8.10")
+    optional("org.springframework.boot:spring-boot-configuration-processor:$springBootVersion")
+}
+compileJava.dependsOn(processResources)

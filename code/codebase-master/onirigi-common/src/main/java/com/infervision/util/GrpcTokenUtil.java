@@ -11,6 +11,8 @@ import io.grpc.stub.MetadataUtils;
  **/
 public class GrpcTokenUtil {
 
+	public static final String BEARER_TYPE = "Bearer";
+	public static final Metadata.Key<String> AUTHORIZATION = Metadata.Key.of("Authorization", Metadata.ASCII_STRING_MARSHALLER);
 	/**
 	 * 自定义 token内容
 	 *
@@ -20,8 +22,9 @@ public class GrpcTokenUtil {
 	 * @date: 19-5-15 上午11:02
 	 */
 	public static <T extends AbstractStub<T>> T blockingStubToken(T stub, String token) {
-		Metadata auth = TokenExtractor.createTokenMetadata(token);
-		return MetadataUtils.attachHeaders(stub, auth);
+		Metadata metadata = new Metadata();
+		metadata.put(AUTHORIZATION, String.format("%s %s", BEARER_TYPE, token));
+		return MetadataUtils.attachHeaders(stub, metadata);
 	}
 
 }
