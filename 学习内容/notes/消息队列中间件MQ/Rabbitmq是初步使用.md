@@ -411,3 +411,13 @@ public class LabelStatisticsListener implements ChannelAwareMessageListener {
 以上内容就完成了rabbitmq 从搭建到使用全部的流程。当然里面还有更多的可以让我们去探讨，比如mq的队列模式，一个系统配置多个mq等等内容。敬请期待我们下一篇mq系列内容。
 
 大家在系统中使用过mq吗？你们使用的mq是什么样的？可以在留言区我们一起探讨哦。
+
+·END·
+
+路虽远，行则必至
+
+本文原发于 同名微信公众号「胖琪的升级之路」，回复「1024」你懂得，给个赞呗。
+
+微信ID：YoungRUIQ
+
+![公众号](http://jikelearn.cn/2019-03-13-23-32-33.png)
