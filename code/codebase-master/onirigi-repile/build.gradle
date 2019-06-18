@@ -8,7 +8,6 @@ buildscript {
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://repos.infervision.com' }
-        maven { url 'http://www.dcm4che.org/maven2/' }
         mavenCentral()
     }
     dependencies {
@@ -48,8 +47,8 @@ dependencies {
     compile("org.apache.commons:commons-lang3:${commonsLang3}")
     compile("com.github.andyczy:java-excel-utils:4.0")
     compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6'
+    compile ("com.deepoove:poi-tl:1.6.0-beta1")
     testCompile('org.springframework.boot:spring-boot-starter-test')
-
 
 }
 

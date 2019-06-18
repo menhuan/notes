@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.infervision.model.ProfessorContent;
 import com.infervision.service.ProfessorService;
+import com.infervision.service.WordService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,11 +31,15 @@ public class ProfessorControler {
     @Autowired
     ProfessorService professorService;
 
+    @Autowired
+    WordService wordService;
+
     @GetMapping("start")
     public List<Map> start(String url) {
         List<Map> per = this.per(url);
         List<ProfessorContent> professorContents = professorService.acquireContent(per);
-        professorService.toExcel(professorContents);
+//        professorService.toExcel(professorContents);
+        wordService.toWordByContent(professorContents);
         return per;
     }
 
@@ -53,7 +58,11 @@ public class ProfessorControler {
             String create_time = (String) maps.get(19).get("create_time");
             String substring = StringUtils.substring(create_time, create_time.length() - 8, create_time.length() - 5);
             Integer i = Integer.parseInt(substring) - 1;
-            String join = StringUtils.join(StringUtils.substring(create_time, 0, create_time.length() - 8), i.toString(),"+0800");
+            String cont = i.toString();
+            if (i<100){
+                cont = "0" + cont;
+            }
+            String join = StringUtils.join(StringUtils.substring(create_time, 0, create_time.length() - 8), cont,"+0800");
             try {
 //                String s = URLEncoder.encode(join, "UTF-8").toLowerCase();
 //                String replace = StringUtils.replace(s, "t", "T", 1);

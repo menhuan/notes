@@ -3,31 +3,13 @@ apply from: JAVA_GRADLE
 buildscript {
     ext {
         springBootVersion = '1.5.10.RELEASE'
-//        commonioVersion = '2.6'
-//        jedisVersion = '2.9.0'
-//        redisVersion = '1.8.4.RELEASE'
-//        SpringTestVersion = '2.0.2.RELEASE'
-//        mysqlVersion = '5.1.40'
-//        aliVersion = '1.0.26'
-//        mybatisVersion = '1.1.1'
-//        commonscodecVersion = '1.8'
-//        dom4jVersion = '1.6.1'
-//        commonsLang3 = '3.7'
-//        fastjson = '1.2.47'
-//        hadoop = '3.1.1'
-//        guava = '26.0-jre'
-//        s3version = '1.11.486'
     }
     repositories {
         maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
         maven { url 'http://repos.infervision.com' }
-        maven { url 'http://www.dcm4che.org/maven2/' }
         mavenCentral()
     }
-    dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-        classpath("org.springframework:springloaded:1.2.6.RELEASE")
-    }
+
 }
 
 group 'com.infervision'
@@ -64,7 +46,8 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
     compile("mysql:mysql-connector-java:${mysqlVersion}")
     compile("com.alibaba:druid:${aliVersion}")
-    compile("com.alibaba:easyexcel:1.1.1")
+    compile("com.alibaba:easyexcel:${excelVersion}")
+
     compile("org.flywaydb:flyway-core:${flywayVersion}")
 
 

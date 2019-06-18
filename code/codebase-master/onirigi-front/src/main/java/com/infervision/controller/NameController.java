@@ -19,7 +19,6 @@ import static com.infervision.constants.Constants.LABEL_FIEL_XML_QUEUE_ROUTING_K
  * @date: 19-2-19 下午5:32
  * @version:1.0
  **/
-
 @RequestMapping("name")
 @RestController
 @Api(value = "名字", tags = {"对名字进行修改"})
