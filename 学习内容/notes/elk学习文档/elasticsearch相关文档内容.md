@@ -131,8 +131,6 @@ get /_search
 
 type 有best_fields 还有most_fields 等等类型匹配方式，
 
-
-
 ### 数据删除
 
 数据的删除是根据id进行删除，也可以根据路由来控制
@@ -145,4 +143,3 @@ POST /{index}/{type}/id/_update 更新数据
 ```json
 json体内容
 ```
-

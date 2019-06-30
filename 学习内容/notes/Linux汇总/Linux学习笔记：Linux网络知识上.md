@@ -69,3 +69,76 @@ OSI模型可以了解下，暂时不作为总结内容。属于7层构建内容�
 
 与接收包流程类似，将上面内容反转过来，并且判断MTU与发送的内容大小做对比，如果超过MTU的大小，需要进行分包发送。
 
+
+
+cp /var/www/html/index.nginx-debian.html /var/www/luckqi.cn/htdocs/index.html && chown www-data: /var/www/luckqi.cn/htdocs/index.html
+
+```json
+{
+    "log": {
+            "access": "/var/log/v2ray/access.log",
+            "error": "/var/log/v2ray/error.log",
+            "loglevel": "warning"
+    },
+    "inbound": {
+            "port": 51025,
+            "protocol": "vmess",
+            "settings": {
+                    "clients": [{
+                            "id": "ed7a9469-b6e1-1cd2-b817-a02dc5604980",
+                            "level": 1,
+                            "alterId": 64,
+                            "security": "auto"
+                    }]
+            },
+            "streamSettings":{
+                    "network":"ws",
+                    "security": "auto",
+                    "wsSettings":{
+                            "connectionReuse": true,
+                            "path": "/enterv2ray/"
+                            }
+                    }
+    },
+    "outbound": {
+            "protocol": "freedom",
+            "settings": {}
+    },
+    "outboundDetour": [
+        {
+            "protocol": "blackhole",
+            "settings": {},
+            "tag": "blocked"
+        }
+    ],
+    "routing": {
+        "strategy": "rules",
+        "settings": {
+            "rules": [
+                {
+                    "type": "field",
+                    "ip": [
+                        "0.0.0.0/8",
+                        "10.0.0.0/8",
+                        "100.64.0.0/10",
+                        "127.0.0.0/8",
+                        "169.254.0.0/16",
+                        "172.16.0.0/12",
+                        "192.0.0.0/24",
+                        "192.0.2.0/24",
+                        "192.168.0.0/16",
+                        "198.18.0.0/15",
+                        "198.51.100.0/24",
+                        "203.0.113.0/24",
+                        "::1/128",
+                        "fc00::/7",
+                        "fe80::/10"
+                    ],
+                    "outboundTag": "blocked"
+                }
+            ]
+        }
+    }
+}
+
+```
