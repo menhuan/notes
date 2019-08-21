@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.infervision.model.ProfessorContent;
 import com.infervision.service.ProfessorService;
 import com.infervision.util.RequestUtil;
+import com.infervision.util.StringUtils;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 import org.slf4j.Logger;
@@ -41,8 +42,8 @@ public class ProfessorServiceImpl implements ProfessorService {
     public JSONObject professorService(String url) {
         Map<String, String> headMap = new HashMap<>(10);
         headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0");
-        headMap.put("Referer", "https://wx.zsxq.com/dweb2/index/group/init");
-        headMap.put("cookie", "zsxq_access_token=E1D5685F-FDAE-56BD-5F77-64025DFF2EE8");
+        headMap.put("Referer", "https://wx.zsxq.com/dweb"); //2/index/group/init
+        headMap.put("cookie", "zsxq_access_token=C66584E0-EB45-D3D8-CBC8-84CB3028730B");
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);
@@ -58,16 +59,16 @@ public class ProfessorServiceImpl implements ProfessorService {
             if (talk == null || talk.size() == 0) {
                 Map questionMap = (Map) content.get("question");
                 String question = (String) questionMap.get("text");
-                con.setQuestionee(question);
+                con.setQuestionee(StringUtils.replaceBlank(question));
 
                 Map answerMap = (Map) content.get("answer");
                 String answer = (String) answerMap.get("text");
-                con.setAnswer(answer);
+                con.setAnswer(StringUtils.replaceBlank(answer));
             } else {
 
                 if (talk.get("text")!=null){
                     con.setQuestionee(" ");
-                    con.setAnswer(talk.get("text").toString());
+                    con.setAnswer(StringUtils.replaceBlank(talk.get("text").toString()));
                 }
 
             }
