@@ -99,7 +99,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      role: db
+      role: db #拦截这个空间内的携带了role=db标签的pod 下面规定是流入白名单
   ingress:
    - from:
      - namespaceSelector:
@@ -113,3 +113,44 @@ spec:
          port: 6379
 
 ```
+
+kubernetes的网络插件会使用其定义在宿主机上生成iptables规则，对pod的隔离就是再主机上生成NetworkPolict对应的iptable规则。
+
+### 第二步
+
+生成上述规则后，网路插件还需要将隔离的Pod请求转发到规则上进行匹配，请求匹配通不过，则该请求被拒绝。
+
+CNI网络插件中，设置两组iptable规则实现。
+
+1. 第一组负责对被合理POD的访问请求，在内部实现转发FORWARD.
+
+### iptables知识
+
+iptables 是一个操作Linux内核Netfilter子系统对策界面，挡在网卡和用户态进程之间的防火墙。
+![2019-08-01-23-53-27](http://jikelearn.cn/2019-08-01-23-53-27.png)
+
+在IP包的进出通道上，有被称为链的检查点。
+![2019-08-01-23-54-41](http://jikelearn.cn/2019-08-01-23-54-41.png)
+
+IP包经过路由后决定下一步的确定，两种情况进行处理。
+
+1. 继续本地处理
+2. 被转发到其他目的地
+
+第一种去向流向上层协议栈，然后通过传输层进入用户空间，交给用户处理，用户进程会通过本地发出返回的IP包，再进入流出路径。
+
+第二种去向，IP包不进入传输层，而是继续在网络层流动，转发路径汇总设置一个FORWARD的检查点，经过之后就会来到流出路径，**转发的IP包由于目的已经确认**，则不需要再进入到流出路径中，直接到POSTROUTING检查点。
+
+POSTROUTING的作用就会汇聚在一起的最后检查点。
+
+### NerworkPolicy
+
+iptables -A FORWARD -d $podIP -m physdev --physdev-is-bridged -j KUBE-POD-SPECIFIC-FW-CHAIN
+iptables -A FORWARD -d $podIP -j KUBE-POD-SPECIFIC-FW-CHAIN
+...
+
+第一条FORWARD链拦截就是一种特殊情况，同一台宿主机上容器之间经过CNI网桥进行通信的流入数据包
+
+第二条拦截是普遍的情况，容器跨主通信，都是经过路由转发FORWARD检查点来的。
+
+最后都调到NetworkPolicy设置的第二组规则。让其进行匹配规则
