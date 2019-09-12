@@ -1,3 +1,10 @@
+---
+ebook:
+  theme: github-light.css
+  title: My eBook
+  authors: shd101wyy
+---
+
 今天做下复盘，也算是一次总结。总的来说还是需要进入快速的学习中。
 ### 复盘
 新公司入职三周，公司的主语言是Python，本人是做Java的，到公司接手到的项目就是进行Python的代码进行重构写成Java，当然只是其中的一部分Python代码。但是也够自己去学习了
@@ -47,4 +54,4 @@ https://github.com/google/guava  链接地址。
 
 
 
-    
+
