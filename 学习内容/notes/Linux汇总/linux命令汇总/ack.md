@@ -39,3 +39,4 @@ ack-grep -L "test" #不包含文件名
 ```
 
 当然还有更多的用法，你可以参考ack的[官网](https://beyondgrep.com/install/)
+
