@@ -37,6 +37,10 @@ public class ProfessorControler {
     @GetMapping("start")
     public List<Map> start(String url) {
         List<Map> per = this.per(url);
+        if (per == null){
+            logger.error(url);
+            return per;
+        }
         List<ProfessorContent> professorContents = professorService.acquireContent(per);
 //        professorService.toExcel(professorContents);
         wordService.toWordByContent(professorContents);
@@ -68,6 +72,9 @@ public class ProfessorControler {
 //                String replace = StringUtils.replace(s, "t", "T", 1);
                 url = "https://api.zsxq.com/v1.10/groups/222454121411/topics?scope=by_owner&count=20" +"&end_time="+join;
                 List<Map> start = this.start(url);
+                if (start == null){
+                    return maps;
+                }
                 maps.addAll(start);
             } catch (Exception e) {
                 logger.error("[ERROR] 转移错误",e);

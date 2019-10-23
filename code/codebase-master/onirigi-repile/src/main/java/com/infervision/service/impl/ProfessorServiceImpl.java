@@ -41,9 +41,9 @@ public class ProfessorServiceImpl implements ProfessorService {
     @Override
     public JSONObject professorService(String url) {
         Map<String, String> headMap = new HashMap<>(10);
-        headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101 Firefox/68.0");
-        headMap.put("Referer", "https://wx.zsxq.com/dweb"); //2/index/group/init
-        headMap.put("cookie", "zsxq_access_token=2614716D-E93A-D939-0C0E-75FA91440115");
+        headMap.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0");
+        headMap.put("Referer", "https://wx.zsxq.com/dweb2/index/group/222454121411");
+        headMap.put("cookie", "zsxq_access_token=0722F5FE-7185-958E-EE04-1FF8AFA5DB8C");
         RequestUtil requestUtil = new RequestUtil();
         String res = requestUtil.restStar(headMap, url);
         JSONObject jsonObject = JSON.parseObject(res);
