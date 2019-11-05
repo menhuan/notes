@@ -174,3 +174,9 @@ elif "apple" in fruits:
     pass
 else:
     print("什么也没有")
+
+
+while 1>2:
+    print("1大于2")
+else:
+    print("1小于2")
