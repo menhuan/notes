@@ -1,4 +1,11 @@
 
+
+def study_content():
+    print("learn english and math")
+
+def study_english():
+    print("learn english")
+
 content = "hello world"
 print(content)
 
