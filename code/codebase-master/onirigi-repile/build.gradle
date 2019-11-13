@@ -42,7 +42,6 @@ jar {
 
 
 dependencies {
-    compile("com.alibaba:fastjson:${fastjson}")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.apache.commons:commons-lang3:${commonsLang3}")
     compile("com.github.andyczy:java-excel-utils:4.0")

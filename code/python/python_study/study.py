@@ -1,4 +1,11 @@
 
+
+def study_content():
+    print("learn english and math")
+
+def study_english():
+    print("learn english")
+
 content = "hello world"
 print(content)
 
@@ -225,5 +232,10 @@ print(content)
 # for fruit,_ in fruits.items():
 #     print("水果是：",fruit)
 
+<<<<<<< HEAD
 # for _,value in fruits.items():
 #     print("水果数量是",value)
+=======
+for _,value in fruits.items():
+    print("水果数量是",value)
+>>>>>>> bc827fb55f885d09a246453b96fb42d3098cc698
