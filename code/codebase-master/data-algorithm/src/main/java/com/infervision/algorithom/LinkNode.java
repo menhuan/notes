@@ -1,5 +1,7 @@
 package com.infervision.algorithom;
 
+import com.alibaba.fastjson.JSON;
+
 /**
  * @ClassName fruiqi
  * @Description 链表的实现
@@ -71,14 +73,36 @@ public class LinkNode {
         return true;
 
     }
+
     /**
+     * @return void
      * @Author fruiqi
-     * @Description  链表的反转
+     * @Description 链表的反转
      * @Date 12:34 2019/4/21
      * @Param []
-     * @return void
      **/
-    public void LinkedInversion(){
-        
+    public void LinkedInversion() {
+
+    }
+
+    /**
+     * @return java.util.List<com.infervision.algorithom.Node>
+     * @Author fruiqi
+     * @Description 创建一个单链表
+     * @Date 23:38 2019/11/6
+     * @Param []
+     **/
+    public void SingleNodes() {
+        Node head = new Node(null, "data");
+
+        int maxNode = 10;
+        Node next = new Node(null,"next1");
+        head.setNext(next);
+        for (int i = 0; i < maxNode; i++) {
+            Node nextEnd = new Node(null,"next"+i);
+            next.setNext(nextEnd);
+            next = nextEnd;
+        }
+        System.out.println(JSON.toJSONString(head));
     }
 }

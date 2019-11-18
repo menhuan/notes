@@ -2,8 +2,8 @@ package com.infervision;
 
 import com.infervision.algorithom.LinkNode;
 import com.infervision.algorithom.Node;
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 
 import java.util.LinkedList;
 
@@ -19,7 +19,9 @@ public class DataAlgorithmAppliaction {
 
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
-        SpringApplication.run(DataAlgorithmAppliaction.class, args);
+        LinkNode linkNode = new LinkNode();
+        linkNode.SingleNodes();
+        new SpringApplicationBuilder().sources(DataAlgorithmAppliaction.class).web(false).run(args);
     }
 
 
