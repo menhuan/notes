@@ -1,5 +1,14 @@
+<<<<<<< HEAD
+---
+ebook:
+  theme: github-light.css
+  title: My eBook
+  authors: shd101wyy
+---
+=======
 
 # Python 系列
+>>>>>>> e1d4840b6822d75ddd0b8be37f81b13904627656
 
 今天做下复盘，也算是一次总结。总的来说还是需要进入快速的学习中。
 
@@ -54,4 +63,4 @@ https://github.com/google/guava  链接地址。
 
 
 
-    
+
