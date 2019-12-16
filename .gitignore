@@ -38,4 +38,5 @@ hs_err_pid*
 *.classpath
 *.xml
 *.iml
-
+# 忽略vscode配置
+*.vscode
