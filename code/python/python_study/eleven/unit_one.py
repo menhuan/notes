@@ -13,12 +13,17 @@ def sum(n):
     return sum
 
 
-n = 10000
 
-if n <= 0:
-    print("输入的参数必须是大于0")
-sum_value = sum(n)
-if sum_value >= 123456:
-    print("求和的结果必须是小于123456")
-else:
-    print("输出的结果是", sum_value)
+
+import unittest
+class TestLearn(unittest.TestCase):
+    def test_sum(self):
+        n = -1 
+        assert n >= 0,"输入的参数必须是大于0"
+        sum_value = sum(n)
+        assert sum_value <= 123456,"求和的结果必须是小于123456"
+        print("输出的结果是", sum_value)
+
+
+if __name__ == '__main__':
+    unittest.main()

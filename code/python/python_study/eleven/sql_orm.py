@@ -1,6 +1,6 @@
 import sqlalchemy
 from sqlalchemy.orm.session import sessionmaker
-from sqlalchemy.sql.schema import MetaData
+from sqlalchemy.sql.schema import MetaData,Table,Column,Integer
 
 mysql_host ="127.0.0.1"
 port =3306 
@@ -16,5 +16,8 @@ Session = sessionmaker(bind=engine, autoflush=False)
 session = Session()
 # 连接数据库
 connect = engine.connect()
+
 meta_data = MetaData(engine)
 
+Table('student',meta_data,
+    Column('id',Integer,primary_key= True)
