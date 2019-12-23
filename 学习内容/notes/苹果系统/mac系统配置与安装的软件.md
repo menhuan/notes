@@ -40,6 +40,16 @@
 
 安装方式有很多，这里只介绍在用的插件与主题
 
-## autojump 
+## 配置vscode 快捷
+
+将vscode安装到APP启动中，然后在~/.zshrc文件中增加如下内容。
+
+```mac
+alias code="/Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code"
+```
+
+source 重启其文件，就可以其快捷键。
+
+## autojump
 
 自动路径跳转
