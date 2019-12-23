@@ -40,3 +40,4 @@ hs_err_pid*
 *.iml
 # 忽略vscode配置
 *.vscode
+*__pycache__
