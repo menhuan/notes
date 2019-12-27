@@ -53,3 +53,20 @@ source 重启其文件，就可以其快捷键。
 ## autojump
 
 自动路径跳转
+
+## grances
+
+软件监控服务，查看CPU,内存，网络等信息
+安装命令：
+
+brew install grances
+
+输入：grances 启动
+
+![2019-12-27-10-14-07](http://jikelearn.cn/2019-12-27-10-14-07.png)
+
+## CheatSheet
+
+快捷键提示软件.
+
+brew install CheatSheet
