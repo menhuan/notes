@@ -1,7 +1,7 @@
 from pymongo import * 
 
 # 链接MongoDB的客户端
-client = MongoClient(host="localhost",port=277017)
+client = MongoClient(host="188.131.139.100",port=27017)
 
 # 用来链接MongoDB中的test数据库
 db = client.test 
@@ -25,6 +25,7 @@ teacher = {
 teacher_result = teachers.insert_one(teacher)
 # 插入的同时会把插入结果返回
 print(teacher_result)
+print(teacher_result.inserted_id)
 # 输出如下
 
 
@@ -57,7 +58,8 @@ teachers_list = [
 ]
 teachers_result = teachers.insert_many(teachers_list)
 # 输出插入的结果
-
+print(teachers_result)
+print(teachers_result.inserted_ids)
 
 
 
@@ -75,8 +77,10 @@ query1 ={
 query_results = teachers.find(query1)
 
 print(query_results)
+for result in query_results:
+    print(result)
 
-## 数据更新
+# ## 数据更新
 condition = {
     "name":"wangMeng"
 }
@@ -86,17 +90,17 @@ result= teachers.update_one(condition,{'$set':teacher})
 print(result)
 
 
-########数据删除
+# ########数据删除
 
-condition = {
-    "age":27
-}
+# condition = {
+#     "age":27
+# }
 
-teacher = teachers.find_one(condition)
+# teacher = teachers.find_one(condition)
 
-if teacher is not None:
-    one_result=teachers.delete_one(condition)
-    print(one_result)
-    many_result = teachers.delete_many(condition)
-    print(many_result)
+# if teacher is not None:
+#     one_result=teachers.delete_one(condition)
+#     print(one_result)
+#     many_result = teachers.delete_many(condition)
+#     print(many_result)
 
