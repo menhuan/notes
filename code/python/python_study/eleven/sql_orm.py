@@ -93,3 +93,19 @@ data = [
 ]
 
 connect.execute(teacher.insert(),data)
+
+## 查询的方式
+
+results = session.query(Student).filter(Student.age == 12).filter(Student.sex == 1).all()
+for result in results:
+    print(result.age,"-------",result.name)
+
+## 更新
+student = session.query(Student).filter(Student.id ==3 )
+if student is not None :
+    student.name = "July"
+    session.commit()
+
+
+student =  session.query(Student).filter(Student.id == 4)
+print(student)
