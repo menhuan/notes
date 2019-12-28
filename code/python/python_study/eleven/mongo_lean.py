@@ -84,10 +84,17 @@ for result in query_results:
 condition = {
     "name":"wangMeng"
 }
-teacher = teachers.find_one(condition)
 
-result= teachers.update_one(condition,{'$set':teacher})
+result= teachers.update_one(condition,{'$set':{"age":33}})
 print(result)
+
+condition = {
+    "age":{
+        "gt":15
+    }
+}
+results = teachers.update_many(condition,{"$set":{"age":24}})
+print(results)
 
 
 # ########数据删除
