@@ -85,29 +85,29 @@ condition = {
     "name":"wangMeng"
 }
 
-result= teachers.update_one(condition,{'$set':{"age":33}})
+result= teachers.update_one(condition, {'$inc': {'age': 1}})
 print(result)
+print(result.matched_count,result.modified_count)
 
 condition = {
     "age":{
         "gt":15
     }
 }
-results = teachers.update_many(condition,{"$set":{"age":24}})
+results = teachers.update_many(condition, {'$inc': {'age': 1}})
 print(results)
-
+print(result.matched_count,result.modified_count)
 
 # ########数据删除
 
-# condition = {
-#     "age":27
-# }
+condition = {
+    "age":27
+}
 
-# teacher = teachers.find_one(condition)
 
-# if teacher is not None:
-#     one_result=teachers.delete_one(condition)
-#     print(one_result)
-#     many_result = teachers.delete_many(condition)
-#     print(many_result)
-
+one_result=teachers.delete_one(condition)
+print(one_result)
+print(one_result.deleted_count)
+many_result = teachers.delete_many(condition)
+print(many_result)
+print(many_result.deleted_count)
