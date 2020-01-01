@@ -13,7 +13,7 @@ sms_history = test.sms_history
 
 def mongo_insert(collestion,data):
     results = collestion.insert_many(data)
-    if results.inserted_count > 0 :
+    if len(results.inserted_ids) > 0 :
         return True
 
 
@@ -57,10 +57,15 @@ def acquire_weather(city_code):
     json_str_result = result.text[length:]
     return json.loads(json_str_result)
 
-def send_content(json_str):
-    
-    pass
-
+def send_content(weather_json):
+    str_prefix = "亲爱的,天气变化多端，请注意身体哦。"
+    cityname = weather_json["cityname"]
+    temp = weather_json["temp"]
+    weather = weather_json["weather"]
+    limit_number = weather_json["limitnumber"]
+    aqi_pm25 = weather_json["aqi_pm25"]
+    result = str_prefix + " " + cityname + "今天当前温度是"+str(temp)+",今天天气"+weather+",今天限行尾号为："+limit_number +",pm25:"+str(aqi_pm25)
+    return result 
 def deal_message():
     """
     1. 爬取对应的天气网站，获取天气数据
@@ -71,7 +76,12 @@ def deal_message():
     # 北京城市的code
     city_code = "101010100"
     weather_json = acquire_weather(city_code)
-
+    send_result = send_content(weather_json)
+    mongo_insert(weather,[weather_json])
+    content = {"sms_content":send_result}
+  
+    mongo_insert(sms_history,[content])
+    send_message(send_result,to_phone="15612856610")
 
 if __name__ == '__main__':
     deal_message()
