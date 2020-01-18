@@ -61,4 +61,48 @@ print(np.multiply(nums, nums_value))
 print(np.divide(nums, nums_value))
 print(np.mod(nums, nums_value))
 
-print(np.add([1,2,3,4],[1,2,3]))
+# print(np.add([1,2,3,4],[1,2,3]))
+
+
+#### np的组合与拆分。
+print("==========================拆分")
+two_demension  = np.arange(20).reshape(4,5)
+print(two_demension)
+three_demension = np.arange(20).reshape(2,2,5)
+print(three_demension)
+
+# 3维数组转为2维数组
+three_demension.shape =(5,4)
+print(three_demension)
+three_demension.resize(2,2,5)
+print(three_demension)
+one_demension = three_demension.flatten()
+print(one_demension) 
+one_damension = three_demension.ravel()
+print(one_damension)
+
+print("=========数组的组合")
+first = np.arange(9).reshape(3,3)
+print(first)
+second = np.arange(18).reshape(3,6)
+print(second)
+result = np.hstack((first,second))
+print(result)
+
+first = np.arange(9).reshape(3,3)
+print(first)
+second = np.arange(18).reshape(6,3)
+print(second)
+result = np.vstack((first,second))
+print(result)
+
+### 拆分
+print("===========================拆分")
+nums = np.arange(20).reshape(4,5)
+# 水平拆分
+h_result = np.hsplit(nums,5)
+print(nums)
+print(h_result)
+# 垂直拆分
+v_result = np.vsplit(nums,4)
+print(v_result)
