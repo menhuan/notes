@@ -20,7 +20,8 @@ NEWSPIDER_MODULE = 'douban.spiders'
 ROBOTSTXT_OBEY = False
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
 
-
+FEED_URI = "file: C:\\Users\\96363\\Desktop\\markdown\\学习内容\\code\\python\\python_study\\test.csv"
+FEED_FORMAT="CSV"
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
 
