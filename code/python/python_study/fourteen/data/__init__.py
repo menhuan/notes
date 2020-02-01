@@ -43,4 +43,5 @@ def draw_imgae(counter):
 
 if __name__ == '__main__':
     value = acquire_txt_from_csv("C:\\Users\\96363\\Desktop\\markdown\\学习内容\\code\\python\\python_study\\test.csv")
-
+    words = parse_words(value)
+    draw_imgae(words)
