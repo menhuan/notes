@@ -12,6 +12,9 @@ pandas = "*"
 jieba = "*"
 wordcloud = "*"
 numpy = "*"
+requests = "*"
+matplotlib = "*"
+pyecharts = "*"
 
 [requires]
 python_version = "3.7"
