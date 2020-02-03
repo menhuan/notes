@@ -4,7 +4,9 @@
 
 ## 包管理工具 brew
 
-安装方式
+安装方式，网络不好情况下多尝试几次
+
+`ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 
 ## 截图工具
 
@@ -40,6 +42,17 @@
 
 安装方式有很多，这里只介绍在用的插件与主题
 
+## 配置代理
+
+在~/.zshrc文件中添加
+
+```Linux
+alias setproxy="export ALL_PROXY=socks5://127.0.0.1:1086"
+alias unsetproxy="unset ALL_PROXY"
+```
+
+配置使其生效source ~/.zshrc
+
 ## 配置vscode 快捷
 
 将vscode安装到APP启动中，然后在~/.zshrc文件中增加如下内容。
@@ -70,3 +83,55 @@ brew install grances
 快捷键提示软件.
 
 brew install CheatSheet
+
+## 升级Python
+
+brew install python3
+
+设置当前的环境为Python3,进入到`/usr/local/Cellar/python/3.7.6.1/bin目录下找到python3`
+
+在zshrc文件中增加变量设置`alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"`
+使用source ~/.zshrc文件生效即可
+
+该方式使用pip3下载内容
+
+## 设置pipenv
+
+pip3或者pip install pipenv
+
+使用自动激活虚拟环境
+
+```linux
+# 复制环境
+git clone "https://github.com/MichaelAquilina/zsh-autoswitch-virtualenv.git" "$ZSH_CUSTOM/plugins/autoswitch_virtualenv"
+
+# 在插件中增加autoswitch_virtualenv
+
+source ~/.zshrc
+```
+
+## 安装go环境
+
+brew install go
+
+```linux
+zsh文件中配置go路径信息 可以自定义GOPATH
+export GOPATH=$HOME/go
+export PATH=$PATH:/usr/local/go/bin::$GOPATH/bin
+
+source ~/.zshrc
+# 配置go使用的代理
+export GO111MODULE=on
+export GOPROXY=https://goproxy.io
+```
+
+## 安装sshw
+
+```linux
+go get -u github.com/yinheli/sshw/cmd/sshw
+
+写配置文件 ~/.sshw
+- name: 组名
+  children:
+  - { name: spring, user: spring, host: 192.168.111.12, password: XX******XXX, port: 22}
+```

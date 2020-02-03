@@ -15,3 +15,16 @@
      lg = log --color --graph --branches --pretty=format:'%C(auto)%h %C(auto)%d %C(auto)%s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --decorate --abbrev-commit --all
      cp = cherry-pick
 ```
+
+## 解决github gist无法访问的问题
+
+mac 终端下操作，ping两个ip
+
+```linux
+ping 192.30.253.118
+ping 192.30.253.119
+能ping通的话，添加到/etc/hosts文件中
+192.30.253.118 gist.github.com
+192.30.253.119 gist.github.com
+保存之后就能ping成功
+```
