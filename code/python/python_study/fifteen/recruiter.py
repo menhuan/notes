@@ -1,4 +1,5 @@
 import math
+import re
 from time import sleep
 
 import pandas
@@ -82,5 +83,34 @@ def acquire_recruiter_data():
     recruiter_data_to_csv(csv_result, "recruiter.csv")
 
 
+def deal_data():
+    recruiter = pandas.read_csv("recruiter.csv")
+
+    # 工作经验
+    num_match = "\d+"
+    work_time = []
+    for time in recruiter["workYear"]:
+        if len(re.findall(num_match, time)) == 0:
+            time = "0年"
+            work_time.append("0年")
+        else:
+            work_time.append(time)
+    recruiter["work_time"] = work_time
+    # 工资进行取区间的均值
+    salary_match = "\d+"
+    salary_result = []
+    for salary in recruiter["salary"]:
+        salary_list = re.findall(salary_match, salary)
+        if len(salary_list) == 0:
+            salary_result.append(0)
+        else:
+            salary_nums = [int(value) for value in salary_list]
+            salary = int((salary_nums[0] + salary_nums[1]) / 2)
+            salary_result.append(salary)
+    recruiter["month_salary"] = salary_result
+    recruiter.to_csv("recruiter.bak.csv")
+
+
 if __name__ == '__main__':
-    acquire_recruiter_data()
+    # acquire_recruiter_data()
+    deal_data()
