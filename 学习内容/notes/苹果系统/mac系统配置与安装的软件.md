@@ -135,3 +135,11 @@ go get -u github.com/yinheli/sshw/cmd/sshw
   children:
   - { name: spring, user: spring, host: 192.168.111.12, password: XX******XXX, port: 22}
 ```
+
+## tree 命令
+
+brew install tree
+
+## docker
+
+brew cask install docker
