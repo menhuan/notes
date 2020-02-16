@@ -23,11 +23,6 @@ class IpScrapy(scrapy.Spider):
                 td["province"] = tr_result[2].string 
                 td["time"] = tr_result[4].string
                 yield td
-                
-            # for td in tr.children:
-            #     print("td 是======",td)
-                # for tb in tr.children :
-                #     print(tb)
 
 
 

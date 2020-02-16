@@ -21,6 +21,3 @@ def acquire_weather(city_code):
     length = len ("var dataSK = ")
     json_str_result = result.text[length:]
     return json.loads(json_str_result)
-    
-def weather_content(json_str):
-    
