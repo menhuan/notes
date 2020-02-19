@@ -19,3 +19,10 @@ pip install grpcio-tools
 python3 -m grpc_tools.protoc --version 进行验证
 
 ```
+
+## Python模式
+
+```linux
+PROTO_DIR=/Volumes/data/code/grpc/proto; python -m grpc_tools.protoc -I $PROTO_DIR/ --python_out=. --grpc_python_out=. $PROTO_DIR/common/*.proto
+PROTO_DIR=/Volumes/data/code/grpc/proto; python -m grpc_tools.protoc -I $PROTO_DIR/ --python_out=. --grpc_python_out=. $PROTO_DIR/ct/*.proto
+```
