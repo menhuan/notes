@@ -11,10 +11,11 @@ scrapy = "*"
 pandas = "*"
 jieba = "*"
 wordcloud = "*"
-numpy = "*"
+numpy = "==1.16.6"
 requests = "*"
 matplotlib = "*"
 pyecharts = "*"
+flask = "*"
 
 [requires]
 python_version = "3.7"

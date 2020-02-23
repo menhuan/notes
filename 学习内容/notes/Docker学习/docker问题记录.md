@@ -12,7 +12,6 @@ docker
 ```linux
 sudo su 输入当前用户密码，切换到root用户
 
-cat /var/lib/docker/containers/docker_id/docker_id-json.log*
 ```
 
 ## 批量删除镜像

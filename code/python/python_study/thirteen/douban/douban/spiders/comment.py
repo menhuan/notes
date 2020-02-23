@@ -11,7 +11,7 @@ from bs4 import BeautifulSoup
 # //*[@id="comments"]
 
 # //*[@id="comments"]/div[1]
-from fourteen.douban.douban.items import CommentItem
+from thirteen.douban.douban.items import CommentItem
 
 
 class CommentSpider(scrapy.Spider):

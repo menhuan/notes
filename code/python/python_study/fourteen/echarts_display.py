@@ -73,7 +73,7 @@ def show_pie_image():
         Pie()
             .add("", [list(z) for z in zip(list(district_count.index), district_count.tolist())],
                  center=["40%", "50%"])
-            .set_colors(["blue", "green", "yellow", "red", "mintcream", "orange", "purple", "hotpink"])
+            .set_colors(["blue", "green", "yellow", "red", "wathet", "orange", "purple", "hotpink"])
             .set_global_opts(title_opts=options.TitleOpts(title="Python工作地区分布"), legend_opts=options.LegendOpts(
             type_="scroll", pos_left="80%", orient="vertical"))
             .set_series_opts(label_opts=options.LabelOpts(formatter="{b}: {c}"))
