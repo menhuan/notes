@@ -143,3 +143,21 @@ brew install tree
 ## docker
 
 brew cask install docker
+
+## 配置22端口
+
+系统偏好设置->共享->远程登录
+
+## 视频播放软件
+
+商店搜索 Elmedia Video Player。
+
+修改默认的 视频播放软件,任意点击一个map文件，使用command+i键，出现文件简介页面，如下图所示：
+![2020-02-24-11-52-12](http://jikelearn.cn/2020-02-24-11-52-12.png)
+点击打开方式，选择修改成的播放器，再点击全部修改
+
+![2020-02-24-11-54-44](http://jikelearn.cn/2020-02-24-11-54-44.png)
+
+## 截图软件
+
+PicGo 软件或者Vscode中插件
