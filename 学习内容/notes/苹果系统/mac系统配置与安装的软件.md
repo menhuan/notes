@@ -143,3 +143,20 @@ brew install tree
 ## docker
 
 brew cask install docker
+
+## 查看支持的字体
+
+brew install fontconfig
+
+查看中文：fc-list :lang=zh
+
+## 安装java环境
+
+brew cask install java
+
+## 安装plant uml
+
+brew cask install java
+brew install graphviz
+在使用vscode安装
+
