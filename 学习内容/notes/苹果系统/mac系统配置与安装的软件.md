@@ -56,7 +56,7 @@ export GOPROXY=https://goproxy.io
 
 sshw 方便去操作ssh ，不用每次都手动输入ssh 命令去连接终端。省时省力
 
-![sshw](http://jikelearn.cn/img/20200311214503.gif)
+![sshw](http://jikelearn.cn/img/20200311220811.gif)
 
 ```linux
 go get -u github.com/yinheli/sshw/cmd/sshw
@@ -183,7 +183,7 @@ Keka压缩软件是一款开源的压缩软件，可以从github上看到他们�
 
 ### 效率神器
 
-Alfred:不用多说，用过的都知道，[操作指导](https://github.com/zenorocha/alfred-workflows)
+Alfred:不用多说，用过的都知道，[Alfred操作教程](https://github.com/zenorocha/alfred-workflows)
 国内出品的效率神器Utools:[Utools](https://www.u.tools/)
 
 ### 文档
