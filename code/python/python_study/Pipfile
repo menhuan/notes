@@ -16,6 +16,8 @@ requests = "*"
 matplotlib = "*"
 pyecharts = "*"
 flask = "*"
+xlwt = "*"
+xlrd = "*"
 
 [requires]
 python_version = "3.7"
