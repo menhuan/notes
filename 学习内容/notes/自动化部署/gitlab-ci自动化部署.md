@@ -1,4 +1,4 @@
-# gitlab 
+# gitlab
 
 gitlab ci runner 拉取与注册
 

@@ -28,3 +28,93 @@ ping 192.30.253.119
 192.30.253.119 gist.github.com
 保存之后就能ping成功
 ```
+
+## pre-commit 配置
+
+```yml
+# 配置python方面的 ，同样的Java方面也是可以做的
+# See https://pre-commit.com/ for usage and config
+default_language_version:
+  python: python3.7
+default_stages: [commit]
+stages: [commit,push]
+repos:
+  - repo: local
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [python]
+        exclude: compiled.*
+
+      - id: black
+        name: black
+        entry: black
+        language: python
+        types: [python]
+        exclude: compiled.*
+      - id: flake8
+        name: flake8
+        entry: pipenv run flake8
+        language: python
+        types: [python]
+        exclude: setup.py
+
+#      - id: mypy
+#        name: mypy
+#        entry: mypy
+#        language: python
+#        types: [python]
+#        exclude: compiled.* |registration.*
+
+
+
+#      - id: pytest
+#        name: pytest
+#        entry: pipenv run pytest test
+#        language: python
+#        types: [python]
+#
+#      - id: pytest-cov
+#        name: pytest
+#        stages: [push]
+#        entry: pipenv run pytest tests/ --cov --cov-fail-under=70
+#        language: python
+#        types: [python]
+#        pass_filenames: false
+```
+
+配置文件
+
+```python
+[isort]
+multi_line_output = 3
+include_trailing_comma = True
+force_grid_wrap = 0
+use_parentheses = True
+line_length = 88
+skip=./src/dlserver/ct1mm/v1/compiled,./src/dlserver/ct1mm/v3/compiled,
+
+
+[flake8]
+ignore = E203, E266, E501, W503,C901,F601
+max-line-length = 88
+max-complexity = 18
+select = B,C,E,F,W,T4
+exclude= ./src/dlserver/ct1mm/v1/compiled,./src/dlserver/ct1mm/v3/compiled
+
+;[mypy]
+;files=./src/dlserver
+;ignore_missing_imports=true
+;show_error_codes=true
+
+;
+;[tool:pytest]
+;testpaths=tests/
+
+# 放到 pyproject.toml文件中
+[tool.black]
+exclude="src/dlserver/ct1mm/v1/compiled|src/dlserver/ct1mm/v3/compiled|"
+
+```

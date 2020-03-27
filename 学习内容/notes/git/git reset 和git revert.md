@@ -1,2 +1,1 @@
-# git reset 和 revert
-
+# git reset ? revert
