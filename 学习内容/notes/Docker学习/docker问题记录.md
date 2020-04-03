@@ -74,3 +74,16 @@ docker network disconnect -f laradock_backend laradock_php-client_1
 或者使用docker-compose up -d --remove-orphans
 
 ```
+
+## 删除上层docker启动
+
+dockerFile中使用
+
+```dockerfile
+ENTRYPOINT [""]
+ENTRYPOINT []
+CMD []
+CMD [""]
+```
+
+在docker启动时设置--entrypoint='' 也能达到相同的效果
