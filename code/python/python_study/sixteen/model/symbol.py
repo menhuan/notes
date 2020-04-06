@@ -4,6 +4,7 @@ from dataclasses import dataclass
 @dataclass
 class Symbol:
     base_currency: str
+    quote_currency: str
     price_precision: str
     amount_precision: int
     symbol_partition: str
@@ -14,7 +15,8 @@ class Symbol:
     max_order_amt: int
     min_order_value: float
 
-    def __parse_list(self, data):
+    @staticmethod
+    def parse_list(data):
         return [Symbol(item['base-currency'], item['quote-currency'], item['price-precision'], item['amount-precision'],
                        item['symbol-partition'], item['symbol'], item['state'], item['value-precision'],
                        item['min-order-amt'], item['max-order-amt'], item['min-order-value']) for item in data]
