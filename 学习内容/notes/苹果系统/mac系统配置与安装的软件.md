@@ -22,6 +22,15 @@ brew install python3
 
 该方式使用pip3下载内容
 
+### 升级Python3.8
+
+brew search python `搜索python的版本`
+brew install python@3.8 进行安装
+brew upgrade pytyhon@3.8 升级
+
+将配置写入到sh文件中。zsh对应的是~/.zshrc bash对应的是.bash_profile`可以看具体的安装介绍，里面有操作步骤`
+
+
 #### 设置pipenv
 
 pip3或者pip install pipenv
