@@ -7,4 +7,10 @@
     <orderEntry type="jdk" jdkName="Python 3.7 (python_study-uMbC8koA)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="$MODULE_DIR$/sixteen/tests" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="pytest" />
+  </component>
 </module>

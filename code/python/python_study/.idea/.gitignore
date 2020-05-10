@@ -3,3 +3,5 @@
 /workspace.xml
 *.xml
 *.iml
+# Editor-based HTTP Client requests
+/httpRequests/

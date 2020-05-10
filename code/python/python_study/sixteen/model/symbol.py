@@ -19,4 +19,5 @@ class Symbol:
     def parse_list(data):
         return [Symbol(item['base-currency'], item['quote-currency'], item['price-precision'], item['amount-precision'],
                        item['symbol-partition'], item['symbol'], item['state'], item['value-precision'],
-                       item['min-order-amt'], item['max-order-amt'], item['min-order-value']) for item in data]
+                       item['min-order-amt'], item['max-order-amt'], item['min-order-value'])
+                for item in data if item['state'] == 'online']
