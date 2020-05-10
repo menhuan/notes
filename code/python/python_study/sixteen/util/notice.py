@@ -1,4 +1,5 @@
 import json
+import os
 import smtplib
 from email.mime.text import MIMEText
 
@@ -80,7 +81,7 @@ def send_email(message, receiver):
 
 def __acquire_sms_config():
     # 从数据库拿
-    return "AKIDziBMGtMfpkTaR2zik24G8kBNK40hkJEv", "ZrX7SbR2Oa2DguuEI6hyzmLdfSP6Xif9"
+    return  os.getenv("SecretId"), os.getenv("SecretKey")
 
 
 def send_sms(content, phones):
