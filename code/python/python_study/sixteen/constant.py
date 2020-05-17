@@ -1,6 +1,7 @@
 """
 常量
 """
+import os
 
 HUOBI_API_KEY = "fa9b3d24-dbye2sf5t7-fbca62e9-a2e03"
 HUOBI_SECRET_KEY = "a6ca0c7c-552e7406-318b4f1c-ebf5a"
@@ -8,6 +9,8 @@ HUOBI_SECRET_KEY = "a6ca0c7c-552e7406-318b4f1c-ebf5a"
 ## API连接
 BASE_REST_API_URL = "https://api.huobi.pro"
 BASE_WSF_API_URL = "wss://api.testnet.huobi.pro/ws/v1"
+if os.getenv("AWS","false") == "true":
+    BASE_REST_API_URL = "https://api-aws.huobi.pro"
 
 ## 交易单元
 USDT = "usdt"

@@ -58,3 +58,5 @@ def add_list(key, values):
 def add_list_default(key, value):
     redis_conn.lpush(key, value)
 
+def clear_cache_by_key(key):
+    redis_conn.delete(key)

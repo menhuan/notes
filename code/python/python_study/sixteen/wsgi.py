@@ -16,5 +16,5 @@ def aync_time_task():
 
 
 if __name__ == '__main__':
-    #aync_time_task()
+    aync_time_task()
     app.run("0.0.0.0", debug=True)

@@ -1,3 +1,5 @@
+import os
+
 import requests
 
 from sixteen.constant import HUOBI_API_KEY, HUOBI_SECRET_KEY, BASE_REST_API_URL
@@ -31,9 +33,12 @@ class HuoRequest:
         #self.request_client = RequestClient(api_key=HUOBI_API_KEY, secret_key=HUOBI_SECRET_KEY)
 
     def get_data(self, base_url=BASE_REST_API_URL):
-
-        resp = requests.get(url=BASE_REST_API_URL + self.url, headers=headers, proxies=self.proxies)
-        if resp.status_code == 200:
+        resp =None
+        if os.getenv("AWS","false").lower() == "true":
+            resp = requests.get(url=BASE_REST_API_URL + self.url, headers=headers)
+        else:
+            resp = requests.get(url=BASE_REST_API_URL + self.url, headers=headers, proxies=self.proxies)
+        if resp is not None and  resp.status_code == 200:
             json_data = resp.json()
             if json_data.get('status') == 'ok':
                 return json_data.get('data') if json_data.get('data') is not None else json_data["tick"]

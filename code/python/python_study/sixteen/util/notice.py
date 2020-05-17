@@ -5,12 +5,13 @@ from email.mime.text import MIMEText
 
 ## 收件邮箱 可以使qq邮箱，也可以是网易邮箱
 from time import sleep
-
+import tencentcloud.common
 from tencentcloud.common import credential
 from tencentcloud.common.profile.client_profile import ClientProfile
 from tencentcloud.common.profile.http_profile import HttpProfile
 from tencentcloud.sms.v20190711 import sms_client, models
 
+from sixteen import logger
 from sixteen.constant import EMAIL_LIST
 from sixteen.util.caches import get_list, acqure_list_key_len, add_list
 
@@ -25,9 +26,6 @@ password = "15732029557"
 
 smtp_server = "smtp.163.com"
 smtp_port = 465
-
-pop_server = "pop.163.com"
-imap_server = "imap.163.com"
 
 
 def __init_email():
@@ -81,11 +79,12 @@ def send_email(message, receiver):
 
 def __acquire_sms_config():
     # 从数据库拿
-    return  os.getenv("SecretId"), os.getenv("SecretKey")
+    return os.getenv("SecretId"), os.getenv("SecretKey")
 
 
 def send_sms(content, phones):
     try:
+        logger.info(f"========{content}")
         secret_id, secret_key = __acquire_sms_config()
         cred = credential.Credential(secret_id, secret_key)
         # 实例化要请求产品(以cvm为例)的client对象
@@ -111,9 +110,10 @@ def send_sms(content, phones):
         result = resp.to_json_string(indent=2)
         print(resp.to_json_string(indent=2))
         for status in json.loads(resp.to_json_string(indent=2)).get("SendStatusSet", {}):
+            # 现在只发送一条短信数据
             code = status.get("Code")
             if code.lower() == "ok":
-                continue
+                break
             else:
                 return False
         return True
@@ -123,5 +123,5 @@ def send_sms(content, phones):
 
 
 if __name__ == '__main__':
-    send_sms(["test",'tress','12312'], ["+8615612856610"])
-   # send_email("message", "963633167@qq.com")
+    send_sms(["test", 'tress', '12312'], ["+8615612856610"])
+# send_email("message", "963633167@qq.com")

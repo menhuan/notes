@@ -1,16 +1,17 @@
+import json
 from time import sleep, time
 
 from sixteen import logger
 from sixteen.constant import NOTICE_COINS
-from sixteen.models import session
+from sixteen.models import session, dao_to_dict
 from sixteen.models.Tables import CoinPrice, CoinPriceHistory
-from sixteen.util.caches import put_zset_pip, get_list, get_queue_message, add_list
+from sixteen.util.caches import put_zset_pip, get_list, get_queue_message, add_list, add_list_default, \
+    clear_cache_by_key
 from sixteen.util.notice import send_sms, send_notice
 from sixteen.util.request import HuoRequest
 
 
 def update_price():
-    start = time()
     while (True):
         start = time()
         try:
@@ -40,6 +41,13 @@ def watch_price():
     监听价格的变化，达到设定的价格值之后，发送短信与邮件通知
     :return:
     """
+    # 每次服务启动时初始化下
+    logger.info("__init__ notice_coins")
+    clear_cache_by_key(NOTICE_COINS)
+    coins = session.query(CoinPrice).all()
+    for coin in coins:
+        add_list_default(NOTICE_COINS, json.dumps(dao_to_dict(coin)))
+
     while True:
         try:
             logger.info("start acquire notice")
@@ -48,7 +56,7 @@ def watch_price():
             data = HuoRequest(url=f'/market/detail/merged?symbol={notice_coin.get("coin")}').get_data()
             close = data.get("close")
             open = data.get("open")
-            messages = [notice_coin.get('coin'),notice_coin.get('price'),data.get('close')]
+            messages = [notice_coin.get('coin'), str(notice_coin.get('price')), str(data.get('close'))]
             if close - open >= 0 and close >= notice_coin.get('price'):
                 send_notice(messages, notice_coin.get('user_phone'), notice_coin.get('email_address'))
             elif close - open < 0 and close <= notice_coin.get('price'):
@@ -58,13 +66,15 @@ def watch_price():
                 add_list(NOTICE_COINS, data)
                 sleep(1)
                 continue
-            con_price = CoinPrice.query.filter_by(id=data.get('id')).first()
-            if not con_price:
-                session.delete(con_price)
-                con_price_history = CoinPriceHistory(id=con_price.id, coin=con_price.coin, price=con_price.coin,
+            con_price = session.query(CoinPrice).filter(CoinPrice.id == notice_coin.get('id')).first()
+            if con_price is not None:
+                logger.info(f"===============coin_price {con_price}")
+                con_price_history = CoinPriceHistory(coin=con_price.coin, price=con_price.coin,
                                                      user_phone=con_price.user_phone,
                                                      email_address=con_price.email_address)
-                session.delete(con_price_history)
+                session.delete(con_price)
+                session.commit()
+                session.add(con_price_history)
                 session.commit()
 
 
