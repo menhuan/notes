@@ -1,0 +1,21 @@
+version: "3"
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: somewordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: always
+    volumes:
+    - ./redis_data:/data
