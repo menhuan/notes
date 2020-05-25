@@ -11,6 +11,7 @@
     - [rows](#rows)
     - [ref](#ref)
     - [extra](#extra)
+  - [总结](#总结)
 
 ## 前言
 
@@ -180,4 +181,4 @@ extra 表示更多的sql查询信息，extra是Mysql查询计划中查询信息�
 
 明白SQL的查询计划，当再写SQL时，多多使用explain语句来看下SQL的查询计划是怎样的，心中对SQL的执行有大概的了解，方能得心运手。
 
-本文中用到的SQL语句上传到[github]()中需要的自取
+本文中用到的SQL语句上传到[github](https://github.com/menhuan/notes/tree/master/%E5%AD%A6%E4%B9%A0%E5%86%85%E5%AE%B9/notes/Mysql%E5%A4%A7%E9%9B%86%E5%90%88/sql%E8%AF%AD%E5%8F%A5%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC)中需要的自取
