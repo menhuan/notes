@@ -96,3 +96,14 @@ CMD [""]
 ```
 
 在docker启动时设置--entrypoint='' 也能达到相同的效果
+
+## 修改docker的存储文件地址
+
+修改sudo vim /etc/docker/daemon.json 添加如下内容
+
+```shell
+"graph":"/media/tx-deepocean/Data/docker"
+```
+
+service docker restart
+sudo service docker restart 
