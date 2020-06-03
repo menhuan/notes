@@ -21,14 +21,12 @@ docker image prune --force --all或者docker image prune -f -a` : 删除所有�
 docker rm $(docker ps -aq)
 
 # 删除 镜像tag为None的镜像
-docker rmi $(docker images | grep "none" | awk '{print $3}') 
+docker rmi $(docker images | grep "none" | awk '{print $3}')
 # 删除容器
 docker rm $(docker ps -a | grep "Exited" | awk '{print $1 }')    //删除容器  
 # 停止容器
- docker stop $(docker ps -a | grep "Exited" | awk '{print $1 }') 
+ docker stop $(docker ps -a | grep "Exited" | awk '{print $1 }')
 ```
-
-
 
 ## network
 
@@ -107,3 +105,8 @@ CMD [""]
 
 service docker restart
 sudo service docker restart 
+
+## 重新给镜像打tag
+
+docker tag imgeid 重新命名的镜像名称。
+docker tag 旧的镜像名称 新的镜像名称。
