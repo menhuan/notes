@@ -109,3 +109,4 @@ if student is not None :
 
 student =  session.query(Student).filter(Student.id == 4)
 print(student)
+
