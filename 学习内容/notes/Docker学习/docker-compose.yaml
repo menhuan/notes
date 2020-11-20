@@ -18,7 +18,7 @@ service:
        - "/home/ubuntu/Desktop/jpress/docker_compose/tomcat:/usr/local/tomcat/webapps/ROOT/attachment"
 
   mysql:
-  	images:mysql:5.7
+  	images: mysql:5.7
   	restart:always
   	ports:
   	- 3307:3306
@@ -30,3 +30,13 @@ service:
     volumes:
       -  /home/ubuntu/Desktop/jpress/docker_compose/mysql:/var/lib/mysql     
 
+  rabbitmq:
+    image: rabbitmq-with-healthcheck:3.7.9-management
+    restart: always
+    ports:
+    - 5673:5672
+    - 15673:15672
+    environment:
+    - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+    - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
+    logging: *id001

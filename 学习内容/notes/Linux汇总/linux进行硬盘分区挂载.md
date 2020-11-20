@@ -1,5 +1,9 @@
 linux 进行分区汇总。新电脑配置了一个固态256G的还有一个3T的硬盘。新公司要求自己进行安装。刚开始安装系统的时候没有注意到还有一块硬盘。导致在安装系统的时候没有进行把普通硬盘进行分区和挂载，那么没法了只能手动去操作把剩余的硬盘进行分区和挂载操作。
+
 ## 分区操作
+
+`lsblk 这个命令查的更加详细`
+
  我个人在操作linux分区的时候使用的是fdisk 命令 首先看下fdisk的命令学习下。使用fdisk --help 查看
  ![fdisk.png](https://upload-images.jianshu.io/upload_images/4237685-5b3db055a7763ad6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 命令不用记住很多，大家不会使用的时候使用 --help可以看到这些。看怎么使用就好。

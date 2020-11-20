@@ -20,12 +20,15 @@ sudo su 输入当前用户密码，切换到root用户
 docker image prune --force --all或者docker image prune -f -a` : 删除所有不使用的镜像
 docker rm $(docker ps -aq)
 
-# 删除 镜像tag为None的镜像
+# 删除 镜像tag为None的镜像 删除某个镜像 将none 改为对应的名字即可
 docker rmi $(docker images | grep "none" | awk '{print $3}')
 # 删除容器
 docker rm $(docker ps -a | grep "Exited" | awk '{print $1 }')    //删除容器  
 # 停止容器
  docker stop $(docker ps -a | grep "Exited" | awk '{print $1 }')
+# 删除状态为退出的容器
+docker ps -aq -f status=exited | xargs -r docker rm
+
 ```
 
 ## network
