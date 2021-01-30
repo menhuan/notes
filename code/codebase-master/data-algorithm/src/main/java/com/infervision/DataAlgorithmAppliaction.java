@@ -18,6 +18,7 @@ import java.util.LinkedList;
 public class DataAlgorithmAppliaction {
 
     public static void main(String[] args) {
+        
         LinkedList list = new LinkedList();
         LinkNode linkNode = new LinkNode();
         linkNode.SingleNodes();

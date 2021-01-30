@@ -1,6 +1,7 @@
 package com.infervision.algorithom;
 
 import com.alibaba.fastjson.JSON;
+import java.util.concurrent.ConcurrentMap;
 
 /**
  * @ClassName fruiqi
@@ -104,5 +105,9 @@ public class LinkNode {
             next = nextEnd;
         }
         System.out.println(JSON.toJSONString(head));
+    }
+
+    public void test(){
+        var hashmap =  new ConcurrentMap();
     }
 }
