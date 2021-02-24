@@ -10,20 +10,25 @@ import java.util.Map;
 // @lc code=start
 class Solution {
     public int[] corpFlightBookings(int[][] bookings, int n) {
-        int[] ans = new int[n];
-        Map<Integer,Integer> ansMap = new HashMap<Integer,Integer>();
-        for (int[] booking : bookings) {
-            if(1<=booking[i] && booking[j] <=n ){
-                
-                if ansMap.containsKey(key)
+        int[] diff = new int[n];
+        // 计算差分算法
+        diff[0] = 0;
+        for (int index = 0; index < bookings.length; index++) {
+            diff[bookings[index][0] - 1] += bookings[index][2];
+            if (bookings[index][1] < n) {
+                diff[bookings[index][1]] -= bookings[index][2];
             }
+
         }
-        for (int index = 1; index <= n; index++) {
-            int num = 0;
-           
-            ans[index - 1] = num;
+        System.out.println(diff[0]);
+
+        for (int index = 1; index < n; index++) {
+            System.out.println(diff[index]);
+
+            diff[index] = diff[index] + diff[index - 1];
         }
-        return ans;
+
+        return diff;
     }
 }
 // @lc code=end
