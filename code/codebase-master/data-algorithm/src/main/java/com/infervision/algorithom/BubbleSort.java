@@ -1,6 +1,7 @@
 package com.infervision.algorithom;
 
 import com.alibaba.druid.support.json.JSONUtils;
+import java.util.concurrent.locks.ReentrantLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -120,7 +121,7 @@ public class BubbleSort {
             nums[minJ] = value;
         }
 
-
     }
+
 
 }
