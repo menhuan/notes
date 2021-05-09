@@ -10,40 +10,38 @@ import java.util.List;
 // @lc code=start
 class Solution {
 
-    private List<String> list;
+    private List<String> ans;
 
     public List<String> generateParenthesis(int n) {
-        // 括号的生成 使用递归的方式 ，要不生成 左括号，要不生成右括号
-        list = new ArrayList<>();
-        generate(0, 0, n, "");
-        return list;
+        // 如果想生成一个括号需要什么呢？ 那么左括号与右括号必须是匹配的。
+        // 第二个数量是一样的，左括号笔试先于右括号生成
+        ans = new ArrayList<String>();
+        dfs(n, 0, 0, "");
+        return ans;
     }
 
+    // 因为这道题目 可以用递归来生成
     /**
-     * 生成需要的括号字符串 left，right 是从0开始的，所以我们在判断小于n，而不是等于n进行计算
      * 
-     * @param left  代表左括号的数量
-     * @param right 代表右括号的数量
-     * @param n     终止条件
-     * @param s     生成的字符串
+     * @param n     代表数量
+     * @param left
+     * @param right
+     * @param s
      */
-    public void generate(int left, int right, int n, String s) {
-        // 括号的生成
-        // 递归的终止条件
+    public void dfs(int n, int left, int right, String s) {
+        // 递归终止的条件
         if (left == n && right == n) {
-            list.add(s);
+            ans.add(s);
             return;
         }
-        // 本层处理
+        // 当前层的逻辑
         if (left < n) {
-            generate(left + 1, right, n, s + "(");
+            // 下一层的逻辑
+            dfs(n, left + 1, right, s + "(");
         }
-        // 左右进行匹配
         if (right < left) {
-            generate(left, right + 1, n, s + ")");
+            dfs(n, left, right + 1, s + ")");
         }
-
-        // 终止操作 或者其他操作。
 
     }
 
