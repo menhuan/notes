@@ -16,7 +16,7 @@ class Solution {
         Set<String> end_str = new HashSet();
         for(int index=0 ;index < s.length();){
             String content = s.substring(index, index+max_len+1);
-            if (end_str.contains(content)):
+            if (end_str.contains(content));
                 
             
             

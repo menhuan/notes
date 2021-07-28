@@ -13,7 +13,7 @@ public class 字符串压缩 {
                 num=1;
             }
         }
-        builder.delete()
+        builder.delete();
         if (builder.length()>s.length()){
             return s;
         }else{
