@@ -30,6 +30,7 @@
 package leetcode.editor.cn;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class RemoveDuplicateNodeLcci{
       public static void main(String[] args) {
@@ -45,7 +46,14 @@ public class RemoveDuplicateNodeLcci{
  * }
  */
 class Solution {
-    public ListNode removeDuplicateNodes(ListNode head) {
+        public class ListNode {
+            int val;
+            ListNode next;
+            ListNode(int x) {
+                this.val  = x;
+            }
+        }
+        public ListNode removeDuplicateNodes(ListNode head) {
         // 借助set来实现
         if(head == null){
             return null;
