@@ -32,48 +32,52 @@ package leetcode.editor.cn;
 import java.util.HashSet;
 import java.util.Set;
 
-public class RemoveDuplicateNodeLcci{
-      public static void main(String[] args) {
-           Solution solution = new RemoveDuplicateNodeLcci().new Solution();
-      }
-      //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) { val = x; }
- * }
- */
-class Solution {
+public class RemoveDuplicateNodeLcci {
+    public static void main(String[] args) {
+        Solution solution = new RemoveDuplicateNodeLcci().new Solution();
+        solution.removeDuplicateNodes(null);
+    }
+    //leetcode submit region begin(Prohibit modification and deletion)
+
+    /**
+     * Definition for singly-linked list.
+     * public class ListNode {
+     * int val;
+     * ListNode next;
+     * ListNode(int x) { val = x; }
+     * }
+     */
+    class Solution {
         public class ListNode {
             int val;
             ListNode next;
+
             ListNode(int x) {
-                this.val  = x;
+                this.val = x;
             }
         }
+
         public ListNode removeDuplicateNodes(ListNode head) {
-        // 借助set来实现
-        if(head == null){
-            return null;
-        }
-        Set<Integer> con = new HashSet<Integer>();
-        con.add(head.val);
-        ListNode cur = head;
-        while(cur.next !=null){
-            int val = cur.next.val;
-            if(con.add(val)){
-                cur = cur.next ;
-            }else{
-                // 没有修改当前的cur 而是修改的next 这样就不会出现cur 是空的判断
-                cur.next = cur.next.next ;
+            // 借助set来实现
+            if (head == null) {
+                return null;
             }
+            Set<Integer> con = new HashSet<Integer>();
+            con.add(head.val);
+            ListNode cur = head;
+            while (cur.next != null) {
+                int val = cur.next.val;
+                if (con.add(val)) {
+                    cur = cur.next;
+                } else {
+                    // 没有修改当前的cur 而是修改的next 这样就不会出现cur 是空的判断
+                    cur.next = cur.next.next;
+                }
+            }
+            cur.next = null;
+            return head;
         }
-        cur.next = null;
-        return head;
     }
-}
 //leetcode submit region end(Prohibit modification and deletion)
 
 }

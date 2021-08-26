@@ -1,0 +1,8 @@
+version: '3.3'
+services:
+    java8Study:
+        image: hub.infervision.com/dev/studyjava8:0.0.1
+        restart: always
+        build:
+            context: .
+            dockerfile: DockerFileJava
