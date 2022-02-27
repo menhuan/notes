@@ -6,4 +6,4 @@
 
 那这时候怎么判断两个值相等呢?就需要使用BigDecimal的comporeto方法了,比较之后==0 就是相等.大于(1)0代表大,小于(-1)0代表小.
 
-参考文档
+参考文档[博客文档](https://blog.csdn.net/jixinhuluwa/article/details/72626598)
