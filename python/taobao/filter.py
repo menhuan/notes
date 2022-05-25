@@ -1,5 +1,6 @@
 
 from copy import deepcopy
+import os
 from numpy import single
 import pandas
 
@@ -50,7 +51,7 @@ def filter_ci(excel_data,blacklist,blacklist_guanjianci,contains_cis):
 def run_hanfu():
     #csv_path ="/Users/ruiqi/data/code/notes/python/taobao/淘词参谋_20-10-06.xlsx
     #excel_data = pandas.read_csv(csv_path)
-    excel_csv_path ="/Users/ruiqi/data/code/notes/python/taobao/淘词参谋_21-07-33.xlsx"
+    excel_csv_path ="/Users/ruiqi/data/code/notes/python/taobao/淘词参谋_09-34-01.xlsx"
     excel_data = pandas.read_excel(excel_csv_path)
     exce_path = "/Users/ruiqi/data/code/notes/python/taobao/淘宝汉服存储.xlsx"
     blacklist = pandas.read_excel(exce_path,sheet_name=1)
@@ -58,9 +59,10 @@ def run_hanfu():
     contains_cis = pandas.read_excel(exce_path,sheet_name=3)
 
     filter_ci(excel_data,blacklist['过滤词'],blacklist_guanjianci['黑名单'],contains_cis['包含'])
+    os.remove(excel_csv_path)
 
 def run_xie():
-    excel_csv_path ="/Users/ruiqi/data/code/notes/python/taobao/淘词参谋_拖鞋.xlsx"
+    excel_csv_path ="/Users/ruiqi/data/code/notes/python/taobao/淘词参谋_09-46-34.xlsx"
     excel_data = pandas.read_excel(excel_csv_path)
     exce_path = "/Users/ruiqi/data/code/notes/python/taobao/拖鞋词保存.xlsx"
     blacklist = pandas.read_excel(exce_path,sheet_name=1)
@@ -71,5 +73,5 @@ def run_xie():
     
 
 if __name__ == '__main__':
-    run_hanfu()
+    run_xie()
    
