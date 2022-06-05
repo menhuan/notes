@@ -44,3 +44,4 @@ hs_err_pid*
 *_data/
 */docker-compose/
 *.dev*
+*.DS_Store
