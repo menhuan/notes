@@ -1,0 +1,38 @@
+#FROM docker.infervision.com/xqdocker/ubuntu-openjdk:8
+FROM python3.10
+WORKDIR /app
+
+RUN addgroup --gid 1000 docker && \
+    adduser --uid 1000 --ingroup docker --home /home/docker --shell /bin/sh --disabled-password --gecos "" docker 
+
+RUN sed -i s@/archive.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.list  && \
+    sed -i s@/security.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.list && \
+    sed -i s@/deb.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.list
+
+RUN apt-get update && apt-get install -y cron gcc procps libx11-6 libgl1-mesa-glx git \
+    vim \
+    curl \
+    sudo \
+    zsh \
+    && apt-get clean
+
+
+# 安装配置fixuid
+
+RUN USER=docker&& \
+    GROUP=docker && \
+    curl -SsL https://github.com/boxboat/fixuid/releases/download/v0.5/fixuid-0.5-linux-amd64.tar.gz | tar -C /usr/local/bin -xzf - && \
+    chown root:root /usr/local/bin/fixuid && \
+    chmod 4755 /usr/local/bin/fixuid && \
+    mkdir -p /etc/fixuid && \
+    printf "user: $USER\ngroup: $GROUP\n" > /etc/fixuid/config.yml
+
+ENV TZ=Asia/Shanghai
+
+USER docker:docker
+
+ENTRYPOINT ["fixuid"]
+CMD ["bash"]
+ENV HOME /home/docker
+USER docker:docker
+

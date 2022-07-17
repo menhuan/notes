@@ -1,0 +1,59 @@
+[
+    {
+        "originPayId": "yyw220716205453071_1qmall_103323",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 40.00,
+        "flightOrderNo": "yyw220716205453071",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_1qmall_105957",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 30.00,
+        "flightOrderNo": "yyw220716205453071",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_2qmall_103323",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 40.00,
+        "flightOrderNo": "yyw220716205453071",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_2qmall_105957",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 30.00,
+        "flightOrderNo": "yyw220716205453071",
+        "callbackType": 2
+    }
+],queryTtsPayCallBacks: [
+    {
+        "originPayId": "yyw220716205453071_1qmall_103323",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 40.00,
+        "flightOrderNo": "yyw220716205453071_1",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_1qmall_105957",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 30.00,
+        "flightOrderNo": "yyw220716205453071_1",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_2qmall_103323",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 40.00,
+        "flightOrderNo": "yyw220716205453071_2",
+        "callbackType": 2
+    },
+    {
+        "originPayId": "yyw220716205453071_2qmall_105957",
+        "combineOrderNo": "combine_4_0f5920f45e356671237c438b1ee94451",
+        "payAmount": 30.00,
+        "flightOrderNo": "yyw220716205453071_2",
+        "callbackType": 2
+    }
+]
