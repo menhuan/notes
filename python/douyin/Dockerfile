@@ -6,11 +6,8 @@ RUN sed -i s@/archive.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.l
     sed -i s@/security.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.list && \
     sed -i s@/deb.debian.org/@/mirrors.huaweicloud.com/@g /etc/apt/sources.list
 
-RUN apt-get update && apt-get install -y cron gcc procps libx11-6 libgl1-mesa-glx git \
-    vim \
+RUN apt-get update && apt-get install -y vim \
     curl \
-    sudo \
-    zsh \
     ffmpeg \
     imagemagick \
     && apt-get clean

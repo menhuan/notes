@@ -3,3 +3,8 @@
 *.mp3
 # JetBrains
 .idea
+.git
+.vscode
+.gitignore
+Makefile
+README.md
