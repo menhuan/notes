@@ -1,0 +1,5 @@
+*.mp4
+*.wav
+*.mp3
+# JetBrains
+.idea
