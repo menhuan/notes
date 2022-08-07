@@ -8,9 +8,11 @@ import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
-output_path = os.getenv(
-    'OUTPUT_PATH', "/workspaces/notes/python/douyin/booking/")
 
+output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
+    'OUTPUT_PATH', "zhihu/booking/"))
+
+booking_size = int(os.getenv("BOOKING_SIZE",1800))
 
 def getText(url):
 

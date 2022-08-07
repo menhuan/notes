@@ -1,10 +1,12 @@
 # 根据小说的音频生成视频
 # 运行程序 python3 add_music_to_video.py
 
+from logging import exception
 import os
 
 from random import sample
 from time import sleep
+import traceback
 from moviepy.editor import *
 from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
@@ -17,16 +19,19 @@ bg_video_name = 'bg_video.mp4'
 # 字体的色值
 # https://encycolorpedia.cn/ff6781
 text_color = "#000000"  # black ##F2B2C5
-root_path = os.getenv("ROOT_PATH", "/workspaces/notes/python/douyin/video/")
-font_name = root_path + os.getenv("FOOT_NAME", "fonts/miaohunti.ttf")
-output_path = root_path + os.getenv("OUTPUT", "output/")
+root_path = os.getenv("ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
+font_name = os.path.join(root_path,os.getenv("FOOT_NAME", "fonts/miaohunti.ttf"))
+output_path = os.path.join(root_path,os.getenv("OUTPUT", "output/"))
+relax_path =os.path.join(root_path,os.getenv("RELAX_PATH","cutting_videos"))
+backgroundmusic_path = os.path.join(root_path,os.getenv("BACKGROUNDMUSIC","backgroundmusic/"))
+musics_path = os.path.join(root_path,os.getenv("BACKGROUNDMUSIC","musics/"))
+
 # 合并视频，获取解压的背景视频
 
 
 def mergerVideo(videoDuration):
 
-    dst_path = root_path + "relaxVideo"
-    relaxVideo_files = os.listdir(dst_path)
+    relaxVideo_files = os.listdir(relax_path)
     relaxVideo_files_count = len(relaxVideo_files)
     print(relaxVideo_files_count)
 
@@ -55,7 +60,7 @@ def mergerVideo(videoDuration):
     video_clip_list = []
 
     for file in random_list:
-        video = VideoFileClip(root_path + "relaxVideo/" + file)
+        video = VideoFileClip(os.path.join(relax_path,file))
         # newvideo = video.volumex(0.2)#
         # video_clip_list.append(newvideo)
         video_clip_list.append(video)
@@ -67,13 +72,13 @@ def mergerVideo(videoDuration):
 
     # 添加背景音乐
     # video_audio_clip = final_clip.audio.volumex(0.1)
-    dst_path = root_path + "/backgroundmusic"
+    dst_path = backgroundmusic_path
     music_files = os.listdir(dst_path)
     musics_files_count = len(music_files)
     backgroundmusic_list = []
     for music_file in music_files:
         if (music_file.endswith('.mp3') or music_file.endswith('.wav')):
-            music_name = root_path+"backgroundmusic/" + music_file
+            music_name = backgroundmusic_path + music_file
             backgroundmusic_list.append(music_name)
 
     music = sample(backgroundmusic_list, 1)  # 随机抽取1个元素
@@ -236,42 +241,44 @@ def videoAddSrt(videoFile, srtFile, title):
 
 if __name__ == "__main__":
 
-
     # 获取音乐文件夹
-    dst_path = root_path + "/musics"
+    dst_path = musics_path
     music_files = os.listdir(dst_path)
     musics_files_count = len(music_files)
     sleep_time = os.getenv("SLEEP_TIME",10)
     while(True):
-        if(len(music_files) == 0 ):
-            print("本次没有音频文件,暂不合并")
-            sleep(sleep_time)
-        for music_file in music_files:
-            if (music_file.endswith('.mp3') or music_file.endswith('.wav')):
-                print(music_file)
-                music_name = root_path + "musics/" + music_file
-                srt_name = root_path + "musics/" + music_file.split('.')[0] + ".srt"
-                print(srt_name)
+        try:
+            if(len(music_files) == 0 ):
+                print("本次没有音频文件,暂不合并")
+                sleep(sleep_time)
+            for music_file in music_files:
+                if (music_file.endswith('.mp3') or music_file.endswith('.wav')):
+                    print(music_file)
+                    music_name = root_path + "musics/" + music_file
+                    srt_name = root_path + "musics/" + music_file.split('.')[0] + ".srt"
+                    print(srt_name)
 
-                if music_file.endswith('.mp3'):
-                    audioMp3 = MP3(music_name)
-                    audio_duration = audioMp3.info.length
-                else:
-                    audio = WAVE(music_name)
-                    audio_info = audio.info
-                    audio_duration = int(audio_info.length)
+                    if music_file.endswith('.mp3'):
+                        audioMp3 = MP3(music_name)
+                        audio_duration = audioMp3.info.length
+                    else:
+                        audio = WAVE(music_name)
+                        audio_info = audio.info
+                        audio_duration = int(audio_info.length)
 
-                mergerVideo(audio_duration)
+                    mergerVideo(audio_duration)
 
-                print(music_file.split('.')[0])
+                    print(music_file.split('.')[0])
 
-                title = music_file.split('.')[0]
+                    title = music_file.split('.')[0]
 
-                addMusicToVideo(music_name, srt_name, title)
-                os.remove(music_file)
-                os.remove(srt_name)
-            print("视频合成已完成",music_file)
-        print("本次视频合成完毕")
+                    addMusicToVideo(music_name, srt_name, title)
+                    os.remove(os.path.join(musics_path,music_file))
+                    os.remove(os.path.join(musics_path,srt_name))
+                print("视频合成已完成",music_file)
+            print("本次视频合成完毕")
+        except exception as e :
+            traceback.format_exception(e)
         sleep(sleep_time)
 
 # playsound.playsound('视频合成完成提示音.mp3')

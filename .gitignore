@@ -51,3 +51,7 @@ hs_err_pid*
 *.DS_Store
 /WatermarkRemover-master/venv/
 .DS_Store
+*.mp4
+*.mp3
+*.wav
+*.srt
