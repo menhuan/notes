@@ -45,3 +45,9 @@ hs_err_pid*
 */docker-compose/
 *.dev*
 *.DS_Store
+*.mp3
+*.mp4
+*.wav
+*.DS_Store
+/WatermarkRemover-master/venv/
+.DS_Store
