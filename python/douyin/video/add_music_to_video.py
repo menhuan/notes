@@ -285,8 +285,10 @@ def run_make_video():
 
 if __name__ == "__main__":
     # 开启一个线程去做
-    threading._start_new_thread(deal_with.run())
-    threading._start_new_thread(run_make_video())
+    t1 = threading.Thread(target=deal_with.run)
+    t2 = threading.Thread(target=run_make_video)
+    t1.start()
+    t2.start()
 
 
 
