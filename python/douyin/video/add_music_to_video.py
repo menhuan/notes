@@ -219,7 +219,7 @@ def videoAddSrt(videoFile, srtFile, title):
         start, end = map(float, (start, end))
         # sentences = "年会上我喝多了，玩游戏还输了,被迫要和同桌一个异性亲亲"
         span = end-start
-        if (len(sentences) > 12):
+        if (len(sentences) > 10):
             # method：可以设置为’label’或’caption’，设置为’label’时，
             # 图片将自动调整大小以适合剪辑的大小，这是该参数的缺省值。设置为’caption’时，
             # 文字将在size参数指定范围内显示，此时文字会自动换行
@@ -242,12 +242,13 @@ def videoAddSrt(videoFile, srtFile, title):
 if __name__ == "__main__":
 
     # 获取音乐文件夹
-    dst_path = musics_path
-    music_files = os.listdir(dst_path)
-    musics_files_count = len(music_files)
+  
     sleep_time = os.getenv("SLEEP_TIME",10)
     while(True):
         try:
+            dst_path = musics_path
+            music_files = os.listdir(dst_path)
+            musics_files_count = len(music_files)
             if(len(music_files) == 0 ):
                 print("本次没有音频文件,暂不合并")
                 sleep(sleep_time)
@@ -277,7 +278,7 @@ if __name__ == "__main__":
                     os.remove(os.path.join(musics_path,srt_name))
                 print("视频合成已完成",music_file)
             print("本次视频合成完毕")
-        except exception as e :
+        except Exception as e :
             traceback.format_exception(e)
         sleep(sleep_time)
 

@@ -1,16 +1,14 @@
 # 用来前处理视频文件
-
-
 import os
-from cv2 import merge
+import cv2
 from moviepy.editor import *
 import ffmpeg
 import subprocess
 
 
-root_path = os.getenv("ROOT_PATH" ,"/workspaces/notes/python/douyin/output/douyin/")
+root_path = os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output/douyin/")
 output_path = os.path.join(root_path,os.getenv("CUTTING_VIDEOS",'cutting_videos'))
-merge_path = os.path.join(root_path,os.getenv("MERGE_PATH",'merge'))
+merge_path = os.path.join(root_path,os.getenv("MERGE_PATH",'merge/'))
 merge_outpath =os.path.join(root_path,os.getenv("MERGE_OUT_PATH",'merge_out'))
 bash_sh = os.getenv("VIDEO_ADD_GBLUR","/workspaces/notes/python/douyin/video/video_add_gblur.sh")
 
@@ -88,6 +86,6 @@ def gaussian_video(video_dir_path):
     print("result:{}",result)
 
 if __name__ == "__main__":
-    # sub_video() 
+    sub_video() 
     gaussian_video(merge_path)
-    #cutting_video_by_minuts(merge_outpath)
+    cutting_video_by_minuts(merge_outpath)

@@ -57,13 +57,14 @@ def getText(url):
 
     name2 = output_path + textName2 + '.md'
     origin_content = deepcopy(content)
-    content = content.replace('\n','')
+#    content = content.replace('\n','')
     t = content.replace('「', '').replace('」', '').replace('！', '').replace('。', '，').replace(
-        '？', '，').replace('……', '，').replace('”', '').replace('“', '')
-    for index in range(1,20):
-       num = str(index) + "."
-       t =t.replace(num,"\n" +num + "\n") 
-    t =t.replace('0\n',"\n") 
+        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','')
+        
+    # for index in range(1,20):
+    #    num = str(index) + "."
+    #    t =t.replace(num,"\n" +num + "\n") 
+    # t =t.replace('0\n',"\n") 
     t = url + "\n" + t
        
     print("输出文件内容：\n", t)  # 输出文件内容
@@ -75,7 +76,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 
-url = 'https://www.zhihu.com/question/462705408/answer/2605285400'
+url = 'https://www.zhihu.com/question/329545868/answer/2607939697'
 
 content = getText(url)
 # import image2
