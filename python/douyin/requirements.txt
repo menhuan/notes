@@ -10,6 +10,7 @@ imageio==2.21.0
 imageio-ffmpeg==0.4.7
 lxml==4.9.1
 moviepy==1.0.3
+mutagen==1.45.1
 numpy==1.23.1
 opencv-python==4.6.0.66
 Pillow==9.2.0

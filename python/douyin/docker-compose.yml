@@ -5,9 +5,7 @@ services:
         restart: always
         build:
             context: .
-            dockerfile: Dockerfile
-            platform: linux/amd64
-            
+            dockerfile: Dockerfile            
             
         
         
