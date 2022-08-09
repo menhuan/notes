@@ -11,12 +11,13 @@ RUN apt-get update && apt-get install -y vim \
     ffmpeg \
     imagemagick \
     && apt-get clean
+RUN /usr/local/bin/python -m pip install --upgrade pip && /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+
 ADD ./video/  /app/video
 COPY requirements.txt /app/
 ADD ./output/douyin/fonts /app/output/douyin/fonts
 ADD ./output/douyin/backgroundmusic /app/output/douyin/backgroundmusic
 
-RUN /usr/local/bin/python -m pip install --upgrade pip && /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 
 ENV TZ=Asia/Shanghai
 
