@@ -242,6 +242,7 @@ def videoAddSrt(videoFile, srtFile, title):
     os.remove(videoFile)
 
 def run_make_video():
+    print("开始运行切割视频")
     sleep_time = os.getenv("SLEEP_TIME",10)
     while(True):
         try:
