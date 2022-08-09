@@ -12,8 +12,7 @@ from moviepy.editor import *
 from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
 from pip import main
-
-from video.deal_with import run
+import deal_with 
 
 out_image_name = 'out_image.png'
 out_video_name = 'black_video.mp4'
@@ -285,8 +284,8 @@ def run_make_video():
 
 if __name__ == "__main__":
     # 开启一个线程去做
-    threading.start_new_thread(run())
-    threading.start_new_thread(run_make_video())
+    threading._start_new_thread(deal_with.run())
+    threading._start_new_thread(run_make_video())
 
 
 
