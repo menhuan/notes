@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y vim \
     ffmpeg \
     imagemagick \
     && apt-get clean
-RUN /usr/local/bin/python -m pip install --upgrade pip && /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN /usr/local/bin/python -m pip install --upgrade pip
+RUN /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 RUN  sed -i s@<policy domain="path" rights="none" pattern="@*"/>@<!--<policy domain="path" rights="none" pattern="@*"/>-->@g /etc/ImageMagick-6/policy.xml
 ADD ./video/  /app/video
 COPY requirements.txt /app/
