@@ -20,6 +20,6 @@ RUN /usr/local/bin/python -m pip install --upgrade pip && /usr/local/bin/pip ins
 
 ENV TZ=Asia/Shanghai
 
-CMD ["python /workspaces/notes/python/douyin/video/add_music_to_video.py"]
+CMD ["python", "/app/video/add_music_to_video.py"]
 
 

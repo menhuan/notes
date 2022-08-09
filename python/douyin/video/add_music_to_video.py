@@ -5,12 +5,15 @@ from logging import exception
 import os
 
 from random import sample
+import threading
 from time import sleep
 import traceback
 from moviepy.editor import *
 from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
 from pip import main
+
+from video.deal_with import run
 
 out_image_name = 'out_image.png'
 out_video_name = 'black_video.mp4'
@@ -239,13 +242,11 @@ def videoAddSrt(videoFile, srtFile, title):
     video.write_videofile(output_path + title + ".mp4")
     os.remove(videoFile)
 
-if __name__ == "__main__":
-
-    # 获取音乐文件夹
-  
+def run_make_video():
     sleep_time = os.getenv("SLEEP_TIME",10)
     while(True):
         try:
+            # 获取音乐文件夹
             dst_path = musics_path
             music_files = os.listdir(dst_path)
             musics_files_count = len(music_files)
@@ -281,5 +282,14 @@ if __name__ == "__main__":
         except Exception as e :
             traceback.format_exception(e)
         sleep(sleep_time)
+
+if __name__ == "__main__":
+    # 开启一个线程去做
+    threading.start_new_thread(run())
+    threading.start_new_thread(run_make_video())
+
+
+
+   
 
 # playsound.playsound('视频合成完成提示音.mp3')

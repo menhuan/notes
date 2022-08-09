@@ -85,7 +85,10 @@ def gaussian_video(video_dir_path):
     result = subprocess.call(f"bash {bash_sh}",shell=True)
     print("result:{}",result)
 
-if __name__ == "__main__":
+def run():
     sub_video() 
     gaussian_video(merge_path)
     cutting_video_by_minuts(merge_outpath)
+
+if __name__ == "__main__":
+    pass
