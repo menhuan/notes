@@ -27,7 +27,7 @@ def sub_video():
         x1, y1 = 0, 0
         x2, y2 = 1980, 935
         video_out_clip = video_clip.fx(vfx.crop, x1, y1, x2, y2)
-        video_name = merge_path + video.split('/')[-1][:-4] + ".mp4"
+        video_name = os.path.join(merge_path,video.split('/')[-1][:-4] + ".mp4")
         without_video_out_clip = video_out_clip.without_audio()
         speedx_video = without_video_out_clip.speedx(1.4)
         speedx_video.write_videofile(video_name)
