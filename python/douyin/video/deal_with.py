@@ -67,8 +67,8 @@ def cutting_video_by_minuts(video_dir_path):
                 cutting_video = clip.subclip(int(start_time), clip.duration)
             else:
                 cutting_video = clip.subclip(start_time, local_end_time)
-            target_path = output_path + \
-                item.split('/')[-1][:-4] + "_" + str(index) + ".mp4"
+            target_path = os.path.join(output_path ,
+                item.split('/')[-1][:-4] + "_" + str(index) + ".mp4")
             cutting_video.to_videofile(target_path)
             start_time = local_end_time
             print("切割完成一部分", item, index)

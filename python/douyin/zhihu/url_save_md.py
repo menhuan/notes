@@ -59,7 +59,8 @@ def getText(url):
     origin_content = deepcopy(content)
 #    content = content.replace('\n','')
     t = content.replace('「', '').replace('」', '').replace('！', '').replace('。', '，').replace(
-        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','')
+        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').repalce(
+            ']','').replace('[','').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -76,7 +77,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 
-url = 'https://www.zhihu.com/question/329545868/answer/2607939697'
+url = 'https://www.zhihu.com/question/296856984/answer/2536761477'
 
 content = getText(url)
 # import image2
