@@ -77,7 +77,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 
-url = 'https://www.zhihu.com/question/296856984/answer/2536761477'
+url = 'https://www.zhihu.com/question/296856984/answer/2543318701'
 
 content = getText(url)
 # import image2
