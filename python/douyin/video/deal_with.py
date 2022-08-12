@@ -1,5 +1,6 @@
 # 用来前处理视频文件
 import os
+from time import sleep
 import cv2
 from moviepy.editor import *
 import ffmpeg
@@ -75,6 +76,7 @@ def cutting_video_by_minuts(video_dir_path):
 
 
 def gaussian_video(video_dir_path):
+    files = []
     for dirpath, dirnames, filenames in os.walk(video_dir_path):
         for name in filenames:
             fname = os.path.join(dirpath, name)
@@ -82,13 +84,20 @@ def gaussian_video(video_dir_path):
                 name_to_target =name.replace('|','').replace(' ','')
                 fname_target = os.path.join(dirpath,name_to_target)
                 os.rename(fname,fname_target)
-    result = subprocess.call(f"bash {bash_sh}",shell=True)
-    print("result:{}",result)
+                files.append(fname_target)
+    if(len(files) > 0):
+        result = subprocess.call(f"bash {bash_sh}",shell=True)
+        print("result:{}",result)
+    else:
+        print("本次没有找到对应的文件,暂不处理")
+   
 
 def run():
-    sub_video() 
-    gaussian_video(merge_path)
-    cutting_video_by_minuts(merge_outpath)
+    while(True):
+        sub_video() 
+        gaussian_video(merge_path)
+        cutting_video_by_minuts(merge_outpath)
+        sleep(10)
 
 if __name__ == "__main__":
     pass
