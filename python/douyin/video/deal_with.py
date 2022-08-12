@@ -32,6 +32,7 @@ def sub_video():
         without_video_out_clip = video_out_clip.without_audio()
         speedx_video = without_video_out_clip.speedx(1.4)
         speedx_video.write_videofile(video_name)
+        os.remove(video)
         print("完成视频裁剪", video)
     # video = "/workspaces/notes/python/douyin/video/pending/test_0.mp4"
     # video_clip = VideoFileClip(video)
@@ -73,6 +74,7 @@ def cutting_video_by_minuts(video_dir_path):
             cutting_video.to_videofile(target_path)
             start_time = local_end_time
             print("切割完成一部分", item, index)
+        os.remove(item)
 
 
 def gaussian_video(video_dir_path):
