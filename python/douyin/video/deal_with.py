@@ -99,6 +99,7 @@ def run():
         sub_video() 
         gaussian_video(merge_path)
         cutting_video_by_minuts(merge_outpath)
+        print("本次处理完毕,等待下次处理")
         sleep(10)
 
 if __name__ == "__main__":

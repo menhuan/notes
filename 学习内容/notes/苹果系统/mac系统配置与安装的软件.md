@@ -15,9 +15,9 @@
 
 brew install python3
 
-设置当前的环境为Python3,进入到`/usr/local/Cellar/python/3.7.6.1/bin目录下找到python3`
+设置当前的环境为Python3,进入到 `/usr/local/Cellar/python/3.7.6.1/bin目录下找到python3`
 
-在zshrc文件中增加变量设置`alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"`
+在zshrc文件中增加变量设置 `alias python="/usr/local/Cellar/python/3.7.6_1/bin/python3"`
 使用source ~/.zshrc文件生效即可
 
 该方式使用pip3下载内容
@@ -28,8 +28,7 @@ brew search python `搜索python的版本`
 brew install python@3.8 进行安装
 brew upgrade pytyhon@3.8 升级
 
-将配置写入到sh文件中。zsh对应的是~/.zshrc bash对应的是.bash_profile`可以看具体的安装介绍，里面有操作步骤`
-
+将配置写入到sh文件中。zsh对应的是~/.zshrc bash对应的是.bash_profile `可以看具体的安装介绍，里面有操作步骤`
 
 #### 设置pipenv
 
@@ -102,7 +101,6 @@ brew install graphviz
 ## 软件工具
 
 常用的Mac软件工具
-
 
 ## 包管理工具 brew
 
@@ -215,19 +213,17 @@ Alfred:不用多说，用过的都知道，[Alfred操作教程](https://github.c
 
 1. mac上没有Dircolor，我们需要在mac系统上装上coreutil这个配色包，安装方式如下
 
-    ```mac
-    wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors
-    ```
-
+   ```mac
+   wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O $HOME/.dircolors
+   ```
 2. 在我们的shell里面配置，bash 配置.bashrc文件,zsh 配置.zshrc文件。
 
-    ```mac
-    eval $(gdircolors -b $HOME/.dircolors)
-    if [ -n "$LS_COLORS" ]; then
-        zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-    fi
-    ```
-
+   ```mac
+   eval $(gdircolors -b $HOME/.dircolors)
+   if [ -n "$LS_COLORS" ]; then
+       zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+   fi
+   ```
 3. 重新启动terminal，再次查看文件的路径颜色就会发现已经被改变了。
 
 为了方便的北京颜色，item2上增加了很多种配色方案，但是需要自己去下载并修改。[github地址](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master)。
@@ -264,3 +260,14 @@ brew cask install docker
 ### 配置22端口
 
 系统偏好设置->共享->远程登录
+
+### sshpass
+
+
+```shell
+
+brew install hudochenkov/sshpass/sshpass
+
+sshpass -p密码 执行对应的命令
+在iterm2上配置sshpass 
+```

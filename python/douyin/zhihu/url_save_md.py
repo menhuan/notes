@@ -59,8 +59,8 @@ def getText(url):
     origin_content = deepcopy(content)
 #    content = content.replace('\n','')
     t = content.replace('「', '').replace('」', '').replace('！', '').replace('。', '，').replace(
-        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').repalce(
-            ']','').replace('[','').strip()
+        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
+            ']','').replace('[','').replace(':',',').replace('?',',').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
