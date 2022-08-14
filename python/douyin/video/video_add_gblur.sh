@@ -4,8 +4,8 @@
 ###ffmpeg实例，使用高斯模糊为视频生成一个模糊背景（gblur）
 ##参考代码https://blog.csdn.net/qq_20288327/article/details/114652060?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-2-114652060-null-null.pc_agg_new_rank&utm_term=moviepy%20%E9%AB%98%E6%96%AF%E6%A8%A1%E7%B3%8A&spm=1000.2123.3001.4430
 
-dir="/workspaces/notes/python/douyin/output/douyin/merge"
-output="/workspaces/notes/python/douyin/output/douyin/merge_out/"
+dir="${ROOT_PATH}merge"
+output="${ROOT_PATH}/merge_out/"
 filelist=`ls ${dir}`
 for file in $filelist
 do 
