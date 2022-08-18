@@ -1,155 +1,161 @@
-
-# 运行程序 python3 upload_ksVideo.py
-#!/usr/bin/python3
-
 import os
 import time
 import json
-import datetime
-import playsound
-from moviepy.editor import *
-from selenium import webdriver 
+import traceback
+from selenium.webdriver.common.keys import Keys
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
-index_next_day = 1;## 当天是0，第二天是1，以此往后类推
-
-project_root = os.path.abspath(os.path.dirname(__file__))
-
-driver_bin= os.path.join(project_root, 'chromedriver')
-
-browser = webdriver.Chrome(executable_path = driver_bin)
-browser.get('https://passport.kuaishou.com/pc/account/login/?sid=kuaishou.web.cp.api&callback=https%3A%2F%2Fcp.kuaishou.com%2Frest%2Finfra%2Fsts%3FfollowUrl%3Dhttps%253A%252F%252Fcp.kuaishou.com%252Farticle%252Fpublish%252Fvideo%26setRootDomain%3Dtrue')
-
-browser.find_element("xpath",'//*[@placeholder="请输入手机号"]').send_keys("手机")
-browser.find_element("xpath",'//*[@placeholder="请输入密码"]').send_keys("密码")
-browser.find_element("xpath",'//button[text()="登录"]').click()	
-
-time.sleep(5)
-
-def uploadVideo(describe,path_mp4,sendTime):
-	time.sleep(3)
-	browser.find_element("xpath",'//span[text()=" 发布视频 "]').click()	
-	time.sleep(1)
-	# ### 上传视频
-	vidoe = browser.find_element("xpath",'//input[@type="file"]')
-	vidoe.send_keys(path_mp4)
-	# ###等待视频上传完成
-	video_clip = VideoFileClip(path_mp4)
-	vidoe_duration = video_clip.duration
-	print(vidoe_duration)
-	print("视频还在上传中···")
-	# sleep_number = 7
-	if(vidoe_duration < 60):
-		sleep_number = 20
-	elif (vidoe_duration < 120):
-		sleep_number = 40
-	elif (vidoe_duration < 180):
-		sleep_number = 60
-	elif (vidoe_duration < 240):
-		sleep_number = 80
-	else:
-		sleep_number = 100
-
-	time.sleep(sleep_number)
-
-	print("视频上传完成!!!")
-
-	### 填写描述
-	browser.find_element("xpath",'//*[@placeholder="添加合适的话题和描述，作品能获得更多推荐～"]').send_keys(describe)
-
-	time.sleep(2)
-	### 定时发布
-	browser.find_element("xpath",'//span[text()="定时发布"]').click()
-	browser.find_element("xpath","//input[@placeholder='选择日期时间']").click()
+from liulanqi import COOKING_PATH, get_driver, get_map4, get_publish_date
 
 
-	tempStr = sendTime.split(' ')
-	day = tempStr[0].split('-')[2]
-	hour = tempStr[1].split(':')[0]
-	###选择日
-	day_elm = browser.find_element("xpath","//table[@class='ant-picker-content']")
-	days = day_elm.find_elements("tag name","td")
+KUAISHOU_COOKING = os.path.join(COOKING_PATH, "kuaishou.json")
 
-	### for 循环遍历 ，选择25号这一天
-	for cell in days:
-		if(cell.text == day):
-			cell.click()
-			break;
-	###选择小时
-	hour_elm = browser.find_element("xpath","//ul[@class='ant-picker-time-panel-column']")
-	hours = hour_elm.find_elements("tag name","li")
-	int_hour = int(hour)
-	if int_hour <= 7:
-		cell = hours[int_hour]
-		cell.click()
-	elif int_hour <= 14:
-		hours[7].click()
-		hours = hour_elm.find_elements("tag name","li")
-		cell = hours[int_hour]
-		cell.click()
-	elif int_hour <= 21:
-		hours[7].click()
-		hours = hour_elm.find_elements("tag name","li")
-		hours[13].click()
-		hours = hour_elm.find_elements("tag name","li")
-		cell = hours[int_hour]
-		cell.click()
-	else:
-		hours[7].click()
-		hours = hour_elm.find_elements("tag name","li")
-		hours[13].click()
-		hours = hour_elm.find_elements("tag name","li")
-		hours[20].click()
-		hours = hour_elm.find_elements("tag name","li")
-		cell = hours[int_hour]
-		cell.click()
-		print(cell.text)
 
-	browser.find_element("xpath",'//span[text()="确定"]').click()	
-	time.sleep(1)
-	####发布
-	browser.find_element("xpath",'//span[text()="发布"]').click()	
-	time.sleep(1)
-	browser.find_element("xpath",'//span[text()="确认发布"]').click()	
-	time.sleep(1)
-	print("视频发布完成！")
+def kuaishou_login(driver):
+    if (os.path.exists(KUAISHOU_COOKING)):
+        print("cookies存在")
+        with open(KUAISHOU_COOKING) as f:
+            cookies = json.loads(f.read())
+            driver.get('https://cp.kuaishou.com/article/publish/video')
+            driver.implicitly_wait(10)
+            driver.delete_all_cookies()
+            time.sleep(8)
+            # 遍历cook
+            print("加载cookie")
+            for cookie in cookies:
+                if 'expiry' in cookie:
+                    del cookie["expiry"]
+                # 添加cook
+                driver.add_cookie(cookie)
+            time.sleep(5)
+            # 刷新
+            print("开始刷新")
+            driver.refresh()
 
-# describe = "我爱你"
+            driver.refresh()
+            driver.get('https://cp.kuaishou.com/article/publish/video')
+            time.sleep(10)
+    else:
+        print("cookies不存在")
+        driver.get('https://passport.kuaishou.com/pc/account/login/?sid=kuaishou.web.cp.api&callback=https%3A%2F%2Fcp.kuaishou.com%2Frest%2Finfra%2Fsts%3FfollowUrl%3Dhttps%253A%252F%252Fcp.kuaishou.com%252Farticle%252Fpublish%252Fvideo%26setRootDomain%3Dtrue')
+        driver.find_element(
+            "xpath", '//*[@placeholder="请输入手机号"]').send_keys("15612856610")
+        # driver.find_element(
+        #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")
+        driver.find_element("xpath", '//button[text()="登录"]').click()
+        time.sleep(10)
+        cookies = driver.get_cookies()
+        with open(KUAISHOU_COOKING, 'w') as f:
+            f.write(json.dumps(cookies))
+        print(cookies)
+        time.sleep(1)
 
-# path_mp4 = "/Users/huoqiuliang/Documents/LearnPython/短视频相关/自动化上传视频/视频列表/01.mp4"
 
-# send_time = '2022-07-24 22'
+def publish_kuaishou(driver, mp4, index):
+    time.sleep(3)
+    driver.find_element("xpath", '//*[@id="app"]/div[1]/div[1]/div/section/ul/div/span/span').click()
+    print("开始上传文件")
+    time.sleep(3)
+    # ### 上传视频
+    vidoe = driver.find_element("xpath", '//input[@type="file"]')
+    vidoe.send_keys(mp4[0])
+    
+    # 填写描述
+    content = mp4[1].replace('.mp4','')
+    driver.find_element(
+        "xpath", '//*[@placeholder="添加合适的话题和描述，作品能获得更多推荐～"]').send_keys(content + " #虐心小说 #虐文 #小说推荐 ")
 
-# uploadVideo(describe,path_mp4,send_time)
+    time.sleep(1)
+    # 定时发布
+    driver.find_element("xpath", '//span[text()="定时发布"]').click()
+    time.sleep(3)
+    input_data=driver.find_element("xpath", "//input[@placeholder='选择日期时间']")
+    input_data.send_keys(Keys.CONTROL,'a')     #全选
+    input_data.send_keys(get_publish_date(mp4[1],index)) 
+    time.sleep(2)
+    tempStr = get_publish_date(mp4[1],index).split(' ')
+    day = tempStr[0].split('-')[2]
+    hour = tempStr[1].split(':')[0]
+    time.sleep(1)
+     # 选择日
+    day_elm = driver.find_element(
+          "xpath", "//table[@class='ant-picker-content']")
+    days = day_elm.find_elements("tag name", "td")
 
-####获取视频列表文件夹
-dst_path = os.getcwd() + "/视频列表"
-f_list = os.listdir(dst_path)
-f_list_count = len(f_list);
+    # ### for 循环遍历 ，选择25号这一天
+    for cell in days:
+        # 可能会有上个月的和下个月的日期，不能点击，所以需要过滤一下
+        val = cell.get_attribute("class")
+        cell_day = ''
+        if len(cell.text) == 1:
+            cell_day = '0' + cell.text
+        else:
+            cell_day = cell.text
 
-video_list = []          ## 空列表
-for index,val in enumerate(f_list):
-        # os.path.splitext():分离文件名与扩展名
-        if ((os.path.splitext(val)[1] == '.MP4' or os.path.splitext(val)[1] == '.mp4')):
-                video_path = dst_path + '/' + val
-                video_list.append(video_path);
+        if ((cell_day == day) & (val == 'ant-picker-cell ant-picker-cell-in-view')):
+            print("clickclick_day:",day)
+            cell.click()
+            break
+        time.sleep(1)
+        hour_elm = driver.find_element("xpath","//ul[@class='ant-picker-time-panel-column']")
+        hours = hour_elm.find_elements("tag name","li")
+        int_hour = int(hour)
+        if int_hour <= 8:
+            cell = hours[int_hour]
+            cell.click()
+        elif int_hour <= 12:
+            hours[8].click()
+            hours = hour_elm.find_elements("tag name","li")
+            cell = hours[int_hour]
+            cell.click()
+        elif int_hour <= 18:
+            hours[8].click()
+            hours = hour_elm.find_elements("tag name","li")
+            hours[12].click()
+            hours = hour_elm.find_elements("tag name","li")
+            cell = hours[int_hour]
+            cell.click()
+        else:
+            hours[8].click()
+            hours = hour_elm.find_elements("tag name","li")
+            hours[12].click()
+            hours = hour_elm.find_elements("tag name","li")
+            hours[18].click()
+            hours = hour_elm.find_elements("tag name","li")
+            cell = hours[int_hour]
+            cell.click()
+            print("小时",cell.text)
+    #等待视频上传完成
+    while True:
+        time.sleep(3)
+        try:
+            driver.find_element("xpath",'//*[text()="上传成功"]')
+            break;
+        except Exception as e:
+            traceback.print_exc()
+            print("视频还在上传中···")
+    
+    print("视频已上传完成！")
+    time.sleep(3)
+    
+    driver.find_element("xpath", '//*[text()="确定"]').click()
+    time.sleep(1)
+    # 发布
+    driver.find_element("xpath", '//*[text()="发布"]').click()
+    time.sleep(1)
+    driver.find_element("xpath", '//*[text()="确认发布"]').click()
+    time.sleep(1)
+    print("视频发布完成！")
 
-video_list.sort()
-
-hours= ['07', '11','17']
-now_time=datetime.datetime.now()
-send_day_time = (now_time+datetime.timedelta(days=+index_next_day)).strftime("%Y-%m-%d")
-for index,path_mp4 in enumerate(video_list):
-	# describe = "小说推荐讲故事" 
-	describe = "#小说 #讲故事 " 
-	time_date = send_day_time + ' ' + hours[index]
-	print(describe)
-	print(path_mp4)
-	print(time)
-	uploadVideo(describe,path_mp4,time_date)
-
-print("视频全部发布完成！")
-
-playsound.playsound('发布完成的提示音/ks.mp3')
-
+if __name__ == "__main__":
+    try:
+        driver = get_driver()
+        kuaishou_login(driver=driver)
+        mp4s = get_map4()
+        for index, mp4 in enumerate(mp4s):
+            publish_kuaishou(driver, mp4, index)
+            time.sleep(10)
+    finally:
+        driver.quit()

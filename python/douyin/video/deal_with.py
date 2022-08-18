@@ -11,7 +11,7 @@ root_path = os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output/douyin
 output_path = os.path.join(root_path,os.getenv("CUTTING_VIDEOS",'cutting_videos'))
 merge_path = os.path.join(root_path,os.getenv("MERGE_PATH",'merge/'))
 merge_outpath =os.path.join(root_path,os.getenv("MERGE_OUT_PATH",'merge_out'))
-bash_sh = os.getenv("VIDEO_ADD_GBLUR","/workspaces/notes/python/douyin/video/video_add_gblur.sh")
+bash_sh =   os.getenv("VIDEO_ADD_GBLUR","/workspaces/notes/python/douyin/video/video_add_gblur.sh")
 
 def sub_video():
     dst_path = root_path + "pending/"

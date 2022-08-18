@@ -1,18 +1,24 @@
-  version: "3"
-  services:
-    chrome:
-      image: selenium/node-chrome:4.3.0-20220706
-      shm_size: 2gb
-      depends_on:
-        - selenium-hub
-      environment:
-        - SE_EVENT_BUS_HOST=selenium-hub
-        - SE_EVENT_BUS_PUBLISH_PORT=4442
-        - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-    selenium-hub:
-      image: selenium/hub:4.3.0-20220706
-      container_name: selenium-hub
-      ports:
-        - "4442:4442"
-        - "4443:4443"
-        - "4444:4444"
+version: "3"
+services:
+  chrome:
+    image: selenium/node-chrome:4.3.0-20220706
+    shm_size: 2gb
+    ports:
+    - "5900:5900"
+    depends_on:
+      - selenium-hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium-hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+      - SE_VNC_NO_PASSWORD=1
+  selenium-hub:
+    image: selenium/hub:4.3.0-20220706
+    container_name: selenium-hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "50000:4444"
+      - "5555:5555"
+    environment:
+      - SE_VNC_NO_PASSWORD=1

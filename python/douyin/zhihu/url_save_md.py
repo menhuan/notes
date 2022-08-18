@@ -60,7 +60,8 @@ def getText(url):
 #    content = content.replace('\n','')
     t = content.replace('「', '').replace('」', '').replace('！', '').replace('。', '，').replace(
         '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
-            ']','').replace('[','').replace(':',',').replace('?',',').strip()
+            ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
+                "，，","，").replace("，\n，",'，').replace('.','').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -77,7 +78,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 
-url = 'https://www.zhihu.com/question/296856984/answer/2543318701'
+url = 'https://www.zhihu.com/question/329545868/answer/2527233529'
 
 content = getText(url)
 # import image2

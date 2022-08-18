@@ -226,9 +226,9 @@ def videoAddSrt(videoFile, srtFile, title):
             # 图片将自动调整大小以适合剪辑的大小，这是该参数的缺省值。设置为’caption’时，
             # 文字将在size参数指定范围内显示，此时文字会自动换行
             txt = TextClip(sentences, fontsize=80, font=font_name, size=(w - 50, 200), align='center',
-                           color=text_color, method='caption', stroke_color="white", stroke_width=20).set_position((10, h - 980)) .set_duration(span).set_start(start)
+                           color=text_color, method='caption', stroke_color="white", stroke_width=20).set_position((30, h - 980)) .set_duration(span).set_start(start)
             txt2 = TextClip(sentences, fontsize=80, font=font_name, size=(w - 50, 200), align='center',
-                            color=text_color, method='caption').set_position((10, h - 980)).set_duration(span).set_start(start)
+                            color=text_color, method='caption').set_position((30, h - 980)).set_duration(span).set_start(start)
         else:
             txt = TextClip(sentences, fontsize=80, font=font_name, size=(w - 50, 100), align='center',
                            color=text_color, stroke_color="white", stroke_width=20).set_position((10, h - 960)).set_duration(span).set_start(start)
