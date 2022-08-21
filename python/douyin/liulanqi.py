@@ -145,7 +145,7 @@ def get_cookie(driver):
 
 def get_publish_date(title,index):
     # 代表的是 加一天时间
-    time_long = int(index / 3 *24) + 24
+    time_long = int(index / 3 *24) 
     now = datetime.datetime.today()
     tomorrowemp = now + datetime.timedelta(hours = time_long)  
     print("title:",title)
@@ -155,7 +155,7 @@ def get_publish_date(title,index):
     elif title.find("(2)")>0 or title.find("(5)")>0 :
         tomorrow = tomorrowemp.replace(hour=4,minute=0,second=0) 
     elif title.find("(3)") >0 or title.find("(6)")>0:
-        tomorrow = tomorrowemp.replace(hour=10,minute=0,second=0)
+        tomorrow = tomorrowemp.replace(hour=23,minute=45,second=0)
     print("输出的时间是:",tomorrow.strftime("%Y-%m-%d %H:%M"))
     return tomorrow.strftime("%Y-%m-%d %H:%M")
 

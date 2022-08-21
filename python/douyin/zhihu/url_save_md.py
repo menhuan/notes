@@ -13,14 +13,13 @@ output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin
     'OUTPUT_PATH', "zhihu/booking/"))
 
 booking_size = int(os.getenv("BOOKING_SIZE",1800))
+agent = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36'
+
+headers = {
+    'User-Agent': agent
+}
 
 def getText(url):
-
-    agent = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36'
-
-    headers = {
-        'User-Agent': agent
-    }
 
     html = requests.get(url, headers=headers).text
 
@@ -43,8 +42,11 @@ def getText(url):
         urlTiele = title.get_text()
 
         print(title.get_text())
+    # 获取问答
+    #text = soup.find(attrs={"itemprop": "text"})
+    # 获取专栏
+    text = soup.find(id="manuscript")
 
-    text = soup.find(attrs={"itemprop": "text"})
     texts = []
     p_text = text.find_all('p')
     for p in p_text:
@@ -70,6 +72,9 @@ def getText(url):
     t = url + "\n" + t
        
     print("输出文件内容：\n", t)  # 输出文件内容
+    t = t.replace('拐卖','柺卖').replace('死','私').replace('下身','下渗').replace('我靠','').replace(
+        '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码')
+
     with open(name2, "w") as f2:
         f2.write(t)
     return origin_content
@@ -77,9 +82,16 @@ def getText(url):
 
     # shutil.move(name2,move_folder_name2)
 
+def run_zhuanlan():
+    url = 'https://www.zhihu.com/market/paid_column/1467897508667637760/section/1543967778582769665'
+    content = getText(url)
+    # import image2
+    # image2.show_image(content)
 
-url = 'https://www.zhihu.com/question/329545868/answer/2527233529'
+if __name__ == "__main__":
+    run_zhuanlan()
+    pass
 
-content = getText(url)
-# import image2
-# image2.show_image(content)
+
+
+

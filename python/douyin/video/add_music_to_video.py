@@ -11,7 +11,6 @@ import traceback
 from moviepy.editor import *
 from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
-from pip import main
 import deal_with 
 
 out_image_name = 'out_image.png'
@@ -100,7 +99,7 @@ def mergerVideo(videoDuration):
     # final_video.write_videofile(result_video_name)
     video_name = bg_video_name
     final_video.write_videofile(video_name, audio=True)
-
+    os.remove(video_clip_list[0])
 # 把小说配音添加到视频里面
 
 

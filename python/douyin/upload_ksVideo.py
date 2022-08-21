@@ -73,60 +73,30 @@ def publish_kuaishou(driver, mp4, index):
     time.sleep(3)
     input_data=driver.find_element("xpath", "//input[@placeholder='选择日期时间']")
     input_data.send_keys(Keys.CONTROL,'a')     #全选
-    input_data.send_keys(get_publish_date(mp4[1],index)) 
+    tempStrs = get_publish_date(mp4[1],index)
+    print("输出的时间是",tempStrs)
+    input_data.send_keys(tempStrs) 
     time.sleep(2)
-    tempStr = get_publish_date(mp4[1],index).split(' ')
-    day = tempStr[0].split('-')[2]
+    tempStr = tempStrs.split(' ')
+    # day = tempStr[0].split('')[2]
     hour = tempStr[1].split(':')[0]
+
     time.sleep(1)
-     # 选择日
-    day_elm = driver.find_element(
-          "xpath", "//table[@class='ant-picker-content']")
-    days = day_elm.find_elements("tag name", "td")
 
-    # ### for 循环遍历 ，选择25号这一天
-    for cell in days:
-        # 可能会有上个月的和下个月的日期，不能点击，所以需要过滤一下
-        val = cell.get_attribute("class")
-        cell_day = ''
-        if len(cell.text) == 1:
-            cell_day = '0' + cell.text
-        else:
-            cell_day = cell.text
-
-        if ((cell_day == day) & (val == 'ant-picker-cell ant-picker-cell-in-view')):
-            print("clickclick_day:",day)
-            cell.click()
-            break
-        time.sleep(1)
-        hour_elm = driver.find_element("xpath","//ul[@class='ant-picker-time-panel-column']")
-        hours = hour_elm.find_elements("tag name","li")
-        int_hour = int(hour)
-        if int_hour <= 8:
-            cell = hours[int_hour]
-            cell.click()
-        elif int_hour <= 12:
-            hours[8].click()
-            hours = hour_elm.find_elements("tag name","li")
-            cell = hours[int_hour]
-            cell.click()
-        elif int_hour <= 18:
-            hours[8].click()
-            hours = hour_elm.find_elements("tag name","li")
-            hours[12].click()
-            hours = hour_elm.find_elements("tag name","li")
-            cell = hours[int_hour]
-            cell.click()
-        else:
-            hours[8].click()
-            hours = hour_elm.find_elements("tag name","li")
-            hours[12].click()
-            hours = hour_elm.find_elements("tag name","li")
-            hours[18].click()
-            hours = hour_elm.find_elements("tag name","li")
-            cell = hours[int_hour]
-            cell.click()
-            print("小时",cell.text)
+    driver.find_element(
+        "xpath", f"//*[@title='{tempStr[0]}']").click()
+    time.sleep(5)    
+    print(f"点击小时{hour}")
+    hour_elm = driver.find_element("xpath","//ul[@class='ant-picker-time-panel-column']")
+    hours = hour_elm.find_elements("tag name","li")
+    ActionChains(driver).move_to_element(hours[int(hour)]).perform()
+    time.sleep(3)
+    print("点击小时按钮")
+    hours[int(hour)].click()
+    print("选择好点击确定按钮")
+    time.sleep(10)
+    driver.find_element("xpath", '//*[text()="确定"]').click()
+    time.sleep(3)
     #等待视频上传完成
     while True:
         time.sleep(3)
@@ -139,9 +109,7 @@ def publish_kuaishou(driver, mp4, index):
     
     print("视频已上传完成！")
     time.sleep(3)
-    
-    driver.find_element("xpath", '//*[text()="确定"]').click()
-    time.sleep(1)
+
     # 发布
     driver.find_element("xpath", '//*[text()="发布"]').click()
     time.sleep(1)
@@ -158,4 +126,5 @@ if __name__ == "__main__":
             publish_kuaishou(driver, mp4, index)
             time.sleep(10)
     finally:
+        time.sleep(20)
         driver.quit()
