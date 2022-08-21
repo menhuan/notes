@@ -56,7 +56,7 @@ def kuaishou_login(driver):
 def publish_xiaohongshu(driver, mp4, index):
     time.sleep(3)
     driver.find_element("xpath", '//*[text()="发布笔记"]').click()
-    print("开始上传文件")
+    print("开始上传文件",mp4[0])
     time.sleep(3)
     # ### 上传视频
     vidoe = driver.find_element("xpath", '//input[@type="file"]')
@@ -86,12 +86,13 @@ def publish_xiaohongshu(driver, mp4, index):
     #input_data.send_keys(Keys.DELETE)
     input_data.send_keys(get_publish_date(content,index))    
     time.sleep(3)
-    
+    #driver.find_element("xpath", '//*[text()="确定"]').click()
+
     #等待视频上传完成
     while True:
-        time.sleep(3)
+        time.sleep(10)
         try:
-            driver.find_element("xpath",'//*[contains(text(),"重新上传")]')
+            driver.find_element("xpath",'//*[@id="publish-container"]/div/div[2]/div[2]/div[6]/div/div/div[1]//*[contains(text(),"重新上传")]')
             break;
         except Exception as e:
             traceback.print_exc()
@@ -101,8 +102,8 @@ def publish_xiaohongshu(driver, mp4, index):
     time.sleep(3)
     # 发布
     driver.find_element("xpath", '//*[text()="发布"]').click()
-    time.sleep(3)
     print("视频发布完成！")
+    time.sleep(10)
 
 if __name__ == "__main__":
     try:

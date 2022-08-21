@@ -145,17 +145,17 @@ def get_cookie(driver):
 
 def get_publish_date(title,index):
     # 代表的是 加一天时间
-    time_long = int(index / 3 *24) 
+    time_long = int(index/3) *24
     now = datetime.datetime.today()
     tomorrowemp = now + datetime.timedelta(hours = time_long)  
     print("title:",title)
     # 暂时注释掉+ datetime.timedelta(hours = 24)  
     if title.find("(1)")>0  or title.find("(4)") >0  or title.find("(7)") > 0  :
-        tomorrow = tomorrowemp.replace(hour=0,minute=0,second=0) 
+        tomorrow = tomorrowemp.replace(hour=13,minute=0,second=0) 
     elif title.find("(2)")>0 or title.find("(5)")>0 :
-        tomorrow = tomorrowemp.replace(hour=4,minute=0,second=0) 
+        tomorrow = tomorrowemp.replace(hour=18,minute=0,second=0) 
     elif title.find("(3)") >0 or title.find("(6)")>0:
-        tomorrow = tomorrowemp.replace(hour=23,minute=45,second=0)
+        tomorrow = tomorrowemp.replace(hour=20,minute=0,second=0)
     print("输出的时间是:",tomorrow.strftime("%Y-%m-%d %H:%M"))
     return tomorrow.strftime("%Y-%m-%d %H:%M")
 
@@ -178,7 +178,7 @@ def publish_douyin(driver,mp4,index):
         traceback.print_exc()
     print("开始点击发布视频")
     driver.find_element("xpath", '//*[text()="发布视频"]').click()
-    time.sleep(2)
+    time.sleep(5)
     print("加载视频",mp4[1])
     driver.find_element("xpath", '//input[@type="file"]').send_keys(mp4[0])
     time.sleep(3)
@@ -222,7 +222,7 @@ def publish_douyin(driver,mp4,index):
     time.sleep(10)
     driver.find_element(
         "xpath", '//*[@class="detail--2prVy"]').click()
-
+        
     # 同步到西瓜视频
     # time.sleep(1)
     # # driver.find_element("xpath",'//div[@class="preview--27Xrt"]//input').click()   # 默认启用一次后，后面默认启用了。

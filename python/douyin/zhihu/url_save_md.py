@@ -69,12 +69,35 @@ def getText(url):
     #    num = str(index) + "."
     #    t =t.replace(num,"\n" +num + "\n") 
     # t =t.replace('0\n',"\n") 
-    t = url + "\n" + t
        
     print("输出文件内容：\n", t)  # 输出文件内容
+
+    #处理敏感词
     t = t.replace('拐卖','柺卖').replace('死','私').replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码')
 
+    total_size = len(t)
+    # 按照1600来分割
+    split_size = 1600
+    split_result = ''
+    start_index = 0
+    end_index =1600
+    while True:
+        if end_index >= total_size:
+            split_result +=t[start_index:total_size]
+            print("输出数据",start_index,end_index,total_size)
+            break
+        elif t[end_index] == '，':
+            end_index = end_index+1
+            print("输出数据",start_index,end_index,total_size)
+            split_result +=t[start_index:end_index] +"\n"
+            end_index_bak = end_index
+            end_index = start_index +split_size*2
+            start_index = end_index_bak
+        else:
+            end_index+=1
+
+    t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)
     return origin_content
@@ -83,7 +106,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1467897508667637760/section/1543967778582769665'
+    url = 'https://www.zhihu.com/market/paid_column/1434520231809507328/section/1543567789616779264'
     content = getText(url)
     # import image2
     # image2.show_image(content)
