@@ -61,13 +61,15 @@ def publish_kuaishou(driver, mp4, index):
     # ### 上传视频
     vidoe = driver.find_element("xpath", '//input[@type="file"]')
     vidoe.send_keys(mp4[0])
+    print("开始填写描述")
+    time.sleep(3)
     
     # 填写描述
     content = mp4[1].replace('.mp4','')
     driver.find_element(
         "xpath", '//*[@placeholder="添加合适的话题和描述，作品能获得更多推荐～"]').send_keys(content + " #虐心小说 #虐文 #小说推荐 ")
 
-    time.sleep(1)
+    time.sleep(3)
     # 定时发布
     driver.find_element("xpath", '//span[text()="定时发布"]').click()
     time.sleep(3)
@@ -112,9 +114,9 @@ def publish_kuaishou(driver, mp4, index):
 
     # 发布
     driver.find_element("xpath", '//*[text()="发布"]').click()
-    time.sleep(1)
+    time.sleep(5)
     driver.find_element("xpath", '//*[text()="确认发布"]').click()
-    time.sleep(1)
+    time.sleep(5)
     print("视频发布完成！")
 
 if __name__ == "__main__":

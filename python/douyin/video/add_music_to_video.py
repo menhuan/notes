@@ -55,7 +55,7 @@ def mergerVideo(videoDuration):
     else:
         random = 24
 
-    random_list = sample(video_list, 5)  # 随机抽取元素
+    random_list = sample(video_list, random)  # 随机抽取元素
     print(random_list)
     # # 定义一个数组
     video_clip_list = []

@@ -23,7 +23,6 @@ COOKING_PATH = os.path.join(ROOT_PATH, "cooking")
 COOKING_TXT = os.path.join(COOKING_PATH, "douyin.txt")
 
 
-
 def get_driver():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
@@ -34,6 +33,7 @@ def get_driver():
         command_executor='http://101.43.210.78:50000',
         desired_capabilities=chrome_options.to_capabilities()
     )
+    print("链接上")
     return driver
 
 
@@ -96,10 +96,10 @@ def get_map4():
     for path_mp4 in path.iterdir():
         if(".mp4" in str(path_mp4)):
             map4_path = str(path_mp4)
-            mp4_result.append((map4_path,path_mp4.name))
+            mp4_result.append((map4_path, path_mp4.name))
 
-    if(len(mp4_result) >0 ):
-        print("检查到视频路径：" ,mp4_result)
+    if(len(mp4_result) > 0):
+        print("检查到视频路径：", mp4_result)
     else:
         print("未检查到视频路径，程序终止！")
         exit()
@@ -143,23 +143,24 @@ def get_cookie(driver):
     driver.refresh()
 
 
-def get_publish_date(title,index):
+def get_publish_date(title, index):
     # 代表的是 加一天时间
-    time_long = int(index/3) *24
+    time_long = int(index/3) * 24
     now = datetime.datetime.today()
-    tomorrowemp = now + datetime.timedelta(hours = time_long)  
-    print("title:",title)
-    # 暂时注释掉+ datetime.timedelta(hours = 24)  
-    if title.find("(1)")>0  or title.find("(4)") >0  or title.find("(7)") > 0  :
-        tomorrow = tomorrowemp.replace(hour=13,minute=0,second=0) 
-    elif title.find("(2)")>0 or title.find("(5)")>0 :
-        tomorrow = tomorrowemp.replace(hour=18,minute=0,second=0) 
-    elif title.find("(3)") >0 or title.find("(6)")>0:
-        tomorrow = tomorrowemp.replace(hour=20,minute=0,second=0)
-    print("输出的时间是:",tomorrow.strftime("%Y-%m-%d %H:%M"))
+    tomorrowemp = now + datetime.timedelta(hours=time_long)
+    print("title:", title)
+    # 暂时注释掉+ datetime.timedelta(hours = 24)
+    if title.find("(1)") > 0 or title.find("(4)") > 0 or title.find("(7)") > 0:
+        tomorrow = tomorrowemp.replace(hour=9, minute=0, second=0)
+    elif title.find("(2)") > 0 or title.find("(5)") > 0:
+        tomorrow = tomorrowemp.replace(hour=12, minute=0, second=0)
+    elif title.find("(3)") > 0 or title.find("(6)") > 0:
+        tomorrow = tomorrowemp.replace(hour=18, minute=0, second=0)
+    print("输出的时间是:", tomorrow.strftime("%Y-%m-%d %H:%M"))
     return tomorrow.strftime("%Y-%m-%d %H:%M")
 
-def publish_douyin(driver,mp4,index):
+
+def publish_douyin(driver, mp4, index):
     '''
      作用：发布抖音视频
     '''
@@ -179,7 +180,7 @@ def publish_douyin(driver,mp4,index):
     print("开始点击发布视频")
     driver.find_element("xpath", '//*[text()="发布视频"]').click()
     time.sleep(5)
-    print("加载视频",mp4[1])
+    print("加载视频", mp4[1])
     driver.find_element("xpath", '//input[@type="file"]').send_keys(mp4[0])
     time.sleep(3)
     print("开始输入描述")
@@ -200,11 +201,11 @@ def publish_douyin(driver,mp4,index):
     # 输入视频描述
     input_text = driver.find_element(
         "xpath", '//div[@aria-autocomplete="list"]')
-    
-    title = mp4[1].replace(".mp4","")
+
+    title = mp4[1].replace(".mp4", "")
 
     input_text.send_keys(title + " #虐心小说 ")
-    input_text.send_keys( " #推文日常 ")
+    input_text.send_keys(" #推文日常 ")
     input_text.send_keys(" #虐妻一时爽追妻火葬场 ")
 
     # 设置选项
@@ -222,7 +223,7 @@ def publish_douyin(driver,mp4,index):
     time.sleep(10)
     driver.find_element(
         "xpath", '//*[@class="detail--2prVy"]').click()
-        
+
     # 同步到西瓜视频
     # time.sleep(1)
     # # driver.find_element("xpath",'//div[@class="preview--27Xrt"]//input').click()   # 默认启用一次后，后面默认启用了。
@@ -245,10 +246,10 @@ def publish_douyin(driver,mp4,index):
     #driver.find_elements("xpath", '//*[@class="radio--4Gpx6 one-line--2rHu9"]')[1].click()
     time.sleep(3)
     input_data = driver.find_element("xpath", '//*[@placeholder="日期和时间"]')
-    input_data.send_keys(Keys.CONTROL,'a')     #全选
-    #input_data.send_keys(Keys.DELETE)
+    input_data.send_keys(Keys.CONTROL, 'a')  # 全选
+    # input_data.send_keys(Keys.DELETE)
 
-    input_data.send_keys(get_publish_date(title,index))    
+    input_data.send_keys(get_publish_date(title, index))
     # driver.find_element(
     #     "xpath", '//*[@placeholder="日期和时间"]').send_keys("2022-08-16 22:00")
 
@@ -276,15 +277,13 @@ def publish_douyin(driver,mp4,index):
 # publish_douyin(driver=driver)
 
 
-
-
 if __name__ == "__main__":
     try:
         driver = get_driver()
         login(driver=driver)
         mp4s = get_map4()
-        for index,mp4 in enumerate(mp4s):
-            publish_douyin(driver,mp4,index)
+        for index, mp4 in enumerate(mp4s):
+            publish_douyin(driver, mp4, index)
             time.sleep(10)
     finally:
         driver.quit()

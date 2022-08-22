@@ -60,10 +60,11 @@ def getText(url):
     name2 = output_path + textName2 + '.md'
     origin_content = deepcopy(content)
 #    content = content.replace('\n','')
-    t = content.replace('「', '').replace('」', '').replace('！', '').replace('。', '，').replace(
+    t = content.replace('「', '').replace('」', '').replace('。', '，').replace(
         '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
             ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
-                "，，","，").replace("，\n，",'，').replace('.','').strip()
+                "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
+                    '砍','看').replace('砸','杂').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -74,14 +75,15 @@ def getText(url):
 
     #处理敏感词
     t = t.replace('拐卖','柺卖').replace('死','私').replace('下身','下渗').replace('我靠','').replace(
-        '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码')
+        '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
+            '杂碎','砸碎')
 
     total_size = len(t)
     # 按照1600来分割
     split_size = 1600
     split_result = ''
     start_index = 0
-    end_index =1600
+    end_index =1550
     while True:
         if end_index >= total_size:
             split_result +=t[start_index:total_size]
@@ -106,7 +108,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1434520231809507328/section/1543567789616779264'
+    url = 'https://www.zhihu.com/market/paid_column/1533809401052094464/section/1544037932767551489?km_channel=search&origin_label=search'
     content = getText(url)
     # import image2
     # image2.show_image(content)
