@@ -205,11 +205,14 @@ def publish_douyin(driver, mp4, index):
     title = mp4[1].replace(".mp4", "")
 
     input_text.send_keys(title + " #虐心小说 ")
+    time.sleep(4)
     input_text.send_keys(" #推文日常 ")
+    time.sleep(4)
+
     input_text.send_keys(" #虐妻一时爽追妻火葬场 ")
 
     # 设置选项
-    time.sleep(1)
+    time.sleep(4)
     driver.find_element("xpath", '//*[@class="radio--4Gpx6"]').click()
     time.sleep(1)
     driver.find_element(

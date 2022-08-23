@@ -40,7 +40,6 @@ def mergerVideo(videoDuration):
     for index, val in enumerate(relaxVideo_files):
 
         if ((os.path.splitext(val)[1] == '.MP4' or os.path.splitext(val)[1] == '.mp4')):
-            print(val)
             video_list.append(val)
 
     random = 25

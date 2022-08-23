@@ -53,7 +53,7 @@ def getText(url):
         print(p.get_text())
         texts.append(p.get_text())
     content = text.get_text()
-    print("获取到数据")
+    print("获取到数据",content)
 
     textName2 = urlTiele
 
@@ -62,9 +62,10 @@ def getText(url):
 #    content = content.replace('\n','')
     t = content.replace('「', '').replace('」', '').replace('。', '，').replace(
         '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
-            ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
-                "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
-                    '砍','看').replace('砸','杂').strip()
+        ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
+        "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
+        '砍','看').replace('砸','杂').replace('1\n','').replace('2\n','').replace('3\n','').replace('4\n','').replace(
+        '5\n','').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -108,7 +109,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1533809401052094464/section/1544037932767551489?km_channel=search&origin_label=search'
+    url = 'https://www.zhihu.com/market/paid_column/1540388219225350144/section/1543965763316383744?km_channel=search&origin_label=search'
     content = getText(url)
     # import image2
     # image2.show_image(content)
