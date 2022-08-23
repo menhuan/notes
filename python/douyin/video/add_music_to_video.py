@@ -99,7 +99,7 @@ def mergerVideo(videoDuration):
     # final_video.write_videofile(result_video_name)
     video_name = bg_video_name
     final_video.write_videofile(video_name, audio=True)
-    os.remove(video_clip_list[0])
+    os.remove(os.path.join(relax_path,random_list[0]))
 # 把小说配音添加到视频里面
 
 
