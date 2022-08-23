@@ -55,7 +55,7 @@ def mergerVideo(videoDuration):
     else:
         random = 24
 
-    random_list = sample(video_list, random)  # 随机抽取元素
+    random_list = sample(video_list, 3)  # 随机抽取元素
     print(random_list)
     # # 定义一个数组
     video_clip_list = []
@@ -242,7 +242,7 @@ def videoAddSrt(videoFile, srtFile, title):
 
 def run_make_video():
     print("开始运行切割视频")
-    sleep_time = os.getenv("SLEEP_TIME",10)
+    sleep_time = os.getenv("SLEEP_TIME",600)
     while(True):
         try:
             # 获取音乐文件夹
@@ -279,8 +279,7 @@ def run_make_video():
                 print("视频合成已完成",music_file)
             print("本次视频合成完毕")
         except Exception as e :
-            traceback.format_exception(e)
-        sleep(sleep_time)
+            traceback.print_exc()
 
 if __name__ == "__main__":
     # 开启一个线程去做
