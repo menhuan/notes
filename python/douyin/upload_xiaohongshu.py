@@ -13,7 +13,7 @@ from liulanqi import COOKING_PATH, get_driver, get_map4, get_publish_date
 XIAOHONGSHU_COOKING = os.path.join(COOKING_PATH, "xiaohongshu.json")
 
 
-def kuaishou_login(driver):
+def xiaohongshu_login(driver):
     if (os.path.exists(XIAOHONGSHU_COOKING)):
         print("cookies存在")
         with open(XIAOHONGSHU_COOKING) as f:
@@ -108,7 +108,7 @@ def publish_xiaohongshu(driver, mp4, index):
 if __name__ == "__main__":
     try:
         driver = get_driver()
-        kuaishou_login(driver=driver)
+        xiaohongshu_login(driver=driver)
         mp4s = get_map4()
         for index, mp4 in enumerate(mp4s):
             publish_xiaohongshu(driver, mp4, index)

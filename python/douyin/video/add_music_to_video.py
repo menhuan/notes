@@ -33,8 +33,6 @@ musics_path = os.path.join(root_path,os.getenv("BACKGROUNDMUSIC","musics/"))
 def mergerVideo(videoDuration):
 
     relaxVideo_files = os.listdir(relax_path)
-    relaxVideo_files_count = len(relaxVideo_files)
-    print(relaxVideo_files_count)
 
     video_list = []  # 空列表
     for index, val in enumerate(relaxVideo_files):
@@ -42,27 +40,13 @@ def mergerVideo(videoDuration):
         if ((os.path.splitext(val)[1] == '.MP4' or os.path.splitext(val)[1] == '.mp4')):
             video_list.append(val)
 
-    random = 25
-    random = 2
-    random = 0
-    if(videoDuration < 180):
-        random = 13
-    elif (videoDuration < 240):
-        random = 17
-    elif (videoDuration < 300):
-        random = 21
-    else:
-        random = 24
-
-    random_list = sample(video_list, 3)  # 随机抽取元素
+    random_list = sample(video_list, 6)  # 随机抽取元素
     print(random_list)
     # # 定义一个数组
     video_clip_list = []
 
     for file in random_list:
         video = VideoFileClip(os.path.join(relax_path,file))
-        # newvideo = video.volumex(0.2)#
-        # video_clip_list.append(newvideo)
         video_clip_list.append(video)
 
     print("开始根据音频时长,合成视频")
@@ -74,7 +58,6 @@ def mergerVideo(videoDuration):
     # video_audio_clip = final_clip.audio.volumex(0.1)
     dst_path = backgroundmusic_path
     music_files = os.listdir(dst_path)
-    musics_files_count = len(music_files)
     backgroundmusic_list = []
     for music_file in music_files:
         if (music_file.endswith('.mp3') or music_file.endswith('.wav')):
@@ -91,13 +74,11 @@ def mergerVideo(videoDuration):
 
     audio = afx.audio_loop(audio_clip, duration=final_clip.duration)
 
-    # audio_clip_add = CompositeAudioClip([video_audio_clip, audio])
-
     final_video = final_clip.set_audio(audio)
 
-    # final_video.write_videofile(result_video_name)
     video_name = bg_video_name
     final_video.write_videofile(video_name, audio=True)
+    print("删除文件",random_list[0])
     os.remove(os.path.join(relax_path,random_list[0]))
 # 把小说配音添加到视频里面
 
@@ -141,11 +122,13 @@ def writeTextVideo(video_name, srt_name, title):
     title_text_clip = TextClip(txt=cover_title,
                                font=font_name,
                                fontsize=title_fond_size,
-                               color=text_color, stroke_color="white", stroke_width=20, align='center', method="caption", size=(w - 20, 230)).set_position((10, h - 1500)).set_duration(video_clip.duration)
+                               color=text_color, stroke_color="white", stroke_width=20, align='center', method="caption", size=(w - 100, 230)
+                               ).set_position((10, h - 1500)).set_duration(video_clip.duration)
     title_text_clip2 = TextClip(txt=cover_title,
                                 font=font_name,
                                 fontsize=title_fond_size,
-                                color=text_color, align='center', method="caption", size=(w - 20, 230)).set_position((10, h - 1500)).set_duration(video_clip.duration)
+                                color=text_color, align='center', method="caption", size=(w - 100, 230)
+                                ).set_position((10, h - 1500)).set_duration(video_clip.duration)
     txts.append(title_text_clip)
     txts.append(title_text_clip2)
     result = CompositeVideoClip([video_clip, *txts])  # 在视频上覆盖文本
@@ -219,18 +202,18 @@ def videoAddSrt(videoFile, srtFile, title):
         start, end = map(float, (start, end))
         # sentences = "年会上我喝多了，玩游戏还输了,被迫要和同桌一个异性亲亲"
         span = end-start
-        if (len(sentences) > 10):
+        if (len(sentences) > 12):
             # method：可以设置为’label’或’caption’，设置为’label’时，
             # 图片将自动调整大小以适合剪辑的大小，这是该参数的缺省值。设置为’caption’时，
             # 文字将在size参数指定范围内显示，此时文字会自动换行
-            txt = TextClip(sentences, fontsize=80, font=font_name, size=(w - 100, 200), align='center',
-                           color=text_color, method='caption', stroke_color="white", stroke_width=20).set_position((30, h - 980)) .set_duration(span).set_start(start)
-            txt2 = TextClip(sentences, fontsize=80, font=font_name, size=(w - 100, 200), align='center',
-                            color=text_color, method='caption').set_position((30, h - 980)).set_duration(span).set_start(start)
+            txt = TextClip(sentences, fontsize=70, font=font_name, size=(w - 50, 200), align='center',
+                           color=text_color, stroke_color="white", stroke_width=20).set_position((30, h - 980)) .set_duration(span).set_start(start)
+            txt2 = TextClip(sentences, fontsize=70, font=font_name, size=(w - 50, 200), align='center',
+                            color=text_color).set_position((30, h - 980)).set_duration(span).set_start(start)
         else:
-            txt = TextClip(sentences, fontsize=80, font=font_name, size=(w - 50, 100), align='center',
+            txt = TextClip(sentences, fontsize=70, font=font_name, size=(w - 50, 100), align='center',
                            color=text_color, stroke_color="white", stroke_width=20).set_position((10, h - 960)).set_duration(span).set_start(start)
-            txt2 = TextClip(sentences, fontsize=80, font=font_name, size=(w - 50, 100), align='center',
+            txt2 = TextClip(sentences, fontsize=70, font=font_name, size=(w - 50, 100), align='center',
                             color=text_color).set_position((10, h - 960)).set_duration(span).set_start(start)
         txts.append(txt)
         txts.append(txt2)
@@ -247,16 +230,14 @@ def run_make_video():
             # 获取音乐文件夹
             dst_path = musics_path
             music_files = os.listdir(dst_path)
-            musics_files_count = len(music_files)
-            if(len(music_files) == 0 ):
+            if(len(music_files) <= 1 ):
                 print("本次没有音频文件,暂不合并")
                 sleep(sleep_time)
             for music_file in music_files:
                 if (music_file.endswith('.mp3') or music_file.endswith('.wav')):
-                    print(music_file)
                     music_name = root_path + "musics/" + music_file
                     srt_name = root_path + "musics/" + music_file.split('.')[0] + ".srt"
-                    print(srt_name)
+                    print("开始合并文件",srt_name)
 
                     if music_file.endswith('.mp3'):
                         audioMp3 = MP3(music_name)
@@ -268,23 +249,22 @@ def run_make_video():
 
                     mergerVideo(audio_duration)
 
-                    print(music_file.split('.')[0])
-
                     title = music_file.split('.')[0]
 
                     addMusicToVideo(music_name, srt_name, title)
                     os.remove(os.path.join(musics_path,music_file))
                     os.remove(os.path.join(musics_path,srt_name))
                 print("视频合成已完成",music_file)
+            sleep(sleep_time)
             print("本次视频合成完毕")
         except Exception as e :
             traceback.print_exc()
 
 if __name__ == "__main__":
     # 开启一个线程去做
-    t1 = threading.Thread(target=deal_with.run)
+    #t1 = threading.Thread(target=deal_with.run)
     t2 = threading.Thread(target=run_make_video)
-    t1.start()
+    #t1.start()
     t2.start()
 
 

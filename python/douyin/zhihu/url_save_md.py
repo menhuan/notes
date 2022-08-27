@@ -77,7 +77,7 @@ def getText(url):
     #处理敏感词
     t = t.replace('拐卖','柺卖').replace('死','私').replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
-            '杂碎','砸碎')
+            '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',"怂")
 
     total_size = len(t)
     # 按照1600来分割
@@ -109,7 +109,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1540388219225350144/section/1543965763316383744?km_channel=search&origin_label=search'
+    url = 'https://www.zhihu.com/market/paid_column/1540341389779202048/section/1543974789659947008'
     content = getText(url)
     # import image2
     # image2.show_image(content)

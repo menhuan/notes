@@ -27,6 +27,7 @@ def get_driver():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
     chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
    # chrome_options.add_argument('--headless')
    # chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
     driver = webdriver.Remote(
@@ -145,13 +146,13 @@ def get_cookie(driver):
 
 def get_publish_date(title, index):
     # 代表的是 加一天时间
-    time_long = int(index/3) * 24
+    time_long = int(index/3) * 24 + 24
     now = datetime.datetime.today()
     tomorrowemp = now + datetime.timedelta(hours=time_long)
     print("title:", title)
     # 暂时注释掉+ datetime.timedelta(hours = 24)
     if title.find("(1)") > 0 or title.find("(4)") > 0 or title.find("(7)") > 0:
-        tomorrow = tomorrowemp.replace(hour=9, minute=0, second=0)
+        tomorrow = tomorrowemp.replace(hour=8, minute=0, second=0)
     elif title.find("(2)") > 0 or title.find("(5)") > 0:
         tomorrow = tomorrowemp.replace(hour=12, minute=0, second=0)
     elif title.find("(3)") > 0 or title.find("(6)") > 0:
@@ -162,7 +163,7 @@ def get_publish_date(title, index):
 
 def publish_douyin(driver, mp4, index):
     '''
-     作用：发布抖音视频
+     作用：发布抖音视频 
     '''
 
     # 进入创作者页面，并上传视频

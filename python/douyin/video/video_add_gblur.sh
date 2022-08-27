@@ -12,7 +12,7 @@ do
     video_name=${dir}/${file}
     out_video_name=${output}${file//.mp4/_out.mp4}
     echo "输出要写入的路径:"${out_video_name}
-    ffmpeg -i "${video_name}" -vf "split[a][b];[a]scale=1080:1920,boxblur=10:5[1];[b]scale=1080:ih*1080/iw[2];[1][2]overlay=0:(H-h)/2" -c:v libx264 -crf 18 -preset veryfast -aspect 9:16  -f mp4 "${out_video_name}"  -y
+    ffmpeg -i "${video_name}" -vf "split[a][b];[a]scale=1080:1920,boxblur=10:5[1];[b]scale=1080:ih*1540/iw[2];[1][2]overlay=0:(H-h)/2" -c:v libx264 -crf 18 -preset veryfast -aspect 9:16  -f mp4 "${out_video_name}"  -y
     echo "执行完毕"$video_name
     rm ${video_name}  
 done
