@@ -65,7 +65,8 @@ def getText(url):
         ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
         "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
         '砍','看').replace('砸','杂').replace('1\n','').replace('2\n','').replace('3\n','').replace('4\n','').replace(
-        '5\n','').strip()
+        '5\n','').replace('6\n','').replace('7\n','').replace('8\n','').replace('9\n','').replace('0','').replace('】','').replace(
+            "【",'').replace(' ','').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -75,13 +76,13 @@ def getText(url):
     print("输出文件内容：\n", t)  # 输出文件内容
 
     #处理敏感词
-    t = t.replace('拐卖','柺卖').replace('死','私').replace('下身','下渗').replace('我靠','').replace(
+    t = t.replace('拐卖','柺卖').replace('死','4').replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
             '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',"怂")
 
     total_size = len(t)
     # 按照1600来分割
-    split_size = 1600
+    split_size = 1450
     split_result = ''
     start_index = 0
     end_index =1550
@@ -95,7 +96,7 @@ def getText(url):
             print("输出数据",start_index,end_index,total_size)
             split_result +=t[start_index:end_index] +"\n"
             end_index_bak = end_index
-            end_index = start_index +split_size*2
+            end_index = end_index +split_size*2
             start_index = end_index_bak
         else:
             end_index+=1
@@ -109,7 +110,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1540341389779202048/section/1543974789659947008'
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1546092842426015744?km_channel=search&origin_label=search'
     content = getText(url)
     # import image2
     # image2.show_image(content)

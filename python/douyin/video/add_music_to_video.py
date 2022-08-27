@@ -262,9 +262,9 @@ def run_make_video():
 
 if __name__ == "__main__":
     # 开启一个线程去做
-    #t1 = threading.Thread(target=deal_with.run)
+    t1 = threading.Thread(target=deal_with.run)
     t2 = threading.Thread(target=run_make_video)
-    #t1.start()
+    t1.start()
     t2.start()
 
 
