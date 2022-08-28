@@ -1,5 +1,6 @@
 
 import datetime
+from lib2to3.pgen2 import driver
 from operator import index
 import traceback
 from selenium import webdriver
@@ -15,6 +16,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 import json
 import os
+from selenium.webdriver.chromium.remote_connection import ChromiumRemoteConnection
 
 ROOT_PATH = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin")
@@ -22,18 +24,33 @@ VIDEO_PATH = os.path.join(ROOT_PATH, "output")
 COOKING_PATH = os.path.join(ROOT_PATH, "cooking")
 COOKING_TXT = os.path.join(COOKING_PATH, "douyin.txt")
 
+agent ='Mozilla/5.0 (Macintosh; Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
 
 def get_driver():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
     chrome_options.add_argument('--disable-dev-shm-usage')
     chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
+    chrome_options.add_argument(f'user-agent={agent}')
+    chrome_options.add_experimental_option('useAutomationExtension', False)
+    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
+
    # chrome_options.add_argument('--headless')
    # chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
     driver = webdriver.Remote(
-        command_executor='http://101.43.210.78:50000',
+        command_executor="http://101.43.210.78:50000",
         desired_capabilities=chrome_options.to_capabilities()
     )
+    # driver = webdriver.Remote(
+    #   command_executor= ChromiumRemoteConnection(remote_server_addr='http://101.43.210.78:50000',vendor_prefix='-webkit-',browser_name="CHROME"),
+    #   desired_capabilities=chrome_options.to_capabilities()
+    # ) 
+    # with open('/workspaces/notes/python/douyin/stealth.min.js') as f:
+    #     js = f.read()
+    #     driver.execute("executeCdpCommand", {
+    #     'cmd': "Page.addScriptToEvaluateOnNewDocument", 'params': {
+    #         "source": js
+    #     }})
     print("链接上")
     return driver
 
@@ -205,12 +222,15 @@ def publish_douyin(driver, mp4, index):
 
     title = mp4[1].replace(".mp4", "")
 
-    input_text.send_keys(title + " #虐心小说 ")
+    input_text.send_keys(title + " #小说 ")
     time.sleep(4)
     input_text.send_keys(" #推文日常 ")
     time.sleep(4)
-
-    input_text.send_keys(" #虐妻一时爽追妻火葬场 ")
+    input_text.send_keys(" #言情 ")
+    time.sleep(4)
+    input_text.send_keys(" #爽文 ")
+    time.sleep(4)
+    input_text.send_keys(" #恋爱 ")
 
     # 设置选项
     time.sleep(4)
@@ -224,10 +244,12 @@ def publish_douyin(driver, mp4, index):
     time.sleep(1)
     driver.find_element(
         "xpath", '//*[@class="semi-select-selection"]//input').send_keys("院")
-    time.sleep(10)
-    driver.find_element(
-        "xpath", '//*[@class="detail--2prVy"]').click()
-
+    time.sleep(3)
+    try:
+        driver.find_element(
+            "xpath", '//*[@class="detail--2prVy"]').click()
+    except Exception as e:
+        traceback.print_exc()
     # 同步到西瓜视频
     # time.sleep(1)
     # # driver.find_element("xpath",'//div[@class="preview--27Xrt"]//input').click()   # 默认启用一次后，后面默认启用了。
@@ -279,7 +301,13 @@ def publish_douyin(driver, mp4, index):
 
 # 开始执行视频发布
 # publish_douyin(driver=driver)
-
+def run(driver):
+    login(driver=driver)
+    mp4s = get_map4()
+    for index, mp4 in enumerate(mp4s):
+        publish_douyin(driver, mp4, index)
+        time.sleep(10)
+    time.sleep(10)
 
 if __name__ == "__main__":
     try:

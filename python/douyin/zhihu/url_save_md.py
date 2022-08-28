@@ -60,6 +60,7 @@ def getText(url):
     name2 = output_path + textName2 + '.md'
     origin_content = deepcopy(content)
 #    content = content.replace('\n','')
+    # 替换无用的数字
     t = content.replace('「', '').replace('」', '').replace('。', '，').replace(
         '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
         ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
@@ -78,8 +79,14 @@ def getText(url):
     #处理敏感词
     t = t.replace('拐卖','柺卖').replace('死','4').replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
-            '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',"怂")
+            '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',
+            "怂").replace("全面",'全棉').replace('唯一','惟一')
+        
 
+    # 替换作者昵称
+    t = t.replace("梁远",'梁星').replace("陈烟",'陈燕')
+    # 增加前缀
+    t = "如果给你50万,让你跟男神接吻,你愿意吗, 我当然愿意了,"  + t
     total_size = len(t)
     # 按照1600来分割
     split_size = 1450
@@ -96,7 +103,7 @@ def getText(url):
             print("输出数据",start_index,end_index,total_size)
             split_result +=t[start_index:end_index] +"\n"
             end_index_bak = end_index
-            end_index = end_index +split_size*2
+            end_index = end_index +split_size
             start_index = end_index_bak
         else:
             end_index+=1
@@ -110,7 +117,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1546092842426015744?km_channel=search&origin_label=search'
+    url = 'https://www.zhihu.com/market/paid_column/1497895126596427776/section/1545375059392577537'
     content = getText(url)
     # import image2
     # image2.show_image(content)

@@ -118,6 +118,13 @@ def publish_kuaishou(driver, mp4, index):
     driver.find_element("xpath", '//*[text()="确认发布"]').click()
     time.sleep(5)
     print("视频发布完成！")
+def run(driver):
+    kuaishou_login(driver=driver)
+    mp4s = get_map4()
+    for index, mp4 in enumerate(mp4s):
+        publish_kuaishou(driver, mp4, index)
+        time.sleep(10)
+    time.sleep(10)
 
 if __name__ == "__main__":
     try:

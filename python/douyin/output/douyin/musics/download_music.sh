@@ -2,9 +2,9 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="a"
-musics=('https://wpy3.10cha.cn/yuyin/hecheng/outmusic/1661584181000wpy2962.wav' 'https://wpy5.10cha.cn/yuyin/hecheng/outmusic/1661584645000wpy9985.wav')
-srts=('https://wpy3.10cha.cn/yuyin/hecheng/zimu/1661584181000wpy2962.srt' 'https://wpy5.10cha.cn/yuyin/hecheng/zimu/1661584645000wpy9985.srt')
+name="给你50万去亲男神 愿意吗?"
+musics=('https://wpyu.10cha.cn/yuyin/hecheng/outmusic/1661649974000wpy5340.wav' 'https://wpy1.10cha.cn/yuyin/hecheng/outmusic/1661650129000wpy8491.wav' 'https://wpyo.10cha.cn/yuyin/hecheng/outmusic/1661650225000wpy6041.wav')
+srts=('https://wpyu.10cha.cn/yuyin/hecheng/zimu/1661649974000wpy5340.srt' 'https://wpy1.10cha.cn/yuyin/hecheng/zimu/1661650129000wpy8491.srt' 'https://wpyo.10cha.cn/yuyin/hecheng/zimu/1661650225000wpy6041.srt')
 for index in ${!musics[@]}
     do 
     wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'.wav

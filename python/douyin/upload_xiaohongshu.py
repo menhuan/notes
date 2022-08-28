@@ -105,6 +105,13 @@ def publish_xiaohongshu(driver, mp4, index):
     print("视频发布完成！")
     time.sleep(10)
 
+def run(driver):
+    xiaohongshu_login(driver=driver)
+    mp4s = get_map4()
+    for index, mp4 in enumerate(mp4s):
+        publish_xiaohongshu(driver, mp4, index)
+        time.sleep(10)
+
 if __name__ == "__main__":
     try:
         driver = get_driver()

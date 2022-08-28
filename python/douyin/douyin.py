@@ -37,13 +37,13 @@ class DouYin:
         
 
     def read_config(self):
-        if not os.path.exists('设置.ini'):
+        if not os.path.exists('/workspaces/notes/python/douyin/设置.ini'):
             print('配置文件不存在，创建默认的配置文件')
             with open('设置.ini', 'a+') as f:
                 f.write(ini_text)
             print('创建默认配置文件完成')
         try:
-            self.config.read('设置.ini')
+            self.config.read('/workspaces/notes/python/douyin/设置.ini')
             value = self.config.get('设置', '用户主页列表')
             if not value:
                 input('-用户主页列表为空，请先配置再重试，按任意键继续')
