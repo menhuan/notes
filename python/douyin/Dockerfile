@@ -15,10 +15,14 @@ RUN /usr/local/bin/python -m pip install --upgrade pip
 #RUN sed -i s@<policy domain="path" rights="none" pattern="@*"/>@<!--<policy domain="path" rights="none" pattern="@*"/>-->@g /etc/ImageMagick-6/policy.xml
 ADD ./video/  /app/video
 COPY requirements.txt /app/
+
+COPY liulanqi.py /app/
+COPY upload_ksVideo.py /app/
+COPY upload_xiaohongshu.py /app/
+
 RUN /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 ADD ./output/douyin/fonts /app/output/douyin/fonts
 ADD ./output/douyin/backgroundmusic /app/output/douyin/backgroundmusic
-
 
 ENV TZ=Asia/Shanghai
 
