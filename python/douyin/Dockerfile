@@ -22,6 +22,7 @@ COPY upload_xiaohongshu.py /app/
 
 RUN /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
 ADD ./output/douyin/fonts /app/output/douyin/fonts
+ADD ./output/douyin/cooking /app/output/douyin/cooking
 ADD ./output/douyin/backgroundmusic /app/output/douyin/backgroundmusic
 
 ENV TZ=Asia/Shanghai
