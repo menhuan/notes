@@ -84,9 +84,9 @@ def getText(url):
         
 
     # 替换作者昵称
-    t = t.replace("梁远",'梁星').replace("陈烟",'陈燕')
+    t = t.replace("赵子君",'赵雅思').replace("沈修白",'沈元白')
     # 增加前缀
-    t = "如果给你50万,让你跟男神接吻,你愿意吗, 我当然愿意了,"  + t
+    t = ""  + t
     total_size = len(t)
     # 按照1600来分割
     split_size = 1450
@@ -117,7 +117,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1497895126596427776/section/1545375059392577537'
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1543297640699219968?km_channel=search&origin_label=search'
     content = getText(url)
     # import image2
     # image2.show_image(content)

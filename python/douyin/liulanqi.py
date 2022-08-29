@@ -1,6 +1,5 @@
 
 import datetime
-from lib2to3.pgen2 import driver
 from operator import index
 import traceback
 from selenium import webdriver
@@ -24,19 +23,19 @@ VIDEO_PATH = os.path.join(ROOT_PATH, "output")
 COOKING_PATH = os.path.join(ROOT_PATH, "cooking")
 COOKING_TXT = os.path.join(COOKING_PATH, "douyin.txt")
 
-agent ='Mozilla/5.0 (Macintosh; Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+agent = 'Mozilla/5.0 (Macintosh; Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
+
 
 def get_driver():
     chrome_options = webdriver.ChromeOptions()
     chrome_options.add_argument('--no-sandbox')  # 解决DevToolsActivePort文件不存在的报错
     chrome_options.add_argument('--disable-dev-shm-usage')
-    chrome_options.add_experimental_option('excludeSwitches', ['enable-automation'])
+    chrome_options.add_experimental_option(
+        'excludeSwitches', ['enable-automation'])
     chrome_options.add_argument(f'user-agent={agent}')
     chrome_options.add_experimental_option('useAutomationExtension', False)
-    chrome_options.add_argument("--disable-blink-features=AutomationControlled")
-
-   # chrome_options.add_argument('--headless')
-   # chrome_options.add_argument('--disable-gpu')  # 谷歌文档提到需要加上这个属性来规避bug
+    chrome_options.add_argument(
+        "--disable-blink-features=AutomationControlled")
     driver = webdriver.Remote(
         command_executor="http://101.43.210.78:50000",
         desired_capabilities=chrome_options.to_capabilities()
@@ -44,7 +43,7 @@ def get_driver():
     # driver = webdriver.Remote(
     #   command_executor= ChromiumRemoteConnection(remote_server_addr='http://101.43.210.78:50000',vendor_prefix='-webkit-',browser_name="CHROME"),
     #   desired_capabilities=chrome_options.to_capabilities()
-    # ) 
+    # )
     # with open('/workspaces/notes/python/douyin/stealth.min.js') as f:
     #     js = f.read()
     #     driver.execute("executeCdpCommand", {
@@ -163,7 +162,7 @@ def get_cookie(driver):
 
 def get_publish_date(title, index):
     # 代表的是 加一天时间
-    time_long = int(index/3) * 24 + 24
+    time_long = int(index/3) * 24
     now = datetime.datetime.today()
     tomorrowemp = now + datetime.timedelta(hours=time_long)
     print("title:", title)
@@ -301,6 +300,8 @@ def publish_douyin(driver, mp4, index):
 
 # 开始执行视频发布
 # publish_douyin(driver=driver)
+
+
 def run(driver):
     login(driver=driver)
     mp4s = get_map4()
@@ -308,6 +309,7 @@ def run(driver):
         publish_douyin(driver, mp4, index)
         time.sleep(10)
     time.sleep(10)
+
 
 if __name__ == "__main__":
     try:
