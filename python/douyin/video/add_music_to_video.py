@@ -124,15 +124,31 @@ def writeTextVideo(video_name, srt_name, title):
     title_text_clip = TextClip(txt=cover_title,
                                font=font_name,
                                fontsize=title_fond_size,
-                               color=text_color, stroke_color="white", stroke_width=20, align='center', method="caption", size=(w - 100, 230)
+                               color=text_color, stroke_color="white", stroke_width=15, align='center', method="caption", size=(w - 100, 330)
                                ).set_position((10, h - 1500)).set_duration(video_clip.duration)
     title_text_clip2 = TextClip(txt=cover_title,
                                 font=font_name,
                                 fontsize=title_fond_size,
-                                color=text_color, align='center', method="caption", size=(w - 100, 230)
+                                color=text_color,stroke_color=text_color,stroke_width=0,align='center', method="caption", size=(w - 100, 330)
                                 ).set_position((10, h - 1500)).set_duration(video_clip.duration)
+
+    # title_text_clip4 = TextClip(txt="测试一下(1)",
+    #                         font=font_name,
+    #                         fontsize=140,
+    #                         color=text_color, stroke_color="#FFFF00",stroke_width=20, align='center', method="caption",kerning=1.5, size=(w - 100, 230)
+    #                         ).set_position((10, h/2 -200)).set_duration(0.1)
+    # title_text_clip3 = TextClip(txt="测试一下(1)",
+    #                     font=font_name,
+    #                     fontsize=140,
+    #                     color="#FFFFFF", align='center', method="caption",kerning=1.5, size=(w - 100, 230)
+    #                     ).set_position((10, h/2 -200 )).set_duration(0.1)
+
     txts.append(title_text_clip)
     txts.append(title_text_clip2)
+    # txts.append(title_text_clip4)
+    # txts.append(title_text_clip3)
+
+
     result = CompositeVideoClip([video_clip, *txts])  # 在视频上覆盖文本
 
     result_video_name = "title_" + video_name
