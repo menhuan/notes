@@ -39,7 +39,7 @@ def xiaohongshu_login(driver):
         print("cookies不存在")
         driver.get('https://creator.xiaohongshu.com/creator/post')
         # driver.find_element(
-        #     "xpath", '//*[@placeholder="请输入手机号"]').send_keys("15612856610")
+        #     "xpath", '//*[@placeholder="请输入手机号"]').send_keys("")
         # # driver.find_element(
         # #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")
         # driver.find_element("xpath", '//button[text()="登录"]').click()

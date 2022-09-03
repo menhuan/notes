@@ -70,7 +70,7 @@ def wait_login(driver):
         "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/div[3]/span').click()
     # driver.find_element("xpath",'//input[@type="file"]').send_keys(path_mp4)
     driver.find_element(
-        "xpath", '//*[@placeholder="请输入手机号"]').send_keys("15612856610")
+        "xpath", '//*[@placeholder="请输入手机号"]').send_keys("")
     time.sleep(3)
     # driver.find_element(
     #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")

@@ -41,7 +41,7 @@ def kuaishou_login(driver):
         print("cookies不存在")
         driver.get('https://passport.kuaishou.com/pc/account/login/?sid=kuaishou.web.cp.api&callback=https%3A%2F%2Fcp.kuaishou.com%2Frest%2Finfra%2Fsts%3FfollowUrl%3Dhttps%253A%252F%252Fcp.kuaishou.com%252Farticle%252Fpublish%252Fvideo%26setRootDomain%3Dtrue')
         driver.find_element(
-            "xpath", '//*[@placeholder="请输入手机号"]').send_keys("15612856610")
+            "xpath", '//*[@placeholder="请输入手机号"]').send_keys("")
         # driver.find_element(
         #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")
         driver.find_element("xpath", '//button[text()="登录"]').click()
