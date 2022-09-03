@@ -3,8 +3,8 @@
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
 name="作妖的堂妹让我真长见识 网友 送到精神病院吧"
-musics=('https://wpyf.10cha.cn/yuyin/hecheng/outmusic/1662124883000wpy4671.wav' 'https://wpyv.10cha.cn/yuyin/hecheng/outmusic/1662125183000wpy6865.wav' 'https://wpyo.10cha.cn/yuyin/hecheng/outmusic/1662125256000wpy8389.wav' )
-srts=('https://wpyf.10cha.cn/yuyin/hecheng/zimu/1662124883000wpy4671.srt' 'https://wpyv.10cha.cn/yuyin/hecheng/zimu/1662125183000wpy6865.srt' 'https://wpyo.10cha.cn/yuyin/hecheng/zimu/1662125256000wpy8389.srt')
+musics=('https://wpyf.10cha.cn/yuyin/hecheng/outmusic/1662124883000wpy4671.wav' 'https://wpym.10cha.cn/yuyin/hecheng/outmusic/1662186298000wpy710.wav'   'https://wpyy.10cha.cn/yuyin/hecheng/outmusic/1662186170000wpy578.wav' )
+srts=('https://wpyf.10cha.cn/yuyin/hecheng/zimu/1662124883000wpy4671.srt'  'https://wpym.10cha.cn/yuyin/hecheng/zimu/1662186298000wpy710.srt'   'https://wpyy.10cha.cn/yuyin/hecheng/zimu/1662186170000wpy578.srt')
 for index in ${!musics[@]}
     do 
     wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'.wav

@@ -247,7 +247,7 @@ def run_make_video():
                         audioMp3 = MP3(music_name)
                         audio_duration = audioMp3.info.length
                     else:
-                        audio = WAVE(   )
+                        audio = WAVE(music_name)
                         audio_info = audio.info
                         audio_duration = int(audio_info.length)
 
