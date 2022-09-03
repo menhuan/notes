@@ -24,7 +24,7 @@ COOKING_PATH = os.path.join(ROOT_PATH, "cooking")
 COOKING_TXT = os.path.join(COOKING_PATH, "douyin.txt")
 
 agent = 'Mozilla/5.0 (Macintosh; Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-
+isDingShi = os.getenv("IS_DINGSHI",True)
 
 def get_driver():
     chrome_options = webdriver.ChromeOptions()
@@ -40,6 +40,7 @@ def get_driver():
         command_executor="http://101.43.210.78:50000",
         desired_capabilities=chrome_options.to_capabilities()
     )
+    driver.maximize_window()
     # driver = webdriver.Remote(
     #   command_executor= ChromiumRemoteConnection(remote_server_addr='http://101.43.210.78:50000',vendor_prefix='-webkit-',browser_name="CHROME"),
     #   desired_capabilities=chrome_options.to_capabilities()
@@ -162,7 +163,7 @@ def get_cookie(driver):
 
 def get_publish_date(title, index):
     # 代表的是 加一天时间
-    time_long = int(index/3) * 24
+    time_long = int(index/3) * 24 
     now = datetime.datetime.today()
     tomorrowemp = now + datetime.timedelta(hours=time_long)
     print("title:", title)
@@ -173,6 +174,9 @@ def get_publish_date(title, index):
         tomorrow = tomorrowemp.replace(hour=12, minute=0, second=0)
     elif title.find("(3)") > 0 or title.find("(6)") > 0:
         tomorrow = tomorrowemp.replace(hour=18, minute=0, second=0)
+    print("准备写入的时间是:",tomorrow)
+    if(tomorrow <= now):
+        tomorrow = now + datetime.timedelta(hours=2) +datetime.timedelta(hours=1*index)
     print("输出的时间是:", tomorrow.strftime("%Y-%m-%d %H:%M"))
     return tomorrow.strftime("%Y-%m-%d %H:%M")
 
@@ -261,22 +265,22 @@ def publish_douyin(driver, mp4, index):
     # driver.find_element("xpath", '//button[text()="确定"]').click()
 
     # 定时发布radio--4Gpx6 one-line--2rHu9
-    print("定时发布")
-    time.sleep(5)
-    dingshi = driver.find_elements(
-        "xpath", '//*[@class="radio--4Gpx6 one-line--2rHu9"]')
-    time.sleep(4)
-    print("点击定时发布")
-    dingshi[1].click()
-    #driver.find_elements("xpath", '//*[@class="radio--4Gpx6 one-line--2rHu9"]')[1].click()
-    time.sleep(3)
-    input_data = driver.find_element("xpath", '//*[@placeholder="日期和时间"]')
-    input_data.send_keys(Keys.CONTROL, 'a')  # 全选
-    # input_data.send_keys(Keys.DELETE)
+    if isDingShi:
+        print("定时发布")
+        time.sleep(5)
+        dingshi = driver.find_elements(
+            "xpath", '//*[@class="radio--4Gpx6 one-line--2rHu9"]')
+        time.sleep(4)
+        print("点击定时发布")
+        dingshi[1].click()
+        #driver.find_elements("xpath", '//*[@class="radio--4Gpx6 one-line--2rHu9"]')[1].click()
+        time.sleep(3)
+        input_data = driver.find_element("xpath", '//*[@placeholder="日期和时间"]')
+        input_data.send_keys(Keys.CONTROL, 'a')  # 全选
+        # input_data.send_keys(Keys.DELETE)
+        time.sleep(3)
+        input_data.send_keys(get_publish_date(title, index))
 
-    input_data.send_keys(get_publish_date(title, index))
-    # driver.find_element(
-    #     "xpath", '//*[@placeholder="日期和时间"]').send_keys("2022-08-16 22:00")
 
     # 等待视频上传完成,放到最后,这一步是最慢的.
     while True:

@@ -56,23 +56,39 @@ def xiaohongshu_login(driver):
 def publish_xiaohongshu(driver, mp4, index):
     time.sleep(3)
     driver.find_element("xpath", '//*[text()="发布笔记"]').click()
-    print("开始上传文件",mp4[0])
+    print("开始上传文件", mp4[0])
     time.sleep(3)
     # ### 上传视频
     vidoe = driver.find_element("xpath", '//input[@type="file"]')
     vidoe.send_keys(mp4[0])
-    
+
     # 填写标题
-    content = mp4[1].replace('.mp4','')
+    content = mp4[1].replace('.mp4', '')
     driver.find_element(
         "xpath", '//*[@placeholder="填写标题，可能会有更多赞哦～"]').send_keys(content)
 
     time.sleep(1)
     # 填写描述
-    driver.find_element(
-        "xpath", '//*[@placeholder="填写更全面的描述信息，让更多的人看到你吧！"]').send_keys(content + "#虐文 #虐文推荐 #知乎小说 #知乎文 ")
-    
+    content_clink = driver.find_element(
+        "xpath", '//*[@placeholder="填写更全面的描述信息，让更多的人看到你吧！"]')
+    content_clink.send_keys(content)
+
     time.sleep(3)
+    # #虐文推荐 #知乎小说 #知乎文
+    for label in ["#虐文","#知乎文","#小说推荐","#知乎小说","#爽文"]:
+        content_clink.send_keys(label)
+        time.sleep(1)
+        data_indexs = driver.find_elements(
+            "class name", "publish-topic-item")
+        try:
+            for data_index in data_indexs:
+                if(label in data_index.text):
+                    print("点击标签",label)
+                    data_index.click()
+                    break
+        except Exception:
+            traceback.print_exc()
+        time.sleep(1)
 
     # 定时发布
     dingshi = driver.find_elements(
@@ -83,12 +99,12 @@ def publish_xiaohongshu(driver, mp4, index):
     time.sleep(5)
     input_data = driver.find_element("xpath", '//*[@placeholder="请选择日期"]')
     input_data.send_keys(Keys.CONTROL,'a')     #全选
-    #input_data.send_keys(Keys.DELETE)
+    # input_data.send_keys(Keys.DELETE)
     input_data.send_keys(get_publish_date(content,index))    
     time.sleep(3)
-    #driver.find_element("xpath", '//*[text()="确定"]').click()
+    # driver.find_element("xpath", '//*[text()="确定"]').click()
 
-    #等待视频上传完成
+    # 等待视频上传完成
     while True:
         time.sleep(10)
         try:

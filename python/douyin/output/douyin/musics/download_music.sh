@@ -2,9 +2,9 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="小镇做题家的逆袭 打脸真是爽"
-musics=('https://wpy6.10cha.cn/yuyin/hecheng/outmusic/1661731493000wpy2699.mp3' 'https://wpyu.10cha.cn/yuyin/hecheng/outmusic/1661731606000wpy7926.mp3' 'https://wpyu.10cha.cn/yuyin/hecheng/outmusic/1661731787000wpy3121.mp3')
-srts=('https://wpy6.10cha.cn/yuyin/hecheng/zimu/1661731493000wpy2699.srt' 'https://wpyu.10cha.cn/yuyin/hecheng/zimu/1661731606000wpy7926.srt' 'https://wpyu.10cha.cn/yuyin/hecheng/zimu/1661731787000wpy3121.srt' )
+name="作妖的堂妹让我真长见识 网友 送到精神病院吧"
+musics=('https://wpyf.10cha.cn/yuyin/hecheng/outmusic/1662124883000wpy4671.wav' 'https://wpyv.10cha.cn/yuyin/hecheng/outmusic/1662125183000wpy6865.wav' 'https://wpyo.10cha.cn/yuyin/hecheng/outmusic/1662125256000wpy8389.wav' )
+srts=('https://wpyf.10cha.cn/yuyin/hecheng/zimu/1662124883000wpy4671.srt' 'https://wpyv.10cha.cn/yuyin/hecheng/zimu/1662125183000wpy6865.srt' 'https://wpyo.10cha.cn/yuyin/hecheng/zimu/1662125256000wpy8389.srt')
 for index in ${!musics[@]}
     do 
     wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'.wav

@@ -67,7 +67,7 @@ def getText(url):
         "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
         '砍','看').replace('砸','杂').replace('1\n','').replace('2\n','').replace('3\n','').replace('4\n','').replace(
         '5\n','').replace('6\n','').replace('7\n','').replace('8\n','').replace('9\n','').replace('0','').replace('】','').replace(
-            "【",'').replace(' ','').strip()
+            "【",'').replace(' ','').replace('　','').strip()
         
     # for index in range(1,20):
     #    num = str(index) + "."
@@ -80,7 +80,8 @@ def getText(url):
     t = t.replace('拐卖','柺卖').replace('死','4').replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
             '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',
-            "怂").replace("全面",'全棉').replace('唯一','惟一')
+            "怂").replace("全面",'全棉').replace('唯一','惟一').replace("优秀","右袖").replace("全国","劝过").replace("顶级","定级").replace(
+                "烧","🔥")
         
 
     # 替换作者昵称
@@ -117,7 +118,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1543297640699219968?km_channel=search&origin_label=search'
+    url = 'https://www.zhihu.com/market/paid_column/1500563077195636736/section/1548672254053138432'
     content = getText(url)
     # import image2
     # image2.show_image(content)

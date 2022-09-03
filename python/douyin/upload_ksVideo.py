@@ -115,7 +115,10 @@ def publish_kuaishou(driver, mp4, index):
     # 发布
     driver.find_element("xpath", '//*[text()="发布"]').click()
     time.sleep(5)
-    driver.find_element("xpath", '//*[text()="确认发布"]').click()
+    try:
+        driver.find_element("xpath", '//*[text()="确认发布"]').click()
+    except Exception:
+        traceback.print_exc()
     time.sleep(5)
     print("视频发布完成！")
 def run(driver):

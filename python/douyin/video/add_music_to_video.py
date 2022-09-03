@@ -1,7 +1,6 @@
 # 根据小说的音频生成视频
 # 运行程序 python3 add_music_to_video.py
 
-from logging import exception
 import os
 
 from random import sample
@@ -248,7 +247,7 @@ def run_make_video():
                         audioMp3 = MP3(music_name)
                         audio_duration = audioMp3.info.length
                     else:
-                        audio = WAVE(music_name)
+                        audio = WAVE(   )
                         audio_info = audio.info
                         audio_duration = int(audio_info.length)
 
@@ -264,6 +263,7 @@ def run_make_video():
             print("本次视频合成完毕")
         except Exception as e:
             traceback.print_exc()
+            sleep(10)
 
 
 if __name__ == "__main__":
