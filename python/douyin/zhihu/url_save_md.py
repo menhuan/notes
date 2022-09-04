@@ -8,6 +8,8 @@ import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
+from zhihu.yuyin import output
+
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
     'OUTPUT_PATH', "zhihu/booking/"))
@@ -19,7 +21,7 @@ headers = {
     'User-Agent': agent
 }
 
-def getText(url):
+def getText(url,video_title):
 
     html = requests.get(url, headers=headers).text
 
@@ -92,16 +94,26 @@ def getText(url):
     # 按照1600来分割
     split_size = 1450
     split_result = ''
-    start_index = 0
+    start_index = 80
     end_index =1550
+    # 修改前缀
+    page_prefix = t[0:start_index]
+    
+    index_prefix = 1
     while True:
+        current_content =""
         if end_index >= total_size:
+            index_prefix+=1
+            current_content =page_prefix + t[start_index:total_size]
             split_result +=t[start_index:total_size]
             print("输出数据",start_index,end_index,total_size)
             break
         elif t[end_index] == '，':
+            index_prefix+=1
             end_index = end_index+1
             print("输出数据",start_index,end_index,total_size)
+            current_content = page_prefix + t[start_index:end_index]
+            output(current_content,f"{video_title}({index_prefix})")
             split_result +=t[start_index:end_index] +"\n"
             end_index_bak = end_index
             end_index = end_index +split_size
@@ -118,7 +130,7 @@ def getText(url):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1500563077195636736/section/1548672254053138432'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1548725634905608192'
     content = getText(url)
     # import image2
     # image2.show_image(content)

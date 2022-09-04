@@ -23,11 +23,13 @@ root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 font_name = os.path.join(root_path, os.getenv(
     "FOOT_NAME", "fonts/miaohunti.ttf"))
+fengmian_foot_name = os.path.join(root_path, os.getenv(
+    "FOOT_NAME", "fonts/qingnianti.otf"))
 output_path = os.path.join(root_path, os.getenv("OUTPUT", "output/"))
 relax_path = os.path.join(root_path, os.getenv("RELAX_PATH", "cutting_videos"))
 backgroundmusic_path = os.path.join(
     root_path, os.getenv("BACKGROUNDMUSIC", "backgroundmusic/"))
-musics_path = os.path.join(root_path, os.getenv("BACKGROUNDMUSIC", "musics/"))
+musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
 
 # 合并视频，获取解压的背景视频
 
@@ -42,7 +44,7 @@ def mergerVideo(videoDuration):
         if ((os.path.splitext(val)[1] == '.MP4' or os.path.splitext(val)[1] == '.mp4')):
             video_list.append(val)
 
-    random_list = sample(video_list, 6)  # 随机抽取元素
+    random_list = sample(video_list, 3)  # 随机抽取元素
     print(random_list)
     # # 定义一个数组
     video_clip_list = []
@@ -115,7 +117,7 @@ def writeTextVideo(video_name, srt_name, title):
     # cover_title=title;
     # a[2:-2] 表示去掉前面两个和后面两个
     # 如果光去掉后面的a[:-2]
-    cover_title = title
+    cover_title = title.split(",")[0]
     title_fond_size = 90
     txts = []
 
@@ -132,21 +134,21 @@ def writeTextVideo(video_name, srt_name, title):
                                 color=text_color,stroke_color=text_color,stroke_width=0,align='center', method="caption", size=(w - 100, 330)
                                 ).set_position((10, h - 1500)).set_duration(video_clip.duration)
 
-    # title_text_clip4 = TextClip(txt="测试一下(1)",
-    #                         font=font_name,
-    #                         fontsize=140,
-    #                         color=text_color, stroke_color="#FFFF00",stroke_width=20, align='center', method="caption",kerning=1.5, size=(w - 100, 230)
-    #                         ).set_position((10, h/2 -200)).set_duration(0.1)
-    # title_text_clip3 = TextClip(txt="测试一下(1)",
-    #                     font=font_name,
-    #                     fontsize=140,
-    #                     color="#FFFFFF", align='center', method="caption",kerning=1.5, size=(w - 100, 230)
-    #                     ).set_position((10, h/2 -200 )).set_duration(0.1)
+    title_text_clip4 = TextClip(txt=title.split(",")[1],
+                            font=font_name,
+                            fontsize=140,
+                            color=text_color, stroke_color="#000000",stroke_width=20, align='center', method="caption",kerning=1.5, size=(w - 100, 230)
+                            ).set_position((10, h/2 -200)).set_duration(0.1)
+    title_text_clip3 = TextClip(txt=title.split(",")[1],
+                        font=font_name,
+                        fontsize=140,
+                        color="#ffde02", stroke_color="#ffde02",stroke_width=5,align='center', method="caption",kerning=1.5, size=(w - 100, 230)
+                        ).set_position((10, h/2 -200 )).set_duration(0.1)
 
     txts.append(title_text_clip)
     txts.append(title_text_clip2)
-    # txts.append(title_text_clip4)
-    # txts.append(title_text_clip3)
+    txts.append(title_text_clip4)
+    txts.append(title_text_clip3)
 
 
     result = CompositeVideoClip([video_clip, *txts])  # 在视频上覆盖文本
@@ -284,9 +286,9 @@ def run_make_video():
 
 if __name__ == "__main__":
     # 开启一个线程去做
-    t1 = threading.Thread(target=deal_with.run)
+    #t1 = threading.Thread(target=deal_with.run)
     t2 = threading.Thread(target=run_make_video)
-    t1.start()
+    #t1.start()
     t2.start()
 
 

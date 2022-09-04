@@ -10,6 +10,15 @@ RUN apt-get update && apt-get install -y vim \
     curl \
     ffmpeg \
     imagemagick \
+    build-essential \
+    libssl-dev  \
+    libasound2 \
+    wget \
+    libgstreamer1.0-0 \
+    gstreamer1.0-plugins-base \
+    gstreamer1.0-plugins-good \
+    gstreamer1.0-plugins-bad \
+    gstreamer1.0-plugins-ugly \
     && apt-get clean
 RUN /usr/local/bin/python -m pip install --upgrade pip
 #RUN sed -i s@<policy domain="path" rights="none" pattern="@*"/>@<!--<policy domain="path" rights="none" pattern="@*"/>-->@g /etc/ImageMagick-6/policy.xml
