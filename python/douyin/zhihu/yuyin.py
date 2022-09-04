@@ -28,13 +28,14 @@ def output(txt_to_aideo,file_name):
     </speak>
     """
     # Creates an instance of a speech config with specified subscription key and service region.
-    speech_key = "d99b109acc4b4e40a4ffc1490c16751b"
-    service_region = "eastasia"
+    speech_key =os.getenv("SUBSCRIPTION_KEY","") ,
+    service_region = os.getenv("REGION","eastasia"),
 
     speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
     # Note: the voice setting will not overwrite the voice element in input SSML.
     speech_config.speech_synthesis_voice_name = "zh-CN-XiaochenNeural"
-    audio_config = speechsdk.audio.AudioOutputConfig(filename=f"{file_name}.wav")
+    music_path = os.path.join(musics_path,f"{file_name}.wav")
+    audio_config = speechsdk.audio.AudioOutputConfig(filename=music_path)
 
     # use the default speaker as audio output.
     speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config)

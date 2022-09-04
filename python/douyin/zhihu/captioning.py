@@ -21,6 +21,7 @@ from typing import Any
 import wave
 import azure.cognitiveservices.speech as speechsdk
 import helper
+import os
 
 def user_config_from_args(usage : str) -> helper.Read_Only_Dict :
     key = helper.get_cmd_option("--key")
@@ -42,8 +43,8 @@ def user_config_from_args(usage : str) -> helper.Read_Only_Dict :
         "phrase_list" : helper.get_cmd_option("--phrases"),
         "show_recognizing_results" : helper.get_cmd_option("--recognizing"),
         "stable_partial_result_threshold" : helper.get_cmd_option("--threshold"),
-        "subscription_key" : "d99b109acc4b4e40a4ffc1490c16751b",
-        "region" : "eastasia",
+        "subscription_key" : os.getenv("SUBSCRIPTION_KEY","") ,
+        "region" :os.getenv("REGION","eastasia"),
     })
 
 # Note: Continuous language identification is supported only with v2 endpoints.
