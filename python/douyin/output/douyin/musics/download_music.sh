@@ -2,18 +2,18 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="作妖的堂妹让我真长见识 网友 送到精神病院吧"
-musics=('https://wpyf.10cha.cn/yuyin/hecheng/outmusic/1662124883000wpy4671.wav' 'https://wpym.10cha.cn/yuyin/hecheng/outmusic/1662186298000wpy710.wav'   'https://wpyy.10cha.cn/yuyin/hecheng/outmusic/1662186170000wpy578.wav' )
-srts=('https://wpyf.10cha.cn/yuyin/hecheng/zimu/1662124883000wpy4671.srt'  'https://wpym.10cha.cn/yuyin/hecheng/zimu/1662186298000wpy710.srt'   'https://wpyy.10cha.cn/yuyin/hecheng/zimu/1662186170000wpy578.srt')
+name="室友假装白富美让我恶心 网友聚宝吧"
+musics=('https://wpyv.10cha.cn/yuyin/hecheng/outmusic/1662286721000wpy4337.wav' 'https://wpy7.10cha.cn/yuyin/hecheng/outmusic/1662286252000wpy3204.wav' )
+srts=('https://wpyv.10cha.cn/yuyin/hecheng/zimu/1662286721000wpy4337.srt' 'https://wpy7.10cha.cn/yuyin/hecheng/zimu/1662286252000wpy3204.srt')
 for index in ${!musics[@]}
     do 
-    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'.wav
+    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',面子室友'.wav
     echo "$index" "${musics[$index]}"
     done
 
 for index in ${!srts[@]}
     do 
-    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'.srt
+    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',面子室友'.srt
     echo "$index" "${srts[$index]}"
     done
 

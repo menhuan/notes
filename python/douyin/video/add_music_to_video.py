@@ -7,6 +7,7 @@ from random import sample
 import threading
 from time import sleep
 import traceback
+from turtle import tilt
 from moviepy.editor import *
 from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
@@ -122,7 +123,7 @@ def writeTextVideo(video_name, srt_name, title):
     txts = []
 
     w, h = video_clip.w, video_clip.h
-    print("w:", w, "h:", h)
+    print("w:", w, "h:", h,"cover_title",cover_title)
     title_text_clip = TextClip(txt=cover_title,
                                font=font_name,
                                fontsize=title_fond_size,
@@ -198,8 +199,6 @@ def videoAddSrt(videoFile, srtFile, title):
     # 获取视频的宽度和高度
 
     w, h = video.w, video.h
-    print(w)
-    print(h)
 
     txts = []
     txts2 = []
@@ -239,6 +238,7 @@ def videoAddSrt(videoFile, srtFile, title):
         txts.append(txt2)
     # 合成视频，写入文件
     video = CompositeVideoClip([video, *txts])
+    print("输出文件为",output_path + title + ".mp4")
     video.write_videofile(output_path + title + ".mp4")
     os.remove(videoFile)
 
@@ -276,7 +276,7 @@ def run_make_video():
                     addMusicToVideo(music_name, srt_name, title)
                     os.remove(os.path.join(musics_path, music_file))
                     os.remove(os.path.join(musics_path, srt_name))
-                print("视频合成已完成", music_file)
+                print("视频合成已完成", music_file,title)
             sleep(sleep_time)
             print("本次视频合成完毕")
         except Exception as e:

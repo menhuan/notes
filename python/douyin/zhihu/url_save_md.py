@@ -8,7 +8,7 @@ import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
-from zhihu.yuyin import output
+#from yuyin import output
 
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
@@ -94,7 +94,7 @@ def getText(url,video_title):
     # 按照1600来分割
     split_size = 1450
     split_result = ''
-    start_index = 80
+    start_index = 128
     end_index =1550
     # 修改前缀
     page_prefix = t[0:start_index]
@@ -104,8 +104,8 @@ def getText(url,video_title):
         current_content =""
         if end_index >= total_size:
             index_prefix+=1
-            current_content =page_prefix + t[start_index:total_size]
-            split_result +=t[start_index:total_size]
+            #current_content =page_prefix + t[start_index:total_size]
+            split_result += page_prefix +t[start_index:total_size]
             print("输出数据",start_index,end_index,total_size)
             break
         elif t[end_index] == '，':
@@ -113,8 +113,8 @@ def getText(url,video_title):
             end_index = end_index+1
             print("输出数据",start_index,end_index,total_size)
             current_content = page_prefix + t[start_index:end_index]
-            output(current_content,f"{video_title}({index_prefix})")
-            split_result +=t[start_index:end_index] +"\n"
+            #output(current_content,f"{video_title}({index_prefix})")
+            split_result += page_prefix+ t[start_index:end_index] +"\n"
             end_index_bak = end_index
             end_index = end_index +split_size
             start_index = end_index_bak
@@ -130,8 +130,8 @@ def getText(url,video_title):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1548725634905608192'
-    content = getText(url)
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1548372885319872512'
+    content = getText(url,"")
     # import image2
     # image2.show_image(content)
 
