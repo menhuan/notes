@@ -276,7 +276,7 @@ def run_make_video():
                     addMusicToVideo(music_name, srt_name, title)
                     os.remove(os.path.join(musics_path, music_file))
                     os.remove(os.path.join(musics_path, srt_name))
-                print("视频合成已完成", music_file,title)
+                print("视频合成已完成", music_file, music_file.split('.')[0])
             sleep(sleep_time)
             print("本次视频合成完毕")
         except Exception as e:
