@@ -21,7 +21,7 @@ headers = {
     'User-Agent': agent
 }
 
-def getText(url,video_title):
+def getText(url,video_title,start_init):
 
     html = requests.get(url, headers=headers).text
 
@@ -94,7 +94,7 @@ def getText(url,video_title):
     # 按照1600来分割
     split_size = 1450
     split_result = ''
-    start_index = 128
+    start_index =start_init
     end_index =1550
     # 修改前缀
     page_prefix = t[0:start_index]
@@ -103,13 +103,13 @@ def getText(url,video_title):
     while True:
         current_content =""
         if end_index >= total_size:
-            index_prefix+=1
-            #current_content =page_prefix + t[start_index:total_size]
+            current_content =page_prefix + t[start_index:total_size]
             split_result += page_prefix +t[start_index:total_size]
+            with open(output_path + textName2 + "_"+ str(index_prefix)  + '.md', "w") as f2:
+                f2.write(current_content)  
             print("输出数据",start_index,end_index,total_size)
             break
         elif t[end_index] == '，':
-            index_prefix+=1
             end_index = end_index+1
             print("输出数据",start_index,end_index,total_size)
             current_content = page_prefix + t[start_index:end_index]
@@ -118,9 +118,13 @@ def getText(url,video_title):
             end_index_bak = end_index
             end_index = end_index +split_size
             start_index = end_index_bak
+            with open(output_path + textName2 + "_"+ str(index_prefix)  + '.md', "w") as f2:
+                f2.write(current_content)   
+            index_prefix+=1
+
         else:
             end_index+=1
-
+       
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)
@@ -130,8 +134,13 @@ def getText(url,video_title):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1548372885319872512'
-    content = getText(url,"")
+    start_index = len("""我从一个学渣变成一个学霸，最想见到的就是我那劈腿的前男友。
+可是，当我见到他的时候却知道了一个隐瞒很久的秘密。
+也就是这个秘密，彻底改写了我的一生.…""")
+    print("裁剪长度:",start_index)
+
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1548333160286347265'
+    content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)
 

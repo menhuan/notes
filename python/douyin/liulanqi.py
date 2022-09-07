@@ -121,6 +121,7 @@ def get_map4():
     else:
         print("未检查到视频路径，程序终止！")
         exit()
+    mp4_result.sort()
     return mp4_result
 
     # 封面地址获取
