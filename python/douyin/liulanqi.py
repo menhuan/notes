@@ -226,15 +226,15 @@ def publish_douyin(driver, mp4, index):
 
     title = mp4[1].replace(".mp4", "")
 
-    input_text.send_keys(title + " #小说 ")
+    input_text.send_keys(title + " #小说推荐 ")
     time.sleep(4)
-    input_text.send_keys(" #推文日常 ")
+    input_text.send_keys(" #日常推文 ")
+    time.sleep(4)
+    input_text.send_keys(" #甜文 ")
+    #time.sleep(4)
+    #input_text.send_keys(" #虐文虐心 ")
     time.sleep(4)
     input_text.send_keys(" #言情 ")
-    time.sleep(4)
-    input_text.send_keys(" #爽文 ")
-    time.sleep(4)
-    input_text.send_keys(" #恋爱 ")
 
     # 设置选项
     time.sleep(4)

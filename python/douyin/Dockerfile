@@ -31,7 +31,7 @@ COPY upload_ksVideo.py /app/
 COPY upload_xiaohongshu.py /app/
 
 
-RUN /usr/local/bin/pip install -r /app/requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN /usr/local/bin/pip install -r /app/requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ADD ./output/douyin/fonts /app/output/douyin/fonts
 ADD ./output/douyin/cooking /app/output/douyin/cooking
 ADD ./output/douyin/backgroundmusic /app/output/douyin/backgroundmusic
