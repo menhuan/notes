@@ -134,13 +134,16 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""家里破产了，我主动跑去联姻，嫁给了一个大我十岁的「老男人」。
-老男人的前女友突然回国，声称是要拜访我。
-彼时我手里捧着一杯绿茶，如沐春风、浅笑嫣然地抬头看了她一眼，感叹：
-「啧，茶味真浓…」""")
+    start_index = len("""为了网恋对象我两个月减重25斤。
+却在网恋奔现当天发现对方是个200斤的中年大叔。
+我心态崩了。
+当下拉黑删除一条龙服务。
+网络一线牵，结束这段缘。
+军训结束后高中时期的校霸将我堵在了教室门口。
+他唇瓣殷红，一个字一个字咬牙切齿道：「小胖妞，把微信给老子加回来！」""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1549128407891603456'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1549135253574488064'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)
