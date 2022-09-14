@@ -166,6 +166,8 @@ def get_publish_date(title, index):
     # 代表的是 加一天时间
     time_long = int(index/3) * 24 
     now = datetime.datetime.today()
+    if(  now.hour  > 20 ):
+        time_long = 24
     tomorrowemp = now + datetime.timedelta(hours=time_long)
     print("title:", title)
     # 暂时注释掉+ datetime.timedelta(hours = 24)
@@ -284,12 +286,15 @@ def publish_douyin(driver, mp4, index):
 
 
     # 等待视频上传完成,放到最后,这一步是最慢的.
+    times = 10
     while True:
-        time.sleep(3)
+        time.sleep(10)
         try:
             driver.find_element("xpath", '//*[text()="重新上传"]')
             break
         except Exception as e:
+            if times ==0:
+                raise ValueError("需要重新重试")
             print("视频还在上传中···")
 
     print("视频已上传完成！")
@@ -321,8 +326,15 @@ if __name__ == "__main__":
         driver = get_driver()
         login(driver=driver)
         mp4s = get_map4()
-        for index, mp4 in enumerate(mp4s):
-            publish_douyin(driver, mp4, index)
+        mp4s_len = len(mp4s)
+        index = 0
+        while index < mp4s_len:
+            try:
+                publish_douyin(driver, mp4s[index], index)
+            except Exception:
+                index-=1
+            finally:
+                index+=1
             time.sleep(10)
     finally:
         driver.quit()

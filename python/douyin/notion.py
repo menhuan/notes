@@ -4,7 +4,7 @@ import json
 import pandas
 TOKEN = "secret_BNtB6tEMKocFnN2FqmzbCofCOer5HOAfl7PMc97e6Mm"
 database_id = "666f8249fd104dd48f195d7d326377f9"
-PAGE_SIZE = 10
+PAGE_SIZE = 100
 CSV_PATH= "/workspaces/notes/python/douyin/output/zhihu/csv/采集专栏的数据-后羿采集器.csv"
 
 def read_csv():
