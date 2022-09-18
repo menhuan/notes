@@ -3,7 +3,7 @@
 
 import os
 
-from random import sample
+from random import randint, sample
 import threading
 from time import sleep
 import traceback
@@ -45,7 +45,7 @@ def mergerVideo(videoDuration):
         if ((os.path.splitext(val)[1] == '.MP4' or os.path.splitext(val)[1] == '.mp4')):
             video_list.append(val)
 
-    random_list = sample(video_list, 3)  # 随机抽取元素
+    random_list = sample(video_list, 5)  # 随机抽取元素
     print(random_list)
     # # 定义一个数组
     video_clip_list = []
@@ -83,10 +83,14 @@ def mergerVideo(videoDuration):
 
     video_name = bg_video_name
     final_video.write_videofile(video_name, audio=True)
-    print("删除文件", random_list[0])
-    os.remove(os.path.join(relax_path, random_list[0]))
-# 把小说配音添加到视频里面
-
+    if video_clip_list[0].info.length <= videoDuration:
+        print("删除文件", random_list[0])
+        os.remove(os.path.join(relax_path, random_list[0]))
+    else:  
+        end = video_clip_list[0].subclip(0, videoDuration)
+        out_mp4 = os.path.join(relax_path, str(randint(100000,1000000)),'.mp4' )
+        print(f"生成新的文件{out_mp4}")
+        end.write_videofile(out_mp4)
 
 def addMusicToVideo(audioFile, srt_name, title):
     video_clip = VideoFileClip(bg_video_name)

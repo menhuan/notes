@@ -2,18 +2,18 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="我为了追求帅哥 把他的狗狗藏起来"
-musics=('https://wpy17.10cha.cn/yuyin/hecheng/outmusic/1663113650000wpy7060.wav' 'https://wpy9.10cha.cn/yuyin/hecheng/outmusic/1663113770000wpy3849.wav' 'https://wpyl.10cha.cn/yuyin/hecheng/outmusic/1663113861000wpy7864.wav')
-srts=('https://wpy17.10cha.cn/yuyin/hecheng/zimu/1663113650000wpy7060.srt' 'https://wpy9.10cha.cn/yuyin/hecheng/zimu/1663113770000wpy3849.srt' 'https://wpyl.10cha.cn/yuyin/hecheng/zimu/1663113861000wpy7864.srt')
+name="婚姻是恋爱的坟墓 但这才是真正幸福的开始"
+musics=('https://wpye.10cha.cn/yuyin/hecheng/outmusic/1663467798000wpy1548.wav' 'https://wpyn.10cha.cn/yuyin/hecheng/outmusic/1663467865000wpy7083.wav' 'https://wpyo.10cha.cn/yuyin/hecheng/outmusic/1663467929000wpy4084.wav')
+srts=('https://wpye.10cha.cn/yuyin/hecheng/zimu/1663467798000wpy1548.srt' 'https://wpyn.10cha.cn/yuyin/hecheng/zimu/1663467865000wpy7083.srt' 'https://wpyo.10cha.cn/yuyin/hecheng/zimu/1663467929000wpy4084.srt')
 for index in ${!musics[@]}
     do 
-    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',计划男友''('$(($index+1))')'.wav
+    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',浓情女友''('$(($index+1))')'.wav
     echo "$index" "${musics[$index]}"
     done
 
 for index in ${!srts[@]}
     do 
-    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',计划男友''('$(($index+1))')'.srt
+    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',浓情女友''('$(($index+1))')'.srt
     echo "$index" "${srts[$index]}"
     done
 

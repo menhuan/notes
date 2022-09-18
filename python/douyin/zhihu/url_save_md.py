@@ -83,7 +83,7 @@ def getText(url,video_title,start_init):
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
             '杂碎','砸碎').replace('第一','帝一').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',
             "怂").replace("全面",'全棉').replace('唯一','惟一').replace("优秀","右袖").replace("全国","劝过").replace("顶级","定级").replace(
-                "烧","少")
+                "烧","少").replace("支付宝",'zhiFuBao')
         
 
     # 替换作者昵称
@@ -92,10 +92,10 @@ def getText(url,video_title,start_init):
     t = ""  + t
     total_size = len(t)
     # 按照1600来分割
-    split_size = 1450
+    split_size = 1000
     split_result = ''
     start_index =start_init
-    end_index =1550
+    end_index =1050
     # 修改前缀
     page_prefix = t[0:start_index]
     
@@ -134,14 +134,15 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""半夜乘坐电梯。
-一个手腕拴着铁链的帅哥走了进来。
-我死死盯着铁链，
-帅哥以为我紧张，出声安慰：
-「别害怕，它不咬.卧擦，我狗呢？」""")
+    start_index = len("""车祸失忆。
+依稀记得失忆前有钱老公要跟我要离婚。
+离就离！
+看着自己清爽的余额…
+我打开通讯录备注钱包的老公，娇滴滴的打去电话。
+「老公，人家好想你哦！」""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1549443629281878016'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550171837258285056'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)
