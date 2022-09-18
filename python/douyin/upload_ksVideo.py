@@ -67,7 +67,7 @@ def publish_kuaishou(driver, mp4, index):
     # 填写描述
     content = mp4[1].replace('.mp4','')
     driver.find_element(
-        "xpath", '//*[@placeholder="添加合适的话题和描述，作品能获得更多推荐～"]').send_keys(content + " #虐心小说 #虐文 #小说推荐 ")
+        "xpath", '//*[@placeholder="添加合适的话题和描述，作品能获得更多推荐～"]').send_keys(content + " #虐心小说 #虐文 #甜心小故事 ")
 
     time.sleep(3)
     # 定时发布
