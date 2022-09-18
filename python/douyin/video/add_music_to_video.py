@@ -83,7 +83,7 @@ def mergerVideo(videoDuration):
 
     video_name = bg_video_name
     final_video.write_videofile(video_name, audio=True)
-    if video_clip_list[0].info.length <= videoDuration:
+    if video_clip_list[0].duration <= videoDuration:
         print("删除文件", random_list[0])
         os.remove(os.path.join(relax_path, random_list[0]))
     else:  
