@@ -132,12 +132,12 @@ def writeTextVideo(video_name, srt_name, title):
                                font=font_name,
                                fontsize=title_fond_size,
                                color=text_color, stroke_color="white", stroke_width=15, align='center', method="caption", size=(w - 100, 330)
-                               ).set_position((10, h - 1500)).set_duration(video_clip.duration)
+                               ).set_position((10, h - 1400)).set_duration(video_clip.duration)
     title_text_clip2 = TextClip(txt=cover_title,
                                 font=font_name,
                                 fontsize=title_fond_size,
                                 color=text_color,stroke_color=text_color,stroke_width=0,align='center', method="caption", size=(w - 100, 330)
-                                ).set_position((10, h - 1500)).set_duration(video_clip.duration)
+                                ).set_position((10, h - 1400)).set_duration(video_clip.duration)
 
     title_text_clip4 = TextClip(txt=title.split(",")[1],
                             font=font_name,
@@ -230,9 +230,9 @@ def videoAddSrt(videoFile, srtFile, title):
             # 图片将自动调整大小以适合剪辑的大小，这是该参数的缺省值。设置为’caption’时，
             # 文字将在size参数指定范围内显示，此时文字会自动换行
             #sentences = sentences[:12] + " " +sentences[12:]
-            txt = TextClip(sentences, fontsize=70, font=font_name, method="caption", size=(w - 50, 200), align='center',
+            txt = TextClip(sentences, fontsize=70, font=font_name, method="caption", size=(w - 100, 200), align='center',
                            color=text_color, stroke_color="white", stroke_width=20).set_position((30, h - 980)) .set_duration(span).set_start(start)
-            txt2 = TextClip(sentences, fontsize=70, font=font_name, method="caption", size=(w - 50, 200), align='center',
+            txt2 = TextClip(sentences, fontsize=70, font=font_name, method="caption", size=(w - 100, 200), align='center',
                             color=text_color).set_position((30, h - 980)).set_duration(span).set_start(start)
         else:
             txt = TextClip(sentences, fontsize=70, font=font_name, method="caption", size=(w - 50, 100), align='center',
