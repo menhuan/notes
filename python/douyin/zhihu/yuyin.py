@@ -11,7 +11,7 @@ musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
 
 def output(txt_to_aideo,file_name):
     ssml = ""
-    for txt in txt_to_aideo.split(','):
+    for txt in txt_to_aideo.split('，'):
         ssml += f"""
            <voice name="zh-CN-XiaochenNeural">
            <mstts:silence  type="Tailing"  value="200ms"/>
