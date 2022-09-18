@@ -8,7 +8,7 @@ if __name__ == "__main__":
         driver = get_driver()
         run(driver)
         upload_ksVideo.run(driver)
-        upload_xiaohongshu.run(driver)
+#        upload_xiaohongshu.run(driver)
     finally:
         print("执行结束了")
         sleep(10)

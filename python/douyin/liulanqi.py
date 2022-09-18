@@ -313,12 +313,21 @@ def publish_douyin(driver, mp4, index):
 
 
 def run(driver):
-    login(driver=driver)
-    mp4s = get_map4()
-    for index, mp4 in enumerate(mp4s):
-        publish_douyin(driver, mp4, index)
-        time.sleep(10)
-    time.sleep(10)
+    try:
+        login(driver=driver)
+        mp4s = get_map4()
+        mp4s_len = len(mp4s)
+        index = 0
+        while index < mp4s_len:
+            try:
+                publish_douyin(driver, mp4s[index], index)
+            except Exception:
+                index-=1
+            finally:
+                index+=1
+            time.sleep(10)
+    finally:
+        driver.quit()
 
 
 if __name__ == "__main__":
@@ -338,3 +347,5 @@ if __name__ == "__main__":
             time.sleep(10)
     finally:
         driver.quit()
+
+    
