@@ -13,23 +13,19 @@ def output(txt_to_aideo,file_name):
     ssml = ""
     for txt in txt_to_aideo.split('，'):
         ssml += f"""
-           <voice name="zh-CN-XiaochenNeural">
            <mstts:silence  type="Tailing"  value="200ms"/>
-           <prosody rate="45%" pitch="25%">
-             {txt}
-             </
-        </prosody>
-        </voice>
+           <prosody rate="45%" pitch="25%">{txt}</prosody>
            """ 
-    print(ssml)
     text =f"""
     <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
+            <voice name="zh-CN-XiaochenNeural">
             {ssml}
+            </voice>
     </speak>
     """
     # Creates an instance of a speech config with specified subscription key and service region.
-    speech_key =os.getenv("SUBSCRIPTION_KEY","") ,
-    service_region = os.getenv("REGION","eastasia"),
+    speech_key =os.getenv("SUBSCRIPTION_KEY","")
+    service_region = os.getenv("REGION","eastasia")
 
     speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
     # Note: the voice setting will not overwrite the voice element in input SSML.
@@ -71,5 +67,5 @@ if __name__ == "__main__":
 哇哦，这关系听起来有点狗血啊，
 我竖起了八卦的小耳朵，问小跟班，所以你们老大绿了吗，
 你，你放肆，我们老大和我们老大的干妹妹是清白的，"""
-    output(txt_to_aideo=txt,file_name='text')
+    output(txt_to_aideo=txt,file_name='/app/output/text')
     pass
