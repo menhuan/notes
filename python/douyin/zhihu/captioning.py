@@ -64,10 +64,11 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
     return "{} --> {}".format(start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
 
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
-    if user_config["language_ID_languages"] is not None :
-        return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
-    else :
-        return ""
+    return ""
+    # if user_config["language_ID_languages"] is not None :
+    #     return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
+    # else :
+    #     return ""
 
 def caption_from_speech_recognition_result(sequence_number : int, result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     caption = ""
@@ -247,7 +248,7 @@ usage = """Usage: python captioning.py [...]
     --threshold NUMBER            Set stable partial result threshold.
                                   Default value: 3
 """
-
+# python captioning.py --key "d99b109acc4b4e40a4ffc1490c16751b" --region "eastasia" --input /app/output/text.wav --format any --output caption.output.srt - --srt --recognizing --threshold 3 --profanity mask --phrases "Contoso;Jessie;Rehaan" --languages "zh-CN"
 try :
     if helper.cmd_option_exists("--help") :
         print(usage)
