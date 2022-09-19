@@ -134,15 +134,17 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""车祸失忆。
-依稀记得失忆前有钱老公要跟我要离婚。
-离就离！
-看着自己清爽的余额…
-我打开通讯录备注钱包的老公，娇滴滴的打去电话。
-「老公，人家好想你哦！」""")
+    start_index = len("""我中彩票了。
+打出这短短五个字的时候，我的手都在颤抖。
+一千万的大奖，交完税都还有八百万。
+看着账户里多到眼花缭乱的零，我给我的怨种闺蜜发了条消息：「穷B,收款码
+给我。」
+她回的很快：「几个妈啊这么说话？」
+我只好压着微信的最高额度给她转了两万过去。
+「！！！你卖肾了？」""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550171837258285056'
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1551286896373989376'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)

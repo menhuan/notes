@@ -132,23 +132,23 @@ def writeTextVideo(video_name, srt_name, title):
                                font=font_name,
                                fontsize=title_fond_size,
                                color=text_color, stroke_color="white", stroke_width=15, align='center', method="caption", size=(w - 100, 330)
-                               ).set_position((10, h - 1400)).set_duration(video_clip.duration)
+                               ).set_position((10, h - 1500)).set_duration(video_clip.duration)
     title_text_clip2 = TextClip(txt=cover_title,
                                 font=font_name,
                                 fontsize=title_fond_size,
                                 color=text_color,stroke_color=text_color,stroke_width=0,align='center', method="caption", size=(w - 100, 330)
-                                ).set_position((10, h - 1400)).set_duration(video_clip.duration)
+                                ).set_position((10, h - 1500)).set_duration(video_clip.duration)
 
     title_text_clip4 = TextClip(txt=title.split(",")[1],
                             font=font_name,
                             fontsize=140,
                             color=text_color, stroke_color="#000000",stroke_width=20, align='center', method="caption",kerning=1.5, size=(w - 100, 230)
-                            ).set_position((10, h/2 -200)).set_duration(0.1)
+                            ).set_position((10, h/2 -150)).set_duration(0.1)
     title_text_clip3 = TextClip(txt=title.split(",")[1],
                         font=font_name,
                         fontsize=140,
                         color="#ffde02", stroke_color="#ffde02",stroke_width=5,align='center', method="caption",kerning=1.5, size=(w - 100, 230)
-                        ).set_position((10, h/2 -200 )).set_duration(0.1)
+                        ).set_position((10, h/2 -150 )).set_duration(0.1)
 
     txts.append(title_text_clip)
     txts.append(title_text_clip2)
