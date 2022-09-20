@@ -23,6 +23,8 @@ import azure.cognitiveservices.speech as speechsdk
 import helper
 import os
 
+init = 0
+
 def user_config_from_args(usage : str) -> helper.Read_Only_Dict :
     key = helper.get_cmd_option("--key")
     if key is None:
@@ -64,11 +66,12 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
     return "{} --> {}".format(start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
 
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
-    return ""
-    # if user_config["language_ID_languages"] is not None :
-    #     return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
-    # else :
-    #     return ""
+    if user_config["language_ID_languages"] is not None :
+        init += 1
+        return str(init)
+        return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
+    else :
+        return ""
 
 def caption_from_speech_recognition_result(sequence_number : int, result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     caption = ""

@@ -292,9 +292,11 @@ def run_make_video():
 if __name__ == "__main__":
     # 开启一个线程去做
     #t1 = threading.Thread(target=deal_with.run)
-    t2 = threading.Thread(target=run_make_video)
+    #t2 = threading.Thread(target=run_make_video)
     #t1.start()
-    t2.start()
-
+    #t2.start()
+    content = read_srt("output/douyin/musics/暴富之后把钱分给闺蜜是一种什么体验(3),给闺蜜发钱(3).srt")
+    result = get_sequences(content=content)
+    print(result)
 
 # playsound.playsound('视频合成完成提示音.mp3')
