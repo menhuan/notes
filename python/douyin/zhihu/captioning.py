@@ -68,7 +68,7 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     if user_config["language_ID_languages"] is not None :
         init += 1
-        return str(init)
+        return str(init) + linesep
         return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
     else :
         return ""

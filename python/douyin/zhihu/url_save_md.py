@@ -134,17 +134,11 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""我中彩票了。
-打出这短短五个字的时候，我的手都在颤抖。
-一千万的大奖，交完税都还有八百万。
-看着账户里多到眼花缭乱的零，我给我的怨种闺蜜发了条消息：「穷B,收款码
-给我。」
-她回的很快：「几个妈啊这么说话？」
-我只好压着微信的最高额度给她转了两万过去。
-「！！！你卖肾了？」""")
+    start_index = len("""许辞是我弟弟，从小被我欺负到大。却没想到有一天我会被他压在墙角，跟个小
+狼崽子一般咬牙切齿对我说：「许言，欺负我这么些年，现在该我了吧？」""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1551286896373989376'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550161097797353472'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)

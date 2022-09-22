@@ -88,9 +88,12 @@ def mergerVideo(videoDuration):
         os.remove(os.path.join(relax_path, random_list[0]))
     else:  
         end = video_clip_list[0].subclip(0, videoDuration)
-        out_mp4 = os.path.join(relax_path, str(randint(100000,1000000))+".mp4")
+        out_mp4 = os.path.join(relax_path,str(randint(100000,1000000))+".mp4")
         print(f"生成新的文件{out_mp4}")
         end.write_videofile(out_mp4)
+        os.remove(os.path.join(relax_path, random_list[0]))
+
+
 
 def addMusicToVideo(audioFile, srt_name, title):
     video_clip = VideoFileClip(bg_video_name)
