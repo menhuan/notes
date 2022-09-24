@@ -14,7 +14,7 @@ def output(txt_to_aideo,file_name):
     for txt in txt_to_aideo.split('，'):
         ssml += f"""
            <mstts:silence  type="Tailing"  value="200ms"/>
-           <prosody rate="45%" pitch="25%">{txt}</prosody>
+           <prosody rate="35%" pitch="25%">{txt}</prosody>
            """ 
     text =f"""
     <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">

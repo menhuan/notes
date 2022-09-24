@@ -23,8 +23,6 @@ import azure.cognitiveservices.speech as speechsdk
 import helper
 import os
 
-init = 0
-
 def user_config_from_args(usage : str) -> helper.Read_Only_Dict :
     key = helper.get_cmd_option("--key")
     if key is None:
@@ -66,12 +64,11 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
     return "{} --> {}".format(start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
 
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
-    if user_config["language_ID_languages"] is not None :
-        init += 1
-        return str(init) + linesep
-        return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
-    else :
-        return ""
+    return ""
+    # if user_config["language_ID_languages"] is not None :
+    #     return "[{}] ".format(speechsdk.AutoDetectSourceLanguageResult(result).language)
+    # else :
+    #     return ""
 
 def caption_from_speech_recognition_result(sequence_number : int, result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     caption = ""
@@ -125,7 +122,7 @@ def speech_config_from_user_config(user_config : helper.Read_Only_Dict) -> speec
         speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_StablePartialResultThreshold, value = user_config["stable_partial_result_threshold"])
 
     speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption, value = "TrueText")
-    speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "200")
+    speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "160")
     return speech_config
 
 def speech_recognizer_from_user_config(user_config : helper.Read_Only_Dict) -> helper.Read_Only_Dict :

@@ -134,11 +134,16 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""许辞是我弟弟，从小被我欺负到大。却没想到有一天我会被他压在墙角，跟个小
-狼崽子一般咬牙切齿对我说：「许言，欺负我这么些年，现在该我了吧？」""")
+    start_index = len("""恋爱五年，男朋友的同事家人都不知道我的存在。
+「为什么不带我一起？」
+他醉醺醺的：「别闹。」盖上被子沉沉睡去。
+跑到楼下吹了那么久冷风，半夜十二点，我给他发了一条消息：分手吧。
+他没有追下楼，一个月过去了，也没有再回复我。
+我把他取消置顶了。
+直到今天，我们分手后的第一次见面。""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550161097797353472'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550906152329875456'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)
