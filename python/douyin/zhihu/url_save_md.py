@@ -9,7 +9,7 @@ from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
 from yuyin import output
-from zhihu.captioning import run
+from captioning import run
 
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
@@ -127,8 +127,8 @@ def getText(url,video_title,start_init):
         else:
             end_index+=1
     for index,part in enumerate(part_contents):
-        output(part,f"{video_title}({index})") 
-        run(f'python captioning.py --key {os.getenv("SUBSCRIPTION_KEY","")} --region "eastasia" --input /app/output/text.wav --format any --output {video_title}({index}).srt - --srt --recognizing --threshold 3 --profanity mask --phrases "Contoso;Jessie;Rehaan" --languages "zh-CN"')
+        output(part,f"{video_title}({index+1})") 
+        run(f"{video_title}({index+1})","")
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)

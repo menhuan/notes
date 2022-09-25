@@ -23,6 +23,10 @@ import azure.cognitiveservices.speech as speechsdk
 import helper
 import os
 
+root_path = os.getenv(
+    "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
+musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
+
 def user_config_from_args(usage : str) -> helper.Read_Only_Dict :
     key = helper.get_cmd_option("--key")
     if key is None:
@@ -260,14 +264,27 @@ try :
 except Exception as e:
     print(e)
 
-def run(usage):
+def run(input_file,output_file):
     try :
-        if helper.cmd_option_exists("--help") :
-            print(usage)
-        else :
-            user_config = user_config_from_args(usage)
-            initialize(user_config = user_config)
-            speech_recognizer_data = speech_recognizer_from_user_config(user_config = user_config)
-            recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
+        srt_path = os.path.join(musics_path,f"{output_file}.srt")
+        wav_path = os.path.join(musics_path,f"{input_file}.wav")
+        user_config = helper.Read_Only_Dict({
+            "use_compressed_audio" : helper.cmd_option_exists("--format"),
+            "compressed_audio_format" : helper.get_compressed_audio_format(),
+            "profanity_option" : helper.get_profanity_option(),
+            "suppress_console_output" : False,
+            "use_sub_rip_text_caption_format" : True,
+            "input_file" : wav_path,
+            "output_file" :  srt_path,
+            "language_ID_languages" : "zh-CN",
+            "phrase_list" : helper.get_cmd_option("--phrases"),
+            "show_recognizing_results" : helper.get_cmd_option("--recognizing"),
+            "stable_partial_result_threshold" :os.getenv("threshold","3") ,
+            "subscription_key" : os.getenv("SUBSCRIPTION_KEY","") ,
+            "region" :os.getenv("REGION","eastasia"),
+        })
+        initialize(user_config = user_config)
+        speech_recognizer_data = speech_recognizer_from_user_config(user_config = user_config)
+        recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
     except Exception as e:
         print(e)
