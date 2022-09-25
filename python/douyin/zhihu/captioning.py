@@ -275,16 +275,16 @@ def run(input_file,output_file):
         wav_path = os.path.join(musics_path,f"{input_file}.wav")
         user_config = helper.Read_Only_Dict({
             "use_compressed_audio" : helper.cmd_option_exists("--format"),
-            "compressed_audio_format" : helper.get_compressed_audio_format(),
-            "profanity_option" : helper.get_profanity_option(),
-            "suppress_console_output" : False,
+            "compressed_audio_format" : speechsdk.AudioStreamContainerFormat.ANY,
+            "profanity_option" : speechsdk.ProfanityOption.Masked,
+            "suppress_console_output" : True,
             "use_sub_rip_text_caption_format" : True,
             "input_file" : wav_path,
-            "output_file" :  srt_path,
+            "output_file" : srt_path,
             "language_ID_languages" : "zh-CN",
-            "phrase_list" : helper.get_cmd_option("--phrases"),
-            "show_recognizing_results" : helper.get_cmd_option("--recognizing"),
-            "stable_partial_result_threshold" :os.getenv("threshold","3") ,
+            "phrase_list" : "",
+            "show_recognizing_results" :True,
+            "stable_partial_result_threshold":os.getenv("threshold","3") ,
             "subscription_key" : os.getenv("SUBSCRIPTION_KEY","") ,
             "region" :os.getenv("REGION","eastasia"),
         })

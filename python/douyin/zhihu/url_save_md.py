@@ -4,6 +4,7 @@
 
 from copy import deepcopy
 import os
+from time import sleep
 import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
@@ -128,6 +129,7 @@ def getText(url,video_title,start_init):
             end_index+=1
     for index,part in enumerate(part_contents):
         output(part,f"{video_title}({index+1})") 
+        sleep(3)
         run(f"{video_title}({index+1})",f"{video_title}({index+1})")
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
