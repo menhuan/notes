@@ -2,18 +2,18 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="#假基金经理"
-musics=('https://wpy5.10cha.cn/yuyin/hecheng/outmusic/1663982115000wpy1458.mp3' 'https://wpym.10cha.cn/yuyin/hecheng/outmusic/1663982224000wpy8415.mp3' 'https://wpyz.10cha.cn/yuyin/hecheng/outmusic/1663982415000wpy4918.mp3' )
-srts=('https://wpy5.10cha.cn/yuyin/hecheng/zimu/1663982115000wpy1458.srt' 'https://wpym.10cha.cn/yuyin/hecheng/zimu/1663982224000wpy8415.srt' 'https://wpyz.10cha.cn/yuyin/hecheng/zimu/1663982415000wpy4918.srt')
+name="#前夫复合"
+musics=('https://wpyk.10cha.cn/yuyin/hecheng/outmusic/1664065748000wpy7486.mp3' 'https://wpye.10cha.cn/yuyin/hecheng/outmusic/1664065837000wpy5489.mp3' 'https://wpy7.10cha.cn/yuyin/hecheng/outmusic/1664066012000wpy8855.mp3' 'https://wpy11.10cha.cn/yuyin/hecheng/outmusic/1664066080000wpy6977.mp3' 'https://wpyz.10cha.cn/yuyin/hecheng/outmusic/1664066154000wpy7638.mp3' 'https://wpya.10cha.cn/yuyin/hecheng/outmusic/1664066236000wpy619.mp3')
+srts=('https://wpyk.10cha.cn/yuyin/hecheng/zimu/1664065748000wpy7486.srt' 'https://wpye.10cha.cn/yuyin/hecheng/zimu/1664065837000wpy5489.srt' 'https://wpy7.10cha.cn/yuyin/hecheng/zimu/1664066012000wpy8855.srt' 'https://wpy11.10cha.cn/yuyin/hecheng/zimu/1664066080000wpy6977.srt' 'https://wpyz.10cha.cn/yuyin/hecheng/zimu/1664066154000wpy7638.srt' 'https://wpya.10cha.cn/yuyin/hecheng/zimu/1664066236000wpy619.srt')
 for index in ${!musics[@]}
     do 
-    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',假基金经理''('$(($index+1))')'.mp3
+    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',前夫复合''('$(($index+1))')'.mp3
     echo "$index" "${musics[$index]}"
     done
 
 for index in ${!srts[@]}
     do 
-    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',假基金经理''('$(($index+1))')'.srt
+    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',前夫复合''('$(($index+1))')'.srt
     echo "$index" "${srts[$index]}"
     done
 

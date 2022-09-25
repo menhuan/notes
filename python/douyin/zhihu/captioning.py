@@ -61,7 +61,7 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
     else :
         time_format = "%H:%M:%S.%f"
     # Truncate microseconds to milliseconds.
-    return "{} --> {}".format(start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
+    return "{}{} --> {}".format("1" + linesep,start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
 
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     return ""
@@ -122,7 +122,7 @@ def speech_config_from_user_config(user_config : helper.Read_Only_Dict) -> speec
         speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_StablePartialResultThreshold, value = user_config["stable_partial_result_threshold"])
 
     speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption, value = "TrueText")
-    speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "160")
+    speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "100")
     return speech_config
 
 def speech_recognizer_from_user_config(user_config : helper.Read_Only_Dict) -> helper.Read_Only_Dict :

@@ -8,13 +8,15 @@ import azure.cognitiveservices.speech as speechsdk
 root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
+OS_RATE = str(os.getenv("OS_RATE","35")) +"%"
+OS_PITCH = str(os.getenv("OS_PITCH","25")) + "%"
+BREAK_TIME= str(int(os.getenv("BREAK_TIME", "200") /(1 - int(os.getenv("OS_RATE","35"))* 0.01 ) ) ) + "ms"
 
 def output(txt_to_aideo,file_name):
     ssml = ""
     for txt in txt_to_aideo.split('，'):
         ssml += f"""
-           <mstts:silence  type="Tailing"  value="200ms"/>
-           <prosody rate="35%" pitch="25%">{txt}</prosody>
+           <prosody rate="{OS_RATE}" pitch="{OS_PITCH}">{txt } <break time="{BREAK_TIME}" /> </prosody> 
            """ 
     text =f"""
     <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">

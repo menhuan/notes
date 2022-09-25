@@ -8,7 +8,7 @@ import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
-#from yuyin import output
+from yuyin import output
 
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
@@ -100,18 +100,18 @@ def getText(url,video_title,start_init):
     page_prefix = t[0:start_index]
     
     index_prefix = 1
+    part_contents = []
     while True:
         current_content =""
         if end_index >= total_size:
             current_content =page_prefix + t[start_index:total_size]
             split_result += page_prefix +t[start_index:total_size]
             with open(output_path + textName2 + "_"+ str(index_prefix)  + '.md', "w") as f2:
+                part_contents.append(current_content)
                 f2.write(current_content)  
-            print("输出数据",start_index,end_index,total_size)
             break
         elif t[end_index] == '，':
             end_index = end_index+1
-            print("输出数据",start_index,end_index,total_size)
             current_content = page_prefix + t[start_index:end_index]
             #output(current_content,f"{video_title}({index_prefix})")
             split_result += page_prefix+ t[start_index:end_index] +"\n"
@@ -119,12 +119,14 @@ def getText(url,video_title,start_init):
             end_index = end_index +split_size
             start_index = end_index_bak
             with open(output_path + textName2 + "_"+ str(index_prefix)  + '.md', "w") as f2:
+                part_contents.append(current_content)
                 f2.write(current_content)   
             index_prefix+=1
 
         else:
             end_index+=1
-       
+    for index,part in enumerate(part_contents):
+        output(part,f"{video_title}({index})") 
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)
@@ -134,16 +136,12 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""恋爱五年，男朋友的同事家人都不知道我的存在。
-「为什么不带我一起？」
-他醉醺醺的：「别闹。」盖上被子沉沉睡去。
-跑到楼下吹了那么久冷风，半夜十二点，我给他发了一条消息：分手吧。
-他没有追下楼，一个月过去了，也没有再回复我。
-我把他取消置顶了。
-直到今天，我们分手后的第一次见面。""")
+    start_index = len("""我和迟冽因为离婚感被网友们组成了cp,上了热搜。
+网友们都在嗑生嗑死。
+而事实是，我真的和迟冽离过婚。""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550906152329875456'
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550848672237248512?km_channel=search&origin_label=search'
     content = getText(url,"",start_index)
     # import image2
     # image2.show_image(content)
