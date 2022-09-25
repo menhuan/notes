@@ -10,7 +10,7 @@ root_path = os.getenv(
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
 OS_RATE = str(os.getenv("OS_RATE","45")) +"%"
 OS_PITCH = str(os.getenv("OS_PITCH","25")) + "%"
-BREAK_TIME= str(int(int(os.getenv("BREAK_TIME", "100")) /(1 - int(os.getenv("OS_RATE","45"))* 0.01 ))) + "ms"
+BREAK_TIME= str(int(int(os.getenv("BREAK_TIME", "120")) /(1 - int(os.getenv("OS_RATE","45"))* 0.01 ))) + "ms"
 
 def output(txt_to_aideo,file_name):
     # <break time="{BREAK_TIME}" />            <mstts:silence  type="Tailing" value="{BREAK_TIME}"/>

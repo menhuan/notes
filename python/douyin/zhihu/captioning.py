@@ -263,6 +263,7 @@ try :
         print(usage)
     else :
         user_config = user_config_from_args(usage)
+        print(user_config.__dict__)
         initialize(user_config = user_config)
         speech_recognizer_data = speech_recognizer_from_user_config(user_config = user_config)
         recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
@@ -274,20 +275,21 @@ def run(input_file,output_file):
         srt_path = os.path.join(musics_path,f"{output_file}.srt")
         wav_path = os.path.join(musics_path,f"{input_file}.wav")
         user_config = helper.Read_Only_Dict({
-            "use_compressed_audio" : helper.cmd_option_exists("--format"),
+            "use_compressed_audio" : True,
             "compressed_audio_format" : speechsdk.AudioStreamContainerFormat.ANY,
             "profanity_option" : speechsdk.ProfanityOption.Masked,
-            "suppress_console_output" : True,
+            "suppress_console_output" : False,
             "use_sub_rip_text_caption_format" : True,
             "input_file" : wav_path,
             "output_file" : srt_path,
             "language_ID_languages" : "zh-CN",
             "phrase_list" : "",
-            "show_recognizing_results" :True,
+            "show_recognizing_results" : "--threshold",
             "stable_partial_result_threshold":os.getenv("threshold","3") ,
             "subscription_key" : os.getenv("SUBSCRIPTION_KEY","") ,
             "region" :os.getenv("REGION","eastasia"),
         })
+        print(user_config.__dict__)
         initialize(user_config = user_config)
         speech_recognizer_data = speech_recognizer_from_user_config(user_config = user_config)
         recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
