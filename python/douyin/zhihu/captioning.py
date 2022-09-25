@@ -65,7 +65,7 @@ def timestamp_from_speech_recognition_result(result : speechsdk.SpeechRecognitio
     else :
         time_format = "%H:%M:%S.%f"
     # Truncate microseconds to milliseconds.
-    return "{}{} --> {}".format("1" + linesep,start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
+    return "{} --> {}".format(start_time.strftime(time_format)[:-3], end_time.strftime(time_format)[:-3])
 
 def language_from_speech_recognition_result(result : speechsdk.SpeechRecognitionResult, user_config : helper.Read_Only_Dict) -> str :
     return ""
