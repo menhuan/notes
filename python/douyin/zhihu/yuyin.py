@@ -10,15 +10,17 @@ root_path = os.getenv(
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
 OS_RATE = str(os.getenv("OS_RATE","45")) +"%"
 OS_PITCH = str(os.getenv("OS_PITCH","25")) + "%"
-BREAK_TIME= str(int(os.getenv("BREAK_TIME", "150")) /(1 - int(os.getenv("OS_RATE","45"))* 0.01 )) + "ms"
+BREAK_TIME= str(int(os.getenv("BREAK_TIME", "100")) /(1 - int(os.getenv("OS_RATE","45"))* 0.01 )) + "ms"
 
 def output(txt_to_aideo,file_name):
-    # <break time="{BREAK_TIME}" />
+    # <break time="{BREAK_TIME}" />            <mstts:silence  type="Tailing" value="{BREAK_TIME}"/>
     ssml = ""
     for txt in txt_to_aideo.split('，'):
-        ssml += f"""
-           <mstts:silence  type="Tailing" value="{BREAK_TIME}"/>
-           <prosody rate="{OS_RATE}" pitch="{OS_PITCH}">{txt} </prosody> 
+        txt = txt.strip()
+        if(len(txt) >0 ):
+            ssml += f"""
+            <prosody rate="{OS_RATE}" pitch="{OS_PITCH}">{txt} </prosody> 
+            <break time="{BREAK_TIME}" />
            """ 
     text =f"""
     <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
