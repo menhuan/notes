@@ -8,9 +8,9 @@ import azure.cognitiveservices.speech as speechsdk
 root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
-OS_RATE = str(os.getenv("OS_RATE","35")) +"%"
+OS_RATE = str(os.getenv("OS_RATE","45")) +"%"
 OS_PITCH = str(os.getenv("OS_PITCH","25")) + "%"
-BREAK_TIME= str(int(os.getenv("BREAK_TIME", "200") /(1 - int(os.getenv("OS_RATE","35"))* 0.01 ) ) ) + "ms"
+BREAK_TIME= str(int(os.getenv("BREAK_TIME", "300") /(1 - int(os.getenv("OS_RATE","45"))* 0.01 ) ) ) + "ms"
 
 def output(txt_to_aideo,file_name):
     ssml = ""

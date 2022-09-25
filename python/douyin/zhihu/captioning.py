@@ -259,3 +259,15 @@ try :
         recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
 except Exception as e:
     print(e)
+
+def run(usage):
+    try :
+        if helper.cmd_option_exists("--help") :
+            print(usage)
+        else :
+            user_config = user_config_from_args(usage)
+            initialize(user_config = user_config)
+            speech_recognizer_data = speech_recognizer_from_user_config(user_config = user_config)
+            recognize_continuous(speech_recognizer = speech_recognizer_data["speech_recognizer"], user_config = user_config, format = speech_recognizer_data["audio_stream_format"], callback = speech_recognizer_data["pull_input_audio_stream_callback"], stream = speech_recognizer_data["pull_input_audio_stream"])
+    except Exception as e:
+        print(e)

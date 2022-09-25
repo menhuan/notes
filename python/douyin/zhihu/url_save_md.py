@@ -9,6 +9,7 @@ from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
 from yuyin import output
+from zhihu.captioning import run
 
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
@@ -127,6 +128,7 @@ def getText(url,video_title,start_init):
             end_index+=1
     for index,part in enumerate(part_contents):
         output(part,f"{video_title}({index})") 
+        run(f'python captioning.py --key {os.getenv("SUBSCRIPTION_KEY","")} --region "eastasia" --input /app/output/text.wav --format any --output {video_title}({index}).srt - --srt --recognizing --threshold 3 --profanity mask --phrases "Contoso;Jessie;Rehaan" --languages "zh-CN"')
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)
@@ -136,13 +138,13 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""我和迟冽因为离婚感被网友们组成了cp,上了热搜。
-网友们都在嗑生嗑死。
-而事实是，我真的和迟冽离过婚。""")
+    start_index = len("""追求者妈妈给我500万，要求我离开她儿子。
+阿姨，要不我再跪下给你磕两个头？
+不然这钱我拿得不安心。""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550848672237248512?km_channel=search&origin_label=search'
-    content = getText(url,"",start_index)
+    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550563478900789248'
+    content = getText(url,"追求者500万",start_index)
     # import image2
     # image2.show_image(content)
 
