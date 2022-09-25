@@ -127,6 +127,8 @@ def speech_config_from_user_config(user_config : helper.Read_Only_Dict) -> speec
 
     speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption, value = "TrueText")
     speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "100")
+    speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceConnection_InitialSilenceTimeoutMs,value="100");
+
     return speech_config
 
 def speech_recognizer_from_user_config(user_config : helper.Read_Only_Dict) -> helper.Read_Only_Dict :
@@ -159,6 +161,9 @@ def recognize_continuous(speech_recognizer : speechsdk.SpeechRecognizer, user_co
     
         if speechsdk.ResultReason.RecognizingSpeech == e.result.reason and len(e.result.text) > 0  :
             # We don't show sequence numbers for partial results.
+            print("Recognized: {}".format(e.result.text))
+            print("Offset in Ticks: {}".format(e.result.offset))
+            print("Duration in Ticks: {}".format(e.result.duration))
             helper.write_to_console(text = caption_from_speech_recognition_result(sequence_number = 0, result = e.result, user_config = user_config), user_config = user_config)
         elif speechsdk.ResultReason.NoMatch == e.result.reason :
             helper.write_to_console(text = "NOMATCH: Speech could not be recognized.{}".format(linesep), user_config = user_config)

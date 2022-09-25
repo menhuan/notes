@@ -19,15 +19,13 @@ def output(txt_to_aideo,file_name):
         txt = txt.strip()
         if(len(txt) >0 ):
             ssml += f"""
-            <s>
-                <prosody rate="{OS_RATE}" pitch="{OS_PITCH}">{txt} </prosody> 
-                <break time="{BREAK_TIME}" />
-            </s>
+                <s> {txt} </s> 
+                 <mstts:silence  type="Tailing" value="{BREAK_TIME}"/>
            """ 
     text =f"""
     <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="en-US">
-            <voice name="zh-CN-XiaochenNeural">
-            {ssml}
+            <voice name="zh-CN-XiaochenNeural"> 
+            <prosody rate="{OS_RATE}" pitch="{OS_PITCH}">{ssml} </prosody>
             </voice>
     </speak>
     """
