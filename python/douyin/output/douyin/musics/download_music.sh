@@ -2,18 +2,18 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="#前夫复合"
-musics=('https://wpyk.10cha.cn/yuyin/hecheng/outmusic/1664065748000wpy7486.mp3' 'https://wpye.10cha.cn/yuyin/hecheng/outmusic/1664065837000wpy5489.mp3' 'https://wpy7.10cha.cn/yuyin/hecheng/outmusic/1664066012000wpy8855.mp3' 'https://wpy11.10cha.cn/yuyin/hecheng/outmusic/1664066080000wpy6977.mp3' 'https://wpyz.10cha.cn/yuyin/hecheng/outmusic/1664066154000wpy7638.mp3' 'https://wpya.10cha.cn/yuyin/hecheng/outmusic/1664066236000wpy619.mp3')
-srts=('https://wpyk.10cha.cn/yuyin/hecheng/zimu/1664065748000wpy7486.srt' 'https://wpye.10cha.cn/yuyin/hecheng/zimu/1664065837000wpy5489.srt' 'https://wpy7.10cha.cn/yuyin/hecheng/zimu/1664066012000wpy8855.srt' 'https://wpy11.10cha.cn/yuyin/hecheng/zimu/1664066080000wpy6977.srt' 'https://wpyz.10cha.cn/yuyin/hecheng/zimu/1664066154000wpy7638.srt' 'https://wpya.10cha.cn/yuyin/hecheng/zimu/1664066236000wpy619.srt')
+name="#追求者500万"
+musics=('https://wpyq.10cha.cn/yuyin/hecheng/outmusic/1664239373000wpy1066.mp3' 'https://wpy7.10cha.cn/yuyin/hecheng/outmusic/1664239429000wpy8490.mp3' 'https://wpy17.10cha.cn/yuyin/hecheng/outmusic/1664239492000wpy7170.mp3' 'https://wpy5.10cha.cn/yuyin/hecheng/outmusic/1664240421000wpy8686.mp3' 'https://wpya.10cha.cn/yuyin/hecheng/outmusic/1664240499000wpy7069.mp3' 'https://wpy12.10cha.cn/yuyin/hecheng/outmusic/1664240663000wpy8055.mp3')
+srts=('https://wpyq.10cha.cn/yuyin/hecheng/zimu/1664239373000wpy1066.srt' 'https://wpy7.10cha.cn/yuyin/hecheng/zimu/1664239429000wpy8490.srt' 'https://wpy17.10cha.cn/yuyin/hecheng/zimu/1664239492000wpy7170.srt' 'https://wpy5.10cha.cn/yuyin/hecheng/zimu/1664240421000wpy8686.srt' 'https://wpya.10cha.cn/yuyin/hecheng/zimu/1664240499000wpy7069.srt' 'https://wpy12.10cha.cn/yuyin/hecheng/zimu/1664240663000wpy8055.srt')
 for index in ${!musics[@]}
     do 
-    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',前夫复合''('$(($index+1))')'.mp3
+    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',追求者500万''('$(($index+1))')'.mp3
     echo "$index" "${musics[$index]}"
     done
 
 for index in ${!srts[@]}
     do 
-    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',前夫复合''('$(($index+1))')'.srt
+    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',追求者500万''('$(($index+1))')'.srt
     echo "$index" "${srts[$index]}"
     done
 

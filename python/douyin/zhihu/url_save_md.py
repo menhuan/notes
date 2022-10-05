@@ -130,6 +130,7 @@ def getText(url,video_title,start_init):
     for index,part in enumerate(part_contents):
         output(part,f"{video_title}({index+1})") 
         sleep(3)
+    for index,part in enumerate(part_contents):
         run(f"{video_title}({index+1})",f"{video_title}({index+1})")
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
