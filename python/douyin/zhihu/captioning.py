@@ -284,7 +284,7 @@ def run(input_file,output_file):
             "output_file" : srt_path,
             "language_ID_languages" : "zh-CN",
             "phrase_list" : "",
-            "show_recognizing_results" : "--threshold",
+            "show_recognizing_re=sults" : "--threshold",
             "stable_partial_result_threshold":os.getenv("threshold","3") ,
             "subscription_key" : os.getenv("SUBSCRIPTION_KEY","") ,
             "region" :os.getenv("REGION","eastasia"),

@@ -51,7 +51,7 @@ def cutting_video_by_minuts(video_dir_path):
         print("处理路径:", item, "总的时长是:", clip.duration)
         start_time = 0
         end_time = cutting_minuts
-        for index in range(int(clip.duration/cutting_minuts)):
+        for index in range(int(clip.duration/cutting_minuts) +1 ):
             local_end_time = end_time*(index+1)
             print("开始处理", item, index, start_time, local_end_time)
             if(start_time >= clip.duration):
