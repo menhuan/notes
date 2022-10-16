@@ -2,18 +2,18 @@
 # 用来确定分割符
 IFS=`echo -e "\n"`
 OLDIFS=$IFS
-name="#追求者500万"
-musics=('https://wpyq.10cha.cn/yuyin/hecheng/outmusic/1664239373000wpy1066.mp3' 'https://wpy7.10cha.cn/yuyin/hecheng/outmusic/1664239429000wpy8490.mp3' 'https://wpy17.10cha.cn/yuyin/hecheng/outmusic/1664239492000wpy7170.mp3' 'https://wpy5.10cha.cn/yuyin/hecheng/outmusic/1664240421000wpy8686.mp3' 'https://wpya.10cha.cn/yuyin/hecheng/outmusic/1664240499000wpy7069.mp3' 'https://wpy12.10cha.cn/yuyin/hecheng/outmusic/1664240663000wpy8055.mp3')
-srts=('https://wpyq.10cha.cn/yuyin/hecheng/zimu/1664239373000wpy1066.srt' 'https://wpy7.10cha.cn/yuyin/hecheng/zimu/1664239429000wpy8490.srt' 'https://wpy17.10cha.cn/yuyin/hecheng/zimu/1664239492000wpy7170.srt' 'https://wpy5.10cha.cn/yuyin/hecheng/zimu/1664240421000wpy8686.srt' 'https://wpya.10cha.cn/yuyin/hecheng/zimu/1664240499000wpy7069.srt' 'https://wpy12.10cha.cn/yuyin/hecheng/zimu/1664240663000wpy8055.srt')
+name="我的私妹妹 看到最后有惊喜"
+musics=('https://wpy3.10cha.cn/yuyin/hecheng/outmusic/1665923246000wpy5843.mp3' 'https://wpyz.10cha.cn/yuyin/hecheng/outmusic/1665923342000wpy917.mp3' 'https://wpy2.10cha.cn/yuyin/hecheng/outmusic/1665923414000wpy318.mp3')
+srts=('https://wpy3.10cha.cn/yuyin/hecheng/zimu/1665923246000wpy5843.srt' 'https://wpyz.10cha.cn/yuyin/hecheng/zimu/1665923342000wpy917.srt' 'https://wpy2.10cha.cn/yuyin/hecheng/zimu/1665923414000wpy318.srt')
 for index in ${!musics[@]}
     do 
-    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',追求者500万''('$(($index+1))')'.mp3
+    wget "${musics[$index]}" -O  ${name}'('$(($index+1))')'',我的私妹妹''('$(($index+1))')'.mp3
     echo "$index" "${musics[$index]}"
     done
 
 for index in ${!srts[@]}
     do 
-    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',追求者500万''('$(($index+1))')'.srt
+    wget "${srts[$index]}" -O  ${name}'('$(($index+1))')'',我的私妹妹''('$(($index+1))')'.srt
     echo "$index" "${srts[$index]}"
     done
 

@@ -126,8 +126,7 @@ def speech_config_from_user_config(user_config : helper.Read_Only_Dict) -> speec
         speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_StablePartialResultThreshold, value = user_config["stable_partial_result_threshold"])
 
     speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceResponse_PostProcessingOption, value = "TrueText")
-    speech_config.set_property(property_id = speechsdk.PropertyId.Speech_SegmentationSilenceTimeoutMs, value = "100")
-    speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceConnection_InitialSilenceTimeoutMs,value="100");
+    speech_config.set_property(property_id = speechsdk.PropertyId.SpeechServiceConnection_EndSilenceTimeoutMs, value = "100")
 
     return speech_config
 

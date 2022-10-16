@@ -185,7 +185,7 @@ def get_publish_date(title, index):
 
 
 def publish_douyin(driver, mp4, index):
-    '''
+    ''' 
      作用：发布抖音视频 
     '''
 
@@ -291,6 +291,7 @@ def publish_douyin(driver, mp4, index):
         time.sleep(10)
         try:
             driver.find_element("xpath", '//*[text()="重新上传"]')
+            times-=1
             break
         except Exception as e:
             if times ==0:
@@ -321,9 +322,11 @@ def run(driver):
         while index < mp4s_len:
             try:
                 publish_douyin(driver, mp4s[index], index)
-            except Exception:
+            except Exception as e :
+                traceback.print_exc()
                 index-=1
             finally:
+                print(f"mp4长度是{mp4s_len},当前是:{index}")
                 index+=1
             time.sleep(10)
     finally:
@@ -340,10 +343,12 @@ if __name__ == "__main__":
         while index < mp4s_len:
             try:
                 publish_douyin(driver, mp4s[index], index)
-            except Exception:
+            except Exception as e: 
+                traceback.print_exc()
                 index-=1
             finally:
                 index+=1
+                print(f"mp4长度是{mp4s_len},当前是:{index}")
             time.sleep(10)
     finally:
         driver.quit()

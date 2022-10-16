@@ -133,6 +133,7 @@ def run(driver):
             except Exception:
                 index-=1
             finally:
+                print(f"mp4长度是{mp4s_len},当前是:{index}")
                 index+=1
             time.sleep(10)
     finally:
@@ -153,6 +154,7 @@ if __name__ == "__main__":
                 index-=1
             finally:
                 index+=1
+                print(f"mp4长度是{mp4s_len},当前是:{index}")
             time.sleep(10)
     finally:
         time.sleep(20)

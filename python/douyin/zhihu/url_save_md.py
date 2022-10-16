@@ -9,8 +9,8 @@ import requests
 from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
-from yuyin import output
-from captioning import run
+# from yuyin import output
+# from captioning import run
 
 
 output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
@@ -127,11 +127,11 @@ def getText(url,video_title,start_init):
 
         else:
             end_index+=1
-    for index,part in enumerate(part_contents):
-        output(part,f"{video_title}({index+1})") 
-        sleep(3)
-    for index,part in enumerate(part_contents):
-        run(f"{video_title}({index+1})",f"{video_title}({index+1})")
+    # for index,part in enumerate(part_contents):
+    #     output(part,f"{video_title}({index+1})") 
+    #     sleep(3)
+    # for index,part in enumerate(part_contents):
+    #     run(f"{video_title}({index+1})",f"{video_title}({index+1})")
     t = url + "\n" + split_result
     with open(name2, "w") as f2:
         f2.write(t)
@@ -141,13 +141,15 @@ def getText(url,video_title,start_init):
     # shutil.move(name2,move_folder_name2)
 
 def run_zhuanlan():
-    start_index = len("""追求者妈妈给我500万，要求我离开她儿子。
-阿姨，要不我再跪下给你磕两个头？
-不然这钱我拿得不安心。""")
+    start_index = len("""爷爷从乡下带回了我爸和白月光的私生女，说是我妹妹。
+还把她安排进了我的公司实习，进去第一天，她就大肆宣扬自己是流落在外的二
+小姐。
+我当着所有人的面，一巴掌扇在她的脸上。
+「哪来的流浪狗？」""")
     print("裁剪长度:",start_index)
 
-    url = 'https://www.zhihu.com/market/paid_column/1546161471767158784/section/1550563478900789248'
-    content = getText(url,"追求者500万",start_index)
+    url = 'https://www.zhihu.com/market/paid_column/1543288790588035072/section/1558829395070205953'
+    content = getText(url,"私生女的成长",start_index)
     # import image2
     # image2.show_image(content)
 
