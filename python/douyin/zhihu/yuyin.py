@@ -2,15 +2,21 @@
   For more samples please visit https://github.com/Azure-Samples/cognitive-services-speech-sdk 
 '''
 
+from fileinput import filename
+from genericpath import exists
 import os
 import azure.cognitiveservices.speech as speechsdk
+from pathlib import Path
+from long_form_text_synthesis import LongTextSynthesizer
 
 root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
-OS_RATE = str(os.getenv("OS_RATE","45")) +"%"
-OS_PITCH = str(os.getenv("OS_PITCH","25")) + "%"
-BREAK_TIME= str(int(int(os.getenv("BREAK_TIME", "120")) /(1 - int(os.getenv("OS_RATE","45"))* 0.01 ))) + "ms"
+OS_RATE = str(os.getenv("OS_RATE","60")) +"%"
+OS_PITCH = str(os.getenv("OS_PITCH","30")) + "%"
+OS_VOLUME = str(os.getenv("OS_VOLUME","+20")) + "%"
+
+BREAK_TIME= str(int(os.getenv("BREAK_TIME", "100"))) + "ms"
 
 def output(txt_to_aideo,file_name):
     # <break time="{BREAK_TIME}" />            <mstts:silence  type="Tailing" value="{BREAK_TIME}"/>
@@ -18,39 +24,17 @@ def output(txt_to_aideo,file_name):
     for txt in txt_to_aideo.split('，'):
         txt = txt.strip()
         if(len(txt) >0 ):
-            ssml += f"""
-                <prosody rate="{OS_RATE}" pitch="{OS_PITCH}"> {txt} </prosody><break time="{BREAK_TIME}" />
-           """ 
-    text =f"""
-        <speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="zh-CN">
-            <voice name="zh-CN-XiaochenNeural"> 
-            {ssml} 
-            </voice>
-    </speak>
-    """
-    # Creates an instance of a speech config with specified subscription key and service region.
-    speech_key =os.getenv("SUBSCRIPTION_KEY","")
-    service_region = os.getenv("REGION","eastasia")
-
-    speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
-    # Note: the voice setting will not overwrite the voice element in input SSML.
-    speech_config.speech_synthesis_voice_name = "zh-CN-XiaochenNeural"
-    music_path = os.path.join(musics_path,f"{file_name}.wav")
-    audio_config = speechsdk.audio.AudioOutputConfig(filename=music_path)
-
-    # use the default speaker as audio output.
-    speech_synthesizer = speechsdk.SpeechSynthesizer(speech_config=speech_config,audio_config=audio_config)
-
-    result = speech_synthesizer.speak_ssml_async(text).get()
-    # Check result
-    if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
-
-        print("Speech synthesized for text [{}]".format(text))
-    elif result.reason == speechsdk.ResultReason.Canceled:
-        cancellation_details = result.cancellation_details
-        print("Speech synthesis canceled: {}".format(cancellation_details.reason))
-        if cancellation_details.reason == speechsdk.CancellationReason.Error:
-            print("Error details: {}".format(cancellation_details.error_details))
+            ssml += f"""<voice name="zh-CN-XiaochenNeural"><p><prosody rate="{OS_RATE}" pitch="{OS_PITCH}" volume="{OS_VOLUME}" > {txt}。 </prosody><break time="{BREAK_TIME}" /></p></voice>""" 
+    text =f"""<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="zh-CN">{ssml} </speak>"""
+    ssml_path =  os.path.join(musics_path,file_name +".xml")
+    Path(musics_path).mkdir(parents=True,exist_ok=True)
+    with open(ssml_path,'w') as f:
+        f.writelines(text)
+    s = LongTextSynthesizer(subscription="d81e33380a984e25ba06f5582dbb46d7", region="eastasia",parallel_threads=2)
+    # with Path('/workspaces/notes/python/douyin/zhihu/Gatsby-chapter1.txt').open('r', encoding='utf-8') as r:
+    #     s.synthesize_text(r.read(), output_path=Path('./gatsby'))
+    s.synthesize_text(ssml_path=Path(ssml_path), output_path=Path(musics_path),file_name=file_name)
+    os.remove(ssml_path)
 
 
 if __name__ == "__main__":
@@ -72,5 +56,5 @@ if __name__ == "__main__":
 哇哦，这关系听起来有点狗血啊，
 我竖起了八卦的小耳朵，问小跟班，所以你们老大绿了吗，
 你，你放肆，我们老大和我们老大的干妹妹是清白的，"""
-    output(txt_to_aideo=txt,file_name='/app/output/text')
+    output(txt_to_aideo=txt,file_name=f'{musics_path}text,test')
     pass

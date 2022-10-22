@@ -1,0 +1,407 @@
+[
+    {
+        "audio_offset": 50.0,
+        "duration": 450.0,
+        "text": "黛玉冷"
+    },
+    {
+        "audio_offset": 500.0,
+        "duration": 337.5,
+        "text": "笑道"
+    },
+    {
+        "audio_offset": 837.5,
+        "duration": 87.5,
+        "text": "："
+    },
+    {
+        "audio_offset": 1442.0,
+        "duration": 150.0,
+        "text": "我"
+    },
+    {
+        "audio_offset": 1592.0,
+        "duration": 250.0,
+        "text": "说"
+    },
+    {
+        "audio_offset": 1842.0,
+        "duration": 212.5,
+        "text": "呢"
+    },
+    {
+        "audio_offset": 2154.5,
+        "duration": 250.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 2404.5,
+        "duration": 212.5,
+        "text": "亏"
+    },
+    {
+        "audio_offset": 2617.0,
+        "duration": 75.0,
+        "text": "了"
+    },
+    {
+        "audio_offset": 2704.5,
+        "duration": 237.5,
+        "text": "绊"
+    },
+    {
+        "audio_offset": 2942.0,
+        "duration": 175.0,
+        "text": "住"
+    },
+    {
+        "audio_offset": 3217.0,
+        "duration": 300.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 3517.0,
+        "duration": 350.0,
+        "text": "不然"
+    },
+    {
+        "audio_offset": 3967.0,
+        "duration": 250.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 4217.0,
+        "duration": 200.0,
+        "text": "早"
+    },
+    {
+        "audio_offset": 4417.0,
+        "duration": 100.0,
+        "text": "就"
+    },
+    {
+        "audio_offset": 4529.5,
+        "duration": 187.5,
+        "text": "飞"
+    },
+    {
+        "audio_offset": 4717.0,
+        "duration": 87.5,
+        "text": "了"
+    },
+    {
+        "audio_offset": 4804.5,
+        "duration": 162.5,
+        "text": "来"
+    },
+    {
+        "audio_offset": 4967.0,
+        "duration": 137.5,
+        "text": "了"
+    },
+    {
+        "audio_offset": 5104.5,
+        "duration": 112.5,
+        "text": "。"
+    },
+    {
+        "audio_offset": 5738.0,
+        "duration": 450.0,
+        "text": "宝玉道"
+    },
+    {
+        "audio_offset": 6188.0,
+        "duration": 87.5,
+        "text": "："
+    },
+    {
+        "audio_offset": 6794.0,
+        "duration": 375.0,
+        "text": "只许"
+    },
+    {
+        "audio_offset": 7194.0,
+        "duration": 125.0,
+        "text": "和"
+    },
+    {
+        "audio_offset": 7319.0,
+        "duration": 100.0,
+        "text": "你"
+    },
+    {
+        "audio_offset": 7419.0,
+        "duration": 412.5,
+        "text": "玩"
+    },
+    {
+        "audio_offset": 7931.5,
+        "duration": 225.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 8156.5,
+        "duration": 187.5,
+        "text": "替"
+    },
+    {
+        "audio_offset": 8344.0,
+        "duration": 100.0,
+        "text": "你"
+    },
+    {
+        "audio_offset": 8456.5,
+        "duration": 375.0,
+        "text": "解闷"
+    },
+    {
+        "audio_offset": 8844.0,
+        "duration": 112.5,
+        "text": "。"
+    },
+    {
+        "audio_offset": 9406.5,
+        "duration": 537.5,
+        "text": "不过"
+    },
+    {
+        "audio_offset": 10056.5,
+        "duration": 537.5,
+        "text": "偶然"
+    },
+    {
+        "audio_offset": 10606.5,
+        "duration": 175.0,
+        "text": "到"
+    },
+    {
+        "audio_offset": 10781.5,
+        "duration": 175.0,
+        "text": "他"
+    },
+    {
+        "audio_offset": 10969.0,
+        "duration": 462.5,
+        "text": "那里"
+    },
+    {
+        "audio_offset": 11531.5,
+        "duration": 262.5,
+        "text": "，"
+    },
+    {
+        "audio_offset": 11794.0,
+        "duration": 200.0,
+        "text": "就"
+    },
+    {
+        "audio_offset": 11994.0,
+        "duration": 100.0,
+        "text": "说"
+    },
+    {
+        "audio_offset": 12106.5,
+        "duration": 187.5,
+        "text": "这些"
+    },
+    {
+        "audio_offset": 12306.5,
+        "duration": 450.0,
+        "text": "闲话"
+    },
+    {
+        "audio_offset": 12769.0,
+        "duration": 112.5,
+        "text": "。"
+    },
+    {
+        "audio_offset": 13682.0,
+        "duration": 237.5,
+        "text": "好"
+    },
+    {
+        "audio_offset": 13919.5,
+        "duration": 375.0,
+        "text": "没意思"
+    },
+    {
+        "audio_offset": 14294.5,
+        "duration": 312.5,
+        "text": "的话"
+    },
+    {
+        "audio_offset": 14607.0,
+        "duration": 112.5,
+        "text": "！"
+    },
+    {
+        "audio_offset": 15169.5,
+        "duration": 200.0,
+        "text": "去"
+    },
+    {
+        "audio_offset": 15369.5,
+        "duration": 87.5,
+        "text": "不"
+    },
+    {
+        "audio_offset": 15457.0,
+        "duration": 212.5,
+        "text": "去"
+    },
+    {
+        "audio_offset": 15769.5,
+        "duration": 250.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 16019.5,
+        "duration": 150.0,
+        "text": "关"
+    },
+    {
+        "audio_offset": 16169.5,
+        "duration": 75.0,
+        "text": "我"
+    },
+    {
+        "audio_offset": 16257.0,
+        "duration": 187.5,
+        "text": "什么"
+    },
+    {
+        "audio_offset": 16444.5,
+        "duration": 225.0,
+        "text": "事儿"
+    },
+    {
+        "audio_offset": 16669.5,
+        "duration": 112.5,
+        "text": "？"
+    },
+    {
+        "audio_offset": 17232.0,
+        "duration": 150.0,
+        "text": "又"
+    },
+    {
+        "audio_offset": 17382.0,
+        "duration": 125.0,
+        "text": "没"
+    },
+    {
+        "audio_offset": 17519.5,
+        "duration": 150.0,
+        "text": "叫"
+    },
+    {
+        "audio_offset": 17669.5,
+        "duration": 87.5,
+        "text": "你"
+    },
+    {
+        "audio_offset": 17782.0,
+        "duration": 125.0,
+        "text": "替"
+    },
+    {
+        "audio_offset": 17907.0,
+        "duration": 112.5,
+        "text": "我"
+    },
+    {
+        "audio_offset": 18032.0,
+        "duration": 350.0,
+        "text": "解闷儿"
+    },
+    {
+        "audio_offset": 18482.0,
+        "duration": 212.5,
+        "text": "，"
+    },
+    {
+        "audio_offset": 18694.5,
+        "duration": 237.5,
+        "text": "还许"
+    },
+    {
+        "audio_offset": 18932.0,
+        "duration": 100.0,
+        "text": "你"
+    },
+    {
+        "audio_offset": 19032.0,
+        "duration": 312.5,
+        "text": "从此"
+    },
+    {
+        "audio_offset": 19357.0,
+        "duration": 125.0,
+        "text": "不"
+    },
+    {
+        "audio_offset": 19482.0,
+        "duration": 175.0,
+        "text": "理"
+    },
+    {
+        "audio_offset": 19657.0,
+        "duration": 200.0,
+        "text": "我"
+    },
+    {
+        "audio_offset": 19857.0,
+        "duration": 175.0,
+        "text": "呢"
+    },
+    {
+        "audio_offset": 20032.0,
+        "duration": 112.5,
+        "text": "！"
+    },
+    {
+        "audio_offset": 20666.0,
+        "duration": 237.5,
+        "text": "说"
+    },
+    {
+        "audio_offset": 20903.5,
+        "duration": 125.0,
+        "text": "着"
+    },
+    {
+        "audio_offset": 21128.5,
+        "duration": 225.0,
+        "text": "，"
+    },
+    {
+        "audio_offset": 21353.5,
+        "duration": 187.5,
+        "text": "便"
+    },
+    {
+        "audio_offset": 21541.0,
+        "duration": 387.5,
+        "text": "赌气"
+    },
+    {
+        "audio_offset": 21928.5,
+        "duration": 387.5,
+        "text": "回房"
+    },
+    {
+        "audio_offset": 22316.0,
+        "duration": 150.0,
+        "text": "去"
+    },
+    {
+        "audio_offset": 22466.0,
+        "duration": 100.0,
+        "text": "了"
+    },
+    {
+        "audio_offset": 22566.0,
+        "duration": 100.0,
+        "text": "。"
+    }
+]

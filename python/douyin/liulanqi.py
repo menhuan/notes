@@ -63,23 +63,23 @@ def wait_login(driver):
     driver.find_element("xpath", '//*[text()="确认"]').click()
     time.sleep(2)
     # 手机登录
-    driver.find_element(
-        "xpath", '//*[text()="手机号登录"]').click()
-    time.sleep(10)
-    driver.find_element(
-        "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/div[3]/span').click()
-    # driver.find_element("xpath",'//input[@type="file"]').send_keys(path_mp4)
-    driver.find_element(
-        "xpath", '//*[@placeholder="请输入手机号"]').send_keys("")
-    time.sleep(3)
     # driver.find_element(
-    #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")
-    time.sleep(3)
-    driver.find_element(
-        "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/div[4]/img').click()
-    time.sleep(3)
-    driver.find_element(
-        "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/button').click()
+    #     "xpath", '//*[text()="手机号登录"]').click()
+    # time.sleep(10)
+    # driver.find_element(
+    #     "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/div[3]/span').click()
+    # # driver.find_element("xpath",'//input[@type="file"]').send_keys(path_mp4)
+    # driver.find_element(
+    #     "xpath", '//*[@placeholder="请输入手机号"]').send_keys("")
+    # time.sleep(3)
+    # # driver.find_element(
+    # #     "xpath", '//*[@placeholder="请输入密码"]').send_keys("")
+    # time.sleep(3)
+    # driver.find_element(
+    #     "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/div[4]/img').click()
+    # time.sleep(3)
+    # driver.find_element(
+    #     "xpath", '//*[@id="dialog-0"]/div/div[2]/div/div[2]/div[2]/div/form/button').click()
     print("等待登录")
     # 延迟一会，此时你需要登录,60秒应该是够操作了
     time.sleep(60)

@@ -135,12 +135,12 @@ def writeTextVideo(video_name, srt_name, title):
                                font=font_name,
                                fontsize=title_fond_size,
                                color=text_color, stroke_color="white", stroke_width=15, align='center', method="caption", size=(w - 100, 330)
-                               ).set_position((10, h - 1600)).set_duration(video_clip.duration)
+                               ).set_position((10, h - 1700)).set_duration(video_clip.duration)
     title_text_clip2 = TextClip(txt=cover_title,
                                 font=font_name,
                                 fontsize=title_fond_size,
                                 color=text_color,stroke_color=text_color,stroke_width=0,align='center', method="caption", size=(w - 100, 330)
-                                ).set_position((10, h - 1600)).set_duration(video_clip.duration)
+                                ).set_position((10, h - 1700)).set_duration(video_clip.duration)
 
     title_text_clip4 = TextClip(txt=title.split(",")[1],
                             font=font_name,

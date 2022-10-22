@@ -8,6 +8,7 @@ import copy
 import json
 import logging
 import time
+import re
 import xml.etree.ElementTree as ET
 from multiprocessing.pool import ThreadPool
 from pathlib import Path
@@ -24,6 +25,17 @@ from synthesizer_pool import SynthesizerPool
 nltk.download('punkt')
 
 logger = logging.getLogger(__name__)
+punc = '~`!#$%^&*()_+-=|\';":/.,?><~·！@#￥%……&*（）——+-=“：’；、。，？》《{}'
+print()
+
+def s2hms(x):      # 把毫秒转为时分秒
+    s ,hm =divmod(x,1000)
+    m, s = divmod(s, 60)
+    h, m = divmod(m, 60)
+    hms = "%02d:%02d:%s.%s"%(h,m,int(s),str(int(hm)).zfill(3))
+    hms = hms.replace('.',',')       # 把小数点改为逗号
+    return hms
+
 
 
 class LongTextSynthesizer:
@@ -81,7 +93,7 @@ class LongTextSynthesizer:
             logger.error("Synthesizer failed to synthesize text")
             return None, None
 
-    def synthesize_text(self, text: str = None, ssml_path: Path = None, output_path: Path = Path.cwd()) -> None:
+    def synthesize_text(self, text: str = None, ssml_path: Path = None, output_path: Path = Path.cwd(),file_name:str =None) -> None:
         output_path.mkdir(parents=True, exist_ok=True)
         all_word_boundaries, all_sentence_boundaries = [], []
         if text is not None:
@@ -92,9 +104,13 @@ class LongTextSynthesizer:
             self.is_ssml = True
         else:
             raise ValueError('Either text or ssml_path must be provided')
+        print(sentences)
         offset = 0
         with ThreadPool(processes=self.parallel_threads) as pool:
-            audio_path = output_path / 'audio.mp3'
+            if file_name:
+                audio_path = output_path / f'{file_name}.mp3'
+            else:
+                audio_path = output_path / 'audio.mp3'
             with audio_path.open("wb") as f:
                 for result, text_boundaries in tqdm(
                         pool.imap(self.synthesize_text_once, sentences), total=len(sentences)):
@@ -112,11 +128,16 @@ class LongTextSynthesizer:
                                 all_word_boundaries.append(text_boundary_dict)
                         # Calculate the offset for the next sentence,
                         offset += len(result.audio_data) / (48 / 8)
-            with (output_path / "word_boundaries.json").open("w", encoding="utf-8") as f:
-                json.dump(all_word_boundaries, f, indent=4, ensure_ascii=False)
-            with (output_path / "sentence_boundaries.json").open("w", encoding="utf-8") as f:
-                json.dump(all_sentence_boundaries, f, indent=4, ensure_ascii=False)
+            # with (output_path / "word_boundaries.json").open("w", encoding="utf-8") as f:
+            #     json.dump(all_word_boundaries, f, indent=4, ensure_ascii=False)
+            # with (output_path / "sentence_boundaries.json").open("w", encoding="utf-8") as f:
+            #     json.dump(all_sentence_boundaries, f, indent=4, ensure_ascii=False)
+                
+            with (output_path / f"{file_name}.srt").open("w", encoding="utf-8") as f:
+                srt_content = [str(n+1)+'\n' + s2hms(i['audio_offset'])+' --> '+s2hms(i['audio_offset'] +i['duration'] )+'\n' + re.sub(r"[%s]+" %punc, "",i['text']) +'\n\n' for n,i in enumerate(all_sentence_boundaries)] # 序号+开始-->结束+内容
+                f.writelines(srt_content)        
 
+    
     def split_text(self, text: str) -> List[str]:
         sentences = sent_tokenize(text, language=self.language)
         logger.info(f'Splitting into {len(sentences)} sentences')
@@ -132,8 +153,10 @@ class LongTextSynthesizer:
         sentences = []
         speak_element = copy.deepcopy(root)
 
-        for child in list(speak_element):
+        new_var = list(speak_element)
+        for child in new_var:
             _, _, tag = child.tag.rpartition('}')
+            print(tag,child.text)
             if tag != 'voice':
                 raise ValueError(f'Only voice element is supported, got {tag}')
             speak_element.remove(child)
@@ -145,8 +168,10 @@ class LongTextSynthesizer:
 
 
 if __name__ == "__main__":
+    # result = s2hms(12842.0)
+    # print(result)
     logging.basicConfig(level=logging.INFO)
-    s = LongTextSynthesizer(subscription="YourSubscriptionKey", region="YourServiceRegion")
-    with Path('./Gatsby-chapter1.txt').open('r', encoding='utf-8') as r:
-        s.synthesize_text(r.read(), output_path=Path('./gatsby'))
-    s.synthesize_text(ssml_path=Path('multi-role.xml'), output_path=Path('./multi-role'))
+    s = LongTextSynthesizer(subscription="d81e33380a984e25ba06f5582dbb46d7", region="eastasia",parallel_threads=3)
+    # with Path('/workspaces/notes/python/douyin/zhihu/Gatsby-chapter1.txt').open('r', encoding='utf-8') as r:
+    #     s.synthesize_text(r.read(), output_path=Path('./gatsby'))
+    s.synthesize_text(ssml_path=Path('/workspaces/notes/python/douyin/zhihu/multi-role.xml'), output_path=Path('/workspaces/notes/python/douyin/zhihu/multi-role'))
