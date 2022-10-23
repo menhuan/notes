@@ -13,12 +13,12 @@ def read_csv():
 def get_all_content():
     url = f"https://api.notion.com/v1/databases/{database_id}/query"
     payload = {"page_size": PAGE_SIZE,
-                # "sorts": [
-                #     {
-                #         "property": "创建时间戳",
-                #         "direction": "descending"
-                #     }
-                # ]
+                "sorts": [
+                    {
+                        "property": "创建时间戳",
+                        "direction": "descending"
+                    }
+                ]
             }
     headers = {
         "Accept": "application/json",

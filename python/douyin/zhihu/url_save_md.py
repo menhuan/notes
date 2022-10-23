@@ -10,19 +10,18 @@ from pyquery import PyQuery as pq
 from bs4 import BeautifulSoup
 
 from yuyin import output
+import subprocess
 
-
-output_path =os.path.join(os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output"), os.getenv(
-    'OUTPUT_PATH', "zhihu/booking/"))
-
-booking_size = int(os.getenv("BOOKING_SIZE",1800))
+output_path =os.path.join(os.getenv("ZHIHU_PATH","/workspaces/notes/python/douyin/output/zhihu/booking/"))
+root_path = os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output/douyin")
+musics_path = os.path.join(root_path,os.getenv("MUSICS", "musics/"),'download_music.sh') 
 agent = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Mobile Safari/537.36'
 
 headers = {
     'User-Agent': agent
 }
 
-def getText(url,video_title,start_init):
+def getText(url,video_title_pre,video_title,start_init):
 
     html = requests.get(url, headers=headers).text
 
@@ -127,8 +126,9 @@ def getText(url,video_title,start_init):
         else:
             end_index+=1
     for index,part in enumerate(part_contents):
-        output(part,f"{video_title}({index+1})") 
+        output(part,f"{video_title_pre}({index+1}),{video_title}({index+1})") 
         sleep(3)
+    result = subprocess.call(f"bash {musics_path}",shell=True)
     # for index,part in enumerate(part_contents):
     #     run(f"{video_title}({index+1})",f"{video_title}({index+1})")
     t = url + "\n" + split_result
@@ -148,7 +148,7 @@ def run_zhuanlan():
     print("裁剪长度:",start_index)
 
     url = 'https://www.zhihu.com/market/paid_column/1500563077195636736/section/1555993658578702336'
-    content = getText(url,"你们说前科闺蜜有多坏,前科闺蜜",start_index)
+    content = getText(url,"你们说前科闺蜜有多坏","前科闺蜜",start_index)
     # import image2
     # image2.show_image(content)
 

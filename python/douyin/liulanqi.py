@@ -24,7 +24,8 @@ COOKING_PATH = os.path.join(ROOT_PATH, "cooking")
 COOKING_TXT = os.path.join(COOKING_PATH, "douyin.txt")
 
 agent = 'Mozilla/5.0 (Macintosh; Linux) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36'
-isDingShi = os.getenv("IS_DINGSHI",True)
+isDingShi = os.getenv("IS_DINGSHI", True)
+
 
 def get_driver():
     chrome_options = webdriver.ChromeOptions()
@@ -164,9 +165,9 @@ def get_cookie(driver):
 
 def get_publish_date(title, index):
     # 代表的是 加一天时间
-    time_long = int(index/3) * 24 
+    time_long = int(index/3) * 24
     now = datetime.datetime.today()
-    if(  now.hour  > 20 ):
+    if(now.hour > 20):
         time_long = 24
     tomorrowemp = now + datetime.timedelta(hours=time_long)
     print("title:", title)
@@ -177,9 +178,10 @@ def get_publish_date(title, index):
         tomorrow = tomorrowemp.replace(hour=12, minute=0, second=0)
     elif title.find("(3)") > 0 or title.find("(6)") > 0:
         tomorrow = tomorrowemp.replace(hour=18, minute=0, second=0)
-    print("准备写入的时间是:",tomorrow)
+    print("准备写入的时间是:", tomorrow)
     if(tomorrow <= now):
-        tomorrow = now + datetime.timedelta(hours=2) +datetime.timedelta(hours=1*index)
+        tomorrow = now + \
+            datetime.timedelta(hours=2) + datetime.timedelta(hours=1*index)
     print("输出的时间是:", tomorrow.strftime("%Y-%m-%d %H:%M"))
     return tomorrow.strftime("%Y-%m-%d %H:%M")
 
@@ -208,6 +210,12 @@ def publish_douyin(driver, mp4, index):
     driver.find_element("xpath", '//input[@type="file"]').send_keys(mp4[0])
     time.sleep(3)
     print("开始输入描述")
+
+    try:
+        driver.find_element("xpath", '//*[text()="我知道了"]').click()
+        time.sleep(3)
+    except Exception as e:
+        traceback.print_exc()
     # 添加封面
     # driver.find_element("xpath", '//*[text()="编辑封面"]').click()
     # time.sleep(1)
@@ -233,8 +241,8 @@ def publish_douyin(driver, mp4, index):
     input_text.send_keys(" #日常推文 ")
     time.sleep(4)
     input_text.send_keys(" #甜文 ")
-    #time.sleep(4)
-    #input_text.send_keys(" #虐文虐心 ")
+    # time.sleep(4)
+    # input_text.send_keys(" #虐文虐心 ")
     time.sleep(4)
     input_text.send_keys(" #言情 ")
 
@@ -284,17 +292,16 @@ def publish_douyin(driver, mp4, index):
         time.sleep(3)
         input_data.send_keys(get_publish_date(title, index))
 
-
     # 等待视频上传完成,放到最后,这一步是最慢的.
     times = 10
     while True:
         time.sleep(10)
         try:
             driver.find_element("xpath", '//*[text()="重新上传"]')
-            times-=1
+            times -= 1
             break
         except Exception as e:
-            if times ==0:
+            if times == 0:
                 raise ValueError("需要重新重试")
             print("视频还在上传中···")
 
@@ -322,12 +329,12 @@ def run(driver):
         while index < mp4s_len:
             try:
                 publish_douyin(driver, mp4s[index], index)
-            except Exception as e :
+            except Exception as e:
                 traceback.print_exc()
-                index-=1
+                index -= 1
             finally:
                 print(f"mp4长度是{mp4s_len},当前是:{index}")
-                index+=1
+                index += 1
             time.sleep(10)
     finally:
         driver.quit()
@@ -343,14 +350,12 @@ if __name__ == "__main__":
         while index < mp4s_len:
             try:
                 publish_douyin(driver, mp4s[index], index)
-            except Exception as e: 
+            except Exception as e:
                 traceback.print_exc()
-                index-=1
+                index -= 1
             finally:
-                index+=1
+                index += 1
                 print(f"mp4长度是{mp4s_len},当前是:{index}")
             time.sleep(10)
     finally:
         driver.quit()
-
-    

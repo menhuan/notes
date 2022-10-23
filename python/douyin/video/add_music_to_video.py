@@ -13,6 +13,7 @@ from mutagen.mp3 import MP3
 from mutagen.wave import WAVE
 import deal_with
 
+
 out_image_name = 'out_image.png'
 out_video_name = 'black_video.mp4'
 bg_video_name = 'bg_video.mp4'

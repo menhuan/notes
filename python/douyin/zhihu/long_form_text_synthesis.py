@@ -20,8 +20,11 @@ from nltk.tokenize import sent_tokenize
 from tqdm import tqdm
 
 from synthesizer_pool import SynthesizerPool
+import os 
 
 # Only needed for first run
+#punk_path = os.path.join( nltk.data.path[0],"tokenizers","punkt.zip")
+#if not os.path.exists(punk_path):
 nltk.download('punkt')
 
 logger = logging.getLogger(__name__)
