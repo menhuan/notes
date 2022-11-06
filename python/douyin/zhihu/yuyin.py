@@ -13,7 +13,7 @@ root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
 OS_RATE = str(os.getenv("OS_RATE","60")) +"%"
-OS_PITCH = str(os.getenv("OS_PITCH","30")) + "%"
+OS_PITCH = str(os.getenv("OS_PITCH","20")) + "%"
 OS_VOLUME = str(os.getenv("OS_VOLUME","+20")) + "%"
 
 BREAK_TIME= str(int(os.getenv("BREAK_TIME", "100"))) + "ms"
@@ -24,13 +24,13 @@ def output(txt_to_aideo,file_name):
     for txt in txt_to_aideo.split('，'):
         txt = txt.strip()
         if(len(txt) >0 ):
-            ssml += f"""<voice name="zh-CN-XiaochenNeural"><p><prosody rate="{OS_RATE}" pitch="{OS_PITCH}" volume="{OS_VOLUME}" > {txt}。 </prosody><break time="{BREAK_TIME}" /></p></voice>""" 
+            ssml += f"""<voice name="zh-CN-XiaochenNeural"><p><prosody rate="{OS_RATE}" pitch="{OS_PITCH}" volume="{OS_VOLUME}" > {txt}。 </prosody></p></voice>""" 
     text =f"""<speak xmlns="http://www.w3.org/2001/10/synthesis" xmlns:mstts="http://www.w3.org/2001/mstts" xmlns:emo="http://www.w3.org/2009/10/emotionml" version="1.0" xml:lang="zh-CN">{ssml} </speak>"""
     ssml_path =  os.path.join(musics_path,file_name +".xml")
     Path(musics_path).mkdir(parents=True,exist_ok=True)
     with open(ssml_path,'w') as f:
         f.writelines(text)
-    s = LongTextSynthesizer(subscription="d81e33380a984e25ba06f5582dbb46d7", region="eastasia",parallel_threads=2)
+    s = LongTextSynthesizer(parallel_threads=1,voice="zh-CN-XiaochenNeural",language="zh-CN")
     # with Path('/workspaces/notes/python/douyin/zhihu/Gatsby-chapter1.txt').open('r', encoding='utf-8') as r:
     #     s.synthesize_text(r.read(), output_path=Path('./gatsby'))
     s.synthesize_text(ssml_path=Path(ssml_path), output_path=Path(musics_path),file_name=file_name)

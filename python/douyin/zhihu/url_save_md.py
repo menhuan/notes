@@ -11,6 +11,7 @@ from bs4 import BeautifulSoup
 
 from yuyin import output
 import subprocess
+import re
 
 output_path =os.path.join(os.getenv("ZHIHU_PATH","/workspaces/notes/python/douyin/output/zhihu/booking/"))
 root_path = os.getenv("ROOT_PATH","/workspaces/notes/python/douyin/output/douyin")
@@ -20,8 +21,79 @@ agent = 'Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.
 headers = {
     'User-Agent': agent
 }
+punc = '~`!#$%^&*()_+-=|\';":/.,?><~·！@#￥%……&*（）——+-=“：’；、。，？》《{}'
 
-def getText(url,video_title_pre,video_title,start_init):
+
+def spilt_content(text:str,content_prefix:str="",start_index:int =0 ,split_size:int = 1050,end_index:int = 1050):
+    #文本的总长度
+    total_size = len(text) 
+    page_prefix = content_prefix
+    split_result = ""
+    part_contents= []
+    while True:
+        current_content =""
+        if content_prefix != "":
+            current_content = content_prefix 
+        
+        if end_index >= total_size:
+            current_content =page_prefix + text[start_index:total_size]
+            split_result += page_prefix +text[start_index:total_size]
+            part_contents.append(current_content)
+            break
+        elif text[end_index] == '，':
+            end_index = end_index+1
+            current_content = page_prefix + text[start_index:end_index]
+            split_result += page_prefix+ text[start_index:end_index] +"\n"
+            end_index_bak = end_index
+            end_index = end_index +split_size
+            start_index = end_index_bak
+            part_contents.append(current_content)
+        else:
+            end_index+=1
+    return part_contents
+
+def replace_content(text):
+    # text = re.sub(r"[%s]+" %punc, "\n",text)
+    # text = text.replace("\n","，")
+     # 替换无用的数字
+    text = text.replace('「', '').replace('」', '').replace('。', '，').replace(
+        '？', '，').replace('……', '，').replace('”', '').replace('“', '').replace('『','').replace('』','').replace(
+        ']','').replace('[','').replace(':','，').replace("：",'，').replace('?','，').replace("——",'，').replace(
+        "，，","，").replace("！",'，').replace('.','').replace('，，','，').replace('最好','嘴好').replace(
+        '砍','看').replace('砸','杂').replace('1\n','').replace('2\n','').replace('3\n','').replace('4\n','').replace(
+        '5\n','').replace('6\n','').replace('7\n','').replace('8\n','').replace('9\n','').replace('0','').replace('】','').replace(
+            "【",'').replace(' ','').replace('　','').strip()
+                    
+    text = text.replace('拐卖','柺卖').replace('死','4').replace('下身','下渗').replace('我靠','').replace(
+        '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
+            '杂碎','砸碎').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',
+            "怂").replace("全面",'全棉').replace('唯一','惟一').replace("优秀","右袖").replace("全国","劝过").replace("顶级","定级").replace(
+                "烧","少").replace("支付宝",'zhiFuBao')
+        
+    return text
+
+def getTextContenByColumn(url):
+    print("url是",url)
+
+    reqs = requests.get(url, headers=headers)
+    # doc = pq(html)
+    # text = doc("p").text()
+    # text = "\n".join(text.split())
+    soup = BeautifulSoup(reqs.text, 'html.parser')
+    
+    urlTiele = ''
+    for title in soup.find_all('title'):
+        urlTiele = title.get_text()
+        #print(title.get_text())
+    # 获取问答
+    #text = soup.find(attrs={"itemprop": "text"})
+    # 获取专栏
+    text = soup.find(id="manuscript")
+    content = text.get_text()
+    print(content)
+    return content ,urlTiele
+
+def getText(url,video_title,keyword,start_init,content_prefix):
 
     html = requests.get(url, headers=headers).text
 
@@ -103,6 +175,9 @@ def getText(url,video_title_pre,video_title,start_init):
     part_contents = []
     while True:
         current_content =""
+        if content_prefix != "":
+            current_content = content_prefix 
+     
         if end_index >= total_size:
             current_content =page_prefix + t[start_index:total_size]
             split_result += page_prefix +t[start_index:total_size]
@@ -126,7 +201,7 @@ def getText(url,video_title_pre,video_title,start_init):
         else:
             end_index+=1
     for index,part in enumerate(part_contents):
-        output(part,f"{video_title_pre}({index+1}),{video_title}({index+1})") 
+        output(part,f"{video_title}({index+1}),{keyword}({index+1})") 
         sleep(3)
     result = subprocess.call(f"bash {musics_path}",shell=True)
     # for index,part in enumerate(part_contents):
@@ -148,13 +223,14 @@ def run_zhuanlan():
     print("裁剪长度:",start_index)
 
     url = 'https://www.zhihu.com/market/paid_column/1500563077195636736/section/1555993658578702336'
-    content = getText(url,"你们说前科闺蜜有多坏","前科闺蜜",start_index)
+    content = getText(url,"你们说前科闺蜜有多坏","前科闺蜜",start_index,"")
     # import image2
     # image2.show_image(content)
 
 if __name__ == "__main__":
-    run_zhuanlan()
-    pass
+    #run_zhuanlan()
+    #getTextContent('https://www.zhihu.com/market/paid_column/1500563077195636736/section/1555993658578702336')
+    
 
 
 

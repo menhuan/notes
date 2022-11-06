@@ -232,7 +232,7 @@ def publish_douyin(driver, mp4, index):
     time.sleep(5)
     # 输入视频描述
     input_text = driver.find_element(
-        "xpath", '//div[@aria-autocomplete="list"]')
+        "xpath", "//div[@data-placeholder='写一个合适的标题，能让更多人看到']")
 
     title = mp4[1].replace(".mp4", "")
 

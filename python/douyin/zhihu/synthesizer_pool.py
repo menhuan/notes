@@ -8,6 +8,7 @@ import logging
 import queue
 from contextlib import contextmanager
 from queue import LifoQueue
+from time import sleep
 from typing import Callable
 
 import azure.cognitiveservices.speech as speechsdk
@@ -28,7 +29,7 @@ class SynthesizerPool(object):
 
     def _borrow(self) -> speechsdk.SpeechSynthesizer:
         try:
-            return self._queue.get(block=False)
+            return self._queue.get(block=True,timeout=5)
         except queue.Empty:
             return self._create_synthesizer()
         except Exception as e:

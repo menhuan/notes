@@ -28,6 +28,7 @@ import os
 nltk.download('punkt')
 
 logger = logging.getLogger(__name__)
+logger.setLevel("DEBUG")
 punc = '~`!#$%^&*()_+-=|\';":/.,?><~·！@#￥%……&*（）——+-=“：’；、。，？》《{}'
 print()
 
@@ -42,8 +43,8 @@ def s2hms(x):      # 把毫秒转为时分秒
 
 
 class LongTextSynthesizer:
-    def __init__(self, subscription: str, region: str, language: str = 'english',
-                 voice: str = 'en-US-JennyNeural', parallel_threads: int = 8) -> None:
+    def __init__(self, subscription: str = "ebc688a500a948829e956abc2f9b13df", region: str ="japaneast" , language: str = 'english',
+                 voice: str = 'en-US-JennyNeural', parallel_threads: int = 1) -> None:
         self.is_ssml = None
         self.subscription = subscription
         self.region = region
@@ -51,21 +52,24 @@ class LongTextSynthesizer:
         self.voice = voice
         self.parallel_threads = parallel_threads
         self.synthesizer_pool = SynthesizerPool(self._create_synthesizer, self.parallel_threads)
+        self.speechSynthesizer = None
+        
 
     def _create_synthesizer(self) -> speechsdk.SpeechSynthesizer:
-        config = speechsdk.SpeechConfig(subscription=self.subscription, region=self.region)
-        config.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio24Khz48KBitRateMonoMp3)
-        config.set_property(
-            speechsdk.PropertyId.SpeechServiceResponse_RequestSentenceBoundary, 'true')
-        config.speech_synthesis_voice_name = self.voice
-        return speechsdk.SpeechSynthesizer(config, audio_config=None)
+        if self.speechSynthesizer is None:
+            config = speechsdk.SpeechConfig(subscription=self.subscription, region=self.region)
+            config.set_speech_synthesis_output_format(speechsdk.SpeechSynthesisOutputFormat.Audio24Khz48KBitRateMonoMp3)
+            config.set_property(
+                speechsdk.PropertyId.SpeechServiceResponse_RequestSentenceBoundary, 'true')
+            config.speech_synthesis_voice_name = self.voice
+            return speechsdk.SpeechSynthesizer(config, audio_config=None)
+        return self.speechSynthesizer
 
     def synthesize_text_once(self, text: str) -> Tuple[speechsdk.SpeechSynthesisResult,
                                                        List[speechsdk.SpeechSynthesisWordBoundaryEventArgs]]:
-        logger.debug("Synthesis started %s", text)
+        logger.info("Synthesis started %s", text)
         text_boundaries = []
         finished = []
-
         def word_boundary_cb(evt: speechsdk.SpeechSynthesisWordBoundaryEventArgs) -> None:
             text_boundaries.append(evt)
 
@@ -81,11 +85,12 @@ class LongTextSynthesizer:
                 if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
                     logger.debug("Synthesis completed %s", text)
                     while not finished:
-                        time.sleep(0.1)
+                        time.sleep(5)
                     return result, text_boundaries
                 elif result.reason == speechsdk.ResultReason.Canceled:
                     cancellation_details = result.cancellation_details
                     logger.warning("Synthesis canceled, error details %s", cancellation_details.error_details)
+                    time.sleep(5)
                     if cancellation_details.error_code in \
                         [speechsdk.CancellationErrorCode.ConnectionFailure,
                          speechsdk.CancellationErrorCode.ServiceUnavailable,
@@ -93,6 +98,7 @@ class LongTextSynthesizer:
                         logger.info("Synthesis canceled with connection failure, retrying.")
                         continue
                     break
+                
             logger.error("Synthesizer failed to synthesize text")
             return None, None
 
@@ -107,7 +113,6 @@ class LongTextSynthesizer:
             self.is_ssml = True
         else:
             raise ValueError('Either text or ssml_path must be provided')
-        print(sentences)
         offset = 0
         with ThreadPool(processes=self.parallel_threads) as pool:
             if file_name:
@@ -117,6 +122,8 @@ class LongTextSynthesizer:
             with audio_path.open("wb") as f:
                 for result, text_boundaries in tqdm(
                         pool.imap(self.synthesize_text_once, sentences), total=len(sentences)):
+                #for  sentence in sentences:
+#                    result, text_boundaries = self.synthesize_text_once(sentence)      
                     if result is not None:
                         f.write(result.audio_data)
                         for text_boundary in text_boundaries:
@@ -131,6 +138,7 @@ class LongTextSynthesizer:
                                 all_word_boundaries.append(text_boundary_dict)
                         # Calculate the offset for the next sentence,
                         offset += len(result.audio_data) / (48 / 8)
+                    time.sleep(10)
             # with (output_path / "word_boundaries.json").open("w", encoding="utf-8") as f:
             #     json.dump(all_word_boundaries, f, indent=4, ensure_ascii=False)
             # with (output_path / "sentence_boundaries.json").open("w", encoding="utf-8") as f:
@@ -159,7 +167,6 @@ class LongTextSynthesizer:
         new_var = list(speak_element)
         for child in new_var:
             _, _, tag = child.tag.rpartition('}')
-            print(tag,child.text)
             if tag != 'voice':
                 raise ValueError(f'Only voice element is supported, got {tag}')
             speak_element.remove(child)
@@ -174,7 +181,7 @@ if __name__ == "__main__":
     # result = s2hms(12842.0)
     # print(result)
     logging.basicConfig(level=logging.INFO)
-    s = LongTextSynthesizer(subscription="d81e33380a984e25ba06f5582dbb46d7", region="eastasia",parallel_threads=3)
+    s = LongTextSynthesizer(subscription="9281010e1fe3468089c7d23c4d9b2f71", region="eastus2",parallel_threads=1)
     # with Path('/workspaces/notes/python/douyin/zhihu/Gatsby-chapter1.txt').open('r', encoding='utf-8') as r:
     #     s.synthesize_text(r.read(), output_path=Path('./gatsby'))
     s.synthesize_text(ssml_path=Path('/workspaces/notes/python/douyin/zhihu/multi-role.xml'), output_path=Path('/workspaces/notes/python/douyin/zhihu/multi-role'))
