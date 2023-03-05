@@ -85,7 +85,7 @@ class LongTextSynthesizer:
                 if result.reason == speechsdk.ResultReason.SynthesizingAudioCompleted:
                     logger.debug("Synthesis completed %s", text)
                     while not finished:
-                        time.sleep(5)
+                        time.sleep(2)
                     return result, text_boundaries
                 elif result.reason == speechsdk.ResultReason.Canceled:
                     cancellation_details = result.cancellation_details
@@ -138,7 +138,6 @@ class LongTextSynthesizer:
                                 all_word_boundaries.append(text_boundary_dict)
                         # Calculate the offset for the next sentence,
                         offset += len(result.audio_data) / (48 / 8)
-                    time.sleep(10)
             # with (output_path / "word_boundaries.json").open("w", encoding="utf-8") as f:
             #     json.dump(all_word_boundaries, f, indent=4, ensure_ascii=False)
             # with (output_path / "sentence_boundaries.json").open("w", encoding="utf-8") as f:

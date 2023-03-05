@@ -8,7 +8,7 @@ import math
 from PIL import Image,ImageFont,ImageDraw
 
 font_conf = {
-   'type':'Arial Unicode.ttf',
+   'type':'/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf',
    'size':20,
    'rgb':tuple([0,0,0])
 }
@@ -96,6 +96,17 @@ def CreatePic(text,imgPath=None,size=[1242,1660],margin=margin,backgroundRGB=bg_
     if imgPath:
         image.save(imgPath) # 保存图片
     image.show()
-text='接到一个需求，将给出的文字自动生成图片。要求白底黑字，根据图片尺寸两边预留固定尺寸，文字自动居中。这里的一个难点就是计算文字的字号。思路：根据宋体实验找了一下规律，每两个字号渲染尺寸会按双字节加一倍。也就是计算出双字个数，通过宽度剪去双边预留尺寸，再除以双字节个数就是字号。'
+text="""
+我在闺蜜的房间里换衣服，
+都脱完了，我才发现屋子里有人，
+准确地说，不能是现实中的人，
+而是视频里的一张人脸，
+空气安静到诡异，我看到了闺蜜手机视频上的备注，
+我认出他来了，视频里面那个长相矜贵、气质禁欲的男人，是富婆的哥哥，
+你刚刚在看什么，我竭力让自己冷静，
+哥哥冷淡的脸停顿了一下，在看股票，
+我不信，我的三围比不上你的股票线，
+这个男人就是我要攻略的对象，一个只有金钱欲望的性冷淡
+"""
 CreatePic(text)# others function
 CreateMutiLinesPic(text, 20)# my function

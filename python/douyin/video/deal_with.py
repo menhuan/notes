@@ -45,7 +45,7 @@ def cutting_video_by_minuts(video_dir_path):
             fname = os.path.join(dirpath, name)
             if fname.endswith(".mp4"):
                 filelist.append(fname)
-    cutting_minuts = os.getenv("VIDEO_CUTTING_MINUTS", 4*60)
+    cutting_minuts = os.getenv("VIDEO_CUTTING_MINUTS", 10)
     for item in filelist:
         clip = VideoFileClip(item)
         print("处理路径:", item, "总的时长是:", clip.duration)
@@ -94,4 +94,4 @@ def run():
         sleep(600)
 
 if __name__ == "__main__":
-    pass
+    cutting_video_by_minuts("/workspaces/notes/python/douyin/output/douyin/merge_out/")

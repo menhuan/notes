@@ -64,11 +64,11 @@ def replace_content(text):
         '5\n','').replace('6\n','').replace('7\n','').replace('8\n','').replace('9\n','').replace('0','').replace('】','').replace(
             "【",'').replace(' ','').replace('　','').strip()
                     
-    text = text.replace('拐卖','柺卖').replace('死','4').replace('下身','下渗').replace('我靠','').replace(
+    text = text.replace('下身','下渗').replace('我靠','').replace(
         '警察','经查').replace("手枪",'首抢').replace("筹码",'抽码').replace("你他妈","你").replace("他妈",'').replace(
             '杂碎','砸碎').replace("极致",'机智').replace("安全",'案全').replace("最",'嘴').replace('㞞',
-            "怂").replace("全面",'全棉').replace('唯一','惟一').replace("优秀","右袖").replace("全国","劝过").replace("顶级","定级").replace(
-                "烧","少").replace("支付宝",'zhiFuBao')
+            "怂").replace("全面",'全棉').replace('唯一','惟一').replace("优秀","右袖").replace("全国","劝过").replace("顶级",
+            "定级").replace("支付宝",'zhiFuBao')
         
     return text
 
@@ -229,9 +229,7 @@ def run_zhuanlan():
 
 if __name__ == "__main__":
     #run_zhuanlan()
-    #getTextContent('https://www.zhihu.com/market/paid_column/1500563077195636736/section/1555993658578702336')
-    
-
-
+    #getTextContent('https://www.zhihu.com/market/paid_column/1500563077195636736/section/1555993658578702336')    
+    pass
 
 

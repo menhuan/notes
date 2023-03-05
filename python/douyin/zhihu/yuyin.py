@@ -12,7 +12,7 @@ from long_form_text_synthesis import LongTextSynthesizer
 root_path = os.getenv(
     "ROOT_PATH", "/workspaces/notes/python/douyin/output/douyin/")
 musics_path = os.path.join(root_path, os.getenv("MUSICS", "musics/"))
-OS_RATE = str(os.getenv("OS_RATE","60")) +"%"
+OS_RATE = str(os.getenv("OS_RATE","70")) +"%"
 OS_PITCH = str(os.getenv("OS_PITCH","20")) + "%"
 OS_VOLUME = str(os.getenv("OS_VOLUME","+20")) + "%"
 

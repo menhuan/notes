@@ -27,9 +27,10 @@ def run_zhihu_to_aedio():
             #desc_len = len(desc)
             #print(url,keyword,desc,title_pre,
             # desc_len)
+            print(f"符合要求数据{json.dumps(row)}")
+            sleep(10)
             run_zhihu_to_aedio_by(block_id,title_pre,keyword,content_pre)
             #getText(url,title_pre,keyword,0,content_pre)
-            print(f"符合要求数据{json.dumps(row)}")
             break
         else:
             print(f"不符合数据要求{properties.get('详情标题')} status:=== {status}")
@@ -37,7 +38,7 @@ def run_zhihu_to_aedio():
 
 
 def run_zhihu_to_aedio_by(block_id:str="",video_title:str ="",keyword:str= "",content_pre:str=""):
-    contents = getAllBlocks()
+    contents = getAllBlocks(block_id=block_id)
     for index,part in enumerate(contents):
         output(content_pre+part,f"{video_title}({index+1}),{keyword}({index+1})") 
         sleep(3)

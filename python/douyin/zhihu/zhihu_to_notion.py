@@ -5,7 +5,7 @@ import json
 
 if __name__ == "__main__":
     # 用来插入知乎内容到notion中
-    results = get_notion_all(2)
+    results = get_notion_all(10)
     for row in results:
         properties = row.get("properties")
         url = properties.get("URL")
@@ -14,7 +14,7 @@ if __name__ == "__main__":
         status = properties.get("状态")
         #print(json.dumps(row))
         #print(json.dumps(row))
-        if url and status and status.get("multi_select") and  "待发布" in [status_value.get("name") for status_value in  status.get("multi_select")] and text_type.get("select").get("name") == "专栏" :
+        if url and status and status.get("multi_select") and  "待插入文本" in [status_value.get("name") for status_value in  status.get("multi_select")] and text_type.get("select").get("name") == "专栏" :
             text,_ =getTextContenByColumn(url.get("url"))
             text = replace_content(text)
             texts = spilt_content(text)

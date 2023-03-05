@@ -57,8 +57,9 @@ def getAllBlocks(block_id="a8281df9cbd7489bacc2aa3f2022e545"):
     response = requests.get(url, headers=headers)
     contents = []
     for  res in response.json().get("results"):
-       contents.append(res.get("paragraph").get("rich_text")[0].get("text").get("content"))
-    print(contents)
+        if(res.get("paragraph") is None or res.get("paragraph").get("rich_text") is None or len(res.get("paragraph").get("rich_text")) ==0):
+            continue
+        contents.append(res.get("paragraph").get("rich_text")[0].get("plain_text"))
     return contents
 
 def insert_block(content="测试内容",block_id="a8281df9cbd7489bacc2aa3f2022e545"):

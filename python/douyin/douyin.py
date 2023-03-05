@@ -145,6 +145,7 @@ class DouYin:
 
     def get_sec_uid(self, url):
         rsp = self.get_request(url)
+        print(rsp.url)
         sec_uid = re.search(r'sec_uid=.*?\&', rsp.url).group(0)
         return sec_uid[8:-1]
 
