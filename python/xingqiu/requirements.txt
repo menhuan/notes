@@ -1,3 +1,5 @@
 pdfkit
 BeautifulSoup4
 requests
+PyQt6
+browser_cookie3

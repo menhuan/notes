@@ -16,7 +16,7 @@ import base64
 import time
 import browser_cookie3
 
-ZSXQ_ACCESS_TOKEN = '51819C65-B766-5A07-3C8C-4A3F08846268_D43E2E6190D8F1A6'    # 登录后Cookie中的Token（必须修改）
+#ZSXQ_ACCESS_TOKEN = '51819C65-B766-5A07-3C8C-4A3F08846268_D43E2E6190D8F1A6'    # 登录后Cookie中的Token（必须修改）
 USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'    # 登录时使用的User-Agent（必须修改）
 GROUP_ID = '222588541841'                         # 知识星球中的小组ID
 PDF_FILE_NAME = '电子书.pdf'                       # 生成PDF文件的名字
