@@ -1,0 +1,2849 @@
+{
+  "succeeded": true,
+  "resp_data": {
+    "topics": [
+      {
+        "topic_id": 214445145148521,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "请问教授骑白马打新的策略还有效吗？",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "广东"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "打新基本放弃了，因为注册制以后打新没有特别明显的套利空间。\n\n之前打新一年能有5-10%的无风险收益，现在可能还有些收益但风险较大，还得一个个新股去研究，太费时间了。\n\n等啥时候新股估值下来再说吧"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-07-03T08:41:19.209+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-07-03T00:09:22.002+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-06-30T16:54:37.126+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T23:02:38.983+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-29T16:07:29.809+0800",
+            "owner": {
+              "user_id": 512415484,
+              "name": "朝歌夜弦",
+              "alias": "且慢",
+              "avatar_url": "https://images.zsxq.com/FibNKs5kmaoSJX3iH5V6PCqm35dG?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DbVK63ujjieIXjeY1jvdgz73AAw=",
+              "number": 104
+            }
+          },
+          {
+            "create_time": "2023-06-29T14:03:08.971+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-29T12:34:41.457+0800",
+            "owner": {
+              "user_id": 1122444152,
+              "name": "潘潘",
+              "avatar_url": "https://images.zsxq.com/FqIVmDBi7vwDIzXHRNl5gFxmuf5e?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:4iqdrzPQxRh_-AGoSpGYmftVzE0=",
+              "number": 1226
+            }
+          },
+          {
+            "create_time": "2023-06-29T09:35:13.371+0800",
+            "owner": {
+              "user_id": 48418852814518,
+              "name": "vivien_zh_*",
+              "avatar_url": "https://images.zsxq.com/Fh2KxudQXsg-nCIlCslcoWh7KoYx?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:-RO7iwKFJcCb5Fv3Nyy-juDBhyU=",
+              "number": 996
+            }
+          },
+          {
+            "create_time": "2023-06-29T09:24:25.205+0800",
+            "owner": {
+              "user_id": 582224881488124,
+              "name": "陈恒",
+              "avatar_url": "https://images.zsxq.com/Fi6LJUXr4ykLrRTBKKYt7SSJP7Rr?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:iDNSxOengUILROWg3iXzERZNQhs=",
+              "number": 11076
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:54:55.082+0800",
+            "owner": {
+              "user_id": 28425515545481,
+              "name": "海子xs",
+              "avatar_url": "https://images.zsxq.com/Fvl1XpCg4S9fI_oDUVy1X4iznRUA?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QlmjdgXaVL5OwIIn1NiAwC5qrD8=",
+              "number": 681
+            }
+          }
+        ],
+        "likes_count": 14,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 1302,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-29T08:14:36.554+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412228554124448,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 841152484558422,
+            "name": "袁伟-Wayne",
+            "avatar_url": "https://images.zsxq.com/FmSTBvCnACGq-IbrI2eJtlKEort2?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:hoQ3_22JWAG6R7-_NgfmBXzyRWA=",
+            "location": "江苏"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "昨天在286多元入手了一点片仔癀（应该和教授买入价差不多或略低吧😁），看她的平均持股价在329，最低持股价在189，我看这只股的历史，最初的价格不是非常低么，几块钱、几十块钱，一直涨到最高四佰九十元，为什么最低持股和平均股价那么高。请教授指点。\n我同意教授之前发文观点，也入手了医药茅……现在价格相对不高，整个医药指数也是，长期肯定看好，感觉近两三年回不到四百多，回到三百多还是有机会的，关于片仔癀的趋势，请教授多分析两句😄\n我计划，如果慢慢长起来，我就不管它了，如果再大跌，一定时间和空间，就再补一次，最多一次，投资资金总量要控制。😄教授怎么想的。\nPS：现在基金特别是指数基金为主，但也长期持有两只股票（之前有意向的两只，买入了招行现在成本约33.9（之前约37多，半仓分批高抛，又都分批买回来了），另一只中国移动没有买，现在那么高，就算了……）。",
+          "images": [
+            {
+              "image_id": 585582155158444,
+              "type": "png",
+              "thumbnail": {
+                "url": "https://images.zsxq.com/Fm3-1fq8FcX6emLUY7sS8RsN26ZU?imageMogr2/auto-orient/thumbnail/750x/format/jpg/blur/1x0/quality/75&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:BWZjjs_SJVk6s-Vb4fMllnzNn1Q=",
+                "width": 750,
+                "height": 1623
+              },
+              "large": {
+                "url": "https://images.zsxq.com/Fm3-1fq8FcX6emLUY7sS8RsN26ZU?imageMogr2/auto-orient/thumbnail/800x/format/jpg/blur/1x0/quality/75&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:Sgku-FtoZp5FvbCyW5--wo-kuJ0=",
+                "width": 800,
+                "height": 1731
+              },
+              "original": {
+                "url": "https://images.zsxq.com/Fm3-1fq8FcX6emLUY7sS8RsN26ZU?imageMogr2/auto-orient/quality/100!/ignore-error/1&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:_kNV8XbJDShJQHxApWlSyfK9MNk=",
+                "width": 828,
+                "height": 1792,
+                "size": 274316
+              }
+            }
+          ],
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "江苏"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "这个问题很简单吧，因为一开始虽然低，但最早上车的人早就下车了，中间经历过无数次的换手，真正能从早期一直拿到现在的人凤毛麟角。\n\n片仔癀目前的主要问题还是估值比较高和机构持股太集中。\n\n估值高就让很多人不敢买，机构太多就导致没有增量，因为现在基金整体看是净赎回状态，那么就会有部分机构被迫卖出。所以在目前风格下，并不会立刻就能突突上去。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-07-03T08:42:01.766+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-30T16:53:41.078+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T23:03:02.903+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-29T16:09:35.340+0800",
+            "owner": {
+              "user_id": 512415484,
+              "name": "朝歌夜弦",
+              "alias": "且慢",
+              "avatar_url": "https://images.zsxq.com/FibNKs5kmaoSJX3iH5V6PCqm35dG?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DbVK63ujjieIXjeY1jvdgz73AAw=",
+              "number": 104
+            }
+          },
+          {
+            "create_time": "2023-06-29T14:04:48.559+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-29T12:34:53.506+0800",
+            "owner": {
+              "user_id": 1122444152,
+              "name": "潘潘",
+              "avatar_url": "https://images.zsxq.com/FqIVmDBi7vwDIzXHRNl5gFxmuf5e?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:4iqdrzPQxRh_-AGoSpGYmftVzE0=",
+              "number": 1226
+            }
+          },
+          {
+            "create_time": "2023-06-29T09:36:22.435+0800",
+            "owner": {
+              "user_id": 48418852814518,
+              "name": "vivien_zh_*",
+              "avatar_url": "https://images.zsxq.com/Fh2KxudQXsg-nCIlCslcoWh7KoYx?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:-RO7iwKFJcCb5Fv3Nyy-juDBhyU=",
+              "number": 996
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:48:27.335+0800",
+            "owner": {
+              "user_id": 582225418241424,
+              "name": "不会游泳的小瘦子",
+              "alias": "会游泳的小瘦子",
+              "avatar_url": "https://images.zsxq.com/Fke5Z6aaDsm5UK1baEeea8eJElXa?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DpvBtLnGCkCG0BVDVo3reXIsw0s=",
+              "number": 6316
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:44:46.068+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:42:26.277+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          }
+        ],
+        "likes_count": 11,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 1311,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-29T08:13:21.152+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 814481822221182,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 815254551221142,
+            "name": "M.🍀",
+            "avatar_url": "https://images.zsxq.com/Fs7zGef1NPr1ONtddHde-eXAshgC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:cuzNZ7jUYQOQm16l1LPxQh5ddK0=",
+            "location": "云南"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授好，海康威视后续怎么看，可以入手了吗？",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "云南"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "海康这种大白马，我还是相信长期来看不会套人，但短期怎么走就没法说了"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:53:07.444+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T09:36:35.683+0800",
+            "owner": {
+              "user_id": 48418852814518,
+              "name": "vivien_zh_*",
+              "avatar_url": "https://images.zsxq.com/Fh2KxudQXsg-nCIlCslcoWh7KoYx?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:-RO7iwKFJcCb5Fv3Nyy-juDBhyU=",
+              "number": 996
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:57:20.793+0800",
+            "owner": {
+              "user_id": 28425515545481,
+              "name": "海子xs",
+              "avatar_url": "https://images.zsxq.com/Fvl1XpCg4S9fI_oDUVy1X4iznRUA?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QlmjdgXaVL5OwIIn1NiAwC5qrD8=",
+              "number": 681
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:42:45.012+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-27T22:54:43.937+0800",
+            "owner": {
+              "user_id": 244154445228521,
+              "name": "有米君2021",
+              "avatar_url": "https://images.zsxq.com/Fl6TcPgXVw5qDmZK3lldfbv2xnXk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:8RC4dOynNSUz2e-1ev7C2dyQxbE=",
+              "number": 7413
+            }
+          },
+          {
+            "create_time": "2023-06-26T09:46:55.812+0800",
+            "owner": {
+              "user_id": 144428241142,
+              "name": "刘洋",
+              "avatar_url": "https://images.zsxq.com/FhJ7sPnOdN6whXj9xTXDQxI_vPW2?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DKIyx8xaUEk3kwOnDv9pdpMMau4=",
+              "number": 5348
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:36:24.987+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-25T22:44:03.420+0800",
+            "owner": {
+              "user_id": 1122444152,
+              "name": "潘潘",
+              "avatar_url": "https://images.zsxq.com/FqIVmDBi7vwDIzXHRNl5gFxmuf5e?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:4iqdrzPQxRh_-AGoSpGYmftVzE0=",
+              "number": 1226
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:29:53.197+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-22T00:14:31.758+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          }
+        ],
+        "likes_count": 28,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2108,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:49:08.283+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412281851514188,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 111848252821542,
+            "name": "🌛",
+            "avatar_url": "https://images.zsxq.com/Fpy16MGOFUoPAOBzoRG-RnTu-r1W?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:Up8smwOaBl2p76Apjz4MO__VevE=",
+            "location": "福建"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "请问教授如何看待近期的杀白马行情？先是宁德长春高新又到海康威视，基本面的瑕疵仿佛一直都在，近期异动是否能侧面验证机构抱团的崩溃，盘面迎来转机？",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "福建"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "很简单啊，过去机构都抱着一堆白马，但现在涨的好的都是AI之类。\n\n肯定有部分机构决定割肉去追涨，其他机构也没钱接盘，最终导致了专杀大白马。\n\n这种现象往往出现于熊市末期，也就是老的票怎么都涨不动，但市场热点已经出现。\n\n至于盘面有没有转机，我觉得本周下来大家应该都有判断。\n\n之前是过于悲观了，现在稍微修复一点点"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:53:00.483+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:43:07.215+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:36:38.280+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-25T11:25:31.249+0800",
+            "owner": {
+              "user_id": 582185448141154,
+              "name": "Paranoid、",
+              "avatar_url": "https://images.zsxq.com/Fkli3GHdeZby_Q9LznrEIX8B6QyH?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:NTp3oG7ZeWegbMfcHwSEqwU1q7s=",
+              "number": 9900
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:29:58.271+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-20T11:31:59.740+0800",
+            "owner": {
+              "user_id": 881515585422,
+              "name": "谬炎",
+              "avatar_url": "https://images.zsxq.com/FqMwZOdCuuttKyS7dFf7Wgrb2_DK?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:EQiXF3vJo40-KvOFx8RbxBkF1Qc=",
+              "number": 5774
+            }
+          },
+          {
+            "create_time": "2023-06-19T18:26:35.926+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:32:06.610+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:44:11.970+0800",
+            "owner": {
+              "user_id": 28458142885821,
+              "name": "孙向明",
+              "avatar_url": "https://images.zsxq.com/Ftz3NcgbMXt6kNGqLsUfnCuEqzRm?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:O_RPabXnwEWMlduafM5VEmE6n6k=",
+              "number": 11184
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:27:50.975+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          }
+        ],
+        "likes_count": 24,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2096,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:48:10.792+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412281821445518,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 88814428455222,
+            "name": "韩玉光",
+            "avatar_url": "https://images.zsxq.com/Fj_J84cwCmj29ZI7rLVXNXqUQb-P?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ljMF6u1LahBNGjnrTHNq95ZJ_bg=",
+            "location": "辽宁"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授，想请教您一下每天复盘的内容，和看这些内容的目的是什么。",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "辽宁"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "纠偏啊，看看自己之前的判断是不是有问题，在新的形式下如何修正。\n\n这就像开车一样，你开车出去的时候是一个方向，路上还需要不断变向。\n\n不能说车开出去以后就不管了"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:51:53.576+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-30T07:10:20.789+0800",
+            "owner": {
+              "user_id": 518484225454,
+              "name": "大飞",
+              "avatar_url": "https://images.zsxq.com/FlmQNR4fzYDdxzevkIG-oJdZUiT4?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:v2Pp8t5DILO6Tu_sAzTehWzPM28=",
+              "number": 10168
+            }
+          },
+          {
+            "create_time": "2023-06-29T11:32:00.964+0800",
+            "owner": {
+              "user_id": 822128552142,
+              "name": "Lexie🧚‍♀️🪄*",
+              "avatar_url": "https://images.zsxq.com/Fu8lmwM0DoTDxMWTF5C-yUch-15r?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:zubBYso41Ge4IKC8RAWmd1UOW1M=",
+              "number": 11014
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:43:23.417+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:36:43.170+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:30:00.452+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-20T11:32:14.276+0800",
+            "owner": {
+              "user_id": 881515585422,
+              "name": "谬炎",
+              "avatar_url": "https://images.zsxq.com/FqMwZOdCuuttKyS7dFf7Wgrb2_DK?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:EQiXF3vJo40-KvOFx8RbxBkF1Qc=",
+              "number": 5774
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:57:29.613+0800",
+            "owner": {
+              "user_id": 51514124258814,
+              "name": "楷罡行逸",
+              "avatar_url": "https://images.zsxq.com/FrDZd8Ef41_BFMSVVEyG0ba2_r0z?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:aAZcAl57eE6TfRG8Bdas8p44hmo=",
+              "number": 18
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:32:28.378+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T17:10:36.434+0800",
+            "owner": {
+              "user_id": 48812524258448,
+              "name": "#",
+              "avatar_url": "https://images.zsxq.com/Fikm2VyCAwfvm4IYoq-pX75EYk40?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xcVbyh1htPNHnkUhALEgE9LymeU=",
+              "number": 8456
+            }
+          }
+        ],
+        "likes_count": 26,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2016,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:45:04.467+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 584418858251544,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "最近在观察29年大萧条和如今的环境，都是购买力不足生产力严重过剩，并且由于是出口导向，估计发钱也不会太有用，不知道教授怎么看，目前是危大于机，还是机大于危。",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "四川"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "29年时候的货币理论和今天完全不一样，当时各国都是极度紧缩，现在则是都在大放水。\n\n用29年来预测今天，有点指鹿为马的味道"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:51:12.833+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:43:40.941+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:36:57.207+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:30:02.146+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-21T16:21:28.679+0800",
+            "owner": {
+              "user_id": 422142148515488,
+              "name": "蕊婷",
+              "avatar_url": "https://images.zsxq.com/FvQazDczt9pjWlDvgcJUKbFiKFCh?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:BlmtUBQQA1DfVj8LwNEwnnavGSk=",
+              "number": 8432
+            }
+          },
+          {
+            "create_time": "2023-06-20T17:46:06.278+0800",
+            "owner": {
+              "user_id": 88811514254852,
+              "name": "Pradoo",
+              "avatar_url": "https://images.zsxq.com/Fn64OzmbH53GzLfHdxwxKOxMsN_j?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:RfSMohnbZ6Qh8n7Byz1ybBy7bs0=",
+              "number": 4419
+            }
+          },
+          {
+            "create_time": "2023-06-20T15:55:24.690+0800",
+            "owner": {
+              "user_id": 51118242884224,
+              "name": "KIMIBEST",
+              "avatar_url": "https://images.zsxq.com/FifGautiLUu6PJhAFcYH9GxA4BVf?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:AicddjOqYw7MCQVD8DBqzPVWtdk=",
+              "number": 8837
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:32:54.151+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:28:07.382+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-17T20:13:10.922+0800",
+            "owner": {
+              "user_id": 88221888884222,
+              "name": "韭菜君",
+              "avatar_url": "https://images.zsxq.com/FmXMi28e0hl73UbznMH53OSWic-o?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:Ot_26CQE4Qq3vrnD5vP5OO8w0TQ=",
+              "number": 2821
+            }
+          }
+        ],
+        "likes_count": 24,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2014,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:43:21.584+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 584452225451454,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授，买创业板50ETF浮亏22%了，今年还有机会出坑吗？",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "广东"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "一定要我说的话，那就是有可能。\n\n创50的核心就是医药和新能源，这哥俩被压制的很凶，但目前都有点反弹的意思。\n\n这哥俩的逻辑我都写过很多次，都很长也很硬，只不过现在被砸盘了而已。\n\n但只要逻辑好，迟早会有资金买，只要流动性起来就不用特别担心。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:50:49.586+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:43:54.151+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:37:34.269+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-25T15:07:43.463+0800",
+            "owner": {
+              "user_id": 88484452145452,
+              "name": "小书童",
+              "avatar_url": "https://images.zsxq.com/FuhofSxwqQvNUDnhUMk1gZHKgWj3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:8ANABH1-adHEepF82S7WHdgmSG0=",
+              "number": 7507
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:30:04.702+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-19T18:26:06.997+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:58:10.571+0800",
+            "owner": {
+              "user_id": 51514124258814,
+              "name": "楷罡行逸",
+              "avatar_url": "https://images.zsxq.com/FrDZd8Ef41_BFMSVVEyG0ba2_r0z?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:aAZcAl57eE6TfRG8Bdas8p44hmo=",
+              "number": 18
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:33:12.534+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T17:53:33.080+0800",
+            "owner": {
+              "user_id": 88442481828452,
+              "name": "Bismarck",
+              "avatar_url": "https://images.zsxq.com/FvO5ec24MT_Z0Hw3WzGQ3ktWQpE1?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:RPC91G0NUDfNHlwhznPpQjO_dS4=",
+              "number": 9307
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:28:38.865+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          }
+        ],
+        "likes_count": 23,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2010,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:41:57.274+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 814424458552412,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 15515148151582,
+            "name": "海阔天高",
+            "avatar_url": "https://images.zsxq.com/FqPE43JK18ZRQpd9-Kr1rRj7b9yB?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:9fujVsA530rzx-w3_eHafSQu1wk=",
+            "location": "广东"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "最近美股甲骨文大升，原因是:\n甲骨文第二代云端平台Gen2Cloud已经迅速成为运行生成式AI工作量的首选,主要因为甲骨文的表现最佳、GPU集群技术成本最低。请问教授国内对标的公司是哪一家？",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "广东"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "对标甲骨文？那只有阿里云了"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:50:18.529+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:44:05.664+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:37:41.965+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:30:06.852+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-19T18:25:56.578+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:33:18.176+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:28:48.794+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-17T20:13:38.728+0800",
+            "owner": {
+              "user_id": 88221888884222,
+              "name": "韭菜君",
+              "avatar_url": "https://images.zsxq.com/FmXMi28e0hl73UbznMH53OSWic-o?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:Ot_26CQE4Qq3vrnD5vP5OO8w0TQ=",
+              "number": 2821
+            }
+          },
+          {
+            "create_time": "2023-06-17T13:26:31.037+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-17T11:29:38.878+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          }
+        ],
+        "likes_count": 15,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2003,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:38:35.610+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412252225221128,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "请问教授，先声医药，貌似新冠现在各地都当感感冒了，收入没有超预期，记得前两周您还加仓了，您目前对先声药业怎么看",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "上海"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "当感冒没问题啊，但就算感冒也有重感冒需要吃药啊。虽然用药的比例不高，但绝对数量并不少。\n\n不过新冠药不是先声的核心，核心还是其他几种药。\n\n即便没新冠药，也是一家能赚钱的创新药公司啊。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:49:57.859+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:45:40.315+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:37:55.551+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:30:12.891+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-19T18:25:50.774+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-19T08:33:50.683+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-18T16:28:57.432+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-17T19:40:08.128+0800",
+            "owner": {
+              "user_id": 28258548248421,
+              "name": "爱彼赢",
+              "avatar_url": "https://images.zsxq.com/Ftx5kbNjqyRawcWKPJkzBbpREDPB?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:jz_RR4mCEeVoMOn3j93dW9Fd2Ro=",
+              "number": 9375
+            }
+          },
+          {
+            "create_time": "2023-06-17T13:27:03.924+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-17T11:29:57.608+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          }
+        ],
+        "likes_count": 20,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 1999,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-16T16:38:20.552+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 214481128854121,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "talk",
+        "talk": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "#干货 NO.4-50 关于抱团的一些思考\n\n抱团是市场里一种常见的现象。\n\n举例来说，一个城市两个临近的小区，建筑水平可能也差不多，但可能价格上就有明显的区别。股市里这样的情况更普遍，不同的票给的估值天差地别，同一个票在不同时期给的估值也天差地别。\n\n比方说苹果，乔布斯时代欣欣向荣、高速增长，但市场只给10几PE的估值；到了库克时代当然还是能赚大钱，但显然不如乔布斯时代，但市场给40PE。\n\n从本质来看，这就是机构抱团。以巴菲特为首的机构们高度认可苹果公司，将估值推高到一个很高的地步。而在乔布斯时代，苹果虽然明显更加优秀，但机构们没有抱团，所以估值就较低。\n\n抱团形成的主因，是流动性不足，说人话就是钱不够多。\n\n过去A股只有2000个票，流动性好的时候钱多票少，所以能普涨。\n\n但现在A股有5000个票，未来可能还更多，除非日交易额上1.5万亿或者2万亿，否则不可能普涨，只能选择一部分票涨。这就是抱团。\n\n那么怎么思考抱团这个问题呢？\n\n打个比方，古代普遍贫穷，所以一个家族只能培养一两个人去读书。这个时候家族就会在后辈中精挑细选，主要标准有两条，分别是德和才。\n\n才就是聪明，不聪明就是白瞎，读了也是白读。\n\n德的核心是利益分享精神，就是我成功了以后不会吃独食，利益会和大家来分享。否则我辛苦培养出一个白眼狼，有何意义？\n\n历史上的重要争论是德与才谁更重要？\n\n个人理解是要结合周期来理解这个问题，无论对个人、集体、国家来说，都是成长期才更重要，成熟期德更重要。\n\n因为成长期一无所有，完全要靠能力（才）来杀出一条血路，根本就没啥利益分享，德的作用相对小。\n\n成熟期有稳定的收入来源，但想要大幅增加也很难，这时候德起关键作用，需要合理把利益分配给相关者。\n\n所以苹果是一个完美的公司，创业期乔布斯打江山有才，守成期库克守江山有德。买了苹果股票的话，乔布斯时代赚成长的钱，库克时代赚估值提升的钱。\n\n回顾历史有个有趣的现象，就是一代创业者通常能力极强，但比较刻薄。\n\n比如朱元璋给大臣定的工资极低，以至于大臣下班后还要去种田维持生计。\n\n努尔哈赤晚年也很刻薄，对臣子赏赐很少，处罚很严厉，导致大批归附的汉人人心不定，满人也多有怨言，直到皇太极上位后才改善。\n\n市场上更是有很多这样例子，有不少公司赚了很多钱但不分红也不回购，宁可这些钱躺在账户上发霉。不但散户不满意，连跟着大股东创业的老伙计们都不满意。\n\n这还算好的，更差的是公司大股东利用这些钱牟利。比方说通过关联交易的方式，把这些钱借贷出去，亏了算公司的，赚了算自己的。\n\n主要原因在于初代创业者能力极强，很多又是苦出身，所以虽然掌握了巨大的财富和权力，但处理方式上还沿用穷苦时的思路。比方说朱元璋就算过，发给官员的工资已经够他们用了，但这只是够一般老百姓用，怎么可能够官员用？这里不是说官员一定要过奢侈的生活，而是他们开销的确比一般人大很多。\n\n扯了那么远赶紧收回来，要旨就在于，资本市场在给公司估值的时候，也是看中“才”和“德”这两个因素。\n\n才，就是你有没有能力带领公司高速发展。\n\n德，就是赚到钱以后能不能和投资者合理分享。\n\n巴菲特价投四原则中的船长原则也是德才兼备，又能领导企业发展，赚了钱又能给股东们分。\n\n历史上看，A股机构喜欢抱团有“才”的公司，因为在高速增长背景下，有才的企业可以几十倍、上百倍增长。比方说茅台、平安、格力、万科、海康等都符合这个标准，前几年的新能源行业也符合这个标准。\n\n但未来寻找有才的公司难度加大，这倒不是说人才水平不如过去，而是高增长年代本身过去了，高增长红利没了，只有个别行业和个别公司才可能逆天增长。\n\n所以有可能，抱团的方向可能会转向“德”，就是公司还不错，又对投资者好的。\n\n这就好像一个家族高速发展的时候，肯定选最聪明的子弟出来做事，即便这个人德差点也没关系，因为高速发展期间大家都能赚钱，内部矛盾很小。\n\n但等到这个家族已经做大做强，未来很难继续发展的时候，可能就会选最有德的人来上位，因为这样才可以缓解各种内外部矛盾，延续家族的强盛。\n\n这个思路其实已经在前几年炒作茅20的时候上演过一次，茅20中大部分票虽然不能算对股东特别好，但的确中规中矩很少出幺蛾子。其中也有格力、美的这样多年坚持高分红和回购的票。\n\n但由于新能源赛道的兴起，再加上茅20本身的一些业绩风险，比如地产链塌陷，导致这次抱团失败。\n\n今年茅20本来尝试反弹，但因为有AI的兴起，又被打断。\n\n但在未来地产风险出清以后，如果没有特别的赛道（才）可以炒作，相信机构最终还会在有德的票里面抱团。\n\n那么咋么才算有德呢？\n\n我想了几条标准。\n\n1、分红和回购给力，这是最重要的。\n\n2、大股东和资本市场沟通良好，承诺的事都能做到。\n\n3、在困难的时候真金白银来支持公司，如大股东增持。\n\n4、常年现金流都保持比较稳定，最好是现金流爆棚，能支持企业的各种资本运作。\n\n我也想明白为何芒格会买阿里了，因为在拼多多出来之前，阿里符合以上所有标准。芒格买阿里，就类似于巴菲特买苹果。\n\n马云时代阿里有很多创新，有飞速发展，但很少分红和回购；张勇时代阿里可能没有那么大的创新，但会分红和回购，会和资本市场做很好的沟通。两人关系就类似于乔布斯和库克。\n\n但很可惜，拼多多出现了，抖音电商出现了，把阿里的模式颠覆了，芒格的计划也失败了。"
+        },
+        "latest_likes": [
+          {
+            "create_time": "2023-07-03T00:14:33.956+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-07-01T01:54:25.409+0800",
+            "owner": {
+              "user_id": 28248812851521,
+              "name": "hao",
+              "avatar_url": "https://images.zsxq.com/FlWpYbh0bwwcsMZg-RSsuM4Pwy_P?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:tminE3H95K6HdPX8HHhsX5088M4=",
+              "number": 955
+            }
+          },
+          {
+            "create_time": "2023-06-30T22:06:43.496+0800",
+            "owner": {
+              "user_id": 118228142484822,
+              "name": "阿鲍",
+              "avatar_url": "https://images.zsxq.com/FgBacXQPSPqUfopU02P-cN69PTJJ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ZT5B8TQ5eXMNIBDV7wSDWTa4sRI=",
+              "number": 11137
+            }
+          },
+          {
+            "create_time": "2023-06-29T17:14:56.753+0800",
+            "owner": {
+              "user_id": 111815211252222,
+              "name": "胡燕萍",
+              "avatar_url": "https://images.zsxq.com/FjMUNq4McZCCQ1Rbx3I4VHfWTugQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yRqUtydA6lavFeRGjMV3DWzefw0=",
+              "number": 10311
+            }
+          },
+          {
+            "create_time": "2023-06-29T12:36:32.561+0800",
+            "owner": {
+              "user_id": 15488281184882,
+              "name": "磊哥自由",
+              "avatar_url": "https://images.zsxq.com/FqaJhLWANVtce2ZBPtycGK6hk1CV?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:0nqKfhFRm6lGrR65XgRoe39nGUk=",
+              "number": 11087
+            }
+          },
+          {
+            "create_time": "2023-06-29T08:57:03.057+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:41:34.001+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-24T07:39:59.001+0800",
+            "owner": {
+              "user_id": 15411514481552,
+              "name": "Daban",
+              "avatar_url": "https://images.zsxq.com/Fqq0mOfphKj_uuAF7xmBBOQLkKc0?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:HMgzsvW_LFSfd8jeugwwvrFGS-4=",
+              "number": 3316
+            }
+          },
+          {
+            "create_time": "2023-06-24T00:05:43.198+0800",
+            "owner": {
+              "user_id": 118558248125582,
+              "name": "星云",
+              "avatar_url": "https://images.zsxq.com/FhnDq8Z4siMh8ityekUSkOE_9Xex?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:H_rdA1R4t3BFEDkoIySdZxtHYck=",
+              "number": 4731
+            }
+          },
+          {
+            "create_time": "2023-06-23T23:31:35.852+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          }
+        ],
+        "likes_count": 108,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2371,
+        "digested": true,
+        "sticky": false,
+        "create_time": "2023-06-13T00:31:20.796+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 214481842825511,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "talk",
+        "talk": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "<e type=\"hashtag\" hid=\"552854824224\" title=\"%23%E5%B9%B2%E8%B4%A7%23\" /> NO.4-49  2023年市场跟踪报告第15期（2023年6月10日）\n\n还是先喊一声，星球续费活动正在进行中，感兴趣的可以咨询小助手，微信：842086211。具体活动请咨询小助手。\n\n本周无论市场，还是我的净值都走了一个神V，周二暴跌后，后面三个交易日慢慢爬坡，最终基本没输赢。\n\n我仔细想了下，感觉总体还算是好事，说明虽然有人砸盘但砸不太动了。比方说中概，本周晃晃悠悠还是涨了些，美团这种超跌的还反弹比较多。容我乌鸦嘴一下，我觉得这一轮中概、港股可能就跌到这里了，后续要看一些关键数据，比方说美联储官宣停止加息、或者国内消费复苏。以上两条只要任意出现一条，就会有波大反弹。\n\n本周地产涨得不错，所以地产链上的平安和招行也反弹了。\n\n个人依然不认为地产会放啥大招，当然合理地解除限购、降低首付比例和按揭利率有可能，但大规模棚改之类的政策不现实。\n\n但实际情况则是，一线和强二线地产并没有太差，近期上海、北京、杭州、苏州土拍都有不少公司在抢地，天津、无锡土拍也比较顺利。二手房有一定的降价，但也没网上传的那么夸张，前两年套在山顶上的接盘侠当然难受，但绝大部分之前买的人还有大把利润。\n\n三四线的确差，但谁也没指望能好，或者说过去的好本来就是一种非常态，目前只是正常状态回归。我支持三四线出一些鼓励购房政策，但作用也有限。\n\n在这种情况下，让一批地产公司在完成保交楼任务后出清，剩下的会活得相对滋润。从这个逻辑出发，我并不特别看空地产行业，甚至觉得有阶段性反弹机会。\n\n所以这波地产链的反弹，本质看是对前期过于悲观情绪的修正，和政策关系不是很大。但反弹不是反转，这也是我一直纠结着没下手的原因。\n\n芯片本周略有扑街，主因是AI炒作熄火以及苹果头显不及预期。都是正常的，熬着。\n\n电力股本周震荡比较凶，原因是煤炭价格略有反弹。但从大趋势看，煤炭即便不继续降价，那么维持长协价也是一个比较顺的逻辑，光这样电力股就足够过个好年了。\n\n这里简单聊下风电逻辑，由于上峰希望大力发展新能源股产业，所以给了风电很高的价格补贴。举例来说，一度风电并网大约是6毛多，火电只有2毛5，由此获得了高利润。\n\n但各地的风能禀赋不一样，这个主要看一年中能发电的小时数量。有些地方一年能发4000多个小时电，有些地方只有2000小时，这就差一倍了，叠加需要调峰的费用，差别就更大。\n\n但由于政策的鼓励，所以运营商会拼命拿项目，类似于前几年房产大牛市一样，拿到就是赚到。所以从短期看风电运营商的扩张会很快，利润也很好看。但从长期看风电价格不可能永远有补贴，总会降下来，那么到时候那些高成本项目就是负资产，类似于房价跌了以后恒大、融创手里的哪些土储一样。\n\n光看现在，很多都是个位数PE估值还有高速增长；但看未来，到底有多少负资产不好估计。这也是为何风电股估值非常不稳定的主要原因。\n\n龙源电力的资产公认还不错，今年的发电数也不错，A股近期涨得也不错，港股却被砸了。这几年买港股就是这个命，只能等着起风了。\n\n中概互联还可以，反正本周都反弹了，多少而已。\n\n医药依然惨，手贱又补了些。四环因为本周分红的缘故涨了些，都调成恒生医药ETF和片仔癀了。片仔癀在提价后涨了一波，但现在已经跌回去一大半。片仔癀本身估值和业绩问题都不大，主要原因可能是机构在割肉。片子的确定性相当高，提价后未来几年业绩增速30+%没问题，这也是我坚持的原因。\n\n近期你们可能注意到了，每天杀一只大白马祭天，比方说长春高新、海康威视等。片子虽然没被祭天，但也不断阴跌。但从长期看，片子依然具备很强的确定性，这也是我坚持持有的主要原因。\n\n本周CCFI和SCFI指数都下跌，海控也就没怎么反弹起来，后续等分红到账补仓吧。行情不好赚不到钱，只能去赚股票数量。\n\n就这些。",
+          "images": [
+            {
+              "image_id": 212221585824411,
+              "type": "png",
+              "thumbnail": {
+                "url": "https://images.zsxq.com/FpQscdeT3QKwtiNG_G8uslaIK_Cw?imageMogr2/auto-orient/thumbnail/750x/format/jpg/blur/1x0/quality/75&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:vt0eFgJN8WdCcdV6xNWbJ0hx_x4=",
+                "width": 750,
+                "height": 358
+              },
+              "large": {
+                "url": "https://images.zsxq.com/FpQscdeT3QKwtiNG_G8uslaIK_Cw?imageMogr2/auto-orient/thumbnail/800x/format/jpg/blur/1x0/quality/75&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:8KXrFd5kpS0hLes5uiARhz260e4=",
+                "width": 800,
+                "height": 382
+              },
+              "original": {
+                "url": "https://images.zsxq.com/FpQscdeT3QKwtiNG_G8uslaIK_Cw?imageMogr2/auto-orient/quality/100!/ignore-error/1&e=1693497599&s=mmyvmvvytttj&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:9y6NRA30czwl1oHk_JvIeV6TQIc=",
+                "width": 846,
+                "height": 404,
+                "size": 78633
+              }
+            }
+          ]
+        },
+        "latest_likes": [
+          {
+            "create_time": "2023-06-29T09:07:24.681+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:43:17.408+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-21T10:15:55.286+0800",
+            "owner": {
+              "user_id": 825224515252,
+              "name": "Dimple",
+              "avatar_url": "https://images.zsxq.com/Fk_mMr6ilKcIM6Z2fa38b4o6HVBJ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SV8bq5YRzrSyoDa0BTx9glIgqw8=",
+              "number": 881
+            }
+          },
+          {
+            "create_time": "2023-06-21T07:21:16.792+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          },
+          {
+            "create_time": "2023-06-19T21:44:58.061+0800",
+            "owner": {
+              "user_id": 28458551442821,
+              "name": "Lukas",
+              "avatar_url": "https://images.zsxq.com/FhO5B9ECzMyTs1ihlWkIm9uNqrPR?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:FLzzD7EmtBl8Z44iI9WC4gZc7ZI=",
+              "number": 11209
+            }
+          },
+          {
+            "create_time": "2023-06-18T18:41:59.774+0800",
+            "owner": {
+              "user_id": 244424825484181,
+              "name": "阿锋",
+              "avatar_url": "https://images.zsxq.com/Fmh4R5Msnk87tQ_F8CU2YfEMH0kx?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:3Y-OI4En3yg4YzbATwXqLm6Nk-Q=",
+              "number": 10963
+            }
+          },
+          {
+            "create_time": "2023-06-16T23:59:48.424+0800",
+            "owner": {
+              "user_id": 51111128224114,
+              "name": "yxy",
+              "avatar_url": "https://images.zsxq.com/Fmra3GB2PRQAC_vm65kuTOJ_i0Cy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GLH7bZ4yKjOadLwK0OHeHoAEY_o=",
+              "number": 9602
+            }
+          },
+          {
+            "create_time": "2023-06-16T07:40:56.491+0800",
+            "owner": {
+              "user_id": 244188144444251,
+              "name": "默默冲冲冲",
+              "avatar_url": "https://images.zsxq.com/Fpl4o7_e9E3NIYkK6Inxzfax05hw?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:J2DeehEhl6fpeO-MnRFo0AHA2hk=",
+              "number": 5391
+            }
+          },
+          {
+            "create_time": "2023-06-15T17:38:09.934+0800",
+            "owner": {
+              "user_id": 841152484558422,
+              "name": "袁伟-Wayne",
+              "avatar_url": "https://images.zsxq.com/FmSTBvCnACGq-IbrI2eJtlKEort2?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:hoQ3_22JWAG6R7-_NgfmBXzyRWA=",
+              "number": 10940
+            }
+          },
+          {
+            "create_time": "2023-06-15T14:48:52.729+0800",
+            "owner": {
+              "user_id": 512415484,
+              "name": "朝歌夜弦",
+              "alias": "且慢",
+              "avatar_url": "https://images.zsxq.com/FibNKs5kmaoSJX3iH5V6PCqm35dG?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DbVK63ujjieIXjeY1jvdgz73AAw=",
+              "number": 104
+            }
+          }
+        ],
+        "likes_count": 49,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2422,
+        "digested": true,
+        "sticky": false,
+        "create_time": "2023-06-10T14:27:18.308+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 214484824284481,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 48851112522818,
+            "name": "右手不离",
+            "avatar_url": "https://images.zsxq.com/FgaiTImTqy3uIl03nBeIyC6WA77_?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:NtDQ3tfED0NwT63_c6KBNpNZgGQ=",
+            "location": "河南"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授你好，想请教一个关于房子的问题，我们现在在河南的一个县城，除了自住房，前几年购了一套新房，一直没装修，现在考虑着把新房给卖了，去市里边首付一套，我和老公两人都在县城工作，想请教您一下，有这必要吗？",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "河南"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "那要看什么市了。如果不是什么中心城市，房子当然比县里好，但长期看增值也是挺难的。\n\n不过，如果你们是自住，要在这个房子里生活，那就不用考虑太多。\n\n人只活一辈子，买了房以后大概率只剩半辈子，在金钱能支持的前提下，多享受下才合理。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:49:41.096+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-26T08:44:13.413+0800",
+            "owner": {
+              "user_id": 48248118488848,
+              "name": "越@不停",
+              "avatar_url": "https://images.zsxq.com/Fr_HAc0DPj_WyOBbjm579OwCMtsF?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YDA6wTGXWwP0MESJqk3Ceu8_hPg=",
+              "number": 8711
+            }
+          },
+          {
+            "create_time": "2023-06-25T15:09:15.030+0800",
+            "owner": {
+              "user_id": 88484452145452,
+              "name": "小书童",
+              "avatar_url": "https://images.zsxq.com/FuhofSxwqQvNUDnhUMk1gZHKgWj3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:8ANABH1-adHEepF82S7WHdgmSG0=",
+              "number": 7507
+            }
+          },
+          {
+            "create_time": "2023-06-21T07:21:46.038+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          },
+          {
+            "create_time": "2023-06-17T00:00:09.981+0800",
+            "owner": {
+              "user_id": 51111128224114,
+              "name": "yxy",
+              "avatar_url": "https://images.zsxq.com/Fmra3GB2PRQAC_vm65kuTOJ_i0Cy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GLH7bZ4yKjOadLwK0OHeHoAEY_o=",
+              "number": 9602
+            }
+          },
+          {
+            "create_time": "2023-06-13T17:19:39.756+0800",
+            "owner": {
+              "user_id": 88455215228882,
+              "name": "羽",
+              "avatar_url": "https://images.zsxq.com/FtfytgXvCGl1CgFZKJRECEII1mIh?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YQssQ8jtUwJsiu134gLvaoYY4RU=",
+              "number": 1063
+            }
+          },
+          {
+            "create_time": "2023-06-13T14:01:58.366+0800",
+            "owner": {
+              "user_id": 118255551442112,
+              "name": "晴天、",
+              "avatar_url": "https://images.zsxq.com/Fm1kgcS748ieBmE12mEmOgOFyi9-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ublxoldIat7VMp7Kse0WOzfMGjw=",
+              "number": 8876
+            }
+          },
+          {
+            "create_time": "2023-06-13T10:58:01.988+0800",
+            "owner": {
+              "user_id": 244188522851511,
+              "name": "Asta",
+              "avatar_url": "https://images.zsxq.com/FmUNfqV_Zp1agistg4_Fv2zxGtFP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:QDgaEwFDNIPK35NO9QdVWnVm7ww=",
+              "number": 4885
+            }
+          },
+          {
+            "create_time": "2023-06-12T12:00:11.126+0800",
+            "owner": {
+              "user_id": 88811514254852,
+              "name": "Pradoo",
+              "avatar_url": "https://images.zsxq.com/Fn64OzmbH53GzLfHdxwxKOxMsN_j?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:RfSMohnbZ6Qh8n7Byz1ybBy7bs0=",
+              "number": 4419
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:49:33.712+0800",
+            "owner": {
+              "user_id": 241125115181421,
+              "name": "噜啦噜啦嘞",
+              "avatar_url": "https://images.zsxq.com/Fmq-OaXKiKyDeFQ0sGrN5aTg60Ia?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:mKupUEZgeau5zCmZ9oqUh9QI2ek=",
+              "number": 11095
+            }
+          }
+        ],
+        "likes_count": 27,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2211,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T23:24:14.644+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412285821824288,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授好，如果要搞一个股息组合，有哪些需要注意的问题？个股上有哪些关键指标需要关注？您是怎么判断个股能否维持稳定分红的？谢谢",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "河南"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "那只能具体问题具体分析，没法通过几个指标来判断一家公司能否持续分析。\n\n大概来说，企业本身要现金流稳定，周期性不能太强（这个就把煤炭排除了），公司要有分红的动力（比方说大股东需要钱）。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:49:17.779+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-21T07:22:02.759+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          },
+          {
+            "create_time": "2023-06-17T00:00:23.280+0800",
+            "owner": {
+              "user_id": 51111128224114,
+              "name": "yxy",
+              "avatar_url": "https://images.zsxq.com/Fmra3GB2PRQAC_vm65kuTOJ_i0Cy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GLH7bZ4yKjOadLwK0OHeHoAEY_o=",
+              "number": 9602
+            }
+          },
+          {
+            "create_time": "2023-06-13T08:28:32.062+0800",
+            "owner": {
+              "user_id": 414588424444818,
+              "name": "坚持",
+              "avatar_url": "https://images.zsxq.com/Fng-64zvJLve8vpBtHoQRcMRe5it?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:nD9mvYm20O1m9aYidjEi7ZVSRlQ=",
+              "number": 10036
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:17:58.807+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:15.872+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:02.526+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          },
+          {
+            "create_time": "2023-06-11T21:09:07.374+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-11T20:32:55.606+0800",
+            "owner": {
+              "user_id": 28258548248421,
+              "name": "爱彼赢",
+              "avatar_url": "https://images.zsxq.com/Ftx5kbNjqyRawcWKPJkzBbpREDPB?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:jz_RR4mCEeVoMOn3j93dW9Fd2Ro=",
+              "number": 9375
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:19:56.507+0800",
+            "owner": {
+              "user_id": 215822884545511,
+              "name": "JH 魔豆",
+              "avatar_url": "https://images.zsxq.com/Fh3fBxBi_u8GYOywXcJRAy_GoAW9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:fnt84vZz5qYBc1XIEoYE0206bno=",
+              "number": 10373
+            }
+          }
+        ],
+        "likes_count": 16,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 174,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T23:21:58.875+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 181154144114882,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "主公  看到煤炭准备换陕西煤业主要是股息率 \n一直有一个问题   两融账户买入股息率＞融资利率的票长期持有是个可行的策略嘛\n如是  有无推荐    大秦铁路 陕西煤业？",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "四川"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "两融利率太高了，目前一般都在6%以上。如果能3%，也许可"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:48:55.181+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-21T07:22:16.914+0800",
+            "owner": {
+              "user_id": 544481185421184,
+              "name": "西元",
+              "avatar_url": "https://images.zsxq.com/FspJefvzr2g_mFt0OY-LOdYr_dh3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YXR_WSOUHBqK2a0dbwcAoF1jS0U=",
+              "number": 4640
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:19:15.835+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:17.933+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:11.575+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          },
+          {
+            "create_time": "2023-06-11T21:57:59.100+0800",
+            "owner": {
+              "user_id": 815844418415282,
+              "name": "周俊瑜",
+              "avatar_url": "https://images.zsxq.com/Fnj4wg7nOd1vHarx8l2CNc9JkD_X?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:Zj-LI3b-GMhaTljUv0Afs6TPErM=",
+              "number": 8896
+            }
+          },
+          {
+            "create_time": "2023-06-11T21:09:14.736+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:20:37.151+0800",
+            "owner": {
+              "user_id": 215822884545511,
+              "name": "JH 魔豆",
+              "avatar_url": "https://images.zsxq.com/Fh3fBxBi_u8GYOywXcJRAy_GoAW9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:fnt84vZz5qYBc1XIEoYE0206bno=",
+              "number": 10373
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:02:44.583+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-10T09:42:21.821+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          }
+        ],
+        "likes_count": 14,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2038,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T23:15:38.500+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 412285252825518,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授，请教一下，个人做量化交易是否可行",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "广东"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "个人觉得不行。\n\n现在牛逼的量化交易都用几千块显卡搭服务器干，你有几块显卡呢？"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-07-03T13:17:44.918+0800",
+            "owner": {
+              "user_id": 15551588525182,
+              "name": "Ranger",
+              "avatar_url": "https://images.zsxq.com/FnOT0uNuSKGZg4vKv56STQ5oSIG9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ArGAzkVTyBWLZD2U_QB9YCYQ9ms=",
+              "number": 10805
+            }
+          },
+          {
+            "create_time": "2023-07-01T01:58:38.313+0800",
+            "owner": {
+              "user_id": 28248812851521,
+              "name": "hao",
+              "avatar_url": "https://images.zsxq.com/FlWpYbh0bwwcsMZg-RSsuM4Pwy_P?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:tminE3H95K6HdPX8HHhsX5088M4=",
+              "number": 955
+            }
+          },
+          {
+            "create_time": "2023-06-30T16:48:32.878+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-17T00:00:27.213+0800",
+            "owner": {
+              "user_id": 51111128224114,
+              "name": "yxy",
+              "avatar_url": "https://images.zsxq.com/Fmra3GB2PRQAC_vm65kuTOJ_i0Cy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GLH7bZ4yKjOadLwK0OHeHoAEY_o=",
+              "number": 9602
+            }
+          },
+          {
+            "create_time": "2023-06-13T14:02:33.076+0800",
+            "owner": {
+              "user_id": 118255551442112,
+              "name": "晴天、",
+              "avatar_url": "https://images.zsxq.com/Fm1kgcS748ieBmE12mEmOgOFyi9-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ublxoldIat7VMp7Kse0WOzfMGjw=",
+              "number": 8876
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:25:14.945+0800",
+            "owner": {
+              "user_id": 88484212858212,
+              "name": "渴望飞的哺乳类",
+              "avatar_url": "https://images.zsxq.com/FgW8s47dsFuSYyGvTup_8uPO76wy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:oazY9X6ku_5KIu4RaGp0jEKEOkc=",
+              "number": 3932
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:19:37.339+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-12T08:45:43.078+0800",
+            "owner": {
+              "user_id": 544811428848254,
+              "name": "爱吃猫的鱼",
+              "avatar_url": "https://images.zsxq.com/FurbkgqEGgJpnP466UIYlLTXYBRk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:MHw2GxG4ehDHrkjHLFNYUm27yFs=",
+              "number": 966
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:19.188+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:17.976+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          }
+        ],
+        "likes_count": 18,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2032,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T23:13:29.496+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 814482448251882,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 581285884251124,
+            "name": "星空之城",
+            "avatar_url": "https://images.zsxq.com/FuonOnArZIeRnrNsqk6pqZ4V3TZ3?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:9Fy3r6K8DlJfLeLbp0L271lxDj0=",
+            "location": "天津"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "请问教授还有关注敏华控股嘛？这个位置可以抄底了吗？顺便想请教一下教授对家居行业的看法，谢谢！",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "天津"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "我还是真的隔几天就去看一次。\n\n敏华是个好票，功能沙发在国内渗透率也很低，跌成这样万万没想到。\n\n敏华现在主要的利空是国内地产不行，美国那边因为通胀的关系需求也下降了，可能从周期角度看是最差的时候。\n\nA股的顾家家居其实表现也很差，道理和敏华一样。\n\n至于何时能好转，我也不知道，所以还没敢抢跑"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:48:02.770+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-13T17:20:03.568+0800",
+            "owner": {
+              "user_id": 88455215228882,
+              "name": "羽",
+              "avatar_url": "https://images.zsxq.com/FtfytgXvCGl1CgFZKJRECEII1mIh?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YQssQ8jtUwJsiu134gLvaoYY4RU=",
+              "number": 1063
+            }
+          },
+          {
+            "create_time": "2023-06-13T14:02:49.993+0800",
+            "owner": {
+              "user_id": 118255551442112,
+              "name": "晴天、",
+              "avatar_url": "https://images.zsxq.com/Fm1kgcS748ieBmE12mEmOgOFyi9-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:ublxoldIat7VMp7Kse0WOzfMGjw=",
+              "number": 8876
+            }
+          },
+          {
+            "create_time": "2023-06-13T08:29:12.620+0800",
+            "owner": {
+              "user_id": 414588424444818,
+              "name": "坚持",
+              "avatar_url": "https://images.zsxq.com/Fng-64zvJLve8vpBtHoQRcMRe5it?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:nD9mvYm20O1m9aYidjEi7ZVSRlQ=",
+              "number": 10036
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:19:52.602+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-12T08:45:37.376+0800",
+            "owner": {
+              "user_id": 544811428848254,
+              "name": "爱吃猫的鱼",
+              "avatar_url": "https://images.zsxq.com/FurbkgqEGgJpnP466UIYlLTXYBRk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:MHw2GxG4ehDHrkjHLFNYUm27yFs=",
+              "number": 966
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:46:59.650+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:27.850+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:23.045+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-10T19:23:27.082+0800",
+            "owner": {
+              "user_id": 111115421122222,
+              "name": "realyjimmy",
+              "avatar_url": "https://images.zsxq.com/FuW46UibM4fnx6sCfiMqghDa90GR?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yKl1fXKF3EFyKYBsQuvlV9QtmD0=",
+              "number": 10593
+            }
+          }
+        ],
+        "likes_count": 17,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2034,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T23:01:23.605+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 814484518514242,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授对创业板和科创板现在的估值怎么看，是否属于低估，是否可以开始建仓和定投",
+          "expired": true,
+          "anonymous": true,
+          "owner_location": "河南"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "低估。\n\n定投我认为可以，但再等等也可以。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:47:20.551+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-17T00:00:42.129+0800",
+            "owner": {
+              "user_id": 51111128224114,
+              "name": "yxy",
+              "avatar_url": "https://images.zsxq.com/Fmra3GB2PRQAC_vm65kuTOJ_i0Cy?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GLH7bZ4yKjOadLwK0OHeHoAEY_o=",
+              "number": 9602
+            }
+          },
+          {
+            "create_time": "2023-06-13T08:29:18.050+0800",
+            "owner": {
+              "user_id": 414588424444818,
+              "name": "坚持",
+              "avatar_url": "https://images.zsxq.com/Fng-64zvJLve8vpBtHoQRcMRe5it?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:nD9mvYm20O1m9aYidjEi7ZVSRlQ=",
+              "number": 10036
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:20:34.109+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:47:09.104+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:25.625+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-10T15:35:44.705+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:25:37.348+0800",
+            "owner": {
+              "user_id": 215822884545511,
+              "name": "JH 魔豆",
+              "avatar_url": "https://images.zsxq.com/Fh3fBxBi_u8GYOywXcJRAy_GoAW9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:fnt84vZz5qYBc1XIEoYE0206bno=",
+              "number": 10373
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:04:32.525+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-10T09:43:57.387+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          }
+        ],
+        "likes_count": 16,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2040,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T21:54:15.726+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 814484828421242,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 51585425251514,
+            "name": "旸谷",
+            "avatar_url": "https://images.zsxq.com/Fl-aHpj3H7g-40fTzXpPM9zhuR5_?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:H4qDTp0JxeyEDrmAKvnJswjdU5I=",
+            "location": "安徽"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授怎么看杭州南都电源这类储能公司，特斯拉来国内搞储能，对他们来说是利空还是利好呢？按电动车当时的情况看，能带动整个产业链的热度和产能，储能不知道能不能复制",
+          "fee": {
+            "amount": 800
+          },
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "安徽"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "储能当然很好，但目前的问题就是估值太高了。\n\n我一直在盯着一个票，禾迈。如果估值能继续下来会出手"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:46:57.496+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-12T12:38:50.318+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:21:24.022+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:27.630+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-10T15:35:38.639+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:28:04.247+0800",
+            "owner": {
+              "user_id": 215822884545511,
+              "name": "JH 魔豆",
+              "avatar_url": "https://images.zsxq.com/Fh3fBxBi_u8GYOywXcJRAy_GoAW9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:fnt84vZz5qYBc1XIEoYE0206bno=",
+              "number": 10373
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:05:03.296+0800",
+            "owner": {
+              "user_id": 241154255224581,
+              "name": "亮鹚水狳",
+              "avatar_url": "https://images.zsxq.com/FjENtV61a40gJYgcAm01HbkMnALl?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:yfgu2syafMe3URtSkbW0vSaCMnA=",
+              "number": 5587
+            }
+          },
+          {
+            "create_time": "2023-06-10T09:44:23.651+0800",
+            "owner": {
+              "user_id": 422258284824288,
+              "name": "清风",
+              "avatar_url": "https://images.zsxq.com/FsS0ZyZ8EmnVcE49dGMn1xNV4DX9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SdQrFykRTH-yLQGqsAVh_3sBwXk=",
+              "number": 11197
+            }
+          },
+          {
+            "create_time": "2023-06-10T06:39:30.936+0800",
+            "owner": {
+              "user_id": 544455448181884,
+              "name": "陈宜实",
+              "avatar_url": "https://images.zsxq.com/FvYp6XGxq5Z63qF-TFyjJUvWoyai?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:EP5CQq0tKndCuq_BZGYn4RwDqOs=",
+              "number": 10890
+            }
+          },
+          {
+            "create_time": "2023-06-09T23:19:02.435+0800",
+            "owner": {
+              "user_id": 512415484,
+              "name": "朝歌夜弦",
+              "alias": "且慢",
+              "avatar_url": "https://images.zsxq.com/FibNKs5kmaoSJX3iH5V6PCqm35dG?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:DbVK63ujjieIXjeY1jvdgz73AAw=",
+              "number": 104
+            }
+          }
+        ],
+        "likes_count": 14,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2039,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T21:49:41.551+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 584414155488454,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 118512224442112,
+            "name": "‍诺帝卡",
+            "avatar_url": "https://images.zsxq.com/FpTa7ju8crYDtW0UeoRLxM1J_IU-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:_0Fr6jEWb3aGh9dBNwISzoQtJxo=",
+            "location": "山西"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "教授，想了解下你作为极氪001的车主，点评下极氪的续航、驾驶体验以及售后，极氪新出了一款极氪x，刚好我最近想买一辆20万左右的纯电suv，希望教授能给点建议！",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "山西"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "续航就是正常水平。\n\n驾驶体验非常好，比我开过的其他电动车包括特斯拉之类的都强。\n\n我也不知道电动车要什么售后，我买了一年半连保养都懒得去。\n\n对对对，上次免费给我换了一个芯片，价值也2000多，挺满意的。\n\n目前车机改进挺大的，据说是魅族团队的功劳。"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-07-01T01:59:51.538+0800",
+            "owner": {
+              "user_id": 28248812851521,
+              "name": "hao",
+              "avatar_url": "https://images.zsxq.com/FlWpYbh0bwwcsMZg-RSsuM4Pwy_P?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:tminE3H95K6HdPX8HHhsX5088M4=",
+              "number": 955
+            }
+          },
+          {
+            "create_time": "2023-06-30T16:46:31.673+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-21T10:16:36.338+0800",
+            "owner": {
+              "user_id": 825224515252,
+              "name": "Dimple",
+              "avatar_url": "https://images.zsxq.com/Fk_mMr6ilKcIM6Z2fa38b4o6HVBJ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:SV8bq5YRzrSyoDa0BTx9glIgqw8=",
+              "number": 881
+            }
+          },
+          {
+            "create_time": "2023-06-13T17:20:38.785+0800",
+            "owner": {
+              "user_id": 88455215228882,
+              "name": "羽",
+              "avatar_url": "https://images.zsxq.com/FtfytgXvCGl1CgFZKJRECEII1mIh?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:YQssQ8jtUwJsiu134gLvaoYY4RU=",
+              "number": 1063
+            }
+          },
+          {
+            "create_time": "2023-06-12T12:38:43.486+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:21:58.298+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:47:22.456+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:37.701+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-11T20:34:57.106+0800",
+            "owner": {
+              "user_id": 28258548248421,
+              "name": "爱彼赢",
+              "avatar_url": "https://images.zsxq.com/Ftx5kbNjqyRawcWKPJkzBbpREDPB?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:jz_RR4mCEeVoMOn3j93dW9Fd2Ro=",
+              "number": 9375
+            }
+          },
+          {
+            "create_time": "2023-06-10T20:16:57.298+0800",
+            "owner": {
+              "user_id": 28511141811481,
+              "name": "苏苏",
+              "avatar_url": "https://images.zsxq.com/FkzY38qCYNr7Xtf6tNZZioztENiw?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:TsMvt0-jjm4xeS69SiOdQKH7gDw=",
+              "number": 1891
+            }
+          }
+        ],
+        "likes_count": 21,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 2051,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T21:42:52.975+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      },
+      {
+        "topic_id": 181158222241842,
+        "group": {
+          "group_id": 222454121411,
+          "name": "刘备和朋友们",
+          "type": "pay"
+        },
+        "type": "q&a",
+        "question": {
+          "owner": {
+            "user_id": 841128155451812,
+            "name": "随喜",
+            "avatar_url": "https://images.zsxq.com/Fpyxv5vt6TRXncEibh5vnKAW1oKL?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:iHG7oVGb8VFiTVBj4y04qEVX8VM=",
+            "location": "山东"
+          },
+          "questionee": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "看着影视大涨拿的万达一直沉沦，我想问问老王还有机会逆风翻盘嘛？？备叔有财经数据能了解下万达集团到底有多困难，这里面有没有预期差？？难道和融创恒大一样走入了历史的尘埃里",
+          "expired": true,
+          "anonymous": false,
+          "owner_location": "山东"
+        },
+        "answer": {
+          "owner": {
+            "user_id": 15522582185182,
+            "name": "刘备教授",
+            "avatar_url": "https://images.zsxq.com/Fg71SR9RDTUf-O_9fWgw4e1u9KN-?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:VxFoA4xyXAEqKxoUjxIawkmiL14=",
+            "description": "努力进化，为的就是在这个市场站着把钱赚了",
+            "location": "浙江"
+          },
+          "text": "万达集团按理说手里都是优质的综合体和酒店，房开并不多。疫情期间万达肯定困难，但结束以后也许综合体生意一般，但酒店应该是能赚大钱的。\n\n所以我无法理解万达为何会那么困难，不知道运营中出了什么问题。\n\n现在万达的问题主要是看能否重新上市，能上市的话问题就应该不会很大。\n\n但我的直觉是，万达不至于和恒大、融创是一路"
+        },
+        "answered": true,
+        "silenced": false,
+        "latest_likes": [
+          {
+            "create_time": "2023-06-30T16:46:05.988+0800",
+            "owner": {
+              "user_id": 15454411851882,
+              "name": "鱼儿",
+              "avatar_url": "https://images.zsxq.com/FqmteA3Ln_KWDsMzuM3Lw5l0qYUP?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:F8tOv6UcWpMWVl_sXJQl8wxCRyk=",
+              "number": 1558
+            }
+          },
+          {
+            "create_time": "2023-06-12T12:38:31.587+0800",
+            "owner": {
+              "user_id": 51514425252444,
+              "name": "happywe",
+              "avatar_url": "https://images.zsxq.com/Fv2zEqejj-EtcDuzojXM6XgJmJqz?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:CyLfcBCDmxxw6LIksOz1aVTAM5I=",
+              "number": 242
+            }
+          },
+          {
+            "create_time": "2023-06-12T10:22:27.825+0800",
+            "owner": {
+              "user_id": 422128148285128,
+              "name": "钰",
+              "avatar_url": "https://images.zsxq.com/Fh5QxKWpFtdWoEbT7l5mrmRnieWC?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:g_3YvNRz_9roBFfkmF6OM5o5cdA=",
+              "number": 6649
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:47:55.195+0800",
+            "owner": {
+              "user_id": 15281511251822,
+              "name": "小庄",
+              "avatar_url": "https://images.zsxq.com/Fom-JbHZcu0d6hV3McpjzSRHZYaQ?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pGGUXHg5cc3Uy1I6Bt41kzyVBsw=",
+              "number": 2842
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:40.976+0800",
+            "owner": {
+              "user_id": 118512888258252,
+              "name": "江和",
+              "avatar_url": "https://images.zsxq.com/FqBIKxhtekVa27dqC4FJZGJlSMMg?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:pRjs0pHK48tPsR1rFbgNsItgvlQ=",
+              "number": 10639
+            }
+          },
+          {
+            "create_time": "2023-06-11T23:45:39.704+0800",
+            "owner": {
+              "user_id": 1485142522,
+              "name": "龙啸云",
+              "avatar_url": "https://images.zsxq.com/FomB705IY8z9oD4jqSlgLIMHlzAk?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:xc7_H7KnjlypefPW_i-Xc8g98GQ=",
+              "number": 455
+            }
+          },
+          {
+            "create_time": "2023-06-10T21:09:20.159+0800",
+            "owner": {
+              "user_id": 422111822584848,
+              "name": "炜",
+              "avatar_url": "https://images.zsxq.com/FpAhMFERhIdHRdM8UkiuUVhoj-1W?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:6o6Y6rcXzocX62zw6Ckep1vg1-U=",
+              "number": 6637
+            }
+          },
+          {
+            "create_time": "2023-06-10T20:31:16.175+0800",
+            "owner": {
+              "user_id": 88814241124212,
+              "name": "展奇飞翔",
+              "avatar_url": "https://images.zsxq.com/FlxknWO7VoP_Tf-CGIjxfocbr3mY?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:JHZQJnZrTJ8q0e3ZTCqzJECIdLQ=",
+              "number": 5056
+            }
+          },
+          {
+            "create_time": "2023-06-10T15:34:59.281+0800",
+            "owner": {
+              "user_id": 88842244125422,
+              "name": "河上林",
+              "avatar_url": "https://images.zsxq.com/Fiy89KlG2KXyjSFGcL3GCEJ2Gz3s?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:GnsUJVl696PYXJzc6v4VckBCatE=",
+              "number": 1026
+            }
+          },
+          {
+            "create_time": "2023-06-10T11:29:27.933+0800",
+            "owner": {
+              "user_id": 215822884545511,
+              "name": "JH 魔豆",
+              "avatar_url": "https://images.zsxq.com/Fh3fBxBi_u8GYOywXcJRAy_GoAW9?e=1693497599&token=kIxbL07-8jAj8w1n4s9zv64FuZZNEATmlU_Vm6zD:fnt84vZz5qYBc1XIEoYE0206bno=",
+              "number": 10373
+            }
+          }
+        ],
+        "likes_count": 16,
+        "rewards_count": 0,
+        "comments_count": 0,
+        "reading_count": 1,
+        "readers_count": 1980,
+        "digested": false,
+        "sticky": false,
+        "create_time": "2023-06-09T21:13:06.514+0800",
+        "user_specific": {
+          "liked": false,
+          "subscribed": false
+        }
+      }
+    ]
+  }
+}

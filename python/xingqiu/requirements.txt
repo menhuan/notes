@@ -3,3 +3,4 @@ BeautifulSoup4
 requests
 PyQt6
 browser_cookie3
+aiohttp
