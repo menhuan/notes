@@ -4,3 +4,4 @@ requests
 PyQt6
 browser_cookie3
 aiohttp
+pyinstaller
